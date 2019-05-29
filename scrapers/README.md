@@ -3,7 +3,8 @@ Aici găsești script-uri care extrag informații de pe site-uri cu date despre 
 
 ## APIs
 ### Sistemul Informatic Integrat al Învățământului din România
-Base Endpoint: `https://www.siiir.edu.ro/carto/app/rest`
+User URL: `https://www.siiir.edu.ro/carto`
+API Base Endpoint: `https://www.siiir.edu.ro/carto/app/rest`
 
 #### Detalii despre unitate de învățământ după cod
 Nume, Adresa, Contact, Număr Elevi/Personal, Mod Operare, Finanțare etc.
@@ -31,12 +32,15 @@ Cod, Nume, Adresa etc.
 POST `/genericData/find?filters={}&page=1&size=10&sort={"NAME":"asc"}`
 
 ### Ministerul Educației Naționale
+User URL: `http://admitere.edu.ro/2018/repartizare`
+API Base Endpoint: `http://admitere.edu.ro/2018/repartizare`
+
 #### Lista licee
 Nume, Adresa etc.
 
-GET `http://admitere.edu.ro/2018/repartizare/<județ>/data/highschool.json`
+GET `/<județ>/data/highschool.json`
 
 #### Listă specializări
 Nume, Unitate, Ultima Medie etc.
 
-GET `http://admitere.edu.ro/2018/repartizare/<județ>/data/specialization.json`
+GET `/<județ>/data/specialization.json`
