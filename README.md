@@ -5,3 +5,4 @@ Registrul Educațional Alternativ este o platformă prin care liceele sunt evalu
 | Componentă | Descriere |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [ministrul](https://github.com/paubric/real/tree/master/ministrul) | Ministrul este chatbot-ul nostru mascotă. Acesta știe să livreze  mesaje comune și statistici pe serverul nostru de Discord. Are rolul de  detensionare și informare rapidă a grupului. |
+| [scrapers](https://github.com/paubric/real/tree/master/scrapers) | Aici găsești script-uri care extrag informații de pe site-uri cu date despre instituții de învățământ, dar și documentații ale unor API-uri reverse engineered. |
