@@ -32,6 +32,8 @@ Cod, Nume, Adresa etc.
 
 POST `/genericData/find?filters={}&page=1&size=10&sort={"NAME":"asc"}`
 
+---
+
 ### Ministerul Educației Naționale
 User URL: [`http://admitere.edu.ro/2018/repartizare`](http://admitere.edu.ro/2018/repartizare)
 
