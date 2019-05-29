@@ -2,7 +2,7 @@
 Aici găsești script-uri care extrag informații de pe site-uri cu date despre instituții de învățământ, dar și documentații ale unor API-uri reverse engineered.
 
 ## APIs
-## Sistemul Informatic Integrat al Învățământului din România
+### Sistemul Informatic Integrat al Învățământului din România
 Base Endpoint: `https://www.siiir.edu.ro/carto/app/rest`
 
 #### Detalii despre unitate de învățământ după cod
@@ -30,7 +30,7 @@ Cod, Nume, Adresa etc.
 
 POST `/genericData/find?filters={}&page=1&size=10&sort={"NAME":"asc"}`
 
-## Ministerul Eduacției Naționale
+### Ministerul Educației Naționale
 #### Lista licee
 Nume, Adresa etc.
 
