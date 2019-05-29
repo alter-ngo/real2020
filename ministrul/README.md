@@ -1,5 +1,5 @@
 # Ministrul Educațional Alternativ
-Ministrul este chatbot-ul notru mascotă. Acesta știe să livreze mesaje comune și statistici pe serverul nostru de Discord. Are rolul de detensionare și informare rapidă a grupului.
+Ministrul este chatbot-ul nostru mascotă. Acesta știe să livreze mesaje comune și statistici pe serverul nostru de Discord. Are rolul de detensionare și informare rapidă a grupului.
 
 ## Comenzi
 `!spune buna`
