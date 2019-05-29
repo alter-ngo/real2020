@@ -32,6 +32,8 @@ Tinerilor, un lucru este cert: #estereal.
 
 `!real despre`
 
+## Ministrul în acțiune
+
 Registrul Educațional Alternativ este o platformă prin care liceele sunt evaluate chiar de către elevi, profesori, părinți și absolvenți. Acesta a fost gândit pentru a îi ajuta pe elevii din clasa a VIII-a în alegerea opțiunilor de liceu, dar și pentru a le oferi conducerilor instituțiilor de învățământ un mecanism de autoevaluare, încurajând astfel competitivitatea constructivă.
 
 `!real motivatie`
