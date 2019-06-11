@@ -1,60 +1,12 @@
-# Scrapers
-Aici găsești script-uri care extrag informații de pe site-uri cu date despre instituții de învățământ, dar și documentații ale unor API-uri reverse engineered.
+### Ministerul Justiției - Portalul Instanțelor de Judecată
+User URL: [`http://portal.just.ro/SitePages/acasa.aspx`](http://portal.just.ro/SitePages/acasa.aspx)
 
-## APIs
-### Sistemul Informatic Integrat al Învățământului din România
-User URL: [`https://www.siiir.edu.ro/carto`](https://www.siiir.edu.ro/carto)
+#### Detalii despre dosare în instanță
+Cod 
 
-API Base Endpoint: `https://www.siiir.edu.ro/carto/app/rest`
+GET `http://portal.just.ro/SitePages/cautare.aspx?k=LICEU`
 
-#### Detalii despre unitate de învățământ după cod
-Nume, Adresa, Contact, Număr Elevi/Personal, Mod Operare, Finanțare etc.
+#### Detalii despre dosare în instanță din ultimul an
+Cod 
 
-GET `/school/details/<cod>`
-
-#### Listă de subunități ale unei instituții de învățământ după cod
-Nume, Adresa, Statut etc.
-
-GET `/school/subunits/<cod>`
-
-#### Listă de clase
-Nume, Nivel, Număr Elevi, Limba Predare etc.
-
-GET `/school/organisation/11261049`
-
-#### Listă de săli
-Nume, Tip, Adresa, Suprafață, Etaje etc.
-
-GET `/school/materialresources/11261049`
-
-#### Listă unități de învățământ
-Cod, Nume, Adresa etc.
-
-POST `/genericData/find?filters={}&page=1&size=10&sort={"NAME":"asc"}`
-
----
-
-### Admitere
-User URL: [`http://admitere.edu.ro/2018/repartizare`](http://admitere.edu.ro/2018/repartizare)
-
-API Base Endpoint: `http://admitere.edu.ro/2018/repartizare`
-
-#### Lista licee
-Nume, Adresa etc.
-
-GET `/<județ>/data/highschool.json`
-
-#### Lista scoli
-Nume, Adresa etc.
-
-GET `/<județ>/data/school.json`
-
-#### Listă specializări
-Nume, Unitate, Ultima Medie etc.
-
-GET `/<județ>/data/specialization.json`
-
-#### Listă locuri libere
-Nume, Locuri Libere etc.
-
-GET `/<județ>/data/empty-seats.json`
+GET `http://portal.just.ro/SitePages/cautare.aspx?k=LICEU&r=mjmpdosardata%3D%22AQpVbHRpbXVsIGFuDW1qbXBkb3NhcmRhdGEAFwFbMjAxOC0wNi0xMVQwMDowMDowMFo7XQ%3D%3D%22`
