@@ -1,8 +1,5 @@
-# Scrapers
-Aici găsești script-uri care extrag informații de pe site-uri cu date despre instituții de învățământ, dar și documentații ale unor API-uri reverse engineered.
-
-## APIs
 ### Sistemul Informatic Integrat al Învățământului din România
+
 User URL: [`https://www.siiir.edu.ro/carto`](https://www.siiir.edu.ro/carto)
 
 API Base Endpoint: `https://www.siiir.edu.ro/carto/app/rest`
@@ -31,30 +28,3 @@ GET `/school/materialresources/11261049`
 Cod, Nume, Adresa etc.
 
 POST `/genericData/find?filters={}&page=1&size=10&sort={"NAME":"asc"}`
-
----
-
-### Admitere
-User URL: [`http://admitere.edu.ro/2018/repartizare`](http://admitere.edu.ro/2018/repartizare)
-
-API Base Endpoint: `http://admitere.edu.ro/2018/repartizare`
-
-#### Lista licee
-Nume, Adresa etc.
-
-GET `/<județ>/data/highschool.json`
-
-#### Lista scoli
-Nume, Adresa etc.
-
-GET `/<județ>/data/school.json`
-
-#### Listă specializări
-Nume, Unitate, Ultima Medie etc.
-
-GET `/<județ>/data/specialization.json`
-
-#### Listă locuri libere
-Nume, Locuri Libere etc.
-
-GET `/<județ>/data/empty-seats.json`
