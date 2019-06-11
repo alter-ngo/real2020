@@ -1,4 +1,6 @@
-### Admitere
+### ADLIC - Admiterea în licee şi şcoli de arte şi meserii
+Primul sistem informatizat folosit în Romania la nivel naţional pentru centralizarea rezultatelor testelor naţionale şi distribuirea în licee şi şcoli profesionale a candidaţilor.
+
 User URL: [`http://admitere.edu.ro/2018/repartizare`](http://admitere.edu.ro/2018/repartizare)
 
 API Base Endpoint: `http://admitere.edu.ro/2018/repartizare`
