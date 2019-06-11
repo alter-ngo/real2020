@@ -8,4 +8,4 @@ Aici găsești script-uri care extrag informații de pe site-uri cu date despre 
 | beta.aracip.eu      | Agenția Română de Asigurare a Calității în Învățământul Preuniversitar                                              |
 | [portal.just.ro](https://github.com/paubric/real/tree/master/scrapers/portal.just.ro)  | Portalul Instanțelor de Judecată                           |
 | [siiir.edu.ro](https://github.com/paubric/real/tree/master/scrapers/siiir.edu.ro)    | Sistemul Informatic Integrat al Învățământului din România |
-| titularizare.edu.ro | Proiect de informatizare a ocupării posturilor declarate  vacante/rezervate în învăţământul preuniversitar de stat. |
+| titularizare.edu.ro | Ocuparea posturilor declarate  vacante/rezervate în învăţământul preuniversitar de stat. |
