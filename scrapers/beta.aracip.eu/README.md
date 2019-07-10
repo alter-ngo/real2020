@@ -12,3 +12,44 @@ cu anumiti parametri, vezi Networking
 Raport Anual de Evaluare Interna
 
 GET `http://beta.aracip.eu/descarca/2/<nume>_<CUI>/Rapoarte%20anuale%20de%20evaluare%20interna/2017/<CUI>_2017_RAEI.pdf`
+
+#### Structura
+- ```id```
+
+- ```ruta_completa```
+
+- ```Denumire```
+
+- ```Denumire_Scurta```
+
+- ```CUI```
+
+- ```Cod_Unic_Sortare```
+
+- ```Cod_Sirues```
+
+- ```Fel_Unitate```
+
+- ```Tip_Unitate```
+
+- ```Limba_Predare```
+
+- ```Mod_Functionare```
+
+- ```Forma_Finantare```
+
+- ```Forma_Proprietate```
+
+- ```Judet```
+
+- ```Ordin_ministru```
+
+- ```infoagregata```
+
+- ```FormeInvatamant```
+
+- ```NiveluriAcreditabile```
+
+- ```Locatii```
+
+- ```Contacte```
