@@ -27,7 +27,7 @@ GET `/<județ>/data/empty-seats.json`
 
 #### Structura
 - ```j(Județ)```
-- ```lc```
+- ```lc(Numar Liceu >100)```
 - ```l(Nume)```
 - ```t(Tipul Instituției)```
 - ```a(Adresă)```
