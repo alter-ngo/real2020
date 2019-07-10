@@ -24,3 +24,14 @@ GET `/<județ>/data/specialization.json`
 Nume, Locuri Libere etc.
 
 GET `/<județ>/data/empty-seats.json`
+
+#### Structura
+- ```j(Județ)```
+- ```lc```
+- ```l(Nume)```
+- ```t(Tipul Instituției)```
+- ```a(Adresă)```
+- ```p(Telefon)```
+- ```f(Fax)```
+- ```m(Mediu - Urban/Rural)```
+- ```sp(Specializare)```
