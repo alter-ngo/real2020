@@ -1,48 +1,43 @@
 import json
+import numpy as np
+import urllib.request
 
-with open('../admitere.edu.ro/data.json') as f:
-    admitere_data = json.loads(f.read())
+with open('../siiir.edu.ro/data.json') as f:
+    siir_data = json.loads(f.read())
 
-with open('../admitere.edu.ro/judete.json') as f:
-    judete_data = json.loads(f.read())
-
-with open('../beta.aracip.eu/institutii.json') as f:
+with open('institutii.json') as f:
     aracip_data = json.loads(f.read())
 
-def clean_data(input_name: str):
-    diacritice = {
-        'ă':'a',
-        'â':'a',
-        'î':'i',
-        'ș':'s',
-        'ț':'t',
+sirues_codes= []
+for hs in siir_data:
+    for hs_type in hs['OTHERS']['organisation']['schoolLevels']:
+        if hs_type['level'] == 'Liceal' and hs_type['state'] == 'Acreditat':
+            sirues_codes.append(hs['OTHERS']['details']['siruesCode'])
+
+def process_name(name):
+    name_split = name.split('_')
+    CUI = name_split[1]
+    name = name_split[0]
+    special_chars ={
+        'ă': 'a',
+        'â': 'a',
+        'î': 'i',
+        'ț': 't',
+        'ș': 's'
     }
-    input_name = input_name.lower()
-    for diacritica in diacritice.keys():
-        input_name = input_name.replace(diacritica,diacritice[diacritica])
+    for i in range(len(special_chars.keys())):
+        sc = list(special_chars.keys())[i]
+        special_chars[sc.upper()] = special_chars[sc].upper()
+    for sc in special_chars.keys():
+        name = name.replace(sc,special_chars[sc])
+    name = name.replace(' ','%20')
     
-    input_name = input_name.replace('”','')
-    input_name = input_name.replace('“','')
-    input_name = input_name.replace("'",'')
-    input_name = input_name.lstrip()
-
-    return input_name
-
-admitere_hs = []
-for jd in judete_data['judete'].keys():
-    for hs in admitere_data[jd]['highschool']:
-        admitere_hs.append([clean_data(hs['l']),clean_data(judete_data['judete'][jd])])
-
-aracip_hs = []
+    return name+'_'+CUI
+    
+    
 for hs in aracip_data['data']:
-    aracip_hs.append([clean_data(hs['Denumire']),clean_data(hs['Judet'])])
-
-
-count = 0
-for hs in aracip_hs:
-    for _hs in admitere_hs:
-        if (hs[0] in _hs[0] or _hs[0] in hs[0]) and hs[1] == _hs[1]:
-            print(hs)
-            count+=1
-
-print(count)
+    if hs['Cod_Sirues'] in sirues_codes:
+        name = process_name(hs['ruta_completa'].split('\\')[-1])
+        CUI = hs['CUI']
+        url_gen = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2017/{CUI}_2017_RAEI.pdf'
+        print(url_gen)
