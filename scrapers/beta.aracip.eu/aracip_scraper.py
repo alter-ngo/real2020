@@ -1,6 +1,6 @@
 import json
 import numpy as np
-import urllib.request
+import requests
 
 with open('../siiir.edu.ro/data.json') as f:
     siir_data = json.loads(f.read())
@@ -30,7 +30,6 @@ def process_name(name):
         special_chars[sc.upper()] = special_chars[sc].upper()
     for sc in special_chars.keys():
         name = name.replace(sc,special_chars[sc])
-    name = name.replace(' ','%20')
     
     return name+'_'+CUI
     
@@ -40,4 +39,8 @@ for hs in aracip_data['data']:
         name = process_name(hs['ruta_completa'].split('\\')[-1])
         CUI = hs['CUI']
         url_gen = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2017/{CUI}_2017_RAEI.pdf'
-        print(url_gen)
+        req = requests.get(url_gen)
+        if "Eroare 404" in req.text:
+            print(404)
+            continue
+        print(200, url_gen)
