@@ -21,7 +21,8 @@ def process_name(name):
     CUI = name_split[1]
     name = name_split[0]
 
-    name = urllib.parse.quote(name)
+    name = urllib.parse.quote(name, safe='/\'')
+    name = name.replace('%26%23039%3B','\'')
 
     return name+'_'+CUI
 
@@ -29,13 +30,36 @@ for hs in aracip_data['data']:
     if hs['Cod_Sirues'] in sirues_codes and hs['Cod_Sirues'] != None:
         name = process_name(hs['ruta_completa'].split('\\')[-1])
         CUI = hs['CUI']
-        url_gen = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2017/{CUI}_2017_RAEI.pdf'
-        req = requests.get(url_gen)
+        url_gen_1 = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2017/{CUI}_2017_RAEI.pdf'
+        url_gen_2 = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2016/2016.pdf'
+        url_gen_3 = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2015/2015.pdf'
+        url_gen_4 = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2014/2014.pdf'
 
-        if "Eroare 404" in req.text:
-            print('[!]', url_gen)
-            continue
+        req = requests.get(url_gen_1)
+        if "Eroare 404" not in req.text:
+            print('[2017]', url_gen_1)
+            filename = './pdfs/' + f'{CUI}_2017_RAEI.pdf'
+            open(filename,'wb').write(req.content)
+        else:
+            req = requests.get(url_gen_2)
 
-        print('[*]', url_gen)
-        filename = './pdfs/' + f'{CUI}_2017_RAEI.pdf'
-        open(filename,'wb').write(req.content)
+            if "Eroare 404" not in req.text:
+                print('[2016]', url_gen_2)
+                filename = './pdfs/' + f'{CUI}_2016_RAEI.pdf'
+                open(filename,'wb').write(req.content)
+            else:
+                req = requests.get(url_gen_3)
+
+                if "Eroare 404" not in req.text:
+                    print('[2015]', url_gen_3)
+                    filename = './pdfs/' + f'{CUI}_2015_RAEI.pdf'
+                    open(filename,'wb').write(req.content)
+                else:
+                    req = requests.get(url_gen_4)
+
+                    if "Eroare 404" not in req.text:
+                        print('[2014]', url_gen_4)
+                        filename = './pdfs/' + f'{CUI}_2014_RAEI.pdf'
+                        open(filename,'wb').write(req.content)
+                    else:
+                        print('[!]', name)
