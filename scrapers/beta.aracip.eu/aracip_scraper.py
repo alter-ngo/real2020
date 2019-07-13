@@ -22,18 +22,20 @@ def process_name(name):
     name = name_split[0]
 
     name = urllib.parse.quote(name)
-    
+
     return name+'_'+CUI
 
 for hs in aracip_data['data']:
-    if hs['Cod_Sirues'] in sirues_codes:
+    if hs['Cod_Sirues'] in sirues_codes and hs['Cod_Sirues'] != None:
         name = process_name(hs['ruta_completa'].split('\\')[-1])
         CUI = hs['CUI']
         url_gen = f'http://beta.aracip.eu/descarca/2/{name}/Rapoarte%20anuale%20de%20evaluare%20interna/2017/{CUI}_2017_RAEI.pdf'
         req = requests.get(url_gen)
+
         if "Eroare 404" in req.text:
-            print(404)
+            print('[!]', url_gen)
             continue
-        print(200, url_gen)
-        print('Downloading')
-        open(f'{name}.pdf','wb').write(req.content)
+
+        print('[*]', url_gen)
+        filename = './pdfs/' + f'{CUI}_2017_RAEI.pdf'
+        open(filename,'wb').write(req.content)
