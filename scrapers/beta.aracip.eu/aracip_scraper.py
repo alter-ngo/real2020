@@ -30,6 +30,8 @@ def process_name(name):
         special_chars[sc.upper()] = special_chars[sc].upper()
     for sc in special_chars.keys():
         name = name.replace(sc,special_chars[sc])
+
+    name = name.replace(' ','%20')
     
     return name+'_'+CUI
     
