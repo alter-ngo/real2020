@@ -44,3 +44,5 @@ for hs in aracip_data['data']:
             print(404)
             continue
         print(200, url_gen)
+        print('Downloading')
+        open(f'{name}.pdf','wb').write(req.content)
