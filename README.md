@@ -16,3 +16,14 @@ Its main objectives are:
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [ministrul](https://github.com/paubric/real/tree/master/ministrul)         | _Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing.                                                    |
 | [external_data](https://github.com/paubric/real/tree/master/external_data) | Here you can find crawlers, scrapers, spiders and other sorts of scripts which automate the extraction of public data from various platforms. Additionally, these are accompanied by other data wrangling scripts. |
+
+# Contributing
+### General
+- We are not using branches or forks for now
+
+### Python
+- Variables and functions must have English names
+- Variables and functions must have descriptive names, with minimal shortening (E.g. `highschool_list` instead of `hs`)
+- Variables and functions must have `lower_case_with_underscores` names
+- Use an automatic code formatter (E.g. *Prettier* in VS Code) in order to easily apply standard formatting
+- Comments are encouraged
