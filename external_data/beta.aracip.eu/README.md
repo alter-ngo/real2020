@@ -70,4 +70,12 @@ GET `http://beta.aracip.eu/descarca/2/<nume>_<CUI>/Rapoarte%20anuale%20de%20eval
 - `D57`: distribution of teachers relative to studies
 - `D63b`: info regarding directors
 - `D69a`: number of students in the beginning and in the end of the year (useful for dropout rate)
+- `D70a`: students marked for second examination
+- `D72a`: distribution of students relative to final score
+- `D73b`: stats about students in the last year of highschool (n of students in the start/end + graduation) rate
+- `D74`: minimum average admission score to the 9th grade
 - `D77`: BAC results for students
+- `D80a`: highschool held PISA/PIRLS/TIMSS exams
+- `D83`: awards that students got in MEN approved contests
+- `D85`: number of teachers that are authors
+- `D87`: number of students that opted for 'bilingv' or an intensive course
