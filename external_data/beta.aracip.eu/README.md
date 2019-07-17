@@ -58,24 +58,23 @@ GET `http://beta.aracip.eu/descarca/2/<nume>_<CUI>/Rapoarte%20anuale%20de%20eval
 - `Contacte`
 
 # Useful data found in files
-- `D03`: position of highschool relative to the city
-- `D04`: issues that relate to the socio-economic factor or the position of the high school
-- `D17a`: number of classes in the current generation
-- `D18a`: number of students in the current generation
-- `D26a`: etnical structure of students
-- `D26b`: distribution of rrom etnicity in the highschool
-- `D27`: distribution of students relative to their parents studies
-- `D29`: time needed for students to reach highschool
-- `D30`: position of students relative to the highschool
-- `D57`: distribution of teachers relative to studies
-- `D63b`: info regarding directors
-- `D69a`: number of students in the beginning and in the end of the year (useful for dropout rate)
+- `D03`: position relative to locality
+- `D04`: socio-economic factors and positioning
+- `D19a`: CES
+- `D26a`: ethnical structure of students
+- `D27`: students' parents level of studies
+- `D29`: home-highschool travel time
+- `D30`: home-highschool distance
+- `D37`: dining room and accommodation
+- `D57`: teachers by didactic levels
+- `D63b`: directors details
+- `D64`: continuous learning
+- `D68a`: absences
+- `D69a`: dropouts and transfer
 - `D70a`: students marked for second examination
-- `D72a`: distribution of students relative to final score
-- `D73b`: stats about students in the last year of highschool (n of students in the start/end + graduation) rate
-- `D74`: minimum average admission score to the 9th grade
-- `D77`: BAC results for students
-- `D80a`: highschool held PISA/PIRLS/TIMSS exams
-- `D83`: awards that students got in MEN approved contests
-- `D85`: number of teachers that are authors
-- `D87`: number of students that opted for 'bilingv' or an intensive course
+- `D72a`: class average grade
+- `D73b`: graduation rate
+- `D74`: minimum admission score
+- `D77`: BAC results
+- `D83`: MEN contest awards
+- `D85`: teacher authorship
