@@ -22,7 +22,6 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
           "short_name": "Col. Naț. Imaginar",
           "sirues_code": "123456",
           "siiir_code": "12345678",
-          "cui": "1234567",
           "cif": "1234567",
           "school_type": "Colegiu Național"
         },
