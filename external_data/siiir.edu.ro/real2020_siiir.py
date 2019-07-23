@@ -11,6 +11,7 @@ REAL2020 structure relative to SIIIR data:
           'short_name': SHORT_NAME,
           'sirues_code': OTHERS.details.siruesCode,
           'siiir_code': OTHERS.details.code,
+          'school_code': OTHERS.details.idSchool,
           'cif': OTHERS.details.fiscalCode,
           'school_type': None
         },
@@ -277,6 +278,7 @@ for institution in SIIIR_DATA:
                     'short_name': institution['SHORT_NAME'],
                     'sirues_code': institution['OTHERS']['details']['siruesCode'],
                     'siiir_code': institution['OTHERS']['details']['code'],
+                    'school_code': institution['OTHERS']['details']['idSchool'],
                     'cif': institution['OTHERS']['details']['fiscalCode']
                 },
                 'legal': {
