@@ -112,7 +112,6 @@ with open('data.json') as f:
 real2020_dataset = {'institutions': []}
 
 
-
 def get_students_formation(institution_passed):
     ''' get students formation from siiir dataset and adapt for real2020 dataset '''
 
@@ -213,30 +212,14 @@ def get_utilities(institution_passed):
 
     for utilities in institution_passed['OTHERS']['schoolBuildingUtilities']:
         utilities_data = {
-            'running_water':
-            utilities_data['running_water'] + 1
-            if utilities['runningWater'] == 'Da' else utilities_data['running_water'] - 1,
-            'sewerage':
-            utilities_data['sewerage'] + 1
-            if utilities['canalization'] == 'Da' else utilities_data['sewerage'] - 1,
-            'gas':
-            utilities_data['gas'] + 1
-            if utilities['gas'] == 'Da' else utilities_data['gas'] - 1,
-            'electricity':
-            utilities_data['electricity'] + 1
-            if utilities['electricity'] == 'Da' else utilities_data['electricity'] - 1,
-            'heating':
-            utilities_data['heating'] + 1
-            if utilities['heating'] == 'Da' else utilities_data['heating'] - 1,
-            'central_heating':
-            utilities_data['central_heating'] +1
-            if utilities['centralHeating'] == 'Da' else utilities_data['central_heating'] - 1,
-            'sanitation':
-            utilities_data['sanitation'] + 1
-            if utilities['salubrity'] == 'Da' else utilities_data['sanitation'] - 1,
-            'toilets':
-            utilities_data['toilets'] + 1 if utilities['toilet'] ==
-            'În interiorul clădirii, stare corespunzătoare' else utilities_data['toilets'] - 1
+            'running_water': utilities_data['running_water'] + 1 if utilities['runningWater'] == 'Da' else utilities_data['running_water'] - 1,
+            'sewerage': utilities_data['sewerage'] + 1 if utilities['canalization'] == 'Da' else utilities_data['sewerage'] - 1,
+            'gas': utilities_data['gas'] + 1 if utilities['gas'] == 'Da' else utilities_data['gas'] - 1,
+            'electricity': utilities_data['electricity'] + 1 if utilities['electricity'] == 'Da' else utilities_data['electricity'] - 1,
+            'heating': utilities_data['heating'] + 1 if utilities['heating'] == 'Da' else utilities_data['heating'] - 1,
+            'central_heating': utilities_data['central_heating'] + 1 if utilities['centralHeating'] == 'Da' else utilities_data['central_heating'] - 1,
+            'sanitation': utilities_data['sanitation'] + 1 if utilities['salubrity'] == 'Da' else utilities_data['sanitation'] - 1,
+            'toilets': utilities_data['toilets'] + 1 if utilities['toilet'] == 'În interiorul clădirii, stare corespunzătoare' else utilities_data['toilets'] - 1
         }
 
     data_lenght = len(institution_passed['OTHERS']['schoolBuildingUtilities'])
@@ -268,6 +251,7 @@ def is_highschool(instituion_passed):
         if institution_type['level'] == 'Liceal' and institution_type['state'] == 'Acreditat':
             return True
     return False
+
 
 for institution in SIIIR_DATA:
     if is_highschool(institution):
