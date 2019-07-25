@@ -7,95 +7,95 @@ REAL2020 structure relative to SIIIR data:
     {
       'objective': {
         'identity': {
-          'full_name': NAME,
-          'short_name': SHORT_NAME,
-          'sirues_code': OTHERS.details.siruesCode,
-          'siiir_code': OTHERS.details.code,
-          'school_code': OTHERS.details.idSchool,
-          'cif': OTHERS.details.fiscalCode,
+          'full_name': details.longName,
+          'short_name': details.shortName,
+          'sirues_code': details.siruesCode,
+          'siiir_code': details.code,
+          'school_code': details.idSchool,
+          'cif': details.fiscalCode,
           'school_type': None
         },
         'legal': {
-          'status': STATUT,
-          'property_form': PROPERTY_FORM,
-          'funding_form': OTHERS.details.fundingForm
+          'status': details.status,
+          'property_form': details.propertyForm,
+          'funding_form': details.fundingForm
         },
         'location': {
           'medium': None,
-          'county': OTHERS.details.county,
-          'locality': OTHERS.details.locality,
-          'street': OTHERS.details.street,
-          'street_number': OTHERS.details.streetNumber,
-          'postal_code': OTHERS.details.street.postalCode,
+          'county': details.county,
+          'locality': details.locality,
+          'street': details.street,
+          'street_number': details.streetNumber,
+          'postal_code': details.street.postalCode,
           'position_relative_locality': None
         },
         'contact': {
-          'phone_number': OTHERS.details.phoneNumber,
-          'fax_number': OTHERS.details.faxNumber,
-          'email': OTHERS.details.email
+          'phone_number': details.phoneNumber,
+          'fax_number': details.faxNumber,
+          'email': details.email
         },
         'students': {
-          'student_count': OTHERS.details.schoolNumbers.studentsCount,
+          'student_count': details.schoolNumbers.studentsCount,
           'study_formations': [
             {
-              'name': OTHERS.organisation.schoolStudyFormations[x].sfName,
-              'type': OTHERS.organisation.schoolStudyFormations[x].studyFormationType,
-              'education_type': OTHERS.organisation.schoolStudyFormations[x].educationType,
-              'education_form': OTHERS.organisation.schoolStudyFormations[x].educationForm,
-              'teaching_mode' OTHERS.organisation.schoolStudyFormations[x].teachingMode,
-              'teaching_type': OTHERS.organisation.schoolStudyFormations[x].teachingType,
-              'teaching_language': OTHERS.organisation.schoolStudyFormations[x].teachingLanguage,
-              'student_count': OTHERS.organisation.schoolStudyFormations[x].studentsNo
+              'name': organisation.schoolStudyFormations[x].sfName,
+              'type': organisation.schoolStudyFormations[x].studyFormationType,
+              'education_type': organisation.schoolStudyFormations[x].educationType,
+              'education_form': organisation.schoolStudyFormations[x].educationForm,
+              'teaching_mode' organisation.schoolStudyFormations[x].teachingMode,
+              'teaching_type': organisation.schoolStudyFormations[x].teachingType,
+              'teaching_language': organisation.schoolStudyFormations[x].teachingLanguage,
+              'student_count': organisation.schoolStudyFormations[x].studentsNo
             }
           ]
         },
         'resources': {
           'buildings': [
             {
-              'building_id': OTHERS.materialresources.schoolBuildings[x].id,
-              'code': OTHERS.materialresources.schoolBuildings[x].buildingCode,
-              'description': OTHERS.materialresources.schoolBuildings[x].buildingDescription,
-              'built_surface': OTHERS.materialresources.schoolBuildings[x].builtSurface
-              'held_surface': OTHERS.materialresources.schoolBuildings[x].heldSurface,
-              'construction_year': OTHERS.materialresources.schoolBuildings[x].constructionYear,
-              'property_type': OTHERS.materialresources.schoolBuildings[x].propertyType,
-              'floor_count': OTHERS.materialresources.schoolBuildings[x].floorsNo,
-              'video_surveillance': OTHERS.materialresources.schoolBuildings[x].videoSurveillance,
-              'audio_surveillance': OTHERS.materialresources.schoolBuildings[x].audioSurveillance
+              'building_id': organisation.materialresources.schoolBuildings[x].id,
+              'code': organisation.materialresources.schoolBuildings[x].buildingCode,
+              'description': organisation.materialresources.schoolBuildings[x].buildingDescription,
+              'built_surface': organisation.materialresources.schoolBuildings[x].builtSurface
+              'held_surface': organisation.materialresources.schoolBuildings[x].heldSurface,
+              'construction_year': organisation.materialresources.schoolBuildings[x].constructionYear,
+              'property_type': organisation.materialresources.schoolBuildings[x].propertyType,
+              'floor_count': organisation.materialresources.schoolBuildings[x].floorsNo,
+              'video_surveillance': organisation.materialresources.schoolBuildings[x].videoSurveillance,
+              'audio_surveillance': organisation.materialresources.schoolBuildings[x].audioSurveillance
             }
           ],
           'rooms': [
             {
-              'building_id': OTHERS.materialresources.schoolClasses[x].idBuilding,
-              'name': OTHERS.materialresources.schoolClasses[x].name,
-              'type': OTHERS.materialresources.schoolClasses[x].roomType,
-              'surface': OTHERS.materialresources.schoolClasses[x].surface,
-              'floor': OTHERS.materialresources.schoolClasses[x].floor,
-              'seat_count': OTHERS.materialresources.schoolClasses[x].seatsNo,
-              'computer_count': OTHERS.materialresources.schoolClasses[x].computersNumber
+              'building_id': organisation.materialresources.schoolClasses[x].idBuilding,
+              'name': organisation.materialresources.schoolClasses[x].name,
+              'type': organisation.materialresources.schoolClasses[x].roomType,
+              'surface': organisation.materialresources.schoolClasses[x].surface,
+              'floor': organisation.materialresources.schoolClasses[x].floor,
+              'seat_count': organisation.materialresources.schoolClasses[x].seatsNo,
+              'computer_count': organisation.materialresources.schoolClasses[x].computersNumber
             }
           ],
           'transport': [
             {
-              'property': OTHERS.materialresources.schoolTransport[x].property,
-              'serving': OTHERS.materialresources.schoolTransport[x].servers,
-              'vehicle_type': OTHERS.materialresources.schoolTransport[x].vehicleType,
-              'seat_count': OTHERS.materialresources.schoolTransport[x].seatsNo,
-              'acquisition_year': OTHERS.materialresources.schoolTransport[x].acquisitionYear,
-              'driver': OTHERS.materialresources.schoolTransport[x].driverType,
-              'itp': OTHERS.materialresources.schoolTransport[x].itp,
-              'safety': OTHERS.materialresources.schoolTransport[x].safety
+              'property': organisation.materialresources.schoolTransport[x].property,
+              'serving': organisation.materialresources.schoolTransport[x].servers,
+              'vehicle_type': organisation.materialresources.schoolTransport[x].vehicleType,
+              'seat_count': organisation.materialresources.schoolTransport[x].seatsNo,
+              'acquisition_year': organisation.materialresources.schoolTransport[x].acquisitionYear,
+              'driver': organisation.materialresources.schoolTransport[x].driverType,
+              'itp': organisation.materialresources.schoolTransport[x].itp,
+              'safety': organisation.materialresources.schoolTransport[x].safety
             }
           ],
           'utilities': {
-                'running_water': OTHERS.schoolBuildingUtilities.runningWater,
-                'sewerage': OTHERS.schoolBuildingUtilities.canalization,
-                'gas': OTHERS.schoolBuildingUtilities.gas,
-                'electricity': OTHERS.schoolBuildingUtilities.electricity,
-                'heating': OTHERS.schoolBuildingUtilities.heating,
-                'central_heating': OTHERS.schoolBuildingUtilities.centralHeating,
-                'sanitation': OTHERS.schoolBuildingUtilities.salubitry,
-                'toilets': OTHERS.schoolBuildingUtilities.toilet
+                'running_water': buildingsstate.schoolBuildingUtilities.runningWater,
+                'sewerage': buildingsstate.schoolBuildingUtilities.canalization,
+                'gas': buildingsstate.schoolBuildingUtilities.gas,
+                'electricity': buildingsstate.schoolBuildingUtilities.electricity,
+                'heating': buildingsstate.schoolBuildingUtilities.heating,
+                'central_heating': buildingsstate.schoolBuildingUtilities.centralHeating,
+                'sanitation': buildingsstate.schoolBuildingUtilities.salubitry,
+                'toilets': buildingsstate.schoolBuildingUtilities.toilet
             }
         }
       }
