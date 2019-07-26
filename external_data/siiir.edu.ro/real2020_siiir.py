@@ -106,7 +106,7 @@ REAL2020 structure relative to SIIIR data:
 
 import json
 
-with open('data.json') as f:
+with open('siiir_2020.json') as f:
     SIIIR_DATA = json.loads(f.read())
 
 real2020_dataset = {'institutions': []}
@@ -116,7 +116,7 @@ def get_students_formation(institution_passed):
     ''' get students formation from siiir dataset and adapt for real2020 dataset '''
 
     student_formation_list = []
-    for student_formation in institution_passed['OTHERS']['organisation'][
+    for student_formation in institution_passed['organisation'][
             'schoolStudyFormations']:
         student_formation_entry = {
             'name': student_formation['sfName'],
@@ -136,8 +136,11 @@ def get_students_formation(institution_passed):
 def get_buildings(institution_passed):
     ''' get buildings from siiir dataset and adapt for real2020 dataset '''
 
+    if institution_passed.get('materialresources') == None:
+        return None
+
     buildings_list = []
-    for building in institution_passed['OTHERS']['materialresources'][
+    for building in institution_passed['materialresources'][
             'schoolBuildings']:
         buildings_entry = {
             'building_id': building['id'],
@@ -159,8 +162,11 @@ def get_buildings(institution_passed):
 def get_rooms(institution_passed):
     ''' get rooms from siiir dataset and adapt for real2020 dataset '''
 
+    if institution_passed.get('materialresources') == None:
+        return None
+
     rooms_list = []
-    for rooms in institution_passed['OTHERS']['materialresources']['schoolClasses']:
+    for rooms in institution_passed['materialresources']['schoolClasses']:
         rooms_entry = {
             'building_id': rooms['idBuilding'],
             'name': rooms['name'],
@@ -178,8 +184,11 @@ def get_rooms(institution_passed):
 def get_transport(institution_passed):
     ''' get transport from siiir dataset and adapt for real2020 dataset '''
 
+    if institution_passed.get('materialresources') == None:
+        return None
+
     transport_list = []
-    for transport in institution_passed['OTHERS']['materialresources'][
+    for transport in institution_passed['materialresources'][
             'schoolTransport']:
         transport_entry = {
             'property': transport['property'],
@@ -199,6 +208,9 @@ def get_transport(institution_passed):
 def get_utilities(institution_passed):
     ''' get utilities from siiir dataset and adapt for real2020 dataset '''
 
+    if institution_passed.get('buildingsstate') == None:
+        return None
+
     utilities_data = {
         'running_water': 0,
         'sewerage': 0,
@@ -210,7 +222,7 @@ def get_utilities(institution_passed):
         'toilets': 0
     }
 
-    for utilities in institution_passed['OTHERS']['schoolBuildingUtilities']:
+    for utilities in institution_passed['buildingsstate']['schoolBuildingUtilities']:
         utilities_data = {
             'running_water': utilities_data['running_water'] + 1 if utilities['runningWater'] == 'Da' else utilities_data['running_water'] - 1,
             'sewerage': utilities_data['sewerage'] + 1 if utilities['canalization'] == 'Da' else utilities_data['sewerage'] - 1,
@@ -222,13 +234,14 @@ def get_utilities(institution_passed):
             'toilets': utilities_data['toilets'] + 1 if utilities['toilet'] == 'În interiorul clădirii, stare corespunzătoare' else utilities_data['toilets'] - 1
         }
 
-    data_lenght = len(institution_passed['OTHERS']['schoolBuildingUtilities'])
+    data_length = len(
+        institution_passed['buildingsstate']['schoolBuildingUtilities'])
 
     def get_results(ternary_result):
-        ''' decide wheter or not the utility exists in the instituion '''
-        if ternary_result == data_lenght:
+        ''' decide whether or not the utility exists in the instituion '''
+        if ternary_result == data_length:
             return 'Da'
-        elif ternary_result == -data_lenght:
+        elif ternary_result == -data_length:
             return 'Nu'
         else:
             return 'Partial'
@@ -247,46 +260,53 @@ def get_utilities(institution_passed):
 
 def is_highschool(instituion_passed):
     ''' Check wheter or not an institution is a highschool '''
-    for institution_type in instituion_passed['OTHERS']['organisation']['schoolLevels']:
+    if instituion_passed.get('organisation') == None:
+        return None
+
+    for institution_type in instituion_passed['organisation']['schoolLevels']:
         if institution_type['level'] == 'Liceal' and institution_type['state'] == 'Acreditat':
             return True
     return False
 
 
 for institution in SIIIR_DATA:
+    print(SIIIR_DATA.index(institution))
     if is_highschool(institution):
+        if institution.get('details') == None:
+            continue
+
         real2020_entry = {
             'objective': {
                 'identity': {
-                    'full_name': institution['NAME'],
-                    'short_name': institution['SHORT_NAME'],
-                    'sirues_code': institution['OTHERS']['details']['siruesCode'],
-                    'siiir_code': institution['OTHERS']['details']['code'],
-                    'school_code': institution['OTHERS']['details']['idSchool'],
-                    'cif': institution['OTHERS']['details']['fiscalCode']
+                    'full_name': institution['details']['longName'],
+                    'short_name': institution['details']['shortName'],
+                    'sirues_code': institution['details']['siruesCode'],
+                    'siiir_code': institution['details']['code'],
+                    'school_code': institution['details']['idSchool'],
+                    'cif': institution['details']['fiscalCode']
                 },
                 'legal': {
-                    'status': institution['STATUT'],
-                    'property_form': institution['PROPERTY_FORM'],
-                    'funding_form': institution['OTHERS']['details']['fundingForm']
+                    'status': institution['details']['statut'],
+                    'property_form': institution['details']['propertyForm'],
+                    'funding_form': institution['details']['fundingForm']
                 },
                 'location': {
-                    'county': institution['OTHERS']['details']['county'],
-                    'locality': institution['OTHERS']['details']['locality'],
-                    'street': institution['OTHERS']['details']['street'],
+                    'county': institution['details']['county'],
+                    'locality': institution['details']['locality'],
+                    'street': institution['details']['street'],
                     'street_number':
-                    institution['OTHERS']['details']['streetNumber'],
-                    'postal_code': institution['OTHERS']['details']['postalCode']
+                    institution['details']['streetNumber'],
+                    'postal_code': institution['details']['postalCode']
                 },
                 'contact': {
                     'phone_number':
-                    institution['OTHERS']['details']['phoneNumber'],
-                    'fax_number': institution['OTHERS']['details']['faxNumber'],
-                    'email': institution['OTHERS']['details']['email']
+                    institution['details']['phoneNumber'],
+                    'fax_number': institution['details']['faxNumber'],
+                    'email': institution['details']['email']
                 },
                 'students': {
                     'student_count':
-                    institution['OTHERS']['details']['schoolNumbers']
+                    institution['details']['schoolNumbers']
                     ['studentsCount'],
                     'study_formations':
                     get_students_formation(institution)
