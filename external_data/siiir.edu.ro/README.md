@@ -71,50 +71,65 @@ Data: [Google Drive](https://drive.google.com/open?id=1A0905JXCVp3hMZ3er5BNY7XT1
     - `teachingLanguage`
     - `teachingType`
     - `studentsNo`
-  - `materialresources`
-
+- `materialresources`
+  - `idSchool`
+  - `schoolBuildings (for each)`
+    - `id`
     - `idSchool`
-    - `schoolBuildings (for each)`
-      - `id`
-      - `idSchool`
-      - `buildingCode`
-      - `buildingDescription`
-      - `builtSurface`
-      - `heldSurface`
-      - `constructionYear`
-      - `propertyType`
-      - `floorsNo`
-      - `schoolInternalId`
-      - `videoSurveillance`
-      - `audioSurveillance`
-      - `locality`
-      - `street`
-      - `streetNumber`
-      - `postalCode`
-      - `idPhoto`
-    - `schoolClasses (for each)`
-      - `id`
-      - `idSchool`
-      - `idBuilding`
-      - `buildingName`
-      - `code`
-      - `name`
-      - `roomType`
-      - `surface`
-      - `floor`
-      - `seatsNo`
-      - `computersNumber`
-    - `schoolTransport (for each)`
-      - `id`
-      - `idSchool`
-      - `property`
-      - `servers`
-      - `vehicleTyoe`
-      - `seatsNo`
-      - `acquisitionYear`
-      - `driverType`
-      - `itp`
-      - `safety`
+    - `buildingCode`
+    - `buildingDescription`
+    - `builtSurface`
+    - `heldSurface`
+    - `constructionYear`
+    - `propertyType`
+    - `floorsNo`
+    - `schoolInternalId`
+    - `videoSurveillance`
+    - `audioSurveillance`
+    - `locality`
+    - `street`
+    - `streetNumber`
+    - `postalCode`
+    - `idPhoto`
+  - `schoolClasses (for each)`
+    - `id`
+    - `idSchool`
+    - `idBuilding`
+    - `buildingName`
+    - `code`
+    - `name`
+    - `roomType`
+    - `surface`
+    - `floor`
+    - `seatsNo`
+    - `computersNumber`
+  - `schoolTransport (for each)`
+    - `id`
+    - `idSchool`
+    - `property`
+    - `servers`
+    - `vehicleTyoe`
+    - `seatsNo`
+    - `acquisitionYear`
+    - `driverType`
+    - `itp`
+    - `safety`
+- `buildingstate`
+  - `idSchool`
+  - `schoolBuildingUtilities (for each)`
+    - `id`
+    - `idSchool`
+    - `buildingDescription`
+    - `runningWater`
+    - `canalization`
+    - `gas`
+    - `electricity`
+    - `heating`
+    - `salubrity`
+    - `centralHeating`
+    - `toilet`
+    - `dateFrom`
+  - `schoolBuildingsState`
 
 User URL: [`https://www.siiir.edu.ro/carto`](https://www.siiir.edu.ro/carto)
 
@@ -143,6 +158,12 @@ GET `/school/organisation/11261049`
 Nume, Tip, Adresa, Suprafață, Etaje etc.
 
 GET `/school/materialresources/11261049`
+
+#### Institution building state
+
+Utilitati etc.
+
+GET `/school/buildingsstate/11261049`
 
 #### Institution list
 
