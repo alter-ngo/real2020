@@ -11,6 +11,7 @@ REAL2020 structure relative to SIIIR data:
           'short_name': details.shortName,
           'sirues_code': details.siruesCode,
           'siiir_code': details.code,
+          'aracip_code': details.internalIdSchool,
           'school_code': details.idSchool,
           'cif': details.fiscalCode,
           'school_type': None
@@ -282,6 +283,7 @@ for institution in SIIIR_DATA:
                     'short_name': institution['details']['shortName'],
                     'sirues_code': institution['details']['siruesCode'],
                     'siiir_code': institution['details']['code'],
+                    'aracip_code': institution['details']['internalIdSchool'],
                     'school_code': institution['details']['idSchool'],
                     'cif': institution['details']['fiscalCode']
                 },
@@ -321,5 +323,5 @@ for institution in SIIIR_DATA:
         }
         real2020_dataset['institutions'].append(real2020_entry)
 
-with open('real2020.json', 'w') as f:
+with open('../real2020.json', 'w') as f:
     json.dump(real2020_dataset, f)
