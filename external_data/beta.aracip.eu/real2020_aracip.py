@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 def extract_by_index(df, index_column, index):
@@ -35,9 +36,9 @@ def extract_institution_by_sirues(sirues_code):
     extract_institution_by_sirues('1104085')
     '''
     processed_tables = {}
-
     raei_id = extract_by_index(
         xls.parse(3), 'CodSirues', sirues_code)['RaeiId']
+    print('RAEI:', raei_id)
     processed_tables['D03'] = extract_by_index(xls.parse(3), 'RaeiId', raei_id)[
         'PozitionareScoala']
     processed_tables['D04'] = [extract_by_index_and_question(xls.parse(2), 'RaeiID', raei_id, 'DenumireZona')['Zonă dezavantajată din punct de vedere socio-economic (somaj ridicat/ comunităţi defavorizate etc.)'], extract_by_index_and_question(
@@ -59,6 +60,21 @@ def extract_institution_by_sirues(sirues_code):
         'Număr ore de participare']
     processed_tables['D68a'] = [extract_by_index_and_question(xls.parse(90), 'RaeiID', raei_id, 'Denumire')['numărul de absenţe motivate']['Absente'], extract_by_index_and_question(xls.parse(90), 'RaeiID', raei_id, 'Denumire')[
         'numărul de absenţe nemotivate']['Absente'], extract_by_index_and_question(xls.parse(90), 'RaeiID', raei_id, 'Denumire')['Total absenţe pe an']['Absente'], extract_by_index_and_question(xls.parse(90), 'RaeiID', raei_id, 'Denumire')['Număr mediu absenţe pe copil']['Absente']]
+    processed_tables['D69a'] = (np.array([extract_by_index_and_question(xls.parse(92), 'RaeiID', raei_id, 'Denumire')['Numărul de elevi din învăţământul liceal, profil teoretic (IX-XII/XIII)'].values()[3:]]) + np.array([extract_by_index_and_question(xls.parse(), 'RaeiID', raei_id, 'Denumire')[
+                                'Numărul de elevi din învăţământul  liceal, profil vocational (IX-XII/XIII)'].values()[3:]]) + np.array([extract_by_index_and_question(xls.parse(), 'RaeiID', raei_id, 'Denumire')['Numărul de elevi din învăţământul liceal, profil tehnologic (IX-XII/XIII)'].values()[3:]])).sum()
+    processed_tables['D70a'] = (np.array([extract_by_index_and_question(xls.parse(94), 'RaeiID', raei_id, 'Denumire')['Numărul de elevi din învăţământul liceal, profil teoretic (IX-XII/XIII)'].values()[3:]]) + np.array([extract_by_index_and_question(xls.parse(), 'RaeiID', raei_id, 'Denumire')[
+                                'Numărul de elevi din învăţământul  liceal, profil vocational (IX-XII/XIII)'].values()[3:]]) + np.array([extract_by_index_and_question(xls.parse(), 'RaeiID', raei_id, 'Denumire')['Numărul de elevi din învăţământul liceal, profil tehnologic (IX-XII/XIII)'].values()[3:]])).sum()
+    processed_tables['D72a'] = extract_by_index_and_question(xls.parse(
+        98), 'RaeiID', raei_id, 'Denumire')['Învăţământul liceal'].values()[2:]
+    processed_tables['D77'] = extract_by_index_and_question(xls.parse(
+        105), 'RaeiID', raei_id, 'Denumire')['Total'].values()[2:]
+    processed_tables['D83'] = extract_by_index(xls.parse(
+        112), 'RaeiID')['NrElevi']
+    processed_tables['D84'] = extract_by_index(xls.parse(
+        113), 'RaeiID')['Formatori']
+    processed_tables['D85'] = extract_by_index(xls.parse(
+        114), 'RaeiID')['CadreDidacticeAutoriSauCoautoriManuale']
+    return processed_tables
 
 
 xls = pd.ExcelFile('aracip_2018.xlsx')
