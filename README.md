@@ -14,8 +14,8 @@ Its main objectives are:
 
 | Components                                                                 | Description                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [ministrul](https://github.com/paubric/real/tree/master/ministrul)         | _Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing.                                                    |
-| [external_data](https://github.com/paubric/real/tree/master/external_data) | Here you can find crawlers, scrapers, spiders and other sorts of scripts which automate the extraction of public data from various platforms. Additionally, these are accompanied by other data wrangling scripts. |
+| [ministrul](https://github.com/paubric/real/tree/master/ministrul)         | _Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing. **Javascript**                                                  |
+| [external_data](https://github.com/paubric/real/tree/master/external_data) | Here you can find crawlers, scrapers, spiders and other sorts of scripts which automate the extraction of public data from various platforms. Additionally, these are accompanied by other data wrangling scripts. **Python, UiPath** |
 
 # Contributing
 ### General
