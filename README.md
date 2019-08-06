@@ -27,3 +27,8 @@ Its main objectives are:
 - Variables and functions must have `lower_case_with_underscores` names
 - Use an automatic code formatter (E.g. *Prettier* in VS Code) in order to easily apply standard formatting
 - Comments are encouraged
+
+# Contributors
+- [Paul Bricman](github.com/paubric)
+- [Mihai Sturza](github.com/sturzamihai)
+- [Alex Constantin](github.com/xfde)
