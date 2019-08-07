@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 
 
 def extract_by_index(df, index_column, index):
@@ -48,7 +49,7 @@ def extract_by_index_question_and_answer(df, index_column, index, question_colum
 
 def extract_institution_by_sirues(sirues_code):
     '''
-    extract_institution_by_sirues('1104085')
+    extract_institution_by_sirues('1323667')
     '''
     processed_tables = {}
     raei_id = extract_by_index(
@@ -58,19 +59,20 @@ def extract_institution_by_sirues(sirues_code):
         'PozitionareScoala']
     processed_tables['D04'] = [extract_by_index_and_question(xls.parse(2), 'RaeiID', raei_id, 'DenumireZona')['Zonă dezavantajată din punct de vedere socio-economic (somaj ridicat/ comunităţi defavorizate etc.)']['ZonaDezavantajata'], extract_by_index_and_question(
         xls.parse(2), 'RaeiID', raei_id, 'DenumireZona')['Zonă cu probleme de acces (zonă izolată, drumuri desfundate pe ploaie, inzăpeziri frecvente, treceri prin pădure, treceri peste cale ferată, trafic stradal intens etc.)']['ZonaDezavantajata']]
-    processed_tables['D19a'] = ''
+    processed_tables['D19a'] = extract_by_index_question_and_answer(xls.parse(
+        16), 'RaeiID', raei_id, 'Denumire', 'Numărul de elevi din învăţământul liceal ( IX-XII/XIII)').get('UnitateCoodonatoare')
     processed_tables['D26a'] = [extract_by_index_question_and_answer(xls.parse(36), 'RaeiID', raei_id, 'Etnie', 'Română').get('ScoalaProcent'), extract_by_index_question_and_answer(xls.parse(36), 'RaeiID', raei_id, 'Etnie',
                                                                                                                                                                                      'Maghiară/Secui').get('ScoalaProcent'), extract_by_index_question_and_answer(xls.parse(36), 'RaeiID', raei_id, 'Etnie', 'Rromi').get('ScoalaProcent'), extract_by_index_question_and_answer(xls.parse(36), 'RaeiID', raei_id, 'Etnie', 'Alte Etnii').get('ScoalaProcent')]
-    processed_tables['D27'] = [extract_by_index_and_question(xls.parse(38), 'RaeiID', raei_id, 'NivelEducational')['Nici un parinte nu are studii generale (sub 8 clase absolvite)']['ScoalaProcent'], extract_by_index_and_question(xls.parse(38), 'RaeiID', raei_id, 'NivelEducational')['Cel putin un parinte are studii generale (8 clase absolvite)']
+    processed_tables['D27'] = [extract_by_index_question_and_answer(xls.parse(38), 'RaeiID', raei_id, 'NivelEducational', 'Nici un parinte nu are studii generale (sub 8 clase absolvite)').get('ScoalaProcent'), extract_by_index_and_question(xls.parse(38), 'RaeiID', raei_id, 'NivelEducational')['Cel putin un parinte are studii generale (8 clase absolvite)']
                                ['ScoalaProcent'], extract_by_index_and_question(xls.parse(38), 'RaeiID', raei_id, 'NivelEducational')['Cel putin un parinte are studii medii (liceu absolvit)']['ScoalaProcent'], extract_by_index_and_question(xls.parse(38), 'RaeiID', raei_id, 'NivelEducational')['Cel putin un parinte are studii superioare']['ScoalaProcent']]
     processed_tables['D29'] = [extract_by_index_and_question(xls.parse(40), 'RaeiID', raei_id, 'Timp')['sub 30 de minute']['ScoalaProcent'], extract_by_index_and_question(xls.parse(
-        40), 'RaeiID', raei_id, 'Timp')['intre 30 si 60 de minute']['ScoalaProcent'], extract_by_index_and_question(xls.parse(40), 'RaeiID', raei_id, 'Timp')['peste 60 de minute']['ScoalaProcent']]
-    processed_tables['D30'] = [extract_by_index_and_question(xls.parse(41), 'RaeiID', raei_id, 'Domiciliu')['Cu domiciliul în aceeaşi localitate cu şcoala:']['NrEleviProcent'], extract_by_index_and_question(xls.parse(41), 'RaeiID', raei_id, 'Domiciliu')['Cu domiciliul în altă localitate, care fac navetă zilnică']['NrEleviProcent'], extract_by_index_and_question(
-        xls.parse(41), 'RaeiID', raei_id, 'Domiciliu')['Din alte localităţi care stau in gazda sau la internat']['NrEleviProcent'], extract_by_index_question_and_answer(xls.parse(41), 'RaeiID', raei_id, 'Domiciliu', 'Profilul liceului (militar / teologic) implica organizarea activitatiii in regim de internat').get('NrEleviProcent')]
-    processed_tables['D37'] = ''
+        40), 'RaeiID', raei_id, 'Timp')['intre 30 si 60 de minute']['ScoalaProcent'], extract_by_index_question_and_answer(xls.parse(40), 'RaeiID', raei_id, 'Timp', 'peste 60 de minute').get('ScoalaProcent')]
+    processed_tables['D30'] = [extract_by_index_and_question(xls.parse(41), 'RaeiID', raei_id, 'Domiciliu')['Cu domiciliul în aceeaşi localitate cu şcoala:']['NrEleviProcent'], extract_by_index_and_question(xls.parse(41), 'RaeiID', raei_id, 'Domiciliu')['Cu domiciliul în altă localitate, care fac navetă zilnică']['NrEleviProcent'], extract_by_index_question_and_answer(
+        xls.parse(41), 'RaeiID', raei_id, 'Domiciliu', 'Din alte localităţi care stau in gazda sau la internat').get('NrEleviProcent'), extract_by_index_question_and_answer(xls.parse(41), 'RaeiID', raei_id, 'Domiciliu', 'Profilul liceului (militar / teologic) implica organizarea activitatiii in regim de internat').get('NrEleviProcent')]
     processed_tables['D57'] = [extract_by_index_question_and_answer(xls.parse(76), 'RaeiID', raei_id, 'Denumire', 'Număr cadre didactice cu doctorat').get('StructuraProcent'), extract_by_index_and_question(xls.parse(76), 'RaeiID', raei_id, 'Denumire')['Număr cadre didactice cu gradul II']['StructuraProcent'], extract_by_index_and_question(xls.parse(76), 'RaeiID', raei_id, 'Denumire')['Număr cadre didactice cu gradul I']['StructuraProcent'], extract_by_index_and_question(
         xls.parse(76), 'RaeiID', raei_id, 'Denumire')['Număr cadre didactice cu definitivat']['StructuraProcent'], extract_by_index_and_question(xls.parse(76), 'RaeiID', raei_id, 'Denumire')['Număr cadre didactice fără definitivat']['StructuraProcent'], extract_by_index_question_and_answer(xls.parse(76), 'RaeiID', raei_id, 'Denumire', 'Număr personal didactic necalificat').get('StructuraProcent')]
-    processed_tables['D63b'] = ''
+    processed_tables['D63b'] = [list(extract_by_index_and_question(xls.parse(83), 'RaeiID', raei_id, 'Descriere').get('Director').values())[
+        2:], list(extract_by_index_and_question(xls.parse(83), 'RaeiID', raei_id, 'Descriere').get('Director Adjunct').values())[2:]]
     processed_tables['D64'] = extract_by_index(xls.parse(84), 'RaeiID', raei_id)[
         'NrMediuOrePeCadruDidactic']
     processed_tables['D68b'] = [extract_by_index_and_question(xls.parse(91), 'RaeiID', raei_id, 'Denumire')['numărul de absenţe motivate']['Absente'], extract_by_index_and_question(xls.parse(91), 'RaeiID', raei_id, 'Denumire')[
@@ -92,4 +94,13 @@ def extract_institution_by_sirues(sirues_code):
     return processed_tables
 
 
+def extract_all_institutions():
+    real2020 = json.load(open('../real2020.json'))
+    for institution in real2020['institutions']:
+        sirues_code = institution['objective']['identity']['sirues_code']
+        aracip_data = extract_institution_by_sirues(sirues_code)
+        print(sirues_code, aracip_data)
+
+
 xls = pd.ExcelFile('aracip_2018.xlsx')
+extract_all_institutions()
