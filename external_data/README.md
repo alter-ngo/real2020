@@ -81,7 +81,8 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
           "home_relative_location_percentages": {
             "same_locality": 85.5,
             "different_locality": 10.3,
-            "hosted": 4.2
+            "hosted": 4.2,
+            "boarding": 0
           },
           "absences: {
             "total_motivated_absences": 50000,
@@ -97,8 +98,7 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
             "dropouts": 3,
             "repeaters": 2,
             "almost_repeaters": 2,
-            "unfinished_situation": 0,
-            "graduates": 300
+            "unfinished_situation": 0
           },
           "class_grades_percentages": {
             "five_to_six": 14.5,
@@ -108,7 +108,7 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
             "nine_to_ten": 10
           },
           "bacalaureat_grades_percentages": {
-            "five_to_six": 14.5,
+            "under_six": 14.5,
             "six_to_seven": 15.5,
             "seven_to_eight": 30.5,
             "eight_to_nine": 29.5,
