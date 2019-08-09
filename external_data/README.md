@@ -37,7 +37,9 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
           "street": "Calea Lactee",
           "street_number": 123,
           "postal_code": "070045",
-          "position_relative_locality": "Zonă centrală"
+          "position_relative_locality": "Zonă centrală",
+          "socioeconomically_disadvantaged_area": "Nu",
+          "access_problems_area": "Da"
         },
         "contact": {
           "phone_number": "1234567890",
