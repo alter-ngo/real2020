@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import json
+from collections import defaultdict
 
 
 def extract_by_index(df, index_column, index):
@@ -66,6 +67,8 @@ def extract_institution_by_sirues(sirues_code):
         'Mediu'), extract_by_index(xls.parse(3), 'RaeiId', raei_id).get('PozitionareScoala')]
     processed_tables['D04'] = [extract_by_index_question_and_answer(xls.parse(2), 'RaeiID', raei_id, 'DenumireZona', 'Zonă dezavantajată din punct de vedere socio-economic (somaj ridicat/ comunităţi defavorizate etc.)').get('ZonaDezavantajata'), extract_by_index_question_and_answer(
         xls.parse(2), 'RaeiID', raei_id, 'DenumireZona', 'Zonă cu probleme de acces (zonă izolată, drumuri desfundate pe ploaie, inzăpeziri frecvente, treceri prin pădure, treceri peste cale ferată, trafic stradal intens etc.)').get('ZonaDezavantajata')]
+    processed_tables['D05'] = extract_by_index(
+        xls.parse(3), 'RaeiId', raei_id).get('TipUnitate')
     processed_tables['D19a'] = extract_by_index_question_and_answer(xls.parse(
         16), 'RaeiID', raei_id, 'Denumire', 'Numărul de elevi din învăţământul liceal ( IX-XII/XIII)').get('UnitateCoodonatoare')
     processed_tables['D26a'] = [extract_by_index_question_and_answer(xls.parse(36), 'RaeiID', raei_id, 'Etnie', 'Română').get('ScoalaProcent'), extract_by_index_question_and_answer(xls.parse(36), 'RaeiID', raei_id, 'Etnie',
@@ -106,12 +109,93 @@ def extract_all_institutions():
     for institution_index in range(len(real2020['institutions'])):
         sirues_code = real2020['institutions'][institution_index]['objective']['identity']['sirues_code']
         aracip_data = extract_institution_by_sirues(sirues_code)
+        new_dict = defaultdict()
 
-        print(sirues_code, aracip_data)
-        real2020['institutions'][institution_index]['objective']['location']['medium'] = aracip_data['D03'][0]
-        real2020['institutions'][institution_index]['objective']['location']['position_relative_locality'] = aracip_data['D03'][1]
-        real2020['institutions'][institution_index]['objective']['location']['socioeconomical_disadvantaged_area'] = aracip_data['D04'][0]
-        real2020['institutions'][institution_index]['objective']['location']['access_problems_area'] = aracip_data['D04'][1]
+        print(sirues_code)
+        if aracip_data == None:
+            continue
+        new_dict['objective']['identity']['school_type'] = aracip_data['D05']
+        new_dict['objective']['location']['medium'] = aracip_data['D03'][0]
+        new_dict['objective']['location']['position_relative_locality'] = aracip_data['D03'][1]
+        new_dict['objective']['location']['socioeconomically_disadvantaged_area'] = aracip_data['D04'][0]
+        new_dict['objective']['location']['access_problems_area'] = aracip_data['D04'][1]
+        new_dict['objective']['students']['ces_count'] = aracip_data['D19a']
+        new_dict['objective']['students']['ethnicity_percentages']['romanian'] = aracip_data['D26a'][0]
+        new_dict['objective']['students']['ethnicity_percentages']['hungarian'] = aracip_data['D26a'][1]
+        new_dict['objective']['students']['ethnicity_percentages']['rroma'] = aracip_data['D26a'][2]
+        new_dict['objective']['students']['ethnicity_percentages']['others'] = aracip_data['D26a'][3]
+        new_dict['objective']['students'][
+            'parent_studies_percentages']['less_than_eight_classes'] = aracip_data['D27'][0]
+        new_dict['objective']['students'][
+            'parent_studies_percentages']['eight_classes'] = aracip_data['D27'][1]
+        new_dict['objective']['students'][
+            'parent_studies_percentages']['twelve_classes'] = aracip_data['D27'][2]
+        new_dict['objective']['students'][
+            'parent_studies_percentages']['superior_studies'] = aracip_data['D27'][3]
+        new_dict['objective']['students'][
+            'travel_time_percentages']['under_half_an_hour'] = aracip_data['D29'][0]
+        new_dict['objective']['students'][
+            'travel_time_percentages']['half_to_one_hour'] = aracip_data['D29'][1]
+        new_dict['objective']['students'][
+            'travel_time_percentages']['over_one_hour'] = aracip_data['D29'][2]
+        new_dict['objective']['students'][
+            'home_relative_location_percentages']['same_locality'] = aracip_data['D30'][0]
+        new_dict['objective']['students'][
+            'home_relative_location_percentages']['different_locality'] = aracip_data['D30'][10]
+        new_dict['objective']['students'][
+            'home_relative_location_percentages']['hosted'] = aracip_data['D30'][2]
+        new_dict['objective']['students'][
+            'home_relative_location_percentages']['boarding'] = aracip_data['D30'][3]
+        new_dict['objective']['teachers']['didactic_degrees_percentages']['doctorate'] = aracip_data['D57'][0]
+        new_dict['objective']['teachers'][
+            'didactic_degrees_percentages']['second_degree'] = aracip_data['D57'][1]
+        new_dict['objective']['teachers'][
+            'didactic_degrees_percentages']['first_degree'] = aracip_data['D57'][2]
+        new_dict['objective']['teachers'][
+            'didactic_degrees_percentages']['with_definitive'] = aracip_data['D57'][3]
+        new_dict['objective']['teachers'][
+            'didactic_degrees_percentages']['without_definitive'] = aracip_data['D57'][4]
+        new_dict['objective']['teachers'][
+            'didactic_degrees_percentages']['unqualified'] = aracip_data['D57'][5]
+        new_dict['objective']['teachers']['directors'] = aracip_data['D63b']
+        new_dict['objective']['teachers']['continuous_learning_hours_per_teacher'] = aracip_data['D64']
+        new_dict['objective']['students']['absences']['total_motivated_absences'] = aracip_data['D68b'][0]
+        new_dict['objective']['students']['absences']['total_unmotivated_absences'] = aracip_data['D68b'][1]
+        new_dict['objective']['students']['absences']['total_absences'] = aracip_data['D68b'][2]
+        new_dict['objective']['students']['absences']['average_absences_per_student'] = aracip_data['D68b'][3]
+        new_dict['objective']['students']['flux']['registered_initially'] = aracip_data['D69a'][0]
+        new_dict['objective']['students']['flux']['registered_finally'] = aracip_data['D69a'][1]
+        new_dict['objective']['students']['flux']['registered_initially'] = aracip_data['D69a'][2]
+        new_dict['objective']['students']['flux']['registered_during'] = aracip_data['D69a'][3]
+        new_dict['objective']['students']['flux']['transferred'] = aracip_data['D69a'][4]
+        new_dict['objective']['students']['flux']['dropouts'] = aracip_data['D69a'][5]
+        new_dict['objective']['students']['flux']['unfinished_situation'] = aracip_data['D69a'][6]
+        new_dict['objective']['students']['flux']['almost_repeaters'] = aracip_data['D70a'][0]
+        new_dict['objective']['students']['flux']['repeaters'] = aracip_data['D70a'][3]
+        new_dict['objective']['students']['class_grades_percentages']['five_to_six'] = aracip_data['D72a'][0]
+        new_dict['objective']['students']['class_grades_percentages']['six_to_seven'] = aracip_data['D72a'][1]
+        new_dict['objective']['students'][
+            'class_grades_percentages']['seven_to_eight'] = aracip_data['D72a'][2]
+        new_dict['objective']['students']['class_grades_percentages']['eight_to_nine'] = aracip_data['D72a'][3]
+        new_dict['objective']['students']['class_grades_percentages']['nine_to_ten'] = aracip_data['D72a'][4]
+        new_dict['objective']['students'][
+            'bacalaureat_grades_percentages']['under_six'] = aracip_data['D77'][0]
+        new_dict['objective']['students'][
+            'bacalaureat_grades_percentages']['six_to_seven'] = aracip_data['D77'][1]
+        new_dict['objective']['students'][
+            'bacalaureat_grades_percentages']['seven_to_eight'] = aracip_data['D77'][2]
+        new_dict['objective']['students'][
+            'bacalaureat_grades_percentages']['eight_to_nine'] = aracip_data['D77'][3]
+        new_dict['objective']['students'][
+            'bacalaureat_grades_percentages']['nine_to_ten'] = aracip_data['D77'][4]
+        new_dict['objective']['students']['recognized_awards'] = aracip_data['D83']
+        new_dict['objective']['teachers']['trainers'] = aracip_data['D84']
+        new_dict['objective']['teachers']['authors_of_didactic_resources'] = aracip_data['D85']
+
+        real2020['institutions'][institution_index] = {
+            **real2020['institutions'][institution_index], **new_dict}
+
+        print(real2020['institutions'][institution_index])
 
 
 xls = pd.ExcelFile('aracip_2018.xlsx')
