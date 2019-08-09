@@ -127,6 +127,7 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
             "unqualified": 0
           },
           "authors_of_didactic_resources": 15,
+          "trainers": 17,
           "continuous_learning_hours_per_teacher": 120,
           "directors": [
             {
