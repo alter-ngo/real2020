@@ -48,6 +48,7 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
         },
         "students": {
           "student_count": 1000,
+          "ces_count": 100,
           "study_formations": [
             {
               "name": "A",
