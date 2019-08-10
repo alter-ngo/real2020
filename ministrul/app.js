@@ -69,9 +69,13 @@ function spune(receivedMessage, args) {
     receivedMessage.channel.send(
       "Țin să transmit regrete sincere la adresa prezentei situații de neconstituționalitate."
     );
+  } else if (args[0] == "lma") {
+    receivedMessage.channel.send(
+      "În calitate de ministru, doresc să vă transmit la mulți ani plini de situații de constituționalitate din partea echipei REAL!"
+    );
   } else {
     receivedMessage.channel.send("Tinerilor, un lucru este cert: #estereal.");
   }
 }
 
-client.login("XXXXX"); // Replace XXXXX with your bot token
+client.login("NTgyNDY5MzUwOTE3Nzk5OTQx.XU8Tjw.HkbzTQ_8VbgICVqbMwS4l6K3RoM"); // Replace XXXXX with your bot token
