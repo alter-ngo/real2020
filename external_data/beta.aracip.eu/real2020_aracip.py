@@ -116,8 +116,8 @@ def extract_all_institutions():
         sirues_code = real2020['institutions'][institution_index]['objective']['identity']['sirues_code']
         aracip_data = extract_institution_by_sirues(sirues_code)
 
-        print(sirues_code, aracip_data)
-        if aracip_data == None:
+        print(institution_index, sirues_code, aracip_data)
+        if aracip_data == {}:
             continue
         real2020['institutions'][institution_index]['objective']['identity']['school_type'] = aracip_data['D05']
         real2020['institutions'][institution_index]['objective']['location']['medium'] = aracip_data['D03'][0]
@@ -184,34 +184,42 @@ def extract_all_institutions():
         real2020['institutions'][institution_index]['objective']['students']['absences']['average_absences_per_student'] = aracip_data['D68b'][3]
 
         real2020['institutions'][institution_index]['objective']['students']['flux'] = {}
-        real2020['institutions'][institution_index]['objective']['students']['flux']['registered_initially'] = aracip_data['D69a'][0]
-        real2020['institutions'][institution_index]['objective']['students']['flux']['registered_finally'] = aracip_data['D69a'][1]
-        real2020['institutions'][institution_index]['objective']['students']['flux']['registered_during'] = aracip_data['D69a'][2]
-        real2020['institutions'][institution_index]['objective']['students']['flux']['transferred'] = aracip_data['D69a'][3]
-        real2020['institutions'][institution_index]['objective']['students']['flux']['dropouts'] = aracip_data['D69a'][4]
-        real2020['institutions'][institution_index]['objective']['students']['flux']['unfinished_situation'] = aracip_data['D69a'][5]
-        real2020['institutions'][institution_index]['objective']['students']['flux']['almost_repeaters'] = aracip_data['D70a'][0]
-        real2020['institutions'][institution_index]['objective']['students']['flux']['repeaters'] = aracip_data['D70a'][3]
+        if len(aracip_data['D69a']) > 0:
+            real2020['institutions'][institution_index]['objective']['students']['flux']['registered_initially'] = aracip_data['D69a'][0]
+            real2020['institutions'][institution_index]['objective']['students']['flux']['registered_finally'] = aracip_data['D69a'][1]
+            real2020['institutions'][institution_index]['objective']['students']['flux']['registered_during'] = aracip_data['D69a'][2]
+            real2020['institutions'][institution_index]['objective']['students']['flux']['transferred'] = aracip_data['D69a'][3]
+            real2020['institutions'][institution_index]['objective']['students']['flux']['dropouts'] = aracip_data['D69a'][4]
+            real2020['institutions'][institution_index]['objective']['students']['flux']['unfinished_situation'] = aracip_data['D69a'][5]
+        if len(aracip_data['D70a']) > 0:
+            real2020['institutions'][institution_index]['objective']['students']['flux']['almost_repeaters'] = aracip_data['D70a'][0]
+            real2020['institutions'][institution_index]['objective']['students']['flux']['repeaters'] = aracip_data['D70a'][3]
 
         real2020['institutions'][institution_index]['objective']['students']['class_grades_percentages'] = {}
-        real2020['institutions'][institution_index]['objective']['students']['class_grades_percentages']['five_to_six'] = aracip_data['D72a'][0]
-        real2020['institutions'][institution_index]['objective']['students']['class_grades_percentages']['six_to_seven'] = aracip_data['D72a'][1]
-        real2020['institutions'][institution_index]['objective']['students'][
-            'class_grades_percentages']['seven_to_eight'] = aracip_data['D72a'][2]
-        real2020['institutions'][institution_index]['objective']['students']['class_grades_percentages']['eight_to_nine'] = aracip_data['D72a'][3]
-        real2020['institutions'][institution_index]['objective']['students']['class_grades_percentages']['nine_to_ten'] = aracip_data['D72a'][4]
+        if len(aracip_data['D72a']) > 0:
+            real2020['institutions'][institution_index]['objective']['students'][
+                'class_grades_percentages']['five_to_six'] = aracip_data['D72a'][0]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'class_grades_percentages']['six_to_seven'] = aracip_data['D72a'][1]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'class_grades_percentages']['seven_to_eight'] = aracip_data['D72a'][2]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'class_grades_percentages']['eight_to_nine'] = aracip_data['D72a'][3]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'class_grades_percentages']['nine_to_ten'] = aracip_data['D72a'][4]
 
         real2020['institutions'][institution_index]['objective']['students']['bacalaureat_grades_percentages'] = {}
-        real2020['institutions'][institution_index]['objective']['students'][
-            'bacalaureat_grades_percentages']['under_six'] = aracip_data['D77'][0]
-        real2020['institutions'][institution_index]['objective']['students'][
-            'bacalaureat_grades_percentages']['six_to_seven'] = aracip_data['D77'][1]
-        real2020['institutions'][institution_index]['objective']['students'][
-            'bacalaureat_grades_percentages']['seven_to_eight'] = aracip_data['D77'][2]
-        real2020['institutions'][institution_index]['objective']['students'][
-            'bacalaureat_grades_percentages']['eight_to_nine'] = aracip_data['D77'][3]
-        real2020['institutions'][institution_index]['objective']['students'][
-            'bacalaureat_grades_percentages']['nine_to_ten'] = aracip_data['D77'][4]
+        if len(aracip_data['D77']) > 0:
+            real2020['institutions'][institution_index]['objective']['students'][
+                'bacalaureat_grades_percentages']['under_six'] = aracip_data['D77'][0]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'bacalaureat_grades_percentages']['six_to_seven'] = aracip_data['D77'][1]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'bacalaureat_grades_percentages']['seven_to_eight'] = aracip_data['D77'][2]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'bacalaureat_grades_percentages']['eight_to_nine'] = aracip_data['D77'][3]
+            real2020['institutions'][institution_index]['objective']['students'][
+                'bacalaureat_grades_percentages']['nine_to_ten'] = aracip_data['D77'][4]
 
         real2020['institutions'][institution_index]['objective']['students']['recognized_awards'] = aracip_data['D83']
         real2020['institutions'][institution_index]['objective']['teachers']['trainers'] = aracip_data['D84']
