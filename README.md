@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6cd3105f2f35415789a33210ac3df688)](https://www.codacy.com/app/paubric/real?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=paubric/real&amp;utm_campaign=Badge_Grade)
 # Registrul Educațional Alternativ
 
 _Registrul Educațional Alternativ_ is a platform through which romanian highschools are evaluated by students, teachers, parents, alumni, and others.
