@@ -1,4 +1,8 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6cd3105f2f35415789a33210ac3df688)](https://www.codacy.com/app/paubric/real?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=paubric/real&amp;utm_campaign=Badge_Grade)
+![](https://img.shields.io/github/last-commit/paubric/real)
+![](https://img.shields.io/github/contributors/paubric/real)
 # Registrul Educațional Alternativ
+
 
 _Registrul Educațional Alternativ_ is a platform through which romanian highschools are evaluated by students, teachers, parents, alumni, and others.
 
@@ -14,8 +18,8 @@ Its main objectives are:
 
 | Components                                                                 | Description                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [ministrul](https://github.com/paubric/real/tree/master/ministrul)         | _Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing.                                                    |
-| [external_data](https://github.com/paubric/real/tree/master/external_data) | Here you can find crawlers, scrapers, spiders and other sorts of scripts which automate the extraction of public data from various platforms. Additionally, these are accompanied by other data wrangling scripts. |
+| [ministrul](https://github.com/paubric/real/tree/master/ministrul)         | _Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing. **Javascript**                                                  |
+| [external_data](https://github.com/paubric/real/tree/master/external_data) | Here you can find crawlers, scrapers, spiders and other sorts of scripts which automate the extraction of public data from various platforms. Additionally, these are accompanied by other data wrangling scripts. **Python, UiPath** |
 
 # Contributing
 ### General
@@ -27,3 +31,8 @@ Its main objectives are:
 - Variables and functions must have `lower_case_with_underscores` names
 - Use an automatic code formatter (E.g. *Prettier* in VS Code) in order to easily apply standard formatting
 - Comments are encouraged
+
+# Contributors
+- [Paul Bricman](github.com/paubric)
+- [Mihai Sturza](github.com/sturzamihai)
+- [Alex Constantin](github.com/xfde)
