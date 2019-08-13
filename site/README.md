@@ -1,33 +1,24 @@
-# [Wieldy - React Redux Admin Template based on Ant Framework](https://themeforest.net/item/wieldy-react-redux-admin-template/22277962?s_rank=1 "Wieldy")
-Wieldy is a react redux based admin template. 
- 
-# Installation
-
-**Note: Wieldy is using [yarn](https://yarnpkg.com/en/docs/install) instead npm**
-
-Installing all the dependencies of project, run following command:
-
-``` $yarn ```
-
-# Documentation
-
-it is well documented at [here](http://docs.g-axon.com/wieldy/ "Documentation") .
-
-## Branches
-| Branch                           | Description   |
-| -------------------------------- | ------------- |
-| `master`                         | This is the main production branch. You should pull from here to update your local repo. |
-| `starter-template`               | This branch is for you to kickstart your project with the starter template with auth (Firebase). This way you can start building your project from ground-up. |
-| `starter-template-without-auth`  | If you are looking to use a different authentication system, this is the right branch for you to start with. |
-
-## Issues
-##### We accept issues here on GitHub but please follow the rules defined below before raising an issue:
-
-* An issue must be related to coding. It should not be a general query. If you have any query, please ask that [here](https://themeforest.net/item/wieldy-react-redux-admin-template/22277962/support "Support for Wieldy")
-* You can request a feature as an issue. We will make this open for voting for other users. So that they can vote and we can build what is in demand.
-* While posting an issue be descriptive with the process to replicate the issue.
-
-## Pull Requests
-We appreciate your collaboration. If you build something which you believe could help others in their project. You can make that as a pull request. But make sure that it should be in a genral uses rather then something which is built for a specific project.
-
-We merge only those features which we find useful for the community.
+# site
+The home of our web platform. It consists of the core element of the project, through which subjective data is collected and all data is presented.
+## Products
+### Firebase Hosting
+*Simplify your web hosting with tools made specifically for modern web apps. When you upload your web assets, we automatically push them out to our global CDN and give them a free SSL certificate so your users get a secure, reliable, low-latency experience, no matter where they are.*
+### Firebase Cloud Functions
+*Extend your app with custom backend code without needing to manage and scale your own servers. Functions can be triggered by events, which are emitted by Firebase products, Google Cloud services, or third parties, using webhooks.*
+### Firebase Firestore
+*Store and sync data between users and devices - at global scale - using a cloud-hosted, NoSQL database. Cloud Firestore gives you live synchronization and offline support along with efficient data queries. Its integration with other Firebase products enables you to build truly serverless apps.*
+### Firebase Cloud Storage
+*Store and share user-generated content like images, audio, and video with powerful, simple, and cost-effective object storage built for Google scale. The Firebase SDKs for Cloud Storage add Google security to file uploads and downloads for your Firebase apps, regardless of network quality.*
+### Firebase Authentication
+*Manage your users in a simple and secure way. Firebase Auth offers multiple methods to authenticate, including email and password, third-party providers like Google or Facebook, and using your existing account system directly. Build your own interface, or take advantage of our open source, fully customizable UI.*
+### Firebase Dynamic Links
+*Use Dynamic Links to deliver a customized user experience for iOS, Android, and the web. You can use them to power mobile web to drive native app conversions, user to user sharing, social and marketing campaigns, and more. Dynamic Links provides you with the attributions you need to better understand your mobile growth.*
+### Firebase Cloud Messaging
+*Send messages and notifications to users across platforms—Android, iOS, and the web—for free. Messages can be sent to single devices, groups of devices, or specific topics or user segments. Firebase Cloud Messaging (FCM) scales to even the largest apps, delivering hundreds of billions of messages per day.*
+## Hosting Setup
+1. `yarn` to install dependencies
+2. `yarn start` to serve locally
+3. `yarn build` to package for deployment
+4. `firebase login` to connect CLI with Google account
+5. `firebase init` to setup firebase configuration
+6. `firebase deploy` to deploy build to Hosting
