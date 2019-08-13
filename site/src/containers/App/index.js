@@ -53,7 +53,7 @@ class App extends Component {
     }
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const params = new URLSearchParams(this.props.location.search);
 
     if (params.has("theme")) {

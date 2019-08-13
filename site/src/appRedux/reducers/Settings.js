@@ -3,16 +3,16 @@ import {
   LAYOUT_TYPE,
   LAYOUT_TYPE_FULL,
   NAV_STYLE,
-  NAV_STYLE_INSIDE_HEADER_HORIZONTAL,
   THEME_COLOR_SELECTION,
   THEME_COLOR_SELECTION_PRESET,
   THEME_TYPE,
   THEME_TYPE_SEMI_DARK,
+  NAV_STYLE_FIXED,
 } from "../../constants/ThemeSetting";
 
 const initialSettings = {
   navCollapsed: true,
-  navStyle: NAV_STYLE_INSIDE_HEADER_HORIZONTAL,
+  navStyle: NAV_STYLE_FIXED,
   layoutType: LAYOUT_TYPE_FULL,
   themeType: THEME_TYPE_SEMI_DARK,
   colorSelection: THEME_COLOR_SELECTION_PRESET,
