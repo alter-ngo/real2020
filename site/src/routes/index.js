@@ -14,13 +14,13 @@ const App = ({match}) => (
    <Switch>
       <Route path={`${match.url}home`} component={Home}/>
       
-      <Route patn={`${match.url}catalog`} component={Catalog}/>
+      <Route path={`${match.url}catalog`} component={Catalog}/>
 
-      <Route patn={`${match.url}bord`} component={Bord}/>   
+      <Route path={`${match.url}bord`} component={Bord}/>   
        
-      <Route patn={`${match.url}about`} component={About}/> 
-      <Route patn={`${match.url}blog`} component={Blog}/> 
-      <Route patn={`${match.url}formular`} component={Formular}/> 
+      <Route path={`${match.url}about`} component={About}/> 
+      <Route path={`${match.url}blog`} component={Blog}/> 
+      <Route path={`${match.url}formular`} component={Formular}/> 
   </Switch>
   </div>
 );
