@@ -50,11 +50,32 @@ class SidebarContent extends Component {
               theme={themeType === THEME_TYPE_LITE ? 'lite' : 'dark'}
               mode="inline">
 
-              <Menu.Item key="sample">
-                <Link to="/sample"><i className="icon icon-widgets"/>
-                  <IntlMessages id="sidebar.samplePage"/></Link>
+              <Menu.Item key="home">
+                <Link to="/home"><i className="icon icon-widgets"/>
+                  <IntlMessages id="HomePage"/></Link>
+              </Menu.Item>
+ <Menu.Item key="catalog">
+            <Link to="/catalog">
+              <IntlMessages id="Catalog"/></Link>
+          </Menu.Item>
+              <Menu.Item key="bord">
+            <Link to="/bord">
+              <IntlMessages id="Bord"/></Link>
+          </Menu.Item>
+
+         
+
+              <Menu.Item key="about">
+                <Link to="/about">About</Link>
               </Menu.Item>
 
+              <Menu.Item key="blog">
+                <Link to="/blog">Blog</Link>
+              </Menu.Item>
+              
+              <Menu.Item key="formular">
+                <Link to="/formular">Formular</Link>
+              </Menu.Item>
             </Menu>
           </CustomScrollbars>
         </div>
