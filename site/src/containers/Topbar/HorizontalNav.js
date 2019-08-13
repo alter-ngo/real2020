@@ -11,7 +11,7 @@ import {
 } from "../../constants/ThemeSetting";
 
 
-const SubMenu = Menu.SubMenu;
+{/*const SubMenu = Menu.SubMenu;*/}
 
 class HorizontalNav extends Component {
 
@@ -41,31 +41,37 @@ class HorizontalNav extends Component {
         defaultOpenKeys={[defaultOpenKeys]}
         selectedKeys={[selectedKeys]}
         mode="horizontal">
-
-
           <Menu.Item key="home">
-            <Link to="/home"><i className="icon icon-widgets"/>
-              <IntlMessages id="HomePage"/></Link>
+            <Link to="/home">
+              <IntlMessages id="Acasă"/>
+            </Link>
           </Menu.Item> 
           <Menu.Item key="catalog">
             <Link to="/catalog">
-              <IntlMessages id="Catalog"/></Link>
+              <IntlMessages id="Catalog"/>
+            </Link>
           </Menu.Item>
           <Menu.Item key="bord">
             <Link to="/bord">
-              <IntlMessages id="Bord"/></Link>
+              <IntlMessages id="Bord"/>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="about">
+            <Link to="/about">
+              <IntlMessages id="Despre"/>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="blog">
+            <Link to="/blog"> 
+              <IntlMessages id="Blog"/>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="formular">
+            <Link to="/formular">
+              <IntlMessages id="Formular"/>
+            </Link>
           </Menu.Item>
          
-          <Menu.Item key="about">
-                <Link to="/about">About</Link>
-              </Menu.Item>
-              <Menu.Item key="blog">
-                <Link to="/blog">Blog</Link>
-              </Menu.Item>
-              
-              <Menu.Item key="formular">
-                <Link to="/formular">Formular</Link>
-              </Menu.Item>
       </Menu>
 
     );

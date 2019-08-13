@@ -73,7 +73,7 @@ class App extends Component {
       document.body.classList.add('dark-theme');
     }
     if (location.pathname === '/') {
-      return ( <Redirect to={'/sample'}/> );
+      return ( <Redirect to={'/home'}/> );
     }
 
     this.setLayoutType(layoutType);

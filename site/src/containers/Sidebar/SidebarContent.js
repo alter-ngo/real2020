@@ -50,32 +50,36 @@ class SidebarContent extends Component {
               theme={themeType === THEME_TYPE_LITE ? 'lite' : 'dark'}
               mode="inline">
 
-              <Menu.Item key="home">
-                <Link to="/home"><i className="icon icon-widgets"/>
-                  <IntlMessages id="HomePage"/></Link>
-              </Menu.Item>
- <Menu.Item key="catalog">
+          <Menu.Item key="home">
+            <Link to="/home">
+              <i className="icon icon-home"/>
+              <IntlMessages id="Acasă"/></Link>
+          </Menu.Item> 
+          <Menu.Item key="catalog">
             <Link to="/catalog">
+              <i className="icon icon-product-list"/>
               <IntlMessages id="Catalog"/></Link>
           </Menu.Item>
-              <Menu.Item key="bord">
+          <Menu.Item key="bord">
             <Link to="/bord">
+              <i className="icon icon-dasbhoard"/>
               <IntlMessages id="Bord"/></Link>
           </Menu.Item>
-
-         
-
-              <Menu.Item key="about">
-                <Link to="/about">About</Link>
-              </Menu.Item>
-
-              <Menu.Item key="blog">
-                <Link to="/blog">Blog</Link>
-              </Menu.Item>
-              
-              <Menu.Item key="formular">
-                <Link to="/formular">Formular</Link>
-              </Menu.Item>
+          <Menu.Item key="about">
+            <Link to="/about">
+              <i className="icon icon-auth-screen"/>
+              <IntlMessages id="Despre"/></Link>
+          </Menu.Item>
+          <Menu.Item key="blog">
+            <Link to="/blog"> 
+              <i className="icon icon-tag-o"/>
+          <IntlMessages id="Blog"/></Link>
+          </Menu.Item>
+          <Menu.Item key="formular">
+            <Link to="/formular">
+              <i className="icon icon-feedback"/>
+              <IntlMessages id="Formular"/></Link>
+          </Menu.Item>
             </Menu>
           </CustomScrollbars>
         </div>
