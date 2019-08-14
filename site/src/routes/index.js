@@ -1,7 +1,6 @@
 import React from "react";
 import {Route, Switch} from "react-router-dom";
 
-import asyncComponent from "util/asyncComponent";
 import Bord from "./Bord/index";
 import Catalog from "./Catalog/index";
 import About from "./About/index";
