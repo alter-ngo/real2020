@@ -62,7 +62,7 @@ class SidebarContent extends Component {
           </Menu.Item>
           <Menu.Item key="bord">
             <Link to="/bord">
-              <IntlMessages id="Bord"/>
+              <IntlMessages id="Panou"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="catalog">
