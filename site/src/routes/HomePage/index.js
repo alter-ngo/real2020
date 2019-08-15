@@ -1,15 +1,32 @@
 import React from "react";
-import { Card } from "antd";
+
+import Widget from "components/Widget";
+import { Row, Col } from "antd";
+import imag from "assets/images/placeholder.jpg";
 
 const HomePage = () => {
   return (
-    <div>
-      <div className="gx-d-flex justify-content-center">
-        <Card title="#estereal2020">
-          <h1>Real devs wish you happy coding!</h1>
-        </Card>
-      </div>
-    </div>
+    <React.Fragment>
+      <Row gutter={16}>
+        <Col span={12}>
+          <Widget title="#estereal">
+            <h1>Devs from REAL wish you happy coding</h1>
+          </Widget>
+        </Col>
+        <Col span={12}>
+          <Widget title="#estereal">
+            <h1>Devs from REAL wish you happy coding</h1>
+          </Widget>
+        </Col>
+      </Row>
+      <Row gutter={16}>
+        <Col span={24}>
+          <Widget title="#estereal">
+            <h1>Devs from REAL wish you happy coding</h1>
+          </Widget>
+        </Col>
+      </Row>
+    </React.Fragment>
   );
 };
 
