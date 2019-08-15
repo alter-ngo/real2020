@@ -7,7 +7,7 @@ const languageData = [
   },
   {
     languageId: 'romainian',
-    locale: 'en',
+    locale: 'ro',
     name: 'Romanian',
     icon: 'ro'
   },

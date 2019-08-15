@@ -1,4 +1,4 @@
-import antdRo from "antd/lib/locale-provider/en_US";
+import antdRo from "antd/lib/locale-provider/en_GB";
 import appLocaleData from "react-intl/locale-data/ro";
 import roMessages from "../locales/ro_RO.json";
 
