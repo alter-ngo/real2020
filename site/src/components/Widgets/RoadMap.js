@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import RoadMapItem from "./RoadMapItem";
-import {mediaList} from "../../routes/main/Widgets/data"
 import CardBox from "components/CardBox/index";
 
 class RoadMap extends Component {
@@ -21,10 +20,11 @@ class RoadMap extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+    let arr = [0,1,2,3]
     return (
       <CardBox styleName="gx-card-full" heading={''}>
         <Slider className="gx-slick-slider" {...settings}>
-          {mediaList.map((media, index) =>
+          {arr.map((media, index) =>
             <RoadMapItem key={index} data={media}/>
           )
           }
