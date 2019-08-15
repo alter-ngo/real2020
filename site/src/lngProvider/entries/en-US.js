@@ -1,13 +1,13 @@
 import antdEn from "antd/lib/locale-provider/en_US";
 import appLocaleData from "react-intl/locale-data/ro";
-import enMessages from "../locales/en_US.json";
+import enMessages from "../locales/ro_RO.json";
 
 const EnLang = {
   messages: {
     ...enMessages
   },
   antd: antdEn,
-  locale: 'en-US',
+  locale: 'ro-RO',
   data: appLocaleData
 };
 export default EnLang;

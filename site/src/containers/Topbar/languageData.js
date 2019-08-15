@@ -1,15 +1,15 @@
 const languageData = [
   {
+    languageId: 'romainian',
+    locale: 'ro',
+    name: 'Romanian',
+    icon: 'ro'
+  },
+  {
     languageId: 'english',
     locale: 'en',
     name: 'English',
     icon: 'us'
-  },
-  {
-    languageId: 'romainian',
-    locale: 'en',
-    name: 'Romanian',
-    icon: 'ro'
   },
   {
     languageId: 'chinese',
