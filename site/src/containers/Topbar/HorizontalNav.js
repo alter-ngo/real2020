@@ -46,14 +46,19 @@ class HorizontalNav extends Component {
               <IntlMessages id="Acasă"/>
             </Link>
           </Menu.Item> 
-          <Menu.Item key="catalog">
-            <Link to="/catalog">
-              <IntlMessages id="Catalog"/>
+          <Menu.Item key="formular">
+            <Link to="/formular">
+              <IntlMessages id="Formular"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="bord">
             <Link to="/bord">
               <IntlMessages id="Bord"/>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="catalog">
+            <Link to="/catalog">
+              <IntlMessages id="Catalog"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="about">
@@ -64,11 +69,6 @@ class HorizontalNav extends Component {
           <Menu.Item key="blog">
             <Link to="/blog"> 
               <IntlMessages id="Blog"/>
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="formular">
-            <Link to="/formular">
-              <IntlMessages id="Formular"/>
             </Link>
           </Menu.Item>
          
