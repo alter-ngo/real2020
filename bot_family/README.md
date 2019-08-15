@@ -32,6 +32,10 @@ Vă rog să vă mișcați fundul constituțional pentru îndeplinirea acestor sa
 
 Țin să transmit regrete sincere la adresa prezentei situații de neconstituționalitate.
 
+`!spune lma`
+
+În calitate de ministru, doresc să vă transmit la mulți ani plini de situații de constituționalitate din partea echipei REAL!
+
 `!real`
 
 Tinerilor, un lucru este cert: #estereal.
