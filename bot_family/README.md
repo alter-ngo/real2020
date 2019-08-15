@@ -44,19 +44,19 @@ Considerăm ca ultima medie și promovabilitatea sunt măsurători necesare, dar
 
 Nu îți trebuie educație alternativă să înveți să scrii, tinere! Repetă comanda.
 
-![ministrul](https://github.com/paubric/real/tree/master/bot_family/ministrul.jpg)
+![ministrul](https://github.com/paubric/real/blob/master/bot_family/ministrul.jpg)
 
 # Consilierul Ministrului (Zapier)
 
 _Consilierul Ministrului_ is the bot which implements our Zapier automations. It knows how to summarize a newly created event, how to make a briefing before an event occurs, and how to summarize a new task due this week on Trello. It only writes to **#events** and **#general**.
 
-![consilierul](https://github.com/paubric/real/tree/master/bot_family/consilierul.jpg)
+![consilierul](https://github.com/paubric/real/blob/master/bot_family/consilierul.jpg)
 
 # GitHub Bot
 
 _GitHub_ informs the **#technical** department about new commits, issues, and pull requests which have taken place. It accelerates collaboration for the **#technical** team, and only writes on their channel.
 
-![github](https://github.com/paubric/real/tree/master/bot_family/github.jpg)
+![github](https://github.com/paubric/real/blob/master/bot_family/github.jpg)
 
 # Simple Poll
 
@@ -66,4 +66,4 @@ Surprisingly, _Simple Poll_ enables the creation of simple polls. It can be call
 
 `/poll "Question?" "Answer 1" "Answer 2" ... "Answer N"`
 
-![poll](https://github.com/paubric/real/tree/master/bot_family/poll.jpg)
+![poll](https://github.com/paubric/real/blob/master/bot_family/poll.jpg)
