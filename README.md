@@ -19,7 +19,7 @@ Its main objectives are:
 
 | Components                                                                 | Description                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [ministrul](https://github.com/paubric/real/tree/master/ministrul)         | _Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing. **Javascript**                                                  |
+| [bot_family](https://github.com/paubric/real/tree/master/bot_family)         | The place where you can meet the bot family which lives on our Discord server. They can help you with everything from event briefing to cheering you up. **Javascript, Zapier**                                                  |
 | [external_data](https://github.com/paubric/real/tree/master/external_data) | Here you can find crawlers, scrapers, and other sorts of scripts which extract public data from various platforms. Additionally, these are accompanied by other data wrangling scripts. **Python, UiPath** |
 | [site](https://github.com/paubric/real/tree/master/site) | The home of our web platform. It consists of the core element of the project, through which subjective data is collected and all data is presented. **Javascript, Firebase** |
 

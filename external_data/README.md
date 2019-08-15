@@ -25,6 +25,7 @@ Here you can find crawlers, scrapers, spiders and other sorts of scripts which a
           "cif": "1234567",
           "school_type": "Colegiu Național"
         },
+        "shift_count": 2,
         "legal": {
           "status": "Cu personalitate juridică",
           "property_form": "Publică de interes naţional şi local",

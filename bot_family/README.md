@@ -1,6 +1,10 @@
+# bot_family
+
+The place where you can meet the bot family which lives on our Discord server. They can help you with everything from event briefing to cheering you up.
+
 # Ministrul Educațional Alternativ
 
-_Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing.
+_Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing. It can be called on any channel.
 
 ## Commands
 
@@ -28,6 +32,10 @@ Vă rog să vă mișcați fundul constituțional pentru îndeplinirea acestor sa
 
 Țin să transmit regrete sincere la adresa prezentei situații de neconstituționalitate.
 
+`!spune lma`
+
+În calitate de ministru, doresc să vă transmit la mulți ani plini de situații de constituționalitate din partea echipei REAL!
+
 `!real`
 
 Tinerilor, un lucru este cert: #estereal.
@@ -44,6 +52,26 @@ Considerăm ca ultima medie și promovabilitatea sunt măsurători necesare, dar
 
 Nu îți trebuie educație alternativă să înveți să scrii, tinere! Repetă comanda.
 
-## Ministrul in action
+![ministrul](https://github.com/paubric/real/blob/master/bot_family/ministrul.jpg)
 
-![Screenshot](https://github.com/paubric/real/blob/master/ministrul/ss.jpg)
+# Consilierul Ministrului (Zapier)
+
+_Consilierul Ministrului_ is the bot which implements our Zapier automations. It knows how to summarize a newly created event, how to make a briefing before an event occurs, and how to summarize a new task due this week on Trello. It only writes to **#events** and **#general**.
+
+![consilierul](https://github.com/paubric/real/blob/master/bot_family/consilierul.jpg)
+
+# GitHub Bot
+
+_GitHub_ informs the **#technical** department about new commits, issues, and pull requests which have taken place. It accelerates collaboration for the **#technical** team, and only writes on their channel.
+
+![github](https://github.com/paubric/real/blob/master/bot_family/github.jpg)
+
+# Simple Poll
+
+Surprisingly, _Simple Poll_ enables the creation of simple polls. It can be called on any channel.
+
+## Commands
+
+`/poll "Question?" "Answer 1" "Answer 2" ... "Answer N"`
+
+![poll](https://github.com/paubric/real/blob/master/bot_family/poll.jpg)
