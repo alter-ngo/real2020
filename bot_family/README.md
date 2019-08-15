@@ -1,3 +1,7 @@
+# bot_family
+
+The place where you can meet the bot family which lives on our Discord server. They can help you with everything from event briefing to cheering you up.
+
 # Ministrul Educațional Alternativ
 
 _Ministrul_ is our mascot chatbot. It knows how to deliver common messages and stats on our Discord server. It is useful for stress relief and rapid informing. It can be called on any channel.
