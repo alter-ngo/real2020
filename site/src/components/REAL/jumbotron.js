@@ -18,7 +18,7 @@ const Jumbotron = () => {
         </h1>
         
         <p>
-            Cea mai mare colecție de date deschise despre liceele din România
+            Cea mai mare colecție de date despre liceele din România
         </p>
 
         <p>
