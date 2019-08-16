@@ -14,16 +14,16 @@ const DataOverview = () => {
           <Divider style={{ visibility: "hidden" }} />
           <Row gutter={16}>
             <Col xl={12} md={12} sm={12} xs={24}>
-              <Card>
+              <Card bordered={false}>
                 <h2>Exemple</h2>
                 <Divider />
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
+                <p>Procentul de profesori cu doctorat</p>
+                <p>Numărul de premii obținute de elevi</p>
+                <p>Promovabilitatea la Bacalaureat</p>
               </Card>
             </Col>
             <Col sxl={12} md={12} sm={12} xs={24}>
-              <Card>
+              <Card bordered={false}>
                 <h2>Surse</h2>
                 <Divider />
                 <p>Raportul Anual de Evaluare Internă</p>
@@ -42,16 +42,16 @@ const DataOverview = () => {
           <Divider style={{ visibility: "hidden" }} />
           <Row gutter={16}>
             <Col xl={12} md={12} sm={12} xs={24}>
-              <Card bordered={true}>
+              <Card bordered={false}>
                 <h2>Exemple</h2>
                 <Divider />
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
+                <p>Interactivitatea profesorilor</p>
+                <p>Deschiderea comunității de elevi</p>
+                <p>Relația tutore-diriginte</p>
               </Card>
             </Col>
             <Col xl={12} md={12} sm={12} xs={24}>
-              <Card>
+              <Card bordered={false}>
                 <h2>Surse</h2>
                 <Divider />
                 <p>Formularul #estereal</p>
