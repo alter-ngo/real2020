@@ -4,30 +4,29 @@ import Widget from "components/Widget/index";
 
 const Jumbotron = () => {
     return (
-      <Widget styleName="gx-text-left">
+      <Widget styleName="gx-widget-bg">
+        <div>
         <br/>
         <br/>
         <br/>
         <br/>
-        
-        <h1>
+        <h1 className="gx-font-weight-semi-bold gx-text-white">
             Registrul Educațional Alternativ
         </h1>
         
         <p>
             Cea mai mare colecție de date deschise despre liceele din România
         </p>
-        
-        <Divider/>
 
         <p>
-            <Button variant="primary">Completează formularul</Button>
-            <Button variant="primary">Află mai multe</Button>
+        <Button className="gx-mb-1 gx-btn-warning" htmlType="submit">Completează formularul</Button>
+        <Button className="gx-mb-1" htmlType="submit">Află mai multe</Button>
         </p>
         
         <br/>
         <br/>
         <br/>
+        </div>
       </Widget>
     );
   };
