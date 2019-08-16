@@ -8,19 +8,22 @@ const Objectives = ({styleName, placeholder, onChange, value}) => {
 
         
           <Widget>
-            <Row gutter={16}>
+            <Row gutter={16} type="flex" align="middle">
             <Col span={12}>
               <Widget>
                 
-              <h1>Elev</h1>
+              <h1><font size={8}>Elevi</font></h1>
+              <br/>
                 <p>
-              <span class="icon icon-check-circle-o"  /><font size={5}> Acest camp este pentru o
-          descriere.</font><br/>
-              <span class="icon icon-check-circle-o" /><font size={5}> Acest camp este pentru o
-          descriere.</font><br/>
-              <span class="icon icon-check-circle-o" /><font size={5}> Acest camp este pentru o
-          descriere.</font><br/>
+              <span class="icon icon-check-circle-o"  /><font size={4}> Acest camp este pentru o
+          descriere.</font><br/><br/>
+              <span class="icon icon-check-circle-o" /><font size={4}> Acest camp este pentru o
+          descriere.</font><br/><br/>
+              <span class="icon icon-check-circle-o" /><font size={4}> Acest camp este pentru o
+          descriere.</font><br/><br/>
                 </p>
+                
+                <br/>
                 <p>
                   <Button className="gx-mb-1 gx-btn-warning" htmlType="submit">Completează formularul</Button>
                   <Button className="gx-mb-1" htmlType="submit">Află mai multe</Button>
@@ -31,21 +34,22 @@ const Objectives = ({styleName, placeholder, onChange, value}) => {
                 <Row gutter={24}>
                   <Col span={8}>
                     <Widget>
-                      <img src= {image} alt= 'icon' height={95} width={200} />
+                      <div><img src= {image} alt= 'icon' height={60} width={60} class="icon-dashbord"/></div>
+                      
                       <Divider/>
                       <h3>Elevi</h3>
                     </Widget>
                   </Col>
                   <Col span={8}>
                     <Widget>
-                      <img src= {image} alt= 'icon' height={95} width={200} />
+                      <img src= {image} alt= 'icon' height={60} width={60} class="gx-d-flex gx-justify-content-around gx-align-items-center gx-mb-2" />
                       <Divider/>
                       <h3>Parinti</h3>
                     </Widget>
                   </Col>
                   <Col span={8}>
                     <Widget>
-                      <img src= {image} alt= 'icon' height={95} width={200} />  
+                      <img src= {image} alt= 'icon' height={60} width={60} />  
                       <Divider/>
                       <h3>Profesori</h3>
                     </Widget>
@@ -54,21 +58,21 @@ const Objectives = ({styleName, placeholder, onChange, value}) => {
                 <Row gutter={24}>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={95} width={200} />
+                  <img src= {image} alt= 'icon' height={60} width={60} />
                   <Divider/>
                   <h3>Cercatatori</h3>
                 </Widget>
                   </Col>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={95} width={200} />
+                  <img src= {image} alt= 'icon' height={60} width={60} />
                   <Divider/>
                   <h3>Conduceri</h3>
                 </Widget>
                   </Col>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={95} width={200} />
+                  <img src= {image} alt= 'icon' height={60} width={60} />
                   <Divider/>
                   <h3>Minister</h3>
                 </Widget>
