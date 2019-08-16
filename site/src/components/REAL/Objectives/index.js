@@ -22,74 +22,75 @@ class Objectives extends React.Component {
         
           <Widget>
             <Row gutter={16} type="flex" align="middle">
-            <Col span={12}>
-              <Widget>
-                
-              <h1><font size={8}>{this.state.selectionName}</font></h1>
-              <br/>
+            <Col xl={12} md={12} sm={12} xs={24}>
+                <Widget>  
+              <p style={{fontSize:"2.5em", color:"black"}}>{this.state.selectionName}</p>
                 <p>
-              <span class="icon icon-check-circle-o"  /><font size={4}> Acest camp este pentru o
-          descriere.</font><br/><br/>
-              <span class="icon icon-check-circle-o" /><font size={4}> Acest camp este pentru o
-          descriere.</font><br/><br/>
-              <span class="icon icon-check-circle-o" /><font size={4}> Acest camp este pentru o
-          descriere.</font><br/><br/>
+              <span class="icon icon-check-circle-o"  />Acest camp este pentru o
+          descriere.<br/><br/>
+              <span class="icon icon-check-circle-o" /> Acest camp este pentru o
+          descriere.<br/><br/>
+              <span class="icon icon-check-circle-o" /> Acest camp este pentru o
+          descriere.<br/><br/>
                 </p>
-                
                 <br/>
                 <p>
                   <Button className="gx-mb-1 gx-btn-warning" htmlType="submit">Completează formularul</Button>
                   <Button className="gx-mb-1" htmlType="submit">Află mai multe</Button>
                 </p>
-          </Widget>
+                </Widget>
             </Col>
-              <Col span={12}>
-                <Row gutter={32}>
+              <Col xl={12} md={12} sm={12} xs={24}>
+                <Row gutter={8}>
                   <Col span={8}>
                     <Widget >
                       <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Elevi")}/>
                       <Divider/>
-                      <h3>Elevi</h3>
+                      <p style={{fontSize:"0.75em"}}>Elevi</p>
                     </Widget>
                   </Col>
                   <Col span={8}>
                     <Widget >
-                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Parinti")} />
+                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Parinți")} />
                       <Divider/>
-                      <h3>Parinti</h3>
+                      <p style={{fontSize:"0.75em"}}>Parinți</p>
                     </Widget>
                   </Col>
                   <Col span={8}>
                     <Widget>
                       <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Profesori")}/>  
                       <Divider/>
-                      <h3>Profesori</h3>
+                      <p style={{fontSize:"0.75em"}}>Profesori</p>
                     </Widget>
                   </Col>
                 </Row>
-                <Row gutter={32}>
+                <center>
+                <Row gutter={8}>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Cercetatori")}/>
+                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Cercetători")}/>
                   <Divider/>
-                  <h3>Cercetatori</h3>
+                  <center>
+                  <p style={{fontSize:"0.75em"}}>Cercetători</p>
+                  </center>
                 </Widget>
                   </Col>
                   <Col span={8}>
                 <Widget>
                   <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Conduceri")}/>
                   <Divider/>
-                  <h3>Conduceri</h3>
+                  <p style={{fontSize:"0.75em"}}>Conduceri</p>
                 </Widget>
                   </Col>
                   <Col span={8}>
                 <Widget >
                   <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Minister")}/>
                   <Divider/>
-                  <h3>Minister</h3>
+                  <p style={{fontSize:"0.75em"}}>Minister</p>
                 </Widget>
                   </Col>
                 </Row>
+                </center>
               </Col>
             </Row>
           </Widget>
