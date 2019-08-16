@@ -2,9 +2,22 @@ import React from "react";
 import Widget from "components/Widget";
 import { Button, Row, Col, Divider } from "antd";
 import image from "assets/images/avatar-placeholder.png";
-const Objectives = ({styleName, placeholder, onChange, value}) => {
+class Objectives extends React.Component {
+  constructor(props){
+    super(props); 
+    this.state={
+      selectionName:"Elevi"
+    };
+  }
 
-  return (
+  handleClick(mode){
+    this.setState({
+        selectionName: mode
+    })
+
+  }
+  render(){
+    return (
 
         
           <Widget>
@@ -12,7 +25,7 @@ const Objectives = ({styleName, placeholder, onChange, value}) => {
             <Col span={12}>
               <Widget>
                 
-              <h1><font size={8}>Elevi</font></h1>
+              <h1><font size={8}>{this.state.selectionName}</font></h1>
               <br/>
                 <p>
               <span class="icon icon-check-circle-o"  /><font size={4}> Acest camp este pentru o
@@ -33,23 +46,22 @@ const Objectives = ({styleName, placeholder, onChange, value}) => {
               <Col span={12}>
                 <Row gutter={24}>
                   <Col span={8}>
-                    <Widget>
-                      <div><img src= {image} alt= 'icon' height={60} width={60} class="icon-dashbord"/></div>
-                      
+                    <Widget >
+                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Elevi")}/>
                       <Divider/>
                       <h3>Elevi</h3>
                     </Widget>
                   </Col>
                   <Col span={8}>
-                    <Widget>
-                      <img src= {image} alt= 'icon' height={60} width={60} class="gx-d-flex gx-justify-content-around gx-align-items-center gx-mb-2" />
+                    <Widget >
+                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Parinti")} />
                       <Divider/>
                       <h3>Parinti</h3>
                     </Widget>
                   </Col>
                   <Col span={8}>
                     <Widget>
-                      <img src= {image} alt= 'icon' height={60} width={60} />  
+                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Profesori")}/>  
                       <Divider/>
                       <h3>Profesori</h3>
                     </Widget>
@@ -58,21 +70,21 @@ const Objectives = ({styleName, placeholder, onChange, value}) => {
                 <Row gutter={24}>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={60} width={60} />
+                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Cercetatori")}/>
                   <Divider/>
-                  <h3>Cercatatori</h3>
+                  <h3>Cercetatori</h3>
                 </Widget>
                   </Col>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={60} width={60} />
+                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Conduceri")}/>
                   <Divider/>
                   <h3>Conduceri</h3>
                 </Widget>
                   </Col>
                   <Col span={8}>
-                <Widget>
-                  <img src= {image} alt= 'icon' height={60} width={60} />
+                <Widget >
+                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Minister")}/>
                   <Divider/>
                   <h3>Minister</h3>
                 </Widget>
@@ -84,10 +96,9 @@ const Objectives = ({styleName, placeholder, onChange, value}) => {
         
 
   )
-};
+}
+}
+
 export default Objectives;
 
-Objectives.defaultProps = {
-  styleName: "",
-  value: "",
-};
+
