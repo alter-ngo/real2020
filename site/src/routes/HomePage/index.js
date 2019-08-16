@@ -3,7 +3,7 @@ import React from "react";
 import { Row, Col, Divider } from "antd";
 import Jumbotron from "components/REAL/Jumbotron";
 import DataOverview from "components/REAL/DataOverview";
-
+import Objectives from "components/REAL/Objectives"
 const HomePage = () => {
   return (
     <React.Fragment>
@@ -19,6 +19,7 @@ const HomePage = () => {
             <h1>Obiective</h1>
             <h3>Cu ce te putem ajuta?</h3>
             <br />
+            <Objectives/>
           </center>
         </Col>
       </Row>

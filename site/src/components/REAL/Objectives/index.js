@@ -44,7 +44,7 @@ class Objectives extends React.Component {
           </Widget>
             </Col>
               <Col span={12}>
-                <Row gutter={24}>
+                <Row gutter={32}>
                   <Col span={8}>
                     <Widget >
                       <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Elevi")}/>
@@ -67,7 +67,7 @@ class Objectives extends React.Component {
                     </Widget>
                   </Col>
                 </Row>
-                <Row gutter={24}>
+                <Row gutter={32}>
                   <Col span={8}>
                 <Widget>
                   <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Cercetatori")}/>
