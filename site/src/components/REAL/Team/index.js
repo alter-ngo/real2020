@@ -30,9 +30,9 @@ const TeamMembers = () => {
           <i className="icon icon-team gx-fs-xlxl " />
           <h3>Community</h3>
           <br />
-          {UserCard("Ilinca Ivancu","Descriere")}
-          {UserCard("Bianca Nicolau","Descriere")}
-          {UserCard("Anastasia Șeitan","Descriere")}
+          {UserCard("Ilinca Ivancu","Community Manager")}
+          {UserCard("Bianca Nicolau","Community Manager")}
+          {UserCard("Anastasia Șeitan","Event Manager")}
         </center>
       </Col>
       <Col xl={6} md={6} sm={12} xs={24}>
@@ -40,9 +40,9 @@ const TeamMembers = () => {
           <i className="icon icon-camera-2 gx-fs-xlxl " />
           <h3>Content</h3>
           <br />
-          {UserCard("Stefania Bratu","Descriere")}
-          {UserCard("Dan Chira","Descriere")}
-          {UserCard("Bogdan Vidrașcu","Descriere")}
+          {UserCard("Stefania Bratu","Content Creator")}
+          {UserCard("Dan Chira","Public Relations Manager")}
+          {UserCard("Bogdan Vidrașcu","Project Manager")}
         </center>
       </Col>
       <Col xl={6} md={6} sm={12} xs={24}>
@@ -50,8 +50,8 @@ const TeamMembers = () => {
           <i className="icon icon-diamond gx-fs-xlxl " />
           <h3>Financial</h3>
           <br />
-          {UserCard("Ciprian Anghel","Descriere")}
-          {UserCard("Alexandra Dincă","Descriere")}
+          {UserCard("Ciprian Anghel","Fundraising Officer")}
+          {UserCard("Alexandra Dincă","Fundraising Officer")}
         </center>
       </Col>
       <Col xl={6} md={6} sm={12} xs={24}>
@@ -59,9 +59,9 @@ const TeamMembers = () => {
           <i className="icon icon-data-display gx-fs-xlxl " />
           <h3>Technical</h3>
           <br />
-          {UserCard("Paul Bricman","Descriere")}
-          {UserCard("Alexandru Constantin","Descriere")}
-          {UserCard("Mihai Sturza","Descriere")}
+          {UserCard("Paul Bricman","Project Manager")}
+          {UserCard("Alexandru Constantin","Web Developer")}
+          {UserCard("Mihai Sturza","Product Manager")}
         </center>
       </Col>
     </Row>
