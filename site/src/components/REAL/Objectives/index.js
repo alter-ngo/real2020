@@ -43,24 +43,30 @@ class Objectives extends React.Component {
               <Col xl={12} md={12} sm={12} xs={24}>
                 <Row gutter={8}>
                   <Col span={8}>
-                    <Widget >
-                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Elevi")}/>
+                    <Widget>
+                      <div onClick={this.handleClick.bind(this,"Elevi")}>
+                      <img src= {image} alt= 'icon' height={60} width={60} />
                       <Divider/>
                       <p style={{fontSize:"0.75em"}}>Elevi</p>
-                    </Widget>
-                  </Col>
-                  <Col span={8}>
-                    <Widget >
-                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Parinți")} />
-                      <Divider/>
-                      <p style={{fontSize:"0.75em"}}>Parinți</p>
+                      </div>
                     </Widget>
                   </Col>
                   <Col span={8}>
                     <Widget>
-                      <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Profesori")}/>  
+                      <div onClick={this.handleClick.bind(this,"Parinți")}>
+                      <img src= {image} alt= 'icon' height={60} width={60} />
+                      <Divider/>
+                      <p style={{fontSize:"0.75em"}}>Parinți</p>
+                      </div>
+                    </Widget>
+                  </Col>
+                  <Col span={8}>
+                    <Widget>
+                      <div onClick={this.handleClick.bind(this,"Profesori")}>
+                      <img src= {image} alt= 'icon' height={60} width={60} />  
                       <Divider/>
                       <p style={{fontSize:"0.75em"}}>Profesori</p>
+                      </div>
                     </Widget>
                   </Col>
                 </Row>
@@ -68,25 +74,31 @@ class Objectives extends React.Component {
                 <Row gutter={8}>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Cercetători")}/>
+                  <div onClick={this.handleClick.bind(this,"Cercetători")}>
+                  <img src= {image} alt= 'icon' height={60} width={60} />
                   <Divider/>
                   <center>
                   <p style={{fontSize:"0.75em"}}>Cercetători</p>
                   </center>
+                  </div>
                 </Widget>
                   </Col>
                   <Col span={8}>
                 <Widget>
-                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Conduceri")}/>
+                  <div onClick={this.handleClick.bind(this,"Conduceri")}>
+                  <img src= {image} alt= 'icon' height={60} width={60} />
                   <Divider/>
                   <p style={{fontSize:"0.75em"}}>Conduceri</p>
+                  </div>
                 </Widget>
                   </Col>
                   <Col span={8}>
                 <Widget >
-                  <img src= {image} alt= 'icon' height={60} width={60} onClick={this.handleClick.bind(this,"Minister")}/>
+                  <div onClick={this.handleClick.bind(this,"Minister")}>
+                  <img src= {image} alt= 'icon' height={60} width={60} />
                   <Divider/>
                   <p style={{fontSize:"0.75em"}}>Minister</p>
+                  </div>
                 </Widget>
                   </Col>
                 </Row>
