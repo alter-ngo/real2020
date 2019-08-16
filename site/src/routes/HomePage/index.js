@@ -4,6 +4,8 @@ import { Row, Col, Divider } from "antd";
 import Jumbotron from "components/REAL/Jumbotron";
 import DataOverview from "components/REAL/DataOverview";
 import Objectives from "components/REAL/Objectives"
+import TeamMembers from "components/REAL/Team";
+
 const HomePage = () => {
   return (
     <React.Fragment>
@@ -54,6 +56,7 @@ const HomePage = () => {
             <h3>Oamenii din spatele proiectului</h3>
             <br />
           </center>
+          <TeamMembers />
         </Col>
       </Row>
     </React.Fragment>
