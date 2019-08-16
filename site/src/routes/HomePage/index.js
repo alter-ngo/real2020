@@ -38,7 +38,7 @@ const HomePage = () => {
           <center>
             <i className="icon icon-tag gx-fs-xlxl"/>
             <h1>Blog</h1>
-            <h3>Povesti din spatele proiectului</h3>
+            <h3>Poveștile din spatele proiectului</h3>
             <br/>
           </center>
         </Col>
