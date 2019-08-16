@@ -11,7 +11,7 @@ const Jumbotron = () => {
             Registrul Educațional Alternativ
           </h1>
           <p style={{fontSize:"1.6em"}}>
-            Cea mai mare colecție de date deschise despre liceele din România
+            Cea mai mare colecție de date despre liceele din România
           </p>
           <p>
             <Button className="gx-mb-1 gx-btn-warning" htmlType="submit">
