@@ -28,19 +28,17 @@ const TeamMembers = () => {
       <Col xl={6} md={6} sm={12} xs={24}>
         <center>
           <i className="icon icon-team gx-fs-xlxl " />
-          <h1>Community</h1>
-          <h3>Descriere</h3>
+          <h3>Community</h3>
           <br />
           {UserCard("Ilinca Ivancu","Descriere")}
           {UserCard("Bianca Nicolau","Descriere")}
-          {UserCard("Anastasia Seitan","Descriere")}
+          {UserCard("Anastasia Șeitan","Descriere")}
         </center>
       </Col>
       <Col xl={6} md={6} sm={12} xs={24}>
         <center>
           <i className="icon icon-camera-2 gx-fs-xlxl " />
-          <h1>Content</h1>
-          <h3>Descriere</h3>
+          <h3>Content</h3>
           <br />
           {UserCard("Stefania Bratu","Descriere")}
           {UserCard("Dan Chira","Descriere")}
@@ -50,8 +48,7 @@ const TeamMembers = () => {
       <Col xl={6} md={6} sm={12} xs={24}>
         <center>
           <i className="icon icon-diamond gx-fs-xlxl " />
-          <h1>Financial</h1>
-          <h3>Descirere</h3>
+          <h3>Financial</h3>
           <br />
           {UserCard("Ciprian Anghel","Descriere")}
           {UserCard("Alexandra Dincă","Descriere")}
@@ -60,8 +57,7 @@ const TeamMembers = () => {
       <Col xl={6} md={6} sm={12} xs={24}>
         <center>
           <i className="icon icon-data-display gx-fs-xlxl " />
-          <h1>Tehnical</h1>
-          <h3>Descriere</h3>
+          <h3>Technical</h3>
           <br />
           {UserCard("Paul Bricman","Descriere")}
           {UserCard("Alexandru Constantin","Descriere")}

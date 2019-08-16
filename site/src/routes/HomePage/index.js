@@ -28,7 +28,7 @@ const HomePage = () => {
       <Row gutter={16}>
         <Col span={24}>
           <center>
-            <i className="icon icon-dasbhoard gx-fs-xlxl" />
+            <i className="icon icon-apps gx-fs-xlxl" />
             <h1>Date</h1>
             <h3>Ce sunt si de unde vin?</h3>
             <br />
