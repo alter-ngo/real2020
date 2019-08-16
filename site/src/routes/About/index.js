@@ -1,10 +1,10 @@
 import React from "react";
 
 import IntlMessages from "util/IntlMessages";
-import DataOverview from "components/REAL/DataOverview";
+import TeamMembers from "components/REAL/Team";
 
 const AboutPage = () => {
-  return <DataOverview />;
+  return <TeamMembers />;
 };
 
 export default AboutPage;

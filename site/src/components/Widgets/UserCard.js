@@ -2,7 +2,7 @@ import React from "react";
 
 import Widget from "components/Widget/index";
 
-function UserCard() {
+function UserCard(name, desc) {
 
   return (
     <Widget styleName="gx-card-full gx-dot-arrow-hover">
@@ -12,17 +12,9 @@ function UserCard() {
         </div>
         <div className="gx-user-wid-body gx-py-3 gx-pr-3">
           <div className="ant-row-flex">
-            <h2 className="h4 gx-mr-1 gx-mb-1">Mila Alba</h2>
+            <h2 className="h4 gx-mr-1 gx-mb-1">{name}</h2>
           </div>
-          <p className="gx-mb-1 gx-text-grey gx-fs-sm">Creative Head<br/> @example</p>
-          <div className="gx-dot-arrow">
-            <div className="gx-bg-primary gx-hover-arrow">
-              <i className="icon icon-long-arrow-right gx-text-white"/>
-            </div>
-            <div className="gx-dot">
-              <i className="icon icon-ellipse-v gx-text-primary"/>
-            </div>
-          </div>
+          <p  style={{textAlign:"left"}} className="gx-mb-1 gx-text-grey gx-fs-sm">{desc}</p>
         </div>
       </div>
     </Widget>

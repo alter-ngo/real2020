@@ -9,8 +9,8 @@ const DataOverview = () => {
       <Col xl={12} md={12} sm={24} xs={24}>
         <Widget>
           <h1>Obiective</h1>
-          <span class="icon icon-check-circle-o" /> Acest camp este pentru o
-          descriere.
+          <span class="icon icon-check-circle-o" /> Datele obiective reprezintă
+          valori fixe ce provin direct de la instituții oficiale.
           <Divider style={{ visibility: "hidden" }} />
           <Row gutter={16}>
             <Col xl={12} md={12} sm={12} xs={24}>
@@ -26,9 +26,9 @@ const DataOverview = () => {
               <Card>
                 <h2>Surse</h2>
                 <Divider />
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
+                <p>Raportul Anual de Evaluare Internă</p>
+                <p>Cartografia Școlară</p>
+                <p>Admiterea la Liceu</p>
               </Card>
             </Col>
           </Row>
@@ -37,8 +37,8 @@ const DataOverview = () => {
       <Col xl={12} md={12} sm={24} xs={24}>
         <Widget>
           <h1>Subiective</h1>
-          <span class="icon icon-check-circle-o" /> Acest camp este pentru o
-          descriere.
+          <span class="icon icon-check-circle-o" /> Datele subiective reprezintă
+          opiniile manifestate de elevi, profesori și tutori.
           <Divider style={{ visibility: "hidden" }} />
           <Row gutter={16}>
             <Col xl={12} md={12} sm={12} xs={24}>
@@ -54,9 +54,7 @@ const DataOverview = () => {
               <Card>
                 <h2>Surse</h2>
                 <Divider />
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
+                <p>Formularul #estereal</p>
               </Card>
             </Col>
           </Row>
