@@ -1,9 +1,7 @@
 import React from "react";
 
-import Widget from "components/Widget";
 import { Row, Col, Divider } from "antd";
-import imag from "assets/images/placeholder.jpg";
-import Jumbotron from "components/REAL/jumbotron.js";
+import Jumbotron from "components/REAL/Jumbotron";
 import DataOverview from "components/REAL/DataOverview";
 
 const HomePage = () => {
