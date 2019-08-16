@@ -5,12 +5,15 @@ import Widget from "components/Widget/index";
 const Jumbotron = () => {
   return (
     <Widget styleName="gx-widget-bg">
-      <Row type="flex" align="middle" style={{height:"25em"}}>
+      <Row type="flex" align="middle" style={{ height: "3em" }}>
         <Col>
-          <h1 className="gx-font-weight-semi-bold gs-fs-xlxl" style={{fontSize:"2.5em"}}>
+          <h1
+            className="gx-font-weight-semi-bold gs-fs-xlxl"
+            style={{ fontSize: "3em" }}
+          >
             Registrul Educațional Alternativ
           </h1>
-          <p style={{fontSize:"1.4em"}}>
+          <p style={{ fontSize: "1.4em" }}>
             Cea mai mare colecție de date despre liceele din România
           </p>
           <p>
