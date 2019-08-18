@@ -5,7 +5,7 @@ import Widget from "components/Widget/index";
 const Jumbotron = () => {
   return (
     <Widget styleName="gx-widget-bg">
-      <Row type="flex" align="middle" style={{ height: "3em" }}>
+      <Row type="flex" align="middle" style={{ height: "25em" }}>
         <Col>
           <h1
             className="gx-font-weight-semi-bold gs-fs-xlxl"
