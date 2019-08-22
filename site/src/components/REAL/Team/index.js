@@ -51,7 +51,6 @@ const TeamMembers = () => {
           <h3>Financial</h3>
           <br />
           {UserCard("Ciprian Anghel","Fundraising Officer")}
-          {UserCard("Alexandra Dincă","Fundraising Officer")}
         </center>
       </Col>
       <Col xl={6} md={6} sm={12} xs={24}>
