@@ -15,7 +15,8 @@ class Objectives extends React.Component {
         { id: 4, value: "black", context: "Cercetători" },
         { id: 5, value: "black", context: "Conduceri" },
         { id: 6, value: "black", context: "Minister" }
-      ]
+      ],
+      selectedHeight: "800px"
     };
   }
   handleClick(mode) {
@@ -38,21 +39,28 @@ class Objectives extends React.Component {
       <Widget>
         <Row gutter={16} type="flex" align="middle">
           <Col xl={12} md={12} sm={12} xs={24}>
-            <Widget>
-              <p style={{ fontSize: "2.5em", color: "black" }}>
+            <div style={{marginLeft:"1.7em"}}>
+              <p
+                style={{
+                  fontSize: "4em",
+                  color: "black",
+                  margin: 0,
+                  marginBottom: "0.4em"
+                }}
+              >
                 {this.state.selectionName}
               </p>
               <p>
-                <span class="icon icon-check-circle-o" />
-                Acest camp este pentru o descriere.
+                <span className="icon icon-check-circle-o" /> Acest camp este
+                pentru o descriere.
                 <br />
                 <br />
-                <span class="icon icon-check-circle-o" /> Acest camp este pentru
-                o descriere.
+                <span className="icon icon-check-circle-o" /> Acest camp este
+                pentru o descriere.
                 <br />
                 <br />
-                <span class="icon icon-check-circle-o" /> Acest camp este pentru
-                o descriere.
+                <span className="icon icon-check-circle-o" /> Acest camp este
+                pentru o descriere.
                 <br />
                 <br />
               </p>
@@ -65,10 +73,17 @@ class Objectives extends React.Component {
                   Află mai multe
                 </Button>
               </p>
-            </Widget>
+            </div>
           </Col>
-          <Col xl={12} md={12} sm={12} xs={24}>
-            <Row gutter={8}>
+          <Col
+            xl={12}
+            md={12}
+            sm={12}
+            xs={24}
+            ref={heightSelector => (this.heightSelector = heightSelector)}
+          >
+            {console.log(this.refs.heightSelector)}
+            <Row gutter={8} style={{ marginBottom: "-0.5em" }}>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Elevi")}>
                   <Widget cover={<img src={image} alt="icon" height={100} />}>
@@ -118,7 +133,7 @@ class Objectives extends React.Component {
                 </div>
               </Col>
             </Row>
-            <Row gutter={8}>
+            <Row gutter={8} style={{ marginBottom: "-2em" }}>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Cercetători")}>
                   <Widget cover={<img src={image} alt="icon" height={100} />}>
