@@ -1,0 +1,4 @@
+Aici se afla textul descriptiv al proiectului #esteREAL.
+Pentru a modifica textul accesati : site/src/pages/despre.txt
+Pentru a vedea codul accesati : site/src/routes/About/index.js
+_ . __ .._. __

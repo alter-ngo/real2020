@@ -33,6 +33,7 @@
     "react-instantsearch": "^5.2.2",
     "react-instantsearch-dom": "^5.2.2",
     "react-intl": "^2.4.0",
+    "react-markdown": "^4.1.0",
     "react-notifications": "^1.4.3",
     "react-placeholder": "^3.0.1",
     "react-redux": "^5.0.7",
