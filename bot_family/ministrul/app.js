@@ -41,37 +41,37 @@ function real(receivedMessage, args) {
     receivedMessage.channel.send(
       "Registrul Educațional Alternativ este o platformă prin care liceele sunt evaluate chiar de către elevi, profesori, părinți și absolvenți. Acesta a fost gândit pentru a îi ajuta pe elevii din clasa a VIII-a în alegerea opțiunilor de liceu, dar și pentru a le oferi conducerilor instituțiilor de învățământ un mecanism de autoevaluare, încurajând astfel competitivitatea constructivă."
     );
-  } else if ((args[0] == "cc") && (args[0] == "lista")) {
+  } else if (args[0] == "cc" && args[1] == "lista") {
     receivedMessage.channel.send(
       "1. **Transparență**\n2. **Dialog**\n3. **Take it outside**\n4. **Every opinion counts**\n5. **Echilibru**\n6. **Obiectiv**\n7. **Respect**"
     );
-  } else if ((args[0] == "cc") && (args[0] == "art1")) {
+  } else if (args[0] == "cc" && args[1] == "art1") {
     receivedMessage.channel.send(
-      "Conform codului de conduita:\n\n1. **Transparență** Discuțiile legate de proiect trebuie purtate pe cât posibil pe canale publice, pentru a le permite tuturor colegilor să fie la curent cu ultimele noutăți."
+      "Conform codului de conduită:\n\n1. **Transparență** Discuțiile legate de proiect trebuie purtate pe cât posibil pe canale publice, pentru a le permite tuturor colegilor să fie la curent cu ultimele noutăți."
     );
-  } else if ((args[0] == "cc") && (args[0] == "art2")) {
+  } else if (args[0] == "cc" && args[1] == "art2") {
     receivedMessage.channel.send(
-      "Conform codului de conduita:\n\n2. **Dialog** Discuțiile legate de proiect trebuie să fie amiabile și civilizate, pentru a ne permite să ne concentrăm pe ce este cu adevărat important. Critica este foarte utilă, dar doar în formă constructivă."
+      "Conform codului de conduită:\n\n2. **Dialog** Discuțiile legate de proiect trebuie să fie amiabile și civilizate, pentru a ne permite să ne concentrăm pe ce este cu adevărat important. Critica este foarte utilă, dar doar în formă constructivă."
     );
-  } else if ((args[0] == "cc") && (args[0] == "art3")) {
+  } else if (args[0] == "cc" && args[1] == "art3") {
     receivedMessage.channel.send(
-      "Conform codului de conduita:\n\n3. **Take it outside** În cazul în care critica devine neconstructivă dintr-un motiv sau altul, persoanele implicate trebuie să se retragă într-un spațiu privat pentru a continua discuția, pentru a nu cultiva o atmosferă toxică."
+      "Conform codului de conduită:\n\n3. **Take it outside** În cazul în care critica devine neconstructivă dintr-un motiv sau altul, persoanele implicate trebuie să se retragă într-un spațiu privat pentru a continua discuția, pentru a nu cultiva o atmosferă toxică."
     );
-  } else if ((args[0] == "cc") && (args[0] == "art4")) {
+  } else if (args[0] == "cc" && args[1] == "art4") {
     receivedMessage.channel.send(
-      "Conform codului de conduita:\n\n4. **Every opinion counts** Proiectul nostru se bazează pe tratarea opiniilor ca egale. Trebuie aplicat principiul ăsta și intern. Sunt încurajate discuțiile deschise și poll-urile, pentru a include cât mai multe perspective."
+      "Conform codului de conduită:\n\n4. **Every opinion counts** Proiectul nostru se bazează pe tratarea opiniilor ca egale. Trebuie aplicat principiul ăsta și intern. Sunt încurajate discuțiile deschise și poll-urile, pentru a include cât mai multe perspective."
     );
-  } else if ((args[0] == "cc") && (args[0] == "art5")) {
+  } else if (args[0] == "cc" && args[1] == "art5") {
     receivedMessage.channel.send(
-      "Conform codului de conduita:\n\n5. **Echilibru** Chiar dacă lucram la un proiect foarte mișto, trebuie să avem grijă și de noi și să păstrăm un echilibru de timp și energie între viața personală și proiect. Astă ajută pe termen lung și proiectul, prin evitarea burnout-ului."
+      "Conform codului de conduită:\n\n5. **Echilibru** Chiar dacă lucram la un proiect foarte mișto, trebuie să avem grijă și de noi și să păstrăm un echilibru de timp și energie între viața personală și proiect. Astă ajută pe termen lung și proiectul, prin evitarea burnout-ului."
     );
-  } else if ((args[0] == "cc") && (args[0] == "art6")) {
+  } else if (args[0] == "cc" && args[1] == "art6") {
     receivedMessage.channel.send(
-      "Conform codului de conduita:\n\n6. **Obiectiv** Trebuie să nu ne lăsăm copleșiți de satisfacții personale derivate din implicarea în proiect și să prioritizăm calitatea proiectului."
+      "Conform codului de conduită:\n\n6. **Obiectiv** Trebuie să nu ne lăsăm copleșiți de satisfacții personale derivate din implicarea în proiect și să prioritizăm calitatea proiectului."
     );
-  } else if ((args[0] == "cc") && (args[0] == "art7")) {
+  } else if (args[0] == "cc" && args[1] == "art7") {
     receivedMessage.channel.send(
-      "Conform codului de conduita:\n\n7. **Respect** Munca fiecăruia trebuie respectată și apreciată, însă calitatea rămâne prioritară pentru produsul final, în acord cu punctul 6."
+      "Conform codului de conduită:\n\n7. **Respect** Munca fiecăruia trebuie respectată și apreciată, însă calitatea rămâne prioritară pentru produsul final, în acord cu punctul 6."
     );
   } else {
     receivedMessage.channel.send("Tinerilor, un lucru este cert: #estereal.");

@@ -9,10 +9,10 @@ const DataOverview = () => {
       <Col xl={12} md={12} sm={24} xs={24}>
         <Widget>
           <h1>Obiective</h1>
-          <span class="icon icon-check-circle-o" /> Datele obiective reprezintă
-          valori fixe ce provin direct de la instituții oficiale.
+          <span className="icon icon-check-circle-o" /> Datele obiective
+          reprezintă valori fixe ce provin direct de la instituții oficiale.
           <Divider style={{ visibility: "hidden" }} />
-          <Row gutter={16}>
+          <Row gutter={16} style={{ marginBottom: "-3em" }}>
             <Col xl={12} md={12} sm={12} xs={24}>
               <Card bordered={false}>
                 <h2>Exemple</h2>
@@ -37,10 +37,10 @@ const DataOverview = () => {
       <Col xl={12} md={12} sm={24} xs={24}>
         <Widget>
           <h1>Subiective</h1>
-          <span class="icon icon-check-circle-o" /> Datele subiective reprezintă
-          opiniile manifestate de elevi, profesori și tutori.
+          <span className="icon icon-check-circle-o" /> Datele subiective
+          reprezintă opiniile manifestate de elevi, profesori și tutori.
           <Divider style={{ visibility: "hidden" }} />
-          <Row gutter={16}>
+          <Row gutter={16} style={{ marginBottom: "-3em" }}>
             <Col xl={12} md={12} sm={12} xs={24}>
               <Card bordered={false}>
                 <h2>Exemple</h2>

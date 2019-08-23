@@ -48,6 +48,58 @@ Registrul Educațional Alternativ este o platformă prin care liceele sunt evalu
 
 Considerăm ca ultima medie și promovabilitatea sunt măsurători necesare, dar nu suficiente, deoarece nu înglobează complet calitatea unei instituții de învățământ. În plus, cei doi indicatori tradiționali variază implicit în funcție de dificultatea examenului, deci nu pot oferii un suport stabil de măsurare a progresului. De asemenea, ultima medie se bazează pe elevii din anul precedent, care au fost ghidați la rândul lor de elevii din anul precedent lor, impregnând o inerție ce nu facilitează dezvoltarea meritocratică a instituțiilor de învățământ.
 
+`!real cc lista`
+
+1. **Transparență**
+2. **Dialog**
+3. **Take it outside**
+4. **Every opinion counts**
+5. **Echilibru**
+6. **Obiectiv**
+7. **Respect**
+
+`!real cc art1`
+
+Conform codului de conduită:
+
+1. **Transparență** Discuțiile legate de proiect trebuie purtate pe cât posibil pe canale publice, pentru a le permite tuturor colegilor să fie la curent cu ultimele noutăți.
+
+`!real cc art2`
+
+Conform codului de conduită:
+
+2. **Dialog** Discuțiile legate de proiect trebuie să fie amiabile și civilizate, pentru a ne permite să ne concentrăm pe ce este cu adevărat important. Critica este foarte utilă, dar doar în formă constructivă.
+      
+`!real cc art3`
+
+Conform codului de conduită:
+
+3. **Take it outside** În cazul în care critica devine neconstructivă dintr-un motiv sau altul, persoanele implicate trebuie să se retragă într-un spațiu privat pentru a continua discuția, pentru a nu cultiva o atmosferă toxică.
+
+`!real cc art4`
+
+Conform codului de conduită:
+
+4. **Every opinion counts** Proiectul nostru se bazează pe tratarea opiniilor ca egale. Trebuie aplicat principiul ăsta și intern. Sunt încurajate discuțiile deschise și poll-urile, pentru a include cât mai multe perspective.
+
+`!real cc art5`
+
+Conform codului de conduită:
+
+5. **Echilibru** Chiar dacă lucram la un proiect foarte mișto, trebuie să avem grijă și de noi și să păstrăm un echilibru de timp și energie între viața personală și proiect. Astă ajută pe termen lung și proiectul, prin evitarea burnout-ului.
+
+`!real cc art6`
+
+Conform codului de conduită:
+
+6. **Obiectiv** Trebuie să nu ne lăsăm copleșiți de satisfacții personale derivate din implicarea în proiect și să prioritizăm calitatea proiectului.
+
+`!real cc art7`
+
+Conform codului de conduită:
+
+7. **Respect** Munca fiecăruia trebuie respectată și apreciată, însă calitatea rămâne prioritară pentru produsul final, în acord cu punctul 6.
+
 `!comandanecunoscuta`
 
 Nu îți trebuie educație alternativă să înveți să scrii, tinere! Repetă comanda.

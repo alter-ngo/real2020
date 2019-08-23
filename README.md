@@ -35,6 +35,6 @@ Its main objectives are:
 - Comments are encouraged
 
 # Contributors
-- [Paul Bricman](github.com/paubric)
-- [Mihai Sturza](github.com/sturzamihai)
-- [Alex Constantin](github.com/xfde)
+- [Paul Bricman](https://github.com/paubric)
+- [Mihai Sturza](https://github.com/sturzamihai)
+- [Alex Constantin](https://github.com/xfde)
