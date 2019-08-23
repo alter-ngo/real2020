@@ -1,3 +1,17 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.on("message", receivedMessage => {
+  if (receivedMessage.author == client.user) {
+    // Prevent bot from responding to its own messages
+    return;
+  }
+
+  if (receivedMessage.content.startsWith("!")) {
+    processCommand(receivedMessage);
+  }
+});
+
 function processCommand(receivedMessage) {
   let fullCommand = receivedMessage.content.substr(1); // Remove the leading exclamation mark
   let splitCommand = fullCommand.split(" "); // Split the message up in to pieces for each space
