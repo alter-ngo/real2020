@@ -145,7 +145,16 @@ class Objectives extends React.Component {
             <Row gutter={8} style={{ marginBottom: "-0.5em" }}>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Elevi")}>
-                  <Widget cover={<img src={image} alt="icon" height={100} />}>
+                  <Widget
+                    cover={
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e"
+                        alt="icon"
+                        style={{ objectFit: "cover" }}
+                        height={100}
+                      />
+                    }
+                  >
                     <p
                       style={{
                         color: this.state.colors[0].value,
@@ -161,7 +170,16 @@ class Objectives extends React.Component {
               </Col>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Parinți")}>
-                  <Widget cover={<img src={image} alt="icon" height={100} />}>
+                  <Widget
+                    cover={
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fparinti.jpg?alt=media&token=cab87a57-dfb8-43a1-8ba0-7a4f62dd016b"
+                        alt="icon"
+                        style={{ objectFit: "cover" }}
+                        height={100}
+                      />
+                    }
+                  >
                     <p
                       style={{
                         color: this.state.colors[1].value,
@@ -177,7 +195,16 @@ class Objectives extends React.Component {
               </Col>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Profesori")}>
-                  <Widget cover={<img src={image} alt="icon" height={100} />}>
+                  <Widget
+                    cover={
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fprofesori.jpg?alt=media&token=2933756d-8127-458a-a523-5619cbb8f7e5"
+                        alt="icon"
+                        style={{ objectFit: "cover" }}
+                        height={100}
+                      />
+                    }
+                  >
                     <p
                       style={{
                         color: this.state.colors[2].value,
@@ -195,7 +222,16 @@ class Objectives extends React.Component {
             <Row gutter={8} style={{ marginBottom: "-2em" }}>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Cercetători")}>
-                  <Widget cover={<img src={image} alt="icon" height={100} />}>
+                  <Widget
+                    cover={
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fcercetatori.jpg?alt=media&token=fd86a844-5e31-49b3-910b-30fa7b0311b3"
+                        alt="icon"
+                        style={{ objectFit: "cover" }}
+                        height={100}
+                      />
+                    }
+                  >
                     <p
                       style={{
                         color: this.state.colors[3].value,
@@ -211,7 +247,16 @@ class Objectives extends React.Component {
               </Col>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Conduceri")}>
-                  <Widget cover={<img src={image} alt="icon" height={100} />}>
+                  <Widget
+                    cover={
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fconducere.jpg?alt=media&token=14cdf79a-eb4e-46c0-8f8e-2e821c57e0ae"
+                        alt="icon"
+                        style={{ objectFit: "cover" }}
+                        height={100}
+                      />
+                    }
+                  >
                     <p
                       style={{
                         color: this.state.colors[4].value,
@@ -227,7 +272,16 @@ class Objectives extends React.Component {
               </Col>
               <Col span={8}>
                 <div onClick={this.handleClick.bind(this, "Minister")}>
-                  <Widget cover={<img src={image} alt="icon" height={100} />}>
+                  <Widget
+                    cover={
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fminister.jpg?alt=media&token=03f0012f-042e-4c2c-8e42-45f9bc615076"
+                        alt="icon"
+                        style={{ objectFit: "cover" }}
+                        height={100}
+                      />
+                    }
+                  >
                     <p
                       style={{
                         color: this.state.colors[5].value,
