@@ -1,6 +1,6 @@
 import React from "react";
 import { renderComponent } from "recompose";
-import textSource from "pages/despre.txt";
+import textSource from "pages/despre.md";
 
 class AboutPage extends React.Component {
 constructor(props){
