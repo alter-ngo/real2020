@@ -5,6 +5,7 @@ import Jumbotron from "components/REAL/Jumbotron";
 import DataOverview from "components/REAL/DataOverview";
 import Objectives from "components/REAL/Objectives";
 import TeamMembers from "components/REAL/Team";
+import BlogOverview from "../../components/REAL/BlogOverview";
 
 const HomePage = () => {
   return (
@@ -48,6 +49,7 @@ const HomePage = () => {
             <h3>Poveștile din spatele proiectului</h3>
             <br />
           </center>
+          <BlogOverview></BlogOverview>
         </Col>
       </Row>
       <Row gutter={16}>
