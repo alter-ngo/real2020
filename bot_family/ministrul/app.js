@@ -25,7 +25,10 @@ function processCommand(receivedMessage) {
     spune(receivedMessage, arguments);
   } else if (primaryCommand == "real") {
     real(receivedMessage, arguments);
-  } else {
+  }  else if (primaryCommand == "daca") {
+    real(receivedMessage, arguments);
+  } 
+  else {
     receivedMessage.channel.send(
       "Nu îți trebuie educație alternativă să înveți să scrii, tinere! Repetă comanda."
     );
@@ -40,6 +43,10 @@ function real(receivedMessage, args) {
   } else if (args[0] == "despre") {
     receivedMessage.channel.send(
       "Registrul Educațional Alternativ este o platformă prin care liceele sunt evaluate chiar de către elevi, profesori, părinți și absolvenți. Acesta a fost gândit pentru a îi ajuta pe elevii din clasa a VIII-a în alegerea opțiunilor de liceu, dar și pentru a le oferi conducerilor instituțiilor de învățământ un mecanism de autoevaluare, încurajând astfel competitivitatea constructivă."
+    );
+  } else if (args[0] == "e" && args[1]== "2019") {
+    receivedMessage.channel.send(
+      "Si vorbesti de bataie, Si nu esti in ring, esti la meetup la #estereal."
     );
   } else if (args[0] == "cc" && args[1] == "lista") {
     receivedMessage.channel.send(
