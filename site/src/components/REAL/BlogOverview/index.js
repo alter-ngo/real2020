@@ -13,9 +13,10 @@ class BlogOverview extends React.Component {
   }
 
   readManifestFile = callback => {
-    fetch("blogs/manifest.json")
+    fetch("manifest.json")
       .then(r => r.json())
       .then(json => {
+        json = json["blogs"]
         if (this.props.mode == "preview")
           this.setState(
             { blogs: json.slice(json.length - 2, json.length) },
