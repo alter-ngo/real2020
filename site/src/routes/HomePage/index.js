@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Row, Col, Divider } from "antd";
+import { Row, Col, Divider, Button } from "antd";
 import Jumbotron from "components/REAL/Jumbotron";
 import DataOverview from "components/REAL/DataOverview";
 import Objectives from "components/REAL/Objectives";
@@ -49,7 +49,17 @@ const HomePage = () => {
             <h3>Poveștile din spatele proiectului</h3>
             <br />
           </center>
-          <BlogOverview></BlogOverview>
+          <BlogOverview mode="preview" />
+          <center>
+            <Button
+              href="/blog"
+              className="gx-mb-1 gx-btn-warning"
+              type="default"
+            >
+              Afla mai multe
+            </Button>
+          </center>
+          <br />
         </Col>
       </Row>
       <Row gutter={16}>

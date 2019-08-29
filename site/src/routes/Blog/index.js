@@ -1,16 +1,18 @@
 import React from "react";
 
 import IntlMessages from "util/IntlMessages";
+import BlogOverview from "../../components/REAL/BlogOverview";
 
 const BlogPage = () => {
   return (
     <div>
-      <h2 className="title gx-mb-4"><IntlMessages id="Blog"/></h2>
+      <h2 className="title gx-mb-4">
+        <IntlMessages id="Blog" />
+      </h2>
 
       <div className="gx-d-flex justify-content-center">
-        <h4>Real Blog or Blog Real</h4>
+        <BlogOverview></BlogOverview>
       </div>
-
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 import Widget from "components/Widget";
-import { Row, Col, Card } from "antd";
+import { Row, Col, Button } from "antd";
 
 class BlogOverview extends React.Component {
   constructor(props) {
@@ -15,12 +15,14 @@ class BlogOverview extends React.Component {
   readManifestFile = callback => {
     fetch("blogs/manifest.json")
       .then(r => r.json())
-      .then(json =>
-        this.setState(
-          { blogs: json.slice(json.length - 2, json.length) },
-          callback
-        )
-      );
+      .then(json => {
+        if (this.props.mode == "preview")
+          this.setState(
+            { blogs: json.slice(json.length - 2, json.length) },
+            callback
+          );
+        else this.setState({ blogs: json }, callback);
+      });
   };
 
   populatePreview = () => {
@@ -33,7 +35,9 @@ class BlogOverview extends React.Component {
           date: blog.creationDate,
           image: blog.imageSrc
         };
-        this.setState(prevState => ({ preview: [...prevState.preview, dataEntry] }));
+        this.setState(prevState => ({
+          preview: [...prevState.preview, dataEntry]
+        }));
       });
     } else {
       this.setState({
@@ -54,13 +58,13 @@ class BlogOverview extends React.Component {
             return (
               <Col key={index} xl={12} md={12} sm={12} xs={24}>
                 <Widget cover={<img src={blog.image} />}>
-                  <h1 style={{margin: 0}}>{blog.title}</h1>
+                  <h1 style={{ margin: 0 }}>{blog.title}</h1>
                   <span>
                     <i>
                       {blog.category} - {blog.date}
                     </i>
                   </span>
-                  <p style={{fontSize:"1.15em", color:"black"}}>
+                  <p style={{ fontSize: "1.15em", color: "black" }}>
                     {blog.excerpt.replace(/(([^\s]+\s\s*){30})(.*)/, "$1…")}
                   </p>
                 </Widget>
