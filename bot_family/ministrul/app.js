@@ -117,4 +117,4 @@ function spune(receivedMessage, args) {
   }
 }
 
-client.login("XXXXX"); // Replace XXXXX with your bot token
+client.login("NTgyNDY5MzUwOTE3Nzk5OTQx.XW6d8w.rG_Y5Ey2VLT3PnO21ikYxXEZcZA"); // Replace XXXXX with your bot token
