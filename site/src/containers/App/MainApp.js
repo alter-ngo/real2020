@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Layout} from "antd";
+import {Layout,Row,Col} from "antd";
 
 import Sidebar from "../Sidebar/index";
 import HorizontalDefault from "../Topbar/HorizontalDefault/index";
@@ -7,6 +7,7 @@ import HorizontalDark from "../Topbar/HorizontalDark/index";
 import InsideHeader from "../Topbar/InsideHeader/index";
 import AboveHeader from "../Topbar/AboveHeader/index";
 import BelowHeader from "../Topbar/BelowHeader/index";
+import { Button,Icon } from 'antd';
 
 import Topbar from "../Topbar/index";
 import {footerText} from "util/config";
@@ -106,7 +107,17 @@ export class MainApp extends Component {
             <App match={match}/>
             <Footer>
               <div className="gx-layout-footer-content">
-                {footerText}
+              <Row gutter={16} type="flex" align="middle">
+                  <Col xl={16} md={12} sm={12} xs={12}>
+                      {footerText}
+                  </Col>
+                  <Col xl={8} md={12} sm={12} xs={12}>
+                    {"Fii la curent cu noutatiile: "}
+                      <a target="_blank" href="https://www.facebook.com/registruleducationalalternativ/?__tn__=%2Cd%3C-R&eid=ARBfkQD2_gJ5b-zeZAOw94SrhtB3w3gbFprBnHxTsjfzWPo1ho5En-5P-FN1-wGe9oGissDKCdjNn09F"><Icon style={{ fontSize: '24px', color: '#08c' }} type="facebook" /></a>
+                      {"  "}
+                      <a target="_blank" href="https://www.instagram.com/estereal.ro/"><Icon style={{ fontSize: '24px', color: '#e75480' }} type="instagram" /></a>           
+                  </Col>
+              </Row>
               </div>
             </Footer>
           </Content>
