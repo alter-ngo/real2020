@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 import {Layout,Row,Col} from "antd";
-
 import Sidebar from "../Sidebar/index";
 import HorizontalDefault from "../Topbar/HorizontalDefault/index";
 import HorizontalDark from "../Topbar/HorizontalDark/index";
 import InsideHeader from "../Topbar/InsideHeader/index";
 import AboveHeader from "../Topbar/AboveHeader/index";
 import BelowHeader from "../Topbar/BelowHeader/index";
-import { Button,Icon } from 'antd';
+import {Button,Icon, Divider } from 'antd';
+import BackToTop from "react-back-to-top-button";
 
 import Topbar from "../Topbar/index";
 import {footerText} from "util/config";
@@ -107,17 +107,37 @@ export class MainApp extends Component {
             <App match={match}/>
             <Footer>
               <div className="gx-layout-footer-content">
-              <Row gutter={16} type="flex" align="middle">
-                  <Col xl={16} md={12} sm={12} xs={12}>
-                      {footerText}
+              <BackToTop
+                showAt={2000}
+                speed={1500}
+                easing="easeInOutQuint"
+              >
+                <Icon type="up-square"></Icon>
+              </BackToTop>
+                <Row gutter={16} type="flex" align="middle">
+                  <Divider>
+                    
+                  <a target="_blank" href="https://www.facebook.com/registruleducationalalternativ/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="facebook" /></a>
+                  <a target="_blank" href="https://www.instagram.com/estereal.ro/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="instagram" /></a>  
+                  <a target="_blank" href=""><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="youtube" /></a>              
+                  </Divider>
+                </Row>
+                <Row gutter={16} type="flex" justify="center">
+                    <div style={{margin:"5px",color:"#6A6C6E"}}>{"Telefon: "}{"072222222222 "}&#xb7;</div>
+                    <div style={{margin:"5px",color:"#6A6C6E"}}>{"Adresa: "}{"Str. Sturza Special nr. 9 "}&#xb7;</div>
+                    <div style={{margin:"5px", color:"#6A6C6E"}}>{"Email: "}{"info@estereal.com "}</div>
+                </Row>
+            <Divider/>
+                <Row gutter={16} type="flex" align="middle">
+                  <Col xl={20} md={8} sm={8} xs={12}>
+                  {footerText}
                   </Col>
-                  <Col xl={8} md={12} sm={12} xs={12}>
-                    {"Fii la curent cu noutatiile: "}
-                      <a target="_blank" href="https://www.facebook.com/registruleducationalalternativ/?__tn__=%2Cd%3C-R&eid=ARBfkQD2_gJ5b-zeZAOw94SrhtB3w3gbFprBnHxTsjfzWPo1ho5En-5P-FN1-wGe9oGissDKCdjNn09F"><Icon style={{ fontSize: '24px', color: '#08c' }} type="facebook" /></a>
-                      {"  "}
-                      <a target="_blank" href="https://www.instagram.com/estereal.ro/"><Icon style={{ fontSize: '24px', color: '#e75480' }} type="instagram" /></a>           
+                  <Col xl={4} md={8} sm={8} xs={12}>
+                  <a href="">Terms of Use </a>
+                  &#x7c;
+                  <a href=""> Privacy Policy</a>
                   </Col>
-              </Row>
+                </Row>           
               </div>
             </Footer>
           </Content>
