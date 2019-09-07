@@ -107,13 +107,7 @@ export class MainApp extends Component {
             <App match={match}/>
             <Footer>
               <div className="gx-layout-footer-content">
-              <BackToTop
-                showAt={2000}
-                speed={1500}
-                easing="easeInOutQuint"
-              >
-                <Icon type="up-square"></Icon>
-              </BackToTop>
+
                 <Row gutter={16} type="flex" align="middle">
                   <Divider>
                     
