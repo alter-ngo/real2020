@@ -1,7 +1,9 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 
 import IntlMessages from "util/IntlMessages";
 import BlogOverview from "../../components/REAL/BlogOverview";
+import BlogPost from "../../components/REAL/BlogPost";
 
 const BlogPage = () => {
   return (
@@ -11,7 +13,7 @@ const BlogPage = () => {
       </h2>
 
       <div className="gx-d-flex justify-content-center">
-        <BlogOverview></BlogOverview>
+          <BlogOverview></BlogOverview>
       </div>
     </div>
   );
