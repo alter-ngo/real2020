@@ -12,13 +12,16 @@ class Objectives extends React.Component {
       selectionName: "Elevi",
       selectedItemCarousel: 0,
       colors: [
-        { id: 1, value: "secondary-color", context: "Elevi" },
-        { id: 2, value: "black", context: "Parinți" },
-        { id: 3, value: "black", context: "Profesori" },
-        { id: 4, value: "black", context: "Cercetători" },
-        { id: 5, value: "black", context: "Conduceri" },
-        { id: 6, value: "black", context: "Minister" }
+        { id: 1, value: "secondary-color", context: "Elevi", firstObjective:" Te ajutăm să alegi liceul cel mai potrivit pentru tine.", secondObjective:" Îți arătăm ce spun elevii și profesorii despre liceu.", thirdObjective:" Îți dăm informații despre oportunități, resurse și organizare." },
+        { id: 2, value: "black", context: "Parinți", firstObjective:" Vă ajutam să alegeți un liceu sigur pentru copilul dumneavoastră.", secondObjective:" Vă prezentam informații despre calitatea actului educațional.", thirdObjective:" Vă transmitem date despre relația tutore-profesori." },
+        { id: 3, value: "black", context: "Profesori", firstObjective:" Vă ajutam să alegeți un cadru profesional potrivit dumneavoastră.", secondObjective:" Vă facilitam accesul la date despre colectivul didactic.", thirdObjective:" Vă oferim informații despre oportunități de dezvoltare profesională." },
+        { id: 4, value: "black", context: "Cercetători", firstObjective:" Vă oferim acces la cea mai mare colecție de date despre liceele din România.", secondObjective:" Facilităm dezvoltarea de materiale printr-o metodologie riguroasă.", thirdObjective:" Vă ajutăm să observați corelații ce nu au mai putut fi observate până acum." },
+        { id: 5, value: "black", context: "Conduceri", firstObjective:" Vă oferim informații bogate despre starea instituției de învățământ.", secondObjective:" Vă oferim recomandări bazate pe date de la sute de licee.", thirdObjective:" Vă transmitem într-o formă compactă recomandările elevilor și profesorilor." },
+        { id: 6, value: "black", context: "Minister", firstObjective:" Confirmăm independent un set de măsurători critice pentru luarea deciziilor.", secondObjective:" Vă oferim recomandări bazate pe date de la sute de licee.", thirdObjective:" Vă transmitem recomandările elevilor, profesorilor și părinților." }
       ],
+      firstObjective:" Te ajutăm să alegi liceul cel mai potrivit pentru tine.",
+      secondObjective:" Îți arătăm ce spun elevii și profesorii despre liceu.",
+      thirdObjective:" Îți dăm informații despre oportunități, resurse și organizare.",
       windowHeight: 0,
       windowWidth: 0
     };
@@ -28,23 +31,25 @@ class Objectives extends React.Component {
     for (let i = 0; i <= 5; i++) {
       if (this.state.colors[i].context == mode) {
         this.state.colors[i].value = "#fa8c15";
-        console.log(this.state.colors[i].value, this.state.colors[i].context);
         this.handleChangeD(i);
       } else {
         this.state.colors[i].value = "black";
-        console.log(this.state.colors[i].value, this.state.colors[i].context);
       }
     }
     this.setState({
       selectionName: mode
+
     });
   }
   handleChangeD(current) {
-    console.log(this.state.colors[current].context);
+
     this.state.colors[current].value = "#fa8c15";
     this.setState({
       selectedItemCarousel: current,
       selectionName: this.state.colors[current].context,
+      firstObjective: this.state.colors[current].firstObjective,
+      secondObjective: this.state.colors[current].secondObjective,
+      thirdObjective: this.state.colors[current].thirdObjective    
     });
   }
 
@@ -184,13 +189,7 @@ class Objectives extends React.Component {
             </Col>
           </Row>
           <Row gutter={16} style={{ marginBottom: "-1.75em" }}>
-            <Col
-              xl={8}
-              md={8}
-              sm={8}
-              xs={8}
-              onClick={this.handleClick.bind(this, "Cercetători")}
-            >
+            <Col xl={8} md={8} sm={8} xs={8} onClick={this.handleClick.bind(this, "Cercetători")}>
               <Widget
                 cover={
                   <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fcercetatori.jpg?alt=media&token=fd86a844-5e31-49b3-910b-30fa7b0311b3" />
@@ -278,16 +277,13 @@ class Objectives extends React.Component {
                 {this.state.selectionName}
               </p>
               <p>
-                <span className="icon icon-check-circle-o" /> Acest camp este
-                pentru o descriere.
+                <span className="icon icon-check-circle-o" />{this.state.firstObjective}
                 <br />
                 <br />
-                <span className="icon icon-check-circle-o" /> Acest camp este
-                pentru o descriere.
+                <span className="icon icon-check-circle-o" />{this.state.secondObjective}
                 <br />
                 <br />
-                <span className="icon icon-check-circle-o" /> Acest camp este
-                pentru o descriere.
+                <span className="icon icon-check-circle-o" /> {this.state.thirdObjective}
                 <br />
                 <br />
               </p>
