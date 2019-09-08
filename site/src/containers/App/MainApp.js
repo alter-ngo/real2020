@@ -1,12 +1,13 @@
 import React, {Component} from "react";
-import {Layout} from "antd";
-
+import {Layout,Row,Col} from "antd";
 import Sidebar from "../Sidebar/index";
 import HorizontalDefault from "../Topbar/HorizontalDefault/index";
 import HorizontalDark from "../Topbar/HorizontalDark/index";
 import InsideHeader from "../Topbar/InsideHeader/index";
 import AboveHeader from "../Topbar/AboveHeader/index";
 import BelowHeader from "../Topbar/BelowHeader/index";
+import {Button,Icon, Divider } from 'antd';
+import BackToTop from "react-back-to-top-button";
 
 import Topbar from "../Topbar/index";
 import {footerText} from "util/config";
@@ -106,7 +107,29 @@ export class MainApp extends Component {
             <App match={match}/>
             <Footer>
               <div className="gx-layout-footer-content">
-                {footerText}
+                <Row gutter={16} type="flex" align="middle">
+                  <Divider>
+                    <a target="_blank" href="https://www.facebook.com/registruleducationalalternativ/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="facebook" /></a>
+                    <a target="_blank" href="https://www.instagram.com/estereal.ro/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="instagram" /></a>  
+                    <a target="_blank" href=""><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="youtube" /></a>              
+                  </Divider>
+                </Row>
+                <Row gutter={16} type="flex" justify="center">
+                  <div style={{margin:"5px",color:"#6A6C6E"}}>{"Telefon: "}{"0771637695 "}&#xb7;</div>
+                  <div style={{margin:"5px",color:"#6A6C6E"}}>{"Adresa: "}{"Calea Plevnei 204-206, București "}&#xb7;</div>
+                  <div style={{margin:"5px", color:"#6A6C6E"}}>{"Email: "}{"contact@estereal.ro "}</div>
+                </Row>
+            <Divider/>
+                <Row gutter={16} type="flex" align="middle">
+                  <Col xl={20} md={8} sm={8} xs={12}>
+                  {footerText}
+                  </Col>
+                  <Col xl={4} md={8} sm={8} xs={12}>
+                  <a href="">Terms of Use </a>
+                  &#x7c;
+                  <a href=""> Privacy Policy</a>
+                  </Col>
+                </Row>           
               </div>
             </Footer>
           </Content>
