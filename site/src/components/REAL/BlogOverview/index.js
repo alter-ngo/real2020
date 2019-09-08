@@ -15,33 +15,33 @@ class BlogOverview extends React.Component {
   }
 
   readManifestFile = callback => {
-    fetch("manifest.json")
+    fetch("../manifest.json")
       .then(r => r.json())
       .then(json => {
-        json = json["blogs"];
-        if (this.props.mode == "preview")
-          this.setState(
-            { blogs: json.slice(json.length - 2, json.length) },
-            callback
-          );
-        else this.setState({ blogs: json }, callback);
+        this.setState({ blogs: json['blogs'] }, callback);
       });
   };
 
   populatePreview = () => {
     if (this.state.blogs.length > 0) {
+      let iter=0;
       this.state.blogs.forEach((blog, index) => {
-        let dataEntry = {
-          title: blog.title,
-          excerpt: blog.excerpt,
-          category: blog.category,
-          date: blog.creationDate,
-          image: blog.imageSrc,
-          slug: blog.slug
-        };
-        this.setState(prevState => ({
-          preview: [...prevState.preview, dataEntry]
-        }));
+        if (blog.slug != this.props.exclude) {
+          let dataEntry = {
+            title: blog.title,
+            excerpt: blog.excerpt,
+            category: blog.category,
+            date: blog.creationDate,
+            image: blog.imageSrc,
+            slug: blog.slug
+          };
+          this.setState(prevState => ({
+            preview: [...prevState.preview, dataEntry]
+          }));
+        }
+        if(iter>2 && this.props.mode=="preview")
+          return
+        iter++
       });
     } else {
       this.setState({
@@ -54,15 +54,30 @@ class BlogOverview extends React.Component {
     this.readManifestFile(this.populatePreview);
   }
 
-  selectRouting = () => {};
+  componentWillReceiveProps(nextProps) {
+    this.readManifestFile();
+  }
 
   render() {
+    var sizes = [12, 12, 12, 24];
+    if (this.props.embedded == true) {
+      sizes[0] = 24;
+      sizes[1] = 24;
+      sizes[2] = 24;
+      sizes[3] = 24;
+    }
     return (
       <Row gutter={16}>
         {this.state.preview.map((blog, index) => {
           if (this.state.preview.length > 0)
             return (
-              <Col key={index} xl={12} md={12} sm={12} xs={24}>
+              <Col
+                key={index}
+                xl={sizes[0]}
+                md={sizes[1]}
+                sm={sizes[2]}
+                xs={sizes[3]}
+              >
                 <Link to={`/blog/${blog.slug}`}>
                   <Widget cover={<img src={blog.image} />}>
                     <h1 style={{ margin: 0 }}>{blog.title}</h1>

@@ -12,7 +12,7 @@ const HomePage = () => {
     <React.Fragment>
       <Row gutter={16}>
         <Col span={24}>
-          <TextPhoto title="Context" caption="Caption" imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e">
+          <TextPhoto side="left" title="Context" caption="Caption" imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e">
             Considerăm ca ultima medie și promovabilitatea sunt măsurători necesare, dar nu suficiente, deoarece nu înglobează complet calitatea unei instituții de învățământ. În plus, cei doi indicatori tradiționali variază implicit în funcție de dificultatea examenului, deci nu pot oferii un suport stabil de măsurare a progresului. De asemenea, ultima medie se bazează pe elevii din anul precedent, care au fost ghidați la rândul lor de elevii din anul precedent lor, impregnând o inerție ce nu facilitează dezvoltarea meritocratică a instituțiilor de învățământ.
             <br />
             <br />
@@ -25,7 +25,7 @@ const HomePage = () => {
       </Row>
       <Row gutter={16}>
         <Col span={24}>
-          <TextPhoto title="Obiectiv" caption="Caption" imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e">
+          <TextPhoto side="right" title="Obiectiv" caption="Caption" imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e">
             Registrul Educațional Alternativ este o platformă prin care liceele sunt evaluate chiar de către elevi, profesori, părinți și absolvenți.
             <br />
             <br />
@@ -41,7 +41,7 @@ const HomePage = () => {
       </Row>
       <Row gutter={16}>
         <Col span={24}>
-          <TextPhoto title="Metodologie" caption="Caption" imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e">
+          <TextPhoto side="left" title="Metodologie" caption="Caption" imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e">
             Pentru a oferi o imagine de ansamblu reprezentativă a sistemului educațional românesc, vom urma o metodologie. Considerăm că cel mai relevant set de informații ce caracterizează sistemul de învățământ sunt opiniile beneficiarilor acestuia. Am considerat 4 categorii de beneficiari: ELEVI, ABSOLVENȚI, PĂRINȚI, și PROFESORI. Considerăm că aceste categorii înglobează eficient situația sistemului de învământ. Fiecare persoană care se încadrează într-o astfel de categorie poate oferi informații relevante despre instituțiile cu care a avut contact. De exemplu, în cazul elevilor, acestea se referă la instituțiile unde învață.
              <br />
             <br />
