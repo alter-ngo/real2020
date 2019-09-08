@@ -7,16 +7,18 @@ import About from "./About/index";
 import Home from "./HomePage/index";
 import Blog from "./Blog/index";
 import Formular from "./Formular/index";
+import BlogPost from "../components/REAL/BlogPost";
 
 const App = ({match}) => (
   <div className="gx-main-content-wrapper">
    <Switch>
-      <Route path={`${match.url}home`} component={Home}/>
-      <Route path={`${match.url}catalog`} component={Catalog}/>
-      <Route path={`${match.url}bord`} component={Bord}/>   
-      <Route path={`${match.url}about`} component={About}/> 
-      <Route path={`${match.url}blog`} component={Blog}/> 
-      <Route path={`${match.url}formular`} component={Formular}/> 
+      <Route exact path={`${match.url}home`} component={Home}/>
+      <Route exact path={`${match.url}catalog`} component={Catalog}/>
+      <Route exact path={`${match.url}bord`} component={Bord}/>   
+      <Route exact path={`${match.url}about`} component={About}/> 
+      <Route exact path={`${match.url}blog`} component={Blog}/>  
+      <Route exact path={`${match.url}blog/:slug`} component={BlogPost}/>  
+      <Route exact path={`${match.url}formular`} component={Formular}/> 
   </Switch>
   </div>
 );

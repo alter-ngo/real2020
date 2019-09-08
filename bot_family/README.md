@@ -108,9 +108,15 @@ Nu îți trebuie educație alternativă să înveți să scrii, tinere! Repetă 
 
 # Consilierul Ministrului (Zapier)
 
-_Consilierul Ministrului_ is the bot which implements our Zapier automations. It knows how to summarize a newly created event, how to make a briefing before an event occurs, and how to summarize a new task due this week on Trello. It only writes to **#events** and **#general**.
+_Consilierul Ministrului_ knows how to summarize a newly created event, how to make a briefing before an event occurs, and how to summarize a new task due this week on Trello. It only writes to **#events** and **#general**.
 
 ![consilierul](https://github.com/paubric/real/blob/master/bot_family/consilierul.jpg)
+
+# Ziaristul Educațional Alternativ (Zapier)
+
+_Ziaristul Educațional Alternativ_ knows how deliver recent news articles from [https://www.edupedu.ro](https://www.edupedu.ro) to our **#news** channel.
+
+![ziaristul](https://github.com/paubric/real/blob/master/bot_family/ziaristul.jpg)
 
 # GitHub Bot
 

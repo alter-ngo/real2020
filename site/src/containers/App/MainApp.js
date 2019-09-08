@@ -107,19 +107,17 @@ export class MainApp extends Component {
             <App match={match}/>
             <Footer>
               <div className="gx-layout-footer-content">
-
                 <Row gutter={16} type="flex" align="middle">
                   <Divider>
-                    
-                  <a target="_blank" href="https://www.facebook.com/registruleducationalalternativ/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="facebook" /></a>
-                  <a target="_blank" href="https://www.instagram.com/estereal.ro/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="instagram" /></a>  
-                  <a target="_blank" href=""><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="youtube" /></a>              
+                    <a target="_blank" href="https://www.facebook.com/registruleducationalalternativ/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="facebook" /></a>
+                    <a target="_blank" href="https://www.instagram.com/estereal.ro/"><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="instagram" /></a>  
+                    <a target="_blank" href=""><Icon style={{margin:'5px', fontSize: '27px', color: '#fa8c15' }} type="youtube" /></a>              
                   </Divider>
                 </Row>
                 <Row gutter={16} type="flex" justify="center">
-                    <div style={{margin:"5px",color:"#6A6C6E"}}>{"Telefon: "}{"072222222222 "}&#xb7;</div>
-                    <div style={{margin:"5px",color:"#6A6C6E"}}>{"Adresa: "}{"Str. Sturza Special nr. 9 "}&#xb7;</div>
-                    <div style={{margin:"5px", color:"#6A6C6E"}}>{"Email: "}{"info@estereal.com "}</div>
+                  <div style={{margin:"5px",color:"#6A6C6E"}}>{"Telefon: "}{"0771637695 "}&#xb7;</div>
+                  <div style={{margin:"5px",color:"#6A6C6E"}}>{"Adresa: "}{"Calea Plevnei 204-206, București "}&#xb7;</div>
+                  <div style={{margin:"5px", color:"#6A6C6E"}}>{"Email: "}{"contact@estereal.ro "}</div>
                 </Row>
             <Divider/>
                 <Row gutter={16} type="flex" align="middle">

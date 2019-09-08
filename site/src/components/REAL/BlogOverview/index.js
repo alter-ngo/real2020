@@ -2,6 +2,8 @@ import React from "react";
 
 import Widget from "components/Widget";
 import { Row, Col, Button } from "antd";
+import BlogPost from "components/REAL/BlogPost";
+import { Route, Link } from "react-router-dom";
 
 class BlogOverview extends React.Component {
   constructor(props) {
@@ -16,7 +18,7 @@ class BlogOverview extends React.Component {
     fetch("manifest.json")
       .then(r => r.json())
       .then(json => {
-        json = json["blogs"]
+        json = json["blogs"];
         if (this.props.mode == "preview")
           this.setState(
             { blogs: json.slice(json.length - 2, json.length) },
@@ -34,7 +36,8 @@ class BlogOverview extends React.Component {
           excerpt: blog.excerpt,
           category: blog.category,
           date: blog.creationDate,
-          image: blog.imageSrc
+          image: blog.imageSrc,
+          slug: blog.slug
         };
         this.setState(prevState => ({
           preview: [...prevState.preview, dataEntry]
@@ -51,6 +54,8 @@ class BlogOverview extends React.Component {
     this.readManifestFile(this.populatePreview);
   }
 
+  selectRouting = () => {};
+
   render() {
     return (
       <Row gutter={16}>
@@ -58,17 +63,19 @@ class BlogOverview extends React.Component {
           if (this.state.preview.length > 0)
             return (
               <Col key={index} xl={12} md={12} sm={12} xs={24}>
-                <Widget cover={<img src={blog.image} />}>
-                  <h1 style={{ margin: 0 }}>{blog.title}</h1>
-                  <span>
-                    <i>
-                      {blog.category} - {blog.date}
-                    </i>
-                  </span>
-                  <p style={{ fontSize: "1.15em", color: "black" }}>
-                    {blog.excerpt.replace(/(([^\s]+\s\s*){30})(.*)/, "$1…")}
-                  </p>
-                </Widget>
+                <Link to={`/blog/${blog.slug}`}>
+                  <Widget cover={<img src={blog.image} />}>
+                    <h1 style={{ margin: 0 }}>{blog.title}</h1>
+                    <span>
+                      <i>
+                        {blog.category} - {blog.date}
+                      </i>
+                    </span>
+                    <p style={{ fontSize: "1.15em", color: "black" }}>
+                      {blog.excerpt.replace(/(([^\s]+\s\s*){30})(.*)/, "$1…")}
+                    </p>
+                  </Widget>
+                </Link>
               </Col>
             );
           else
