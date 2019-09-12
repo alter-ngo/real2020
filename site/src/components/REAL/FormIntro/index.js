@@ -9,7 +9,7 @@ const FormIntro = () => {
                 <Col>
                     <h1
                         className="gx-font-weight-semi-bold gs-fs-xlxl"
-                        style={{ fontSize: "2em" }}
+                        style={{ fontSize: "1.5em" }}
                     >
                         Bine ai venit în formularul #estereal!
                     </h1>
@@ -18,14 +18,17 @@ const FormIntro = () => {
                             <li>
                                 Opiniile exprimate de tine vor ajuta sute de mii de oameni, de la elevi care își aleg liceul și până la cercetători care realizează analize.
                             </li>
+                            <br/>
                             <li>
                                 Răspunsurile tale sunt <strong>100% anonime</strong>, fiind combinate cu răspunsurile a zeci de mii de alți elevi, profesori și tutori.
                             </li>
+                            <br/>
                             <li>
                                 Completarea formularului durează aproximativ 10 minute, acoperind subiecte diverse, de la oportunități până la organizare.
                             </li>
                         </ul>
                     </p>
+
                 </Col>
             </Row>
         </Widget>
