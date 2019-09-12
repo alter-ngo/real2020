@@ -1,19 +1,16 @@
 import {Input,Form,Radio,Slider,Col,Select,Row,Modal } from "antd";
 import Widget from "components/Widget";
-import { verify } from "crypto";
-import { relative } from "path";
-import IconSlider from "components/REAL/FormComponents/IconSlider";
 import React from "react";
-import IntlMessages from "util/IntlMessages";
+import FormIntro from 'components/REAL/FormIntro';
 
 class ModalSelector extends React.Component {
   state = {
     visible: true,
     status:"",
     colors: [
-      { id: 1, value: "black", context: "Elevi" },
-      { id: 2, value: "black", context: "Parinți" },
-      { id: 3, value: "black", context: "Profesori" },
+      { id: 1, value: "white", context: "Elevi" },
+      { id: 2, value: "white", context: "Parinți" },
+      { id: 3, value: "white", context: "Profesori" },
       ],
   };
 
@@ -22,7 +19,7 @@ class ModalSelector extends React.Component {
       if (this.state.colors[i].context == mode) {
         this.state.colors[i].value = "#fa8c15";
       }else {
-        this.state.colors[i].value = "black";
+        this.state.colors[i].value = "white";
       }
     }
     this.props.nextStep();
@@ -47,9 +44,13 @@ class ModalSelector extends React.Component {
       footer={null}
     >
   <div className="gx-d-flex justify-content-center" >
+    <Col span={24}>    
+    <Row>
+      <FormIntro/>
+    </Row>
     <Row>
       <Col span={8} onClick={this.handleSelection.bind(this,"Elev")}>
-          <Widget
+          <Widget styleName="gx-widget-bg"
             cover={
               <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e" />
             }
@@ -68,7 +69,7 @@ class ModalSelector extends React.Component {
       </Col>
       
       <Col span={8} onClick={this.handleSelection.bind(this,"Parinte")}>
-      <Widget
+      <Widget styleName="gx-widget-bg"
             cover={
               <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fparinti.jpg?alt=media&token=cab87a57-dfb8-43a1-8ba0-7a4f62dd016b" />
             }
@@ -86,7 +87,7 @@ class ModalSelector extends React.Component {
           </Widget>      
       </Col>
       <Col span={8} onClick={this.handleSelection.bind(this,"Profesor")}>
-      <Widget
+      <Widget styleName="gx-widget-bg"
             cover={
               <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fprofesori.jpg?alt=media&token=2933756d-8127-458a-a523-5619cbb8f7e5" />
             }
@@ -104,7 +105,10 @@ class ModalSelector extends React.Component {
           </Widget>
       </Col>
     </Row>
+
+    </Col>
   </div>
+
   </Modal>
     );
   }
