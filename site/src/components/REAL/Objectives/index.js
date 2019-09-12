@@ -144,7 +144,7 @@ class Objectives extends React.Component {
               md={8}
               sm={8}
               xs={8}
-              onClick={this.handleClick.bind(this, "Parinți")}
+              onClick={this.handleClick.bind(this, "Tutori")}
             >
               <Widget
                 cover={
@@ -159,7 +159,7 @@ class Objectives extends React.Component {
                     margin: 0
                   }}
                 >
-                  Parinți
+                  Tutori
                 </p>
               </Widget>
             </Col>
