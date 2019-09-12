@@ -1,18 +1,10 @@
 {
   "hosting": {
     "site": "estereal",
-    "public": "build",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*"
-    ],
-    "rewrites": [{
-      "source": "/public/**",
-      "destination": "/public.html"
-    },
-    {
-      "source": "**",
-      "destination": "/index.html"
-    }]
+    ]
   }
 }
