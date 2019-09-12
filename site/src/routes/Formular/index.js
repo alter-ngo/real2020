@@ -1,18 +1,15 @@
 import React from "react";
 
-import IntlMessages from "util/IntlMessages";
+import { Row, Col, Divider, Button } from "antd";
+import FormIntro from "components/REAL/FormIntro";
 
-const AboutPage = () => {
+const FormPage = () => {
   return (
-    <div>
-      <h2 className="title gx-mb-4"><IntlMessages id="Formular"/></h2>
+    <React.Fragment>
+      <FormIntro/>
+    </React.Fragment>
 
-      <div className="gx-d-flex justify-content-center">
-        <h4>formular</h4>
-      </div>
-
-    </div>
   );
 };
 
-export default AboutPage;
+export default FormPage;
