@@ -15,16 +15,25 @@ class BlogOverview extends React.Component {
   }
 
   readManifestFile = callback => {
-    fetch("../manifest.json")
+    fetch("../blogs.json")
       .then(r => r.json())
       .then(json => {
-        this.setState({ blogs: json['blogs'] }, callback);
+        if (typeof json['blogs'] == 'undefined') this.setState({ blogs: []},callback);
+        else {
+          if (this.props.mode == "preview")
+            this.setState(
+              {
+                blogs: json["blogs"].slice(json["blogs"].length - 2)
+              },
+              callback
+            );
+          else this.setState({ blogs: json["blogs"] }, callback);
+        }
       });
   };
 
   populatePreview = () => {
-    if (this.state.blogs.length > 0) {
-      let iter=0;
+    if (this.state.blogs.length != 0) {
       this.state.blogs.forEach((blog, index) => {
         if (blog.slug != this.props.exclude) {
           let dataEntry = {
@@ -39,9 +48,6 @@ class BlogOverview extends React.Component {
             preview: [...prevState.preview, dataEntry]
           }));
         }
-        if(iter>2 && this.props.mode=="preview")
-          return
-        iter++
       });
     } else {
       this.setState({
@@ -52,10 +58,6 @@ class BlogOverview extends React.Component {
 
   componentDidMount() {
     this.readManifestFile(this.populatePreview);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.readManifestFile();
   }
 
   render() {
@@ -69,7 +71,7 @@ class BlogOverview extends React.Component {
     return (
       <Row gutter={16}>
         {this.state.preview.map((blog, index) => {
-          if (this.state.preview.length > 0)
+          if (this.state.blogs.length > 0)
             return (
               <Col
                 key={index}

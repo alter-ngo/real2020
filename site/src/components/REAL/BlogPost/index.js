@@ -18,7 +18,7 @@ class BlogPost extends React.Component {
   }
 
   readManifestFile = () => {
-    fetch("../manifest.json")
+    fetch("../blogs.json")
       .then(r => r.json())
       .then(json => {
         json = json["blogs"];
@@ -26,21 +26,14 @@ class BlogPost extends React.Component {
           if (blog.slug == this.props.match.params.slug)
             this.setState(
               {
-                markdown: blog.markdownSrc,
+                content: blog.content,
                 title: blog.title,
                 date: blog.creationDate,
                 category: blog.category
               },
-              this.readMarkdownFile
             );
         });
       });
-  };
-
-  readMarkdownFile = () => {
-    fetch(this.state.markdown).then(r =>
-      this.setState({ content: r }, console.log(this.state))
-    );
   };
 
   componentDidMount() {
@@ -57,17 +50,25 @@ class BlogPost extends React.Component {
     return (
       <Widget>
         <Row gutter={16}>
-          <Col span={18}>
+          <Col xl={18}
+                md={16}
+                sm={24}
+                xs={24}>
             <h1>{this.state.title}</h1>
             <p>
               {this.state.category} - {this.state.date}
             </p>
+            <div className="content" style={{color:"black"}}>
             <ReactMarkdown
               source={this.state.content}
               escapeHtml={false}
             ></ReactMarkdown>
+            </div>
           </Col>
-          <Col span={6}>
+          <Col xl={6}
+                md={8}
+                sm={24}
+                xs={24}>
             <h2>Articole Recomandate</h2>
             <BlogOverview
               exclude={this.props.match.params.slug}
