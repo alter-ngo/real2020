@@ -9,4 +9,4 @@ script:
 install:
   - npm install -g firebase-tools
 after_success:
-  - firebase deploy --project real-infrastructure --token $FIREBASE_TOKEN
+  - firebase deploy --project real-infrastructure --only hosting:estereal --token $FIREBASE_TOKEN
