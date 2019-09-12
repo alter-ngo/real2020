@@ -59,7 +59,6 @@ class Objectives extends React.Component {
         windowHeight: window.innerHeight,
         windowWidth: window.innerWidth
       },
-      console.log("Width " + this.state.windowWidth)
     );
   };
 

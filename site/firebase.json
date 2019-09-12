@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "estereal",
-    "public": "build",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*"
