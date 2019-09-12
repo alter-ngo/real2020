@@ -13,7 +13,7 @@ class Objectives extends React.Component {
       selectedItemCarousel: 0,
       colors: [
         { id: 1, value: "secondary-color", context: "Elevi", firstObjective:" Te ajutăm să alegi liceul cel mai potrivit pentru tine.", secondObjective:" Îți arătăm ce spun elevii și profesorii despre liceu.", thirdObjective:" Îți dăm informații despre oportunități, resurse și organizare." },
-        { id: 2, value: "black", context: "Parinți", firstObjective:" Vă ajutam să alegeți un liceu sigur pentru copilul dumneavoastră.", secondObjective:" Vă prezentam informații despre calitatea actului educațional.", thirdObjective:" Vă transmitem date despre relația tutore-profesori." },
+        { id: 2, value: "black", context: "Tutori", firstObjective:" Vă ajutam să alegeți un liceu sigur pentru copilul dumneavoastră.", secondObjective:" Vă prezentam informații despre calitatea actului educațional.", thirdObjective:" Vă transmitem date despre relația tutore-profesori." },
         { id: 3, value: "black", context: "Profesori", firstObjective:" Vă ajutam să alegeți un cadru profesional potrivit dumneavoastră.", secondObjective:" Vă facilitam accesul la date despre colectivul didactic.", thirdObjective:" Vă oferim informații despre oportunități de dezvoltare profesională." },
         { id: 4, value: "black", context: "Cercetători", firstObjective:" Vă oferim acces la cea mai mare colecție de date despre liceele din România.", secondObjective:" Facilităm dezvoltarea de materiale printr-o metodologie riguroasă.", thirdObjective:" Vă ajutăm să observați corelații ce nu au mai putut fi observate până acum." },
         { id: 5, value: "black", context: "Conduceri", firstObjective:" Vă oferim informații bogate despre starea instituției de învățământ.", secondObjective:" Vă oferim recomandări bazate pe date de la sute de licee.", thirdObjective:" Vă transmitem într-o formă compactă recomandările elevilor și profesorilor." },
@@ -91,7 +91,7 @@ class Objectives extends React.Component {
           </div>
           <div>
             <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fparinti.jpg?alt=media&token=cab87a57-dfb8-43a1-8ba0-7a4f62dd016b" />
-            <p className="legend">Parinți</p>
+            <p className="legend">Tutori</p>
           </div>
           <div>
             <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fprofesori.jpg?alt=media&token=2933756d-8127-458a-a523-5619cbb8f7e5" />
@@ -144,7 +144,7 @@ class Objectives extends React.Component {
               md={8}
               sm={8}
               xs={8}
-              onClick={this.handleClick.bind(this, "Parinți")}
+              onClick={this.handleClick.bind(this, "Tutori")}
             >
               <Widget
                 cover={
@@ -159,7 +159,7 @@ class Objectives extends React.Component {
                     margin: 0
                   }}
                 >
-                  Parinți
+                  Tutori
                 </p>
               </Widget>
             </Col>

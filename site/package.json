@@ -66,6 +66,7 @@
     "babel-plugin-import": "^1.8.0",
     "customize-cra": "^0.2.10",
     "react-app-rewired": "^2.0.2",
+    "ws": "3.3.2",
     "yarn": "^1.7.0"
   },
   "browserslist": [
