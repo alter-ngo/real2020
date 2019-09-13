@@ -12,16 +12,16 @@ class Objectives extends React.Component {
       selectionName: "Elevi",
       selectedItemCarousel: 0,
       colors: [
-        { id: 1, value: "secondary-color", context: "Elevi", firstObjective:" Te ajutăm să alegi liceul cel mai potrivit pentru tine.", secondObjective:" Îți arătăm ce spun elevii și profesorii despre liceu.", thirdObjective:" Îți dăm informații despre oportunități, resurse și organizare." },
-        { id: 2, value: "black", context: "Tutori", firstObjective:" Vă ajutam să alegeți un liceu sigur pentru copilul dumneavoastră.", secondObjective:" Vă prezentam informații despre calitatea actului educațional.", thirdObjective:" Vă transmitem date despre relația tutore-profesori." },
-        { id: 3, value: "black", context: "Profesori", firstObjective:" Vă ajutam să alegeți un cadru profesional potrivit dumneavoastră.", secondObjective:" Vă facilitam accesul la date despre colectivul didactic.", thirdObjective:" Vă oferim informații despre oportunități de dezvoltare profesională." },
-        { id: 4, value: "black", context: "Cercetători", firstObjective:" Vă oferim acces la cea mai mare colecție de date despre liceele din România.", secondObjective:" Facilităm dezvoltarea de materiale printr-o metodologie riguroasă.", thirdObjective:" Vă ajutăm să observați corelații ce nu au mai putut fi observate până acum." },
-        { id: 5, value: "black", context: "Conduceri", firstObjective:" Vă oferim informații bogate despre starea instituției de învățământ.", secondObjective:" Vă oferim recomandări bazate pe date de la sute de licee.", thirdObjective:" Vă transmitem într-o formă compactă recomandările elevilor și profesorilor." },
-        { id: 6, value: "black", context: "Minister", firstObjective:" Confirmăm independent un set de măsurători critice pentru luarea deciziilor.", secondObjective:" Vă oferim recomandări bazate pe date de la sute de licee.", thirdObjective:" Vă transmitem recomandările elevilor, profesorilor și părinților." }
+        { id: 1, value: "secondary-color", context: "Elevi", firstObjective: " Te ajutăm să alegi liceul cel mai potrivit pentru tine.", secondObjective: " Îți arătăm ce spun elevii și profesorii despre liceu.", thirdObjective: " Îți dăm informații despre oportunități, resurse și organizare." },
+        { id: 2, value: "black", context: "Tutori", firstObjective: " Vă ajutam să alegeți un liceu sigur pentru copilul dumneavoastră.", secondObjective: " Vă prezentam informații despre calitatea actului educațional.", thirdObjective: " Vă transmitem date despre relația tutore-profesori." },
+        { id: 3, value: "black", context: "Profesori", firstObjective: " Vă ajutam să alegeți un cadru profesional potrivit dumneavoastră.", secondObjective: " Vă facilitam accesul la date despre colectivul didactic.", thirdObjective: " Vă oferim informații despre oportunități de dezvoltare profesională." },
+        { id: 4, value: "black", context: "Cercetători", firstObjective: " Vă oferim acces la cea mai mare colecție de date despre liceele din România.", secondObjective: " Facilităm dezvoltarea de materiale printr-o metodologie riguroasă.", thirdObjective: " Vă ajutăm să observați corelații ce nu au mai putut fi observate până acum." },
+        { id: 5, value: "black", context: "Conduceri", firstObjective: " Vă oferim informații bogate despre starea instituției de învățământ.", secondObjective: " Vă oferim recomandări bazate pe date de la sute de licee.", thirdObjective: " Vă transmitem într-o formă compactă recomandările elevilor și profesorilor." },
+        { id: 6, value: "black", context: "Minister", firstObjective: " Confirmăm independent un set de măsurători critice pentru luarea deciziilor.", secondObjective: " Vă oferim recomandări bazate pe date de la sute de licee.", thirdObjective: " Vă transmitem recomandările elevilor, profesorilor și părinților." }
       ],
-      firstObjective:" Te ajutăm să alegi liceul cel mai potrivit pentru tine.",
-      secondObjective:" Îți arătăm ce spun elevii și profesorii despre liceu.",
-      thirdObjective:" Îți dăm informații despre oportunități, resurse și organizare.",
+      firstObjective: " Te ajutăm să alegi liceul cel mai potrivit pentru tine.",
+      secondObjective: " Îți arătăm ce spun elevii și profesorii despre liceu.",
+      thirdObjective: " Îți dăm informații despre oportunități, resurse și organizare.",
       windowHeight: 0,
       windowWidth: 0
     };
@@ -49,7 +49,7 @@ class Objectives extends React.Component {
       selectionName: this.state.colors[current].context,
       firstObjective: this.state.colors[current].firstObjective,
       secondObjective: this.state.colors[current].secondObjective,
-      thirdObjective: this.state.colors[current].thirdObjective    
+      thirdObjective: this.state.colors[current].thirdObjective
     });
   }
 
@@ -288,11 +288,15 @@ class Objectives extends React.Component {
               </p>
               <br />
               <p>
-                <Button className="gx-mb-1 gx-btn-warning" htmlType="submit">
-                  Completează formularul
+                <Button className="gx-mb-1 gx-btn-warning" htmlType="submit" >
+                  <a href="/formular">
+                    Completează formularul
+                  </a>
                 </Button>
                 <Button className="gx-mb-1" htmlType="submit">
-                  Află mai multe
+                  <a href="/about">
+                    Află mai multe
+                  </a>
                 </Button>
               </p>
             </div>
