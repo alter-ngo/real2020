@@ -105,7 +105,7 @@ class HomePage extends React.Component {
               caption="Colaborare"
               imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fteam.jpg?alt=media&token=e0eee32f-c2cd-4654-bf11-1b2656c9e5df"
             >
-              Registrul Educațional Alternativ este un proiect ce se află sub egida Asociației Alter. Această organizație non-guvernamentală este inițiată și susținută în totalitate de o echipă de liceeni și studenți voluntari, cu background-uri și abilitați diverse. 
+              Registrul Educațional Alternativ este un proiect ce se află sub egida Asociației Alter. Această organizație neguvernamentală este inițiată și susținută în totalitate de o echipă de liceeni și studenți voluntari, cu background-uri și abilitați diverse. 
               <br />
               <br />
               Deoarece împreună putem realiza lucruri mai bune, am încheiat un număr de parteneriate cu alte entități din societatea civilă și din mediul academic.
