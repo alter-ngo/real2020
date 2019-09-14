@@ -1,18 +1,40 @@
-import {Input,Form,Radio,Slider,Col,Select,Row,Modal } from "antd";
+import {Button,Col,Row,Modal,Card } from "antd";
 import Widget from "components/Widget";
 import React from "react";
 import FormIntro from 'components/REAL/FormIntro';
 
+
+const{Meta}=Card;
 class ModalSelector extends React.Component {
   state = {
     visible: true,
     status:"",
     colors: [
-      { id: 1, value: "white", context: "Elevi" },
-      { id: 2, value: "white", context: "Parinți" },
-      { id: 3, value: "white", context: "Profesori" },
+      { id: 1, value: "white", context: "Elev" },
+      { id: 2, value: "white", context: "Tutore" },
+      { id: 3, value: "white", context: "Profesor" },
       ],
+      windowHeight: 0,
+      windowWidth: 0
   };
+
+  updateWindowDimension = () => {
+    this.setState(
+      {
+        windowHeight: window.innerHeight,
+        windowWidth: window.innerWidth
+      },
+    );
+  };
+
+  componentDidMount() {
+    this.updateWindowDimension();
+    window.addEventListener("resize", this.updateWindowDimension);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimension);
+  }
 
   handleSelection(mode){
     for (let i = 0; i <= 2; i++) {
@@ -34,27 +56,53 @@ class ModalSelector extends React.Component {
       visible: false,
     });
   };
-
-  render() {
-    
-    return (
-      <Modal
+  objectiveSelectionDisplay = () => {
+  if(this.state.windowWidth <= 950){
+    return(
+    <Modal
       title="Selecteaza statutul tau:"
       visible={this.state.visible}
       footer={null}
+      closable={false}
     >
   <div className="gx-d-flex justify-content-center" >
     <Col span={24}>    
     <Row>
       <FormIntro/>
     </Row>
+
+      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Elev")}>Elev</Button>
+      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Tutore")}>Tutore</Button>
+      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Profesor")}>Profesor</Button>
+
+    </Col>
+  </div>
+
+  </Modal>
+  )
+  }else{
+    return(
+    <Modal
+      title="Selecteaza statutul tau:"
+      visible={this.state.visible}
+      footer={null}
+      closable={false}
+    >
+  <div className="gx-d-flex justify-content-center" >
+    <Col span={24}>    
     <Row>
-      <Col span={8} onClick={this.handleSelection.bind(this,"Elev")}>
+      <FormIntro/>
+    </Row>
+    <Row gutter={16}>
+      <Col  xl={8}
+            md={8}
+            sm={12}
+            xs={24} onClick={this.handleSelection.bind(this,"Elev")}>
+
           <Widget styleName="gx-widget-bg"
-            cover={
-              <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e" />
-            }
-          >
+          cover={
+            <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e" />
+          }> 
             <p
               style={{
                 color: this.state.colors[0].value,
@@ -65,10 +113,14 @@ class ModalSelector extends React.Component {
             >
               Elev
             </p>
+            
           </Widget>
       </Col>
       
-      <Col span={8} onClick={this.handleSelection.bind(this,"Parinte")}>
+      <Col xl={8}
+            md={8}
+            sm={12}
+            xs={24} onClick={this.handleSelection.bind(this,"Tutore")}>
       <Widget styleName="gx-widget-bg"
             cover={
               <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fparinti.jpg?alt=media&token=cab87a57-dfb8-43a1-8ba0-7a4f62dd016b" />
@@ -82,11 +134,14 @@ class ModalSelector extends React.Component {
                 margin: 0
               }}
             >
-              Parinte
+              Tutore
             </p>
           </Widget>      
       </Col>
-      <Col span={8} onClick={this.handleSelection.bind(this,"Profesor")}>
+      <Col xl={8}
+            md={8}
+            sm={12}
+            xs={24} onClick={this.handleSelection.bind(this,"Profesor")}>
       <Widget styleName="gx-widget-bg"
             cover={
               <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fprofesori.jpg?alt=media&token=2933756d-8127-458a-a523-5619cbb8f7e5" />
@@ -110,6 +165,15 @@ class ModalSelector extends React.Component {
   </div>
 
   </Modal>
+  )}
+  };
+
+  render() {
+    
+    return (
+      <div>
+      {this.objectiveSelectionDisplay()}
+      </div>
     );
   }
 }

@@ -42,29 +42,19 @@ class HomePage extends React.Component {
             <TextPhoto
               side={sides[0]}
               title="Context"
-              caption="Caption"
-              imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e"
+              caption="Liceu"
+              imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fhighschool.jpg?alt=media&token=e3194309-c889-4cf7-bf34-4f68360a5626"
             >
-              Considerăm ca ultima medie și promovabilitatea sunt măsurători
-              necesare, dar nu suficiente, deoarece nu înglobează complet
-              calitatea unei instituții de învățământ. În plus, cei doi
-              indicatori tradiționali variază implicit în funcție de
-              dificultatea examenului, deci nu pot oferii un suport stabil de
-              măsurare a progresului. De asemenea, ultima medie se bazează pe
-              elevii din anul precedent, care au fost ghidați la rândul lor de
-              elevii din anul precedent lor, impregnând o inerție ce nu
-              facilitează dezvoltarea meritocratică a instituțiilor de
-              învățământ.
+              Considerăm că ultima medie și promovabilitatea sunt măsurători necesare, dar nu suficiente, deoarece nu înglobează complet calitatea unei instituții de învățământ.
               <br />
               <br />
-              Nu credem într-un clasament absolut al liceelor, deoarece fiecare
-              caută altceva la un liceu. Am identificat 6 dimensiuni relevante
-              de evaluare a liceelor, bazate pe mediile notelor acordate de
-              respondenți.
+              Datele despre sistemul educațional românesc nu au fost niciodată complet centralizate, îngrădind potențialul deciziilor informate.
               <br />
               <br />
-              Un sistem nu poate fi optimizat fără să poată fi evaluat
-              corespunzător.
+              Ne-am propus să ne asumăm responsabilitatea de a construi cea mai mare colecție de date despre învățământ, combinând informații de la instituții de stat cu opiniile elevilor, profesorilor și tutorilor.
+              <br />
+              <br />
+              Cu ajutorul acestor date, vom ghida dezvoltarea sistemului educațional, de la elevi până la factori decizionali.
             </TextPhoto>
           </Col>
         </Row>
@@ -72,30 +62,38 @@ class HomePage extends React.Component {
           <Col span={24}>
             <TextPhoto
               side={sides[1]}
-              title="Obiectiv"
-              caption="Caption"
-              imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e"
+              title="Obiective"
+              caption="Strategie"
+              imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fobjectives.jpg?alt=media&token=b207235b-240c-4c89-ae6e-60b20ea4e81c"
             >
-              Registrul Educațional Alternativ este o platformă prin care
-              liceele sunt evaluate chiar de către elevi, profesori, părinți și
-              absolvenți.
+            Registrul Educațional Alternativ este o platformă care ajută mai multe categorii de persoane, având un număr de obiective strategice:
+            <br />
               <br />
-              <br />
-              Acesta a fost gândit pentru a îi ajuta pe elevii din clasa a
-              VIII-a în alegerea opțiunilor de liceu, dar și pentru a le oferi
-              conducerilor instituțiilor de învățământ un mecanism de
-              autoevaluare, încurajând astfel competitivitatea constructivă.
-              <br />
-              <br />
-              Proiectul a fost inițiat și susținut integral de o echipă de elevi
-              de liceu voluntari și se bucură de colaborări cu un număr de
-              organizații non-guvernamentale, Centrul pentru Inovare Publică și
-              Școala de Valori, și cu un număr de instituții oficiale, Consiliul
-              Municipal al Elevilor București și Ministerul Educației Naționale.
-              <br />
-              <br />
-              Beneficiarii sistemului educațional ar trebui să poată ghida de
-              îndeaproape evaluarea acestuia și să aibă acces la rezultate.
+              <ul>
+                <li>
+                  Ajutăm elevii să aleagă cea mai potrivită instituție unde să își petreacă anii de liceu.
+                </li>
+                <br/>
+                <li>
+                  Ajutăm profesorii să aleagă cel mai potrivit cadru profesional. 
+                </li>
+                <br/>
+                <li>
+                  Ajutăm tutorii să aleagă un liceu sigur pentru copii. 
+                </li>
+                <br/>
+                <li>
+                  Facilităm cercetarea și jurnalismul în educație oferind date de o calitate și cantitate fără precedent.
+                </li>
+                <br/>
+                <li>
+                  Ghidăm luarea măsurilor de către personalul administrativ, oferind recomandări concrete.
+                </li>
+                <br/>
+                <li>
+                  Ghidăm luarea măsurilor de către factorii decizionali, oferind o sursă de date independentă.
+                </li>
+              </ul>              
             </TextPhoto>
           </Col>
         </Row>
@@ -103,39 +101,20 @@ class HomePage extends React.Component {
           <Col span={24}>
             <TextPhoto
               side={sides[0]}
-              title="Metodologie"
-              caption="Caption"
-              imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e"
+              title="Echipă"
+              caption="Colaborare"
+              imgSrc="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fteam.jpg?alt=media&token=e0eee32f-c2cd-4654-bf11-1b2656c9e5df"
             >
-              Pentru a oferi o imagine de ansamblu reprezentativă a sistemului
-              educațional românesc, vom urma o metodologie. Considerăm că cel
-              mai relevant set de informații ce caracterizează sistemul de
-              învățământ sunt opiniile beneficiarilor acestuia. Am considerat 4
-              categorii de beneficiari: ELEVI, ABSOLVENȚI, PĂRINȚI, și
-              PROFESORI. Considerăm că aceste categorii înglobează eficient
-              situația sistemului de învământ. Fiecare persoană care se
-              încadrează într-o astfel de categorie poate oferi informații
-              relevante despre instituțiile cu care a avut contact. De exemplu,
-              în cazul elevilor, acestea se referă la instituțiile unde învață.
+              Registrul Educațional Alternativ este un proiect ce se află sub egida Asociației Alter. Această organizație neguvernamentală este inițiată și susținută în totalitate de o echipă de liceeni și studenți voluntari, cu background-uri și abilitați diverse. 
               <br />
               <br />
-              Pentru fiecare categorie de beneficiari, am întocmit un set de
-              întrebări, sub forma unui formular, care să capteze eficient
-              percepția acestora față de multiple aspecte relevante ale
-              sistemului de învățământ. Printre aceste aspecte se numără:
-              nivelul resurselor, expunerea la oportunități, gradul de
-              diversitate, calitatea relațiilor dintre beneficiari, logistică și
-              organizare, modul de predare etc. Deși percepția asupra acestor
-              aspecte ale sistemului de învățământ sunt măsurători subiective,
-              considerăm ca o cantitate suficient de mare de astfel de
-              informații pot conduce la o evaluare extrem de riguroasă și
-              relevantă a sistemului de învățământ.
+              Deoarece împreună putem realiza lucruri mai bune, am încheiat un număr de parteneriate cu alte entități din societatea civilă și din mediul academic.
               <br />
               <br />
-              Pe baza datelor brute ce provin din răspunsurile la întrebările
-              din formular vom genera o colecție de informații ce pot fi
-              interpretate ușor, atât la nivel agregat, cât și la nivel de
-              instituție.
+              Suntem organizați în 4 departamente distincte, cu obiective specifice: #community, #content, #financial și #technical.
+              <br />
+              <br />
+              Asociația Alter, conform statutului și actului constitutiv, este o organizație neguvernamentală independentă, neafiliată politic și apolitică.
             </TextPhoto>
           </Col>
         </Row>

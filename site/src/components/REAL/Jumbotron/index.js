@@ -17,11 +17,15 @@ const Jumbotron = () => {
             Cea mai mare colecție de date despre liceele din România
           </p>
           <p>
-            <Button className="gx-mb-1 gx-btn-warning" htmlType="submit">
-              Completează formularul
+            <Button className="gx-mb-1 gx-btn-warning" htmlType="submit" >
+              <a href="/formular">
+                Completează formularul
+              </a>
             </Button>
             <Button className="gx-mb-1" htmlType="submit">
-              Află mai multe
+              <a href="/about">
+                Află mai multe
+              </a>
             </Button>
           </p>
         </Col>
