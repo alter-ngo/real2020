@@ -6,6 +6,8 @@ import IconSlider from "components/REAL/FormComponents/IconSlider";
 import React from "react";
 import IntlMessages from "util/IntlMessages";
 import StudentsGeneral from 'components/REAL/FormComponents/StudentsGeneral';
+import TeachersGeneral from 'components/REAL/FormComponents/TeachersGeneral';
+
 const { Option } = Select;
 class GeneralForm extends React.Component {
   state = {
@@ -37,19 +39,24 @@ class GeneralForm extends React.Component {
       case "Tutore":
         return(
           <div className="gx-d-flex justify-content-center">
-          <Widget>
-
-            <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
-          </Widget>
+            <Col span={24}>
+            <Widget>
+              <br/>
+              <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
+            </Widget>
+            </Col>
           </div>
         )
       case "Profesor":
         return(
           <div className="gx-d-flex justify-content-center">
-          <Widget>
-  
-            <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
-          </Widget>
+            <Col span={24}>
+            <Widget>
+              <TeachersGeneral/>
+              <br/>
+              <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
+            </Widget>
+            </Col>
           </div>
         )
     }

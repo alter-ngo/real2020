@@ -59,7 +59,7 @@ class GeneralForm extends React.Component {
       <Form layout={"vertical"}>
 
         <Form.Item label={" Ce vârstă ai?"}>
-          <InputNumber min={9} max={90} />
+          <InputNumber min={12} max={25} />
         </Form.Item>
 
 
