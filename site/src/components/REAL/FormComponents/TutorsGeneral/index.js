@@ -1,4 +1,4 @@
-import { InputNumber, Form, Radio, Slider, Col, Select, Button } from "antd";
+import { InputNumber, Form, Radio, Slider, Col, Select, Button, Alert } from "antd";
 import Widget from "components/Widget";
 import React from "react";
 
@@ -35,9 +35,14 @@ class GeneralForm extends React.Component {
       )
     }
     return (
-
       <Form layout={"vertical"}>
-
+      <Alert
+        message="Notă privind completarea multiplă"
+        description="În cazul în care aveți copii care învață la licee diferite, vă rugăm să completați formularul o dată pentru fiecare liceu."
+        type="info"
+        showIcon
+      />
+        <br/>
         <Form.Item label={" Ce vârstă aveți?"}>
           <InputNumber min={9} max={90} />
         </Form.Item>
