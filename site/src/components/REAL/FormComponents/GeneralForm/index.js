@@ -7,6 +7,7 @@ import React from "react";
 import IntlMessages from "util/IntlMessages";
 import StudentsGeneral from 'components/REAL/FormComponents/StudentsGeneral';
 import TeachersGeneral from 'components/REAL/FormComponents/TeachersGeneral';
+import TutorsGeneral from 'components/REAL/FormComponents/TutorsGeneral';
 
 const { Option } = Select;
 class GeneralForm extends React.Component {
@@ -41,6 +42,7 @@ class GeneralForm extends React.Component {
           <div className="gx-d-flex justify-content-center">
             <Col span={24}>
             <Widget>
+              <TutorsGeneral/>
               <br/>
               <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
             </Widget>
