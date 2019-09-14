@@ -104,7 +104,7 @@ class GeneralForm extends React.Component {
                 {licee}
               </Select>
             </Form.Item>
-            <Form.Item label={" Ce clasa esti?"}>
+            <Form.Item label={" Ce clasă ești?"}>
               <Radio.Group defaultValue="IX" buttonStyle="solid">
                   <Radio.Button value="IX">a IX-a</Radio.Button>
                   <Radio.Button value="X">a X-a</Radio.Button>
