@@ -12,15 +12,14 @@ import FeedbackForm from 'components/REAL/FormComponents/FeedbackForm';
 class Formular extends React.Component {
   constructor(props) {
     super(props);
-
-  this.state = {
-    status:"",
-    radioValue: 1,
-    visible: true,
-    sliderValue: 0,
-    step: 1,
-    current: -1,
-  };
+    this.state = {
+      status:"",
+      radioValue: 1,
+      visible: true,
+      sliderValue: 0,
+      step: 1,
+      current: -1,
+    };
   this.setStatus=this.setStatus.bind(this);
   }
 
@@ -29,13 +28,13 @@ class Formular extends React.Component {
       status: param,
     });
   }
-
   nextStep=()=>{
     const{step, current}=this.state;
     this.setState({
       step: step + 1,
       current: current + 1
     });
+    window.scrollTo(0, 0);
   }
   prevStep=()=>{
     const{step, current}=this.state;
@@ -43,6 +42,7 @@ class Formular extends React.Component {
       step: step - 1,
       current: current - 1
     });
+    window.scrollTo(0, 0);
   }
 
   render(){
@@ -51,7 +51,7 @@ class Formular extends React.Component {
        switch(step){
           case 1:
            return (
-             <ModalSelector
+             <ModalSelector 
               nextStep={this.nextStep}
               setStatus={this.setStatus}
               />
