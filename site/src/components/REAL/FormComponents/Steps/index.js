@@ -5,7 +5,7 @@ import React from "react";
 
 const steps = [
   {
-    title: 'Informatii Generale',
+    title: 'General',
     content: 'First-content',
   },
   {
