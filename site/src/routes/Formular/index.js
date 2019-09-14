@@ -62,6 +62,7 @@ class Formular extends React.Component {
                 <StepsComp current={this.state.current}/>
                 <br/>
                 <GeneralForm
+                  status={this.state.status}
                   nextStep={this.nextStep}/>
               </div>
             )

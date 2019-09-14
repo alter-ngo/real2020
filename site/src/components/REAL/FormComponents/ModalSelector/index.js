@@ -1,7 +1,8 @@
-import {Input,Form,Radio,Slider,Col,Select,Row,Modal,Icon, Avatar,Card } from "antd";
+import {Button,Col,Row,Modal,Card } from "antd";
 import Widget from "components/Widget";
 import React from "react";
 import FormIntro from 'components/REAL/FormIntro';
+
 
 const{Meta}=Card;
 class ModalSelector extends React.Component {
@@ -62,69 +63,17 @@ class ModalSelector extends React.Component {
       title="Selecteaza statutul tau:"
       visible={this.state.visible}
       footer={null}
+      closable={false}
     >
   <div className="gx-d-flex justify-content-center" >
     <Col span={24}>    
     <Row>
       <FormIntro/>
     </Row>
-    <Row>
-      <Col  xl={8}
-            md={8}
-            sm={12}
-            xs={24} onClick={this.handleSelection.bind(this,"Elev")}>
-          <Widget styleName="gx-widget-bg"> 
-            <p
-              style={{
-                color: this.state.colors[0].value,
-                fontSize: "1.25em",
-                textAlign: "center",
-                margin: 0
-              }}
-            >
-              Elev
-            </p>
-            
-          </Widget>
-      </Col>
-      
-      <Col xl={8}
-            md={8}
-            sm={12}
-            xs={24} onClick={this.handleSelection.bind(this,"Tutore")}>
-      <Widget styleName="gx-widget-bg"
-          >
-            <p
-              style={{
-                color: this.state.colors[1].value,
-                fontSize: "1.25em",
-                textAlign: "center",
-                margin: 0
-              }}
-            >
-              Tutore
-            </p>
-          </Widget>      
-      </Col>
-      <Col xl={8}
-            md={8}
-            sm={12}
-            xs={24} onClick={this.handleSelection.bind(this,"Profesor")}>
-      <Widget styleName="gx-widget-bg"
-          >
-            <p
-              style={{
-                color: this.state.colors[2].value,
-                fontSize: "1.25em",
-                textAlign: "center",
-                margin: 0
-              }}
-            >
-              Profesor
-            </p>
-          </Widget>
-      </Col>
-    </Row>
+
+      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Elev")}>Elev</Button>
+      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Tutore")}>Tutore</Button>
+      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Profesor")}>Profesor</Button>
 
     </Col>
   </div>
@@ -137,17 +86,19 @@ class ModalSelector extends React.Component {
       title="Selecteaza statutul tau:"
       visible={this.state.visible}
       footer={null}
+      closable={false}
     >
   <div className="gx-d-flex justify-content-center" >
     <Col span={24}>    
     <Row>
       <FormIntro/>
     </Row>
-    <Row>
+    <Row gutter={16}>
       <Col  xl={8}
             md={8}
             sm={12}
             xs={24} onClick={this.handleSelection.bind(this,"Elev")}>
+
           <Widget styleName="gx-widget-bg"
           cover={
             <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e" />
