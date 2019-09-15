@@ -18,7 +18,7 @@ class BlogPost extends React.Component {
   }
 
   readManifestFile = () => {
-    fetch("../manifest.json")
+    fetch("../blogs.json")
       .then(r => r.json())
       .then(json => {
         json = json["blogs"];
