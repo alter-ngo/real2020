@@ -15,7 +15,7 @@ class BlogOverview extends React.Component {
   }
 
   readManifestFile = callback => {
-    fetch("../blogs.json")
+    fetch("../manifest.json")
       .then(r => r.json())
       .then(json => {
         if (typeof json['blogs'] == 'undefined') this.setState({ blogs: []},callback);
