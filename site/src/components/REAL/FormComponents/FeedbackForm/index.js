@@ -1,4 +1,4 @@
-import {Form,Radio,Slider,Col,Select,Button,Rate } from "antd";
+import {Form,Radio,Input,Col,Select,Button } from "antd";
 import Widget from "components/Widget";
 import { verify } from "crypto";
 import { relative } from "path";
@@ -6,77 +6,101 @@ import React from "react";
 
 
 const { Option } = Select;
+const { TextArea } = Input;
 class GeneralForm extends React.Component {
   state = {
-    radioValue: 1,
-    rateValue: 3,
+    radioValue: 0,
+    motivationValue: "",
+    questionValue:"",
+    recommendationValue: "",
+    altele: true,
   };
 
   onChange = e => {
-    this.setState({
-      radioValue: e.target.value,
-    });
+    if(e.target.value==7){
+      this.setState({
+        radioValue: e.target.value,
+        altele: false,
+      });
+    }else{
+      this.setState({
+        radioValue: e.target.value,
+        altele: true,
+      });
+    }
   };
 
-  handleChange = value => {
-    this.setState({ 
-      rateValue:value 
+  onChangeMotivation = e => {
+    this.setState({
+      motivationValue: e.target.value,
+    });
+  };
+  onChangeQuestion = e => {
+    this.setState({
+      questionValue: e.target.value,
+    });
+  };
+  onChangeRecommendation = e => {
+    this.setState({
+      recommendationValue: e.target.value,
     });
   };
   render() {
-    const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
     const radioStyle = {
       display: 'block',
       height: '30px',
       lineHeight: '30px',
     };
-    const marks = {
-      0: 'Deloc',
-      1: 'Foarte Putin',
-      2: 'Putin',
-      3: 'Moderat',
-      4: 'Mult',
-      5: 'Foarte mult',
-      6: 'Absolut',
-      7: 'Sunt deja tocilar',
-    };
-    const { rateValue } = this.state;
+
     return (
       <div>
         <div className="gx-d-flex justify-content-center">
-            <Col span={24}>
+          <Col span={24}>
             <Widget>
             <Form layout={"vertical"}>
-           
-              <Form.Item label={"2. Cât de dispus/ă ai fi să recomanzi unui elev de a 8-a să studieze la liceul tău?"}>
+              <Form.Item label={" Ce te-a motivat să ajungi la sfârșitul formularului?"}>
+              <TextArea  value={this.state.motivationValue} onChange={this.onChangeMotivation} autosize={{ minRows: 3, maxRows: 5 }}/>
+              </Form.Item>
+              <Form.Item label={" Ce întrebare ai adăuga în formular?"}>
+              <TextArea  value={this.state.questionValue} onChange={this.onChangeQuestion} autosize={{ minRows: 1, maxRows: 3 }}/>
+              </Form.Item>
+
+              <Form.Item label={" Cum ai aflat de formular?"}>
                 <Radio.Group onChange={this.onChange} value={this.state.radioValue}>
                   <Radio style={radioStyle} value={1}>
-                    Foarte
+                    Facebook
                   </Radio>
                   <Radio style={radioStyle} value={2}>
-                    Moderat
+                    Instagram
                   </Radio>
                   <Radio style={radioStyle} value={3}>
-                    Putin probabil
+                    Youtube
                   </Radio>
                   <Radio style={radioStyle} value={4}>
-                    Deloc
+                    Prieteni
+                  </Radio>
+                  <Radio style={radioStyle} value={5}>
+                    Profesori
+                  </Radio>
+                  <Radio style={radioStyle} value={6}>
+                    Parinti
+                  </Radio>
+                  <Radio style={radioStyle} value={7}>
+                    Altele:{" "}
+                    
                   </Radio>
                 </Radio.Group>
+                <Input disabled={this.state.altele}/>
               </Form.Item>
-              <Form.Item label={"4. Pe o scara de la 1 la 10 cat de mult iti place liceul tau? [Style 1]"}>
-                <Slider min={0} max={7} marks={marks} />
+              <Form.Item label={" Ai recomandări pentru echipa #estereal?"}>
+              <TextArea  value={this.state.recommendationValue} onChange={this.onChangeRecommendation} autosize={{ minRows: 2, maxRows: 5 }}/>
               </Form.Item>
-              <br/>
-              <Form.Item label={"5. Pe o scara de la 1 la 10 cat de mult iti place liceul tau? [Style 2]"}>
-                  <Rate tooltips={desc} onChange={this.handleChange} value={rateValue} />
-                  {rateValue ? <span className="ant-rate-text">{desc[rateValue - 1]}</span> : ''}
-              </Form.Item>
-          </Form>
-          <Button style={{marginLeft:8}} type="default" onClick={()=>this.props.prevStep()}>Back</Button>
-          <Button style={{marginLeft:10}} type="primary">Submit</Button> 
-          </Widget>
-          </Col>
+            </Form>
+
+              <Button style={{marginLeft:8}} type="default" onClick={()=>this.props.prevStep()}>Back</Button>
+              <Button style={{marginLeft:10}} type="primary">Submit</Button> 
+            </Widget>
+            </Col>
         </div>
       </div>
     );
