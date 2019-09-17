@@ -89,7 +89,7 @@ class BlogOverview extends React.Component {
                       </i>
                     </span>
                     <p style={{ fontSize: "1.15em", color: "black" }}>
-                      {blog.excerpt.replace(/(([^\s]+\s\s*){30})(.*)/, "$1…")}
+                      {blog.excerpt.substring(0,150)+" ..."}
                     </p>
                   </Widget>
                 </Link>
