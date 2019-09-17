@@ -18,7 +18,7 @@ const Jumbotron = () => {
           </p>
           <p>
             <Button className="gx-mb-1 gx-btn-warning" htmlType="submit" >
-              <a href="/formular">
+              <a href="/form">
                 Completează formularul
               </a>
             </Button>

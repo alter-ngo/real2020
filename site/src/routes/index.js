@@ -22,12 +22,12 @@ const App = ({match}) => (
   <div className="gx-main-content-wrapper">
    <Switch>
       <Route exact path={`${match.url}home`} component={Home}/>
-      <Route exact path={`${match.url}catalog`} component={Catalog}/>
-      <Route exact path={`${match.url}bord`} component={Bord}/>   
+      <Route exact path={`${match.url}catalogue`} component={Catalog}/>
+      <Route exact path={`${match.url}panel`} component={Bord}/>   
       <Route exact path={`${match.url}about`} component={About}/> 
       <Route exact path={`${match.url}blog`} component={Blog}/>  
       <Route exact path={`${match.url}blog/:slug`} component={BlogPost}/>  
-      <Route exact path={`${match.url}formular`} component={Formular}/> 
+      <Route exact path={`${match.url}form`} component={Formular}/> 
       <Route component={NoMatchPage} />
   </Switch>
   </div>
