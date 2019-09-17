@@ -81,7 +81,7 @@ class BlogOverview extends React.Component {
                 xs={sizes[3]}
               >
                 <Link to={`/blog/${blog.slug}`}>
-                  <Widget cover={<img src={blog.image} />}>
+                  <Widget cover={<img src={blog.image} height="600"/>}>
                     <h1 style={{ margin: 0 }}>{blog.title}</h1>
                     <span>
                       <i>

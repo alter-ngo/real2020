@@ -53,7 +53,7 @@ class BlogPost extends React.Component {
             <p>
               {this.state.category} - {this.state.date}
             </p>
-            <div className="content" style={{ color: "black" }}>
+            <div className="content" style={{ color: "black", fontSize: "1.2em" }}>
               <ReactMarkdown
                 source={this.state.content}
                 escapeHtml={false}
