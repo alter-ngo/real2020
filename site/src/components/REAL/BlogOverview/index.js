@@ -81,8 +81,8 @@ class BlogOverview extends React.Component {
                 xs={sizes[3]}
               >
                 <Link to={`/blog/${blog.slug}`}>
-                  <Widget cover={<img src={blog.image} height="600"/>}>
-                    <h1 style={{ margin: 0 }}>{blog.title}</h1>
+                  <Widget cover={<img src={blog.image}/>}>
+                    <h1 style={{ margin: 0 }}>{blog.title.replace(/(([^\s]+\s\s*){7})(.*)/, "$1…")}</h1>
                     <span>
                       <i>
                         {blog.category} - {blog.date}
