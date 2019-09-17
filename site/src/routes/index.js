@@ -9,6 +9,15 @@ import Blog from "./Blog/index";
 import Formular from "./Formular/index";
 import BlogPost from "../components/REAL/BlogPost";
 
+const NoMatchPage = () => {
+  return (
+    <React.Fragment>
+     <div style={{ fontSize: "15em", textAlign: "center", color: "black" }} >404</div>
+     <p style={{ fontSize: "2em", textAlign: "center", color: "gray" }} >Construim cea mai mare colecție de date despre învățământ, dar din păcate nu am găsit ce căutai.</p>
+    </React.Fragment>
+  );
+};
+
 const App = ({match}) => (
   <div className="gx-main-content-wrapper">
    <Switch>
@@ -19,6 +28,7 @@ const App = ({match}) => (
       <Route exact path={`${match.url}blog`} component={Blog}/>  
       <Route exact path={`${match.url}blog/:slug`} component={BlogPost}/>  
       <Route exact path={`${match.url}formular`} component={Formular}/> 
+      <Route component={NoMatchPage} />
   </Switch>
   </div>
 );
