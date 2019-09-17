@@ -36,13 +36,9 @@ function processCommand(receivedMessage) {
 }
 
 function real(receivedMessage, args) {
-  if (args[0] == "motivatie") {
+  if (args[0] == "despre") {
     receivedMessage.channel.send(
-      "Considerăm ca ultima medie și promovabilitatea sunt măsurători necesare, dar nu suficiente, deoarece nu înglobează complet calitatea unei instituții de învățământ. În plus, cei doi indicatori tradiționali variază implicit în funcție de dificultatea examenului, deci nu pot oferii un suport stabil de măsurare a progresului. De asemenea, ultima medie se bazează pe elevii din anul precedent, care au fost ghidați la rândul lor de elevii din anul precedent lor, impregnând o inerție ce nu facilitează dezvoltarea meritocratică a instituțiilor de învățământ."
-    );
-  } else if (args[0] == "despre") {
-    receivedMessage.channel.send(
-      "Registrul Educațional Alternativ este o platformă prin care liceele sunt evaluate chiar de către elevi, profesori, părinți și absolvenți. Acesta a fost gândit pentru a îi ajuta pe elevii din clasa a VIII-a în alegerea opțiunilor de liceu, dar și pentru a le oferi conducerilor instituțiilor de învățământ un mecanism de autoevaluare, încurajând astfel competitivitatea constructivă."
+      "Registrul Educațional Alternativ va livra cea mai mare colecție de date despre sistemul de învățământ românesc, combinând informații oficiale de la instituții de stat cu opiniile elevilor, profesorilor și tutorilor. \n\nColectăm sute de variabile pentru fiecare instituție de învățământ, de la notele de la clasă și până la calificările profesorilor. \n\nVom folosi aceste date bogate pentru a ajuta elevi, părinți, tutori, cercetători, conduceri și factori decizionali prin diverse căi. \n\nProiectul este inițiat și menținut în totalitate de o echipă de liceeni și studenți voluntari, având susținere din partea unor organizații din societatea civilă și mediul academic."
     );
   } else if (args[0] == "e" && args[1]== "2019") {
     receivedMessage.channel.send(
