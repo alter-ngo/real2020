@@ -6,7 +6,9 @@ const BordPage = () => {
   return (
     <div>
       <h2 className="title gx-mb-4"><IntlMessages id="Panou"/></h2> 
-        
+      <div className="gx-d-flex justify-content-center">
+        <h4>Această pagină nu este încă disponibilă.</h4>
+      </div>
     </div>
   );
 };
