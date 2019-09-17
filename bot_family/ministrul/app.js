@@ -36,13 +36,9 @@ function processCommand(receivedMessage) {
 }
 
 function real(receivedMessage, args) {
-  if (args[0] == "motivatie") {
+  if (args[0] == "despre") {
     receivedMessage.channel.send(
-      "Considerăm ca ultima medie și promovabilitatea sunt măsurători necesare, dar nu suficiente, deoarece nu înglobează complet calitatea unei instituții de învățământ. În plus, cei doi indicatori tradiționali variază implicit în funcție de dificultatea examenului, deci nu pot oferii un suport stabil de măsurare a progresului. De asemenea, ultima medie se bazează pe elevii din anul precedent, care au fost ghidați la rândul lor de elevii din anul precedent lor, impregnând o inerție ce nu facilitează dezvoltarea meritocratică a instituțiilor de învățământ."
-    );
-  } else if (args[0] == "despre") {
-    receivedMessage.channel.send(
-      "Registrul Educațional Alternativ este o platformă prin care liceele sunt evaluate chiar de către elevi, profesori, părinți și absolvenți. Acesta a fost gândit pentru a îi ajuta pe elevii din clasa a VIII-a în alegerea opțiunilor de liceu, dar și pentru a le oferi conducerilor instituțiilor de învățământ un mecanism de autoevaluare, încurajând astfel competitivitatea constructivă."
+      "Registrul Educațional Alternativ va livra cea mai mare colecție de date despre sistemul de învățământ românesc, combinând informații oficiale de la instituții de stat cu opiniile elevilor, profesorilor și tutorilor. \n\nColectăm sute de variabile pentru fiecare instituție de învățământ, de la notele de la clasă și până la calificările profesorilor. \n\nVom folosi aceste date bogate pentru a ajuta elevi, părinți, tutori, cercetători, conduceri și factori decizionali prin diverse căi. \n\nProiectul este inițiat și menținut în totalitate de o echipă de liceeni și studenți voluntari, având susținere din partea unor organizații din societatea civilă și mediul academic."
     );
   } else if (args[0] == "e" && args[1]== "2019") {
     receivedMessage.channel.send(
@@ -51,6 +47,10 @@ function real(receivedMessage, args) {
   } else if (args[0] == "cc" && args[1] == "lista") {
     receivedMessage.channel.send(
       "1. **Transparență**\n2. **Dialog**\n3. **Take it outside**\n4. **Every opinion counts**\n5. **Echilibru**\n6. **Obiectiv**\n7. **Respect**"
+    );
+  } else if (args[0] == "cc" && args[1] == "listamare") {
+    receivedMessage.channel.send(
+      "Conform codului de conduită:\n\n1. **Transparență** Discuțiile legate de proiect trebuie purtate pe cât posibil pe canale publice, pentru a le permite tuturor colegilor să fie la curent cu ultimele noutăți.\n\n2. **Dialog** Discuțiile legate de proiect trebuie să fie amiabile și civilizate, pentru a ne permite să ne concentrăm pe ce este cu adevărat important. Critica este foarte utilă, dar doar în formă constructivă.\n\n3. **Take it outside** În cazul în care critica devine neconstructivă dintr-un motiv sau altul, persoanele implicate trebuie să se retragă într-un spațiu privat pentru a continua discuția, pentru a nu cultiva o atmosferă toxică.\n\n4. **Every opinion counts** Proiectul nostru se bazează pe tratarea opiniilor ca egale. Trebuie aplicat principiul ăsta și intern. Sunt încurajate discuțiile deschise și poll-urile, pentru a include cât mai multe perspective.\n\n5. **Echilibru** Chiar dacă lucram la un proiect foarte mișto, trebuie să avem grijă și de noi și să păstrăm un echilibru de timp și energie între viața personală și proiect. Astă ajută pe termen lung și proiectul, prin evitarea burnout-ului.\n\n6. **Obiectiv** Trebuie să nu ne lăsăm copleșiți de satisfacții personale derivate din implicarea în proiect și să prioritizăm calitatea proiectului.\n\n7. **Respect** Munca fiecăruia trebuie respectată și apreciată, însă calitatea rămâne prioritară pentru produsul final, în acord cu punctul 6."
     );
   } else if (args[0] == "cc" && args[1] == "art1") {
     receivedMessage.channel.send(
