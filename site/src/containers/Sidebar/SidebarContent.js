@@ -51,31 +51,37 @@ class SidebarContent extends Component {
               mode="inline">
           <Menu.Item key="home">
             <Link to="/home">
+            <i className="icon icon-home " />
               <IntlMessages id="Acasă"/>
             </Link>
           </Menu.Item> 
           <Menu.Item key="formular">
             <Link to="/form">
+            <i className="icon icon-feedback " />
               <IntlMessages id="Formular"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="bord">
             <Link to="/panel">
+            <i className="icon icon-ckeditor " />
               <IntlMessages id="Panou"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="catalog">
             <Link to="/catalogue">
+            <i className="icon icon-product-list " />
               <IntlMessages id="Catalog"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="about">
             <Link to="/about">
+            <i className="icon icon-card " />
               <IntlMessages id="Despre"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="blog">
             <Link to="/blog"> 
+            <i className="icon icon-folder " />
               <IntlMessages id="Blog"/>
             </Link>
           </Menu.Item>
