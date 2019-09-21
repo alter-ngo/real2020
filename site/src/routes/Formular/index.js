@@ -19,6 +19,21 @@ class Formular extends React.Component {
       sliderValue: 0,
       step: 1,
       current: -1,
+      FeedbackVariables:[{id:"motivation",value:""},
+                        {id:"question",value:""},
+                        {id:"radio",value:"",select:1,altele: true},
+                        {id:"recommendation",value:""},],
+
+      generalVariables:[{id:"varsta",value:9},
+                        {id:"gen",value:""},
+                        {id:"judet",value:""},
+                        {id:"localitate",value:""},
+                        {id:"liceu",value:""},
+                        {id:"clasa",value:""},
+                        {id:"litera",value:""},
+                        {id:"filiera",value:""},
+                        {id:"profil",value:""},
+                        {id:"specializare",value:""},],
     };
   this.setStatus=this.setStatus.bind(this);
   }
@@ -62,6 +77,7 @@ class Formular extends React.Component {
                 <StepsComp current={this.state.current}/>
                 <br/>
                 <GeneralForm
+                  generalVariables={this.state.generalVariables}
                   status={this.state.status}
                   nextStep={this.nextStep}/>
               </div>
@@ -82,6 +98,7 @@ class Formular extends React.Component {
                 <StepsComp current={this.state.current}/>
                 <br/>
                 <FeedbackForm
+                FeedbackVariables={this.state.FeedbackVariables}
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}/>
               </div>

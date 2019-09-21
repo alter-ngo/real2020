@@ -12,14 +12,6 @@ import TutorsGeneral from 'components/REAL/FormComponents/TutorsGeneral';
 const { Option } = Select;
 class GeneralForm extends React.Component {
   state = {
-    sliderValue: 0,
-    radioValue: 1,
-  };
-
-  onChange = e => {
-    this.setState({
-      radioValue: e.target.value,
-    });
   };
 
   render() {
@@ -29,11 +21,10 @@ class GeneralForm extends React.Component {
         return(
           <div className="gx-d-flex justify-content-center">
             <Col span={24}>
-            <Widget>
-              <StudentsGeneral/>
-              <br/>
-              <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
-            </Widget>
+              <StudentsGeneral
+              nextStep={this.props.nextStep}
+              generalVariables={this.props.generalVariables}
+              />
             </Col>
           </div>
         )
@@ -41,11 +32,9 @@ class GeneralForm extends React.Component {
         return(
           <div className="gx-d-flex justify-content-center">
             <Col span={24}>
-            <Widget>
-              <TutorsGeneral/>
-              <br/>
-              <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
-            </Widget>
+              <TutorsGeneral
+              nextStep={this.props.nextStep}
+              generalVariables={this.props.generalVariables}/>
             </Col>
           </div>
         )
@@ -53,11 +42,9 @@ class GeneralForm extends React.Component {
         return(
           <div className="gx-d-flex justify-content-center">
             <Col span={24}>
-            <Widget>
-              <TeachersGeneral/>
-              <br/>
-              <Button type="primary" style={{marginLeft:8}} onClick={()=>this.props.nextStep()}>Next</Button>
-            </Widget>
+              <TeachersGeneral
+              nextStep={this.props.nextStep}
+              generalVariables={this.props.generalVariables}/>
             </Col>
           </div>
         )

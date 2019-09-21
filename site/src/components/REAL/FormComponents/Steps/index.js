@@ -25,8 +25,6 @@ class StepsComp extends React.Component {
 
     };
   }
-
-
   render() {
     
     return (

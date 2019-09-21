@@ -9,49 +9,75 @@ const { Option } = Select;
 const { TextArea } = Input;
 class GeneralForm extends React.Component {
   state = {
-    radioValue: 0,
-    motivationValue: "",
-    questionValue:"",
-    recommendationValue: "",
+    radioValue: 1,
     altele: true,
+    motivationText: "",
+    recommendationText: "",
+    questionText: "",
+    alternativeText: "",
+    radioOptions: [{id:"Facebook"},
+                   {id:"Instagram"},
+                   {id:"Youtube"},
+                   {id:"Prieteni"},
+                   {id:"Profesori"},
+                   {id:"Parinti"},
+                   {id:"Altele "}],
   };
+  saveCurrentState(){
+    const {FeedbackVariables}= this.props;
+    const {radioValue, altele, alternativeText, questionText, motivationText, recommendationText}= this.state;
+      FeedbackVariables[2].select=radioValue;
+      FeedbackVariables[2].altele=altele;      
+      FeedbackVariables[2].value=alternativeText;
+      FeedbackVariables[1].value=questionText;
+      FeedbackVariables[0].value=motivationText;
+      FeedbackVariables[3].value=recommendationText;
 
+      this.props.prevStep();
+  }
+  componentWillMount(){
+    const {FeedbackVariables}= this.props;
+    this.setState({      
+      altele: FeedbackVariables[2].altele,
+      radioValue: FeedbackVariables[2].select,
+      motivationText: FeedbackVariables[0].value,
+      recommendationText: FeedbackVariables[3].value,
+      questionText: FeedbackVariables[1].value,
+      alternativeText: FeedbackVariables[2].value,
+    });
+  }
+  handleChange = input => e =>{
+    this.setState({ [input]: e.target.value});
+  };
   onChange = e => {
     if(e.target.value==7){
       this.setState({
-        radioValue: e.target.value,
         altele: false,
+        radioValue: e.target.value
       });
     }else{
       this.setState({
-        radioValue: e.target.value,
         altele: true,
+        radioValue: e.target.value
       });
     }
   };
 
-  onChangeMotivation = e => {
-    this.setState({
-      motivationValue: e.target.value,
-    });
-  };
-  onChangeQuestion = e => {
-    this.setState({
-      questionValue: e.target.value,
-    });
-  };
-  onChangeRecommendation = e => {
-    this.setState({
-      recommendationValue: e.target.value,
-    });
-  };
-  render() {
+  render() { 
+    let radioOpts=[];
+    const {radioOptions, motivationText, questionText, radioValue, altele, recommendationText}=this.state;   
     const radioStyle = {
       display: 'block',
       height: '30px',
       lineHeight: '30px',
     };
-
+    for(let i =1; i<=7;i++){
+      radioOpts.push(
+        <Radio style={radioStyle} value={i}>
+        {radioOptions[i-1].id}
+      </Radio>
+      )
+    }
     return (
       <div>
         <div className="gx-d-flex justify-content-center">
@@ -59,45 +85,24 @@ class GeneralForm extends React.Component {
             <Widget>
             <Form layout={"vertical"}>
               <Form.Item label={" Ce te-a motivat să ajungi la sfârșitul formularului?"}>
-              <TextArea  value={this.state.motivationValue} onChange={this.onChangeMotivation} autosize={{ minRows: 3, maxRows: 5 }}/>
+              <TextArea  value={motivationText} onChange={this.handleChange('motivationText')} autosize={{ minRows: 3, maxRows: 5 }}/>
               </Form.Item>
               <Form.Item label={" Ce întrebare ai adăuga în formular?"}>
-              <TextArea  value={this.state.questionValue} onChange={this.onChangeQuestion} autosize={{ minRows: 1, maxRows: 3 }}/>
+              <TextArea  value={questionText} onChange={this.handleChange('questionText')} autosize={{ minRows: 1, maxRows: 3 }}/>
               </Form.Item>
 
               <Form.Item label={" Cum ai aflat de formular?"}>
-                <Radio.Group onChange={this.onChange} value={this.state.radioValue}>
-                  <Radio style={radioStyle} value={1}>
-                    Facebook
-                  </Radio>
-                  <Radio style={radioStyle} value={2}>
-                    Instagram
-                  </Radio>
-                  <Radio style={radioStyle} value={3}>
-                    Youtube
-                  </Radio>
-                  <Radio style={radioStyle} value={4}>
-                    Prieteni
-                  </Radio>
-                  <Radio style={radioStyle} value={5}>
-                    Profesori
-                  </Radio>
-                  <Radio style={radioStyle} value={6}>
-                    Parinti
-                  </Radio>
-                  <Radio style={radioStyle} value={7}>
-                    Altele:{" "}
-                    
-                  </Radio>
+                <Radio.Group onChange={this.onChange} value={radioValue}>
+                  {radioOpts}
                 </Radio.Group>
-                <Input disabled={this.state.altele}/>
+                <Input disabled={altele} value={this.state.alternativeText || undefined} onChange={this.handleChange('alternativeText')}/>
               </Form.Item>
+              
               <Form.Item label={" Ai recomandări pentru echipa #estereal?"}>
-              <TextArea  value={this.state.recommendationValue} onChange={this.onChangeRecommendation} autosize={{ minRows: 2, maxRows: 5 }}/>
+              <TextArea  value={recommendationText} onChange={this.handleChange('recommendationText')} autosize={{ minRows: 2, maxRows: 5 }}/>
               </Form.Item>
             </Form>
-
-              <Button style={{marginLeft:8}} type="default" onClick={()=>this.props.prevStep()}>Back</Button>
+              <Button style={{marginLeft:8}} type="default" onClick={()=>this.saveCurrentState()}>Back</Button>
               <Button style={{marginLeft:10}} type="primary">Submit</Button> 
             </Widget>
             </Col>
