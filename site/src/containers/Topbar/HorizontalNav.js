@@ -47,17 +47,17 @@ class HorizontalNav extends Component {
             </Link>
           </Menu.Item> 
           <Menu.Item key="formular">
-            <Link to="/formular">
+            <Link to="/form">
               <IntlMessages id="Formular"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="bord">
-            <Link to="/bord">
+            <Link to="/panel">
               <IntlMessages id="Panou"/>
             </Link>
           </Menu.Item>
           <Menu.Item key="catalog">
-            <Link to="/catalog">
+            <Link to="/catalogue">
               <IntlMessages id="Catalog"/>
             </Link>
           </Menu.Item>

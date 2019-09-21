@@ -81,15 +81,15 @@ class BlogOverview extends React.Component {
                 xs={sizes[3]}
               >
                 <Link to={`/blog/${blog.slug}`}>
-                  <Widget cover={<img src={blog.image} />}>
-                    <h1 style={{ margin: 0 }}>{blog.title}</h1>
+                  <Widget cover={<img src={blog.image}/>}>
+                    <h1 style={{ margin: 0 }}>{blog.title.replace(/(([^\s]+\s\s*){7})(.*)/, "$1…")}</h1>
                     <span>
                       <i>
                         {blog.category} - {blog.date}
                       </i>
                     </span>
                     <p style={{ fontSize: "1.15em", color: "black" }}>
-                      {blog.excerpt.replace(/(([^\s]+\s\s*){30})(.*)/, "$1…")}
+                      {blog.excerpt.substring(0,150)+" ..."}
                     </p>
                   </Widget>
                 </Link>
