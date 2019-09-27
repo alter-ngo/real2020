@@ -22,6 +22,7 @@ Its main objectives are:
 | [bot_family](https://github.com/paubric/real/tree/master/bot_family)         | The place where you can meet the bot family which lives on our Discord server. They can help you with everything from event briefing to cheering you up. **Javascript, Zapier**                                                  |
 | [external_data](https://github.com/paubric/real/tree/master/external_data) | Here you can find crawlers, scrapers, and other sorts of scripts which extract public data from various platforms. Additionally, these are accompanied by other data wrangling scripts. **Python, UiPath** |
 | [site](https://github.com/paubric/real/tree/master/site) | The home of our web platform. It consists of the core element of the project, through which subjective data is collected and all data is presented. **Javascript, Firebase** |
+| [data_analysis](https://github.com/paubric/real/tree/master/data_analysis) | The place where you can find some documented explorations of the REAL dataset designed to extract various insights. **Python** |
 
 # Contributing
 ### General
