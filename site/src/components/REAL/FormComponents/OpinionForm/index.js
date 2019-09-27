@@ -40,32 +40,7 @@ class GeneralForm extends React.Component {
         <div className="gx-d-flex justify-content-center">
             <Col span={24}>
             <Widget>
-            <Form layout={"vertical"}>
-           
-              <Form.Item label={"2. Cât de dispus/ă ai fi să recomanzi unui elev de a 8-a să studieze la liceul tău?"}>
-                <Radio.Group onChange={this.onChange} value={this.state.radioValue}>
-                  <Radio style={radioStyle} value={1}>
-                    Foarte
-                  </Radio>
-                  <Radio style={radioStyle} value={2}>
-                    Moderat
-                  </Radio>
-                  <Radio style={radioStyle} value={3}>
-                    Putin probabil
-                  </Radio>
-                  <Radio style={radioStyle} value={4}>
-                    Deloc
-                  </Radio>
-                </Radio.Group>
-              </Form.Item>
-              <Form.Item label={"4. Pe o scara de la 1 la 10 cat de mult iti place liceul tau? [Style 1]"}>
-                <Slider min={0} max={7} marks={marks} />
-              </Form.Item>
-              <br/>
-              <Form.Item label={"5. Pe o scara de la 1 la 10 cat de mult iti place liceul tau? [Style 2]"}>
-                  <IconSlider  min={0} max={10} />
-              </Form.Item>
-          </Form>
+              <span>{"The development team is working on this form page. :)"}</span><br/><br/>
           <Button style={{marginLeft:8}} type="default" onClick={()=>this.props.prevStep()}>Back</Button>
           <Button style={{marginLeft:8}} type="primary" onClick={()=>this.props.nextStep()}>Next</Button> 
           </Widget>
