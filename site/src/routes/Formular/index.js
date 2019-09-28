@@ -34,6 +34,16 @@ class Formular extends React.Component {
                         {id:"filiera",value:""},
                         {id:"profil",value:""},
                         {id:"specializare",value:""},],
+      opinionVariables:[{id:"question 1",value:""},
+                        {id:"question 2",value:""},
+                        {id:"question 3",value:""},
+                        {id:"question 4",value:""},
+                        {id:"question 5",value:2.5},
+                        {id:"question 6",value:2.5},
+                        {id:"question 7",value:""},
+                        {id:"question 8",value:""},
+                        {id:"question 9",value:""},
+                        {id:"radioValue",value:0},],
     };
   this.setStatus=this.setStatus.bind(this);
   }
@@ -89,7 +99,9 @@ class Formular extends React.Component {
                 <br/>
                 <OpinionForm
                 prevStep={this.prevStep}
-                nextStep={this.nextStep}/>
+                nextStep={this.nextStep}
+                status={this.state.status}
+                opinionVariables={this.state.opinionVariables}/>
               </div>
             )
           case 4:
