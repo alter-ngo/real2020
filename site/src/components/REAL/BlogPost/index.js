@@ -51,6 +51,8 @@ class BlogPost extends React.Component {
     return (
       <>
       <Helmet>
+        <meta name="description" content={this.state.excerpt.substring(0,150)+" ..."}></meta>
+        <meta property="og:url" content={window.location.href}></meta>
         <meta property="og:title" content={this.state.title}></meta>
         <meta property="og:type" content="article"></meta>
         <meta property="og:description" content={this.state.excerpt.substring(0,150)+" ..."}></meta>
