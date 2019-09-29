@@ -1,7 +1,7 @@
-import {Form,Radio,Input,Col,Select,Button,Rate } from "antd";
+import {Form,Radio,Input,Col,Select,Button,Rate,Slider } from "antd";
 import Widget from "components/Widget";
 import React from "react";
-
+import IconSlider from "components/REAL/FormComponents/IconSlider";
 const { Option } = Select;
 const { TextArea } = Input;
 class TutorsOpinionForm extends React.Component {
@@ -77,6 +77,18 @@ class TutorsOpinionForm extends React.Component {
       height: '30px',
       lineHeight: '30px',
     };
+    const marks={
+      1: '1',
+      2: '2',
+      3: '3',
+      4: '4',
+      5: '5',
+      6: '6',
+      7: '7',
+      8: '8',
+      9: '9',
+      10: '10',
+    };
     for(let i =1; i<=2;i++){
       radioOpts.push(
         <Radio style={radioStyle} value={i}>
@@ -108,10 +120,10 @@ class TutorsOpinionForm extends React.Component {
               <TextArea  value={question[3].value} onChange={this.handleChange(3)} autosize={{ minRows: 1, maxRows: 1 }}/>
               </Form.Item>
               <Form.Item label={" Cât de satisfăcut sunteți de relația dintre dumneavoastră și dirigintele copilului dumneavoastră?"}>
-              <Rate count={10} value={question[4].value} onChange={(value)=>{this.handleSChange(value, 4)}}/>
+              <IconSlider marks={marks} min={1} max={10} value={question[4].value} onChange={(value)=>{this.handleSChange(value, 4)}} />
               </Form.Item>
               <Form.Item label={" Cât de satisfăcut sunteți de relația dintre dumneavoastră și conducerea liceului la care învață copilul dumneavoastră?"}>
-              <Rate count={10} value={question[5].value} onChange={(value)=>{this.handleSChange(value, 5)}} />
+              <IconSlider marks={marks} min={1} max={10} value={question[5].value} onChange={(value)=>{this.handleSChange(value, 5)}} />
               </Form.Item>
               <Form.Item label={" Ce recomandări ați oferi părinților care vor să își înscrie copiii la liceul copilului dumneavoastră?"}>
               <TextArea  value={question[6].value} onChange={this.handleChange(6)} autosize={{ minRows: 2, maxRows: 5 }}/>

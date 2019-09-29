@@ -11,6 +11,8 @@ class OpinionForm extends React.Component {
         return(
           <div className="gx-d-flex justify-content-center">
             <Col span={24}>
+              <Button style={{marginLeft:8}} type="default" onClick={()=>this.props.prevStep()}>Back</Button>
+              <Button style={{marginLeft:10}} type="primary" onClick={()=>this.props.nextStep()}>Next</Button> 
             </Col>
           </div>
         )
@@ -30,6 +32,8 @@ class OpinionForm extends React.Component {
         return(
           <div className="gx-d-flex justify-content-center">
             <Col span={24}>
+              <Button style={{marginLeft:8}} type="default" onClick={()=>this.props.prevStep()}>Back</Button>
+              <Button style={{marginLeft:10}} type="primary" onClick={()=>this.props.nextStep()}>Next</Button> 
             </Col>
           </div>
         )
