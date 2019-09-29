@@ -2,6 +2,7 @@ import React from "react";
 
 import Widget from "components/Widget";
 import { Row, Col, Button } from "antd";
+import { Helmet } from "react-helmet";
 import BlogPost from "components/REAL/BlogPost";
 import { Route, Link } from "react-router-dom";
 
@@ -18,7 +19,8 @@ class BlogOverview extends React.Component {
     fetch("../manifest.json")
       .then(r => r.json())
       .then(json => {
-        if (typeof json['blogs'] == 'undefined') this.setState({ blogs: []},callback);
+        if (typeof json["blogs"] == "undefined")
+          this.setState({ blogs: [] }, callback);
         else {
           if (this.props.mode == "preview")
             this.setState(
@@ -81,15 +83,17 @@ class BlogOverview extends React.Component {
                 xs={sizes[3]}
               >
                 <Link to={`/blog/${blog.slug}`}>
-                  <Widget cover={<img src={blog.image}/>}>
-                    <h1 style={{ margin: 0 }}>{blog.title.replace(/(([^\s]+\s\s*){7})(.*)/, "$1…")}</h1>
+                  <Widget cover={<img src={blog.image} />}>
+                    <h1 style={{ margin: 0 }}>
+                      {blog.title.replace(/(([^\s]+\s\s*){7})(.*)/, "$1…")}
+                    </h1>
                     <span>
                       <i>
                         {blog.category} - {blog.date}
                       </i>
                     </span>
                     <p style={{ fontSize: "1.15em", color: "black" }}>
-                      {blog.excerpt.substring(0,150)+" ..."}
+                      {blog.excerpt.substring(0, 150) + " ..."}
                     </p>
                   </Widget>
                 </Link>
