@@ -2,6 +2,7 @@ import React from "react";
 
 import Widget from "components/Widget";
 import { Row, Col, Button } from "antd";
+import {Helmet} from "react-helmet";
 import { string } from "prop-types";
 import BlogOverview from "../BlogOverview";
 
@@ -46,6 +47,10 @@ class BlogPost extends React.Component {
   render() {
     const ReactMarkdown = require("react-markdown/with-html");
     return (
+      <>
+      <Helmet>
+        <meta name="og:title" content={this.state.title}></meta>
+      </Helmet>
       <Widget>
         <Row gutter={16}>
           <Col xl={18} md={16} sm={24} xs={24}>
@@ -70,6 +75,7 @@ class BlogPost extends React.Component {
           </Col>
         </Row>
       </Widget>
+      </>
     );
   }
 }
