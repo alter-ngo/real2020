@@ -14,7 +14,8 @@ class BlogPost extends React.Component {
       title: "",
       content: "",
       date: "",
-      category: ""
+      category: "",
+      excerpt: ""
     };
   }
 
@@ -29,7 +30,8 @@ class BlogPost extends React.Component {
               content: blog.content,
               title: blog.title,
               date: blog.creationDate,
-              category: blog.category
+              category: blog.category,
+              excerpt: blog.excerpt
             });
         });
       });
@@ -49,7 +51,9 @@ class BlogPost extends React.Component {
     return (
       <>
       <Helmet>
-        <meta name="og:title" content={this.state.title}></meta>
+        <meta property="og:title" content={this.state.title}></meta>
+        <meta property="og:type" content="article"></meta>
+        <meta property="og:description" content={this.state.excerpt.substring(0,150)+" ..."}></meta>
       </Helmet>
       <Widget>
         <Row gutter={16}>
