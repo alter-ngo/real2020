@@ -15,7 +15,8 @@ class BlogPost extends React.Component {
       content: "",
       date: "",
       category: "",
-      excerpt: ""
+      excerpt: "",
+      src: ""
     };
   }
 
@@ -31,7 +32,8 @@ class BlogPost extends React.Component {
               title: blog.title,
               date: blog.creationDate,
               category: blog.category,
-              excerpt: blog.excerpt
+              excerpt: blog.excerpt,
+              src: blog.imageSrc
             });
         });
       });
@@ -55,6 +57,7 @@ class BlogPost extends React.Component {
         <meta property="og:url" content={window.location.href}></meta>
         <meta property="og:title" content={this.state.title}></meta>
         <meta property="og:type" content="article"></meta>
+        <meta property="og:image" content={this.state.src}></meta>
         <meta property="og:description" content={this.state.excerpt.substring(0,150)+" ..."}></meta>
       </Helmet>
       <Widget>
