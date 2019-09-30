@@ -103,13 +103,13 @@ class TutorsOpinionForm extends React.Component {
             <Widget>
             <Form layout={"vertical"}>
               <Form.Item label={" Cât de ușor credeți că le este elevilor să acceseze activități extracurriculare în afara liceului, care să fie promovate în cadrul liceului?"}>
-              <TextArea  value={question[0].value} onChange={this.handleChange(0)} autosize={{ minRows: 1, maxRows: 3 }}/>
+              <IconSlider marks={marks} min={1} max={10} value={question[0].value} onChange={(value)=>{this.handleSChange(value, 0)}} />
               </Form.Item>
               <Form.Item label={" Cât de ușor credeți că le este elevilor să acceseze activități extracurriculare interne?"}>
-              <TextArea  value={question[1].value} onChange={this.handleChange(1)} autosize={{ minRows: 1, maxRows: 3 }}/>
+              <IconSlider marks={marks} min={1} max={10} value={question[1].value} onChange={(value)=>{this.handleSChange(value, 1)}} />
               </Form.Item>
               <Form.Item label={" Credeți că liceul oferă elevilor susținere suplimentară pentru cultivarea performanțelor academice?"}>
-              <TextArea  value={question[2].value} onChange={this.handleChange(2)} autosize={{ minRows: 1, maxRows: 3 }}/>
+              <IconSlider marks={marks} min={1} max={10} value={question[2].value} onChange={(value)=>{this.handleSChange(value, 2)}} />
               </Form.Item>
               <Form.Item label={" În clasa copilului dumneavoastră există fondul clasei?"}>
                 <Radio.Group onChange={this.onChange} value={radioValue}>
