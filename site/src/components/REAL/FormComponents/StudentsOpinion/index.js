@@ -8,7 +8,11 @@ class StudentsOpinionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      radioValue: 0,
+      radioValue: [
+        {value: 0},
+        {value: 0},
+        {value: 0},
+        {value: 0},],
       question: [{ value: "" },
       { value: "" },
       { value: "" },
@@ -51,7 +55,6 @@ class StudentsOpinionForm extends React.Component {
       opinionVariables[i].value = question[i].value;
       console.log(opinionVariables[i].value);
     }
-    opinionVariables[9].value = radioValue;
     if (arg == "back")
       this.props.prevStep();
     else
@@ -65,7 +68,6 @@ class StudentsOpinionForm extends React.Component {
     }
     this.setState({
       question: aux,
-      radioValue: opinionVariables[9].value,
     })
 
   }
@@ -83,9 +85,11 @@ class StudentsOpinionForm extends React.Component {
       question: aux,
     });
   }
-  onChange = e => {
+  onChange = input => e => {
+    let aux = this.state.radioValue;
+    aux[input].value = e.target.value;
     this.setState({
-      radioValue: e.target.value
+      radioValue: aux,
     });
   };
 
@@ -141,7 +145,7 @@ class StudentsOpinionForm extends React.Component {
                   <IconSlider marks={marks} min={1} max={10} value={question[5].value} onChange={(value) => { this.handleSChange(value, 5) }} />
                 </Form.Item>
                 <Form.Item label={" Ți s-a solicitat vreodată să contribui la fondul clasei?"}>
-                  <Radio.Group onChange={this.onChange} value={question[6].value}>
+                  <Radio.Group onChange={this.onChange(0)} value={radioValue[0].value}>
                     {radioOpts}
                   </Radio.Group>
                 </Form.Item>
@@ -173,7 +177,7 @@ class StudentsOpinionForm extends React.Component {
                   <IconSlider marks={marks} min={1} max={10} value={question[15].value} onChange={(value) => { this.handleSChange(value, 15) }} />
                 </Form.Item>
                 <Form.Item label={" Ai apelat la serviciile consilierilor scolari?"}>
-                  <Radio.Group onChange={this.onChange} value={question[16].value}>
+                  <Radio.Group onChange={this.onChange(1)} value={radioValue[1].value}>
                     {radioOpts}
                   </Radio.Group>
                 </Form.Item>
@@ -181,7 +185,7 @@ class StudentsOpinionForm extends React.Component {
                   <IconSlider marks={marks} min={1} max={10} value={question[17].value} onChange={(value) => { this.handleSChange(value, 17) }} />
                 </Form.Item>
                 <Form.Item label={" Ai fost vreodată hărțuit de un profesor?"}>
-                  <Radio.Group onChange={this.onChange} value={question[18].value}>
+                  <Radio.Group onChange={this.onChange(2)} value={radioValue[2].value}>
                     {radioOpts}
                   </Radio.Group>
                 </Form.Item>
@@ -201,7 +205,7 @@ class StudentsOpinionForm extends React.Component {
                 <IconSlider marks={marks} min={1} max={10} value={question[23].value} onChange={(value) => { this.handleSChange(value, 23) }} />
                 </Form.Item>
                 <Form.Item label={" Ai fost vreodată hărțuit de colegi?"}>
-                  <Radio.Group onChange={this.onChange} value={question[24].value}>
+                  <Radio.Group onChange={this.onChange(3)} value={radioValue[3].value}>
                     {radioOpts}
                   </Radio.Group>
                 </Form.Item>
