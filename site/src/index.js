@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { render } from "react-snapshot";
 
 import NextApp from "./NextApp";
 import registerServiceWorker from "./registerServiceWorker";
@@ -8,24 +7,33 @@ import registerServiceWorker from "./registerServiceWorker";
 import { AppContainer } from "react-hot-loader";
 
 // Wrap the rendering in a function:
-const renderSite = Component => {
-  render(
-    <AppContainer>
-      <NextApp />
-    </AppContainer>,
-    document.getElementById("root")
-  );
+const render = Component => {
+  if (document.getElementById("root").hasChildNodes()) {
+    ReactDOM.hydrate(
+      <AppContainer>
+        <NextApp />
+      </AppContainer>,
+      document.getElementById("root")
+    );
+  } else {
+    ReactDOM.render(
+      <AppContainer>
+        <NextApp />
+      </AppContainer>,
+      document.getElementById("root")
+    );
+  }
 };
 
 // Do this once
 registerServiceWorker();
 
 // Render once
-renderSite(NextApp);
+render(NextApp);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
   module.hot.accept("./NextApp", () => {
-    renderSite(NextApp);
+    render(NextApp);
   });
 }
