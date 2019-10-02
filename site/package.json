@@ -61,13 +61,15 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired --env=jsdom"
+    "test": "react-app-rewired --env=jsdom",
+    "postbuild": "react-snap"
   },
   "devDependencies": {
     "add": "^2.0.6",
     "babel-plugin-import": "^1.8.0",
     "customize-cra": "^0.2.10",
     "react-app-rewired": "^2.0.2",
+    "react-snap": "^1.23.0",
     "ws": "3.3.2",
     "yarn": "^1.7.0"
   },

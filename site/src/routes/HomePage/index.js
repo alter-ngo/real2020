@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Row, Col, Divider, Button } from "antd";
+import { Helmet } from "react-helmet";
 import Jumbotron from "components/REAL/Jumbotron";
 import DataOverview from "components/REAL/DataOverview";
 import Objectives from "components/REAL/Objectives";
