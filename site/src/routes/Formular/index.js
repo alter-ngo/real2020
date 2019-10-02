@@ -44,10 +44,23 @@ class Formular extends React.Component {
                         {id:"question 8",value:""},
                         {id:"question 9",value:""},
                         {id:"radioValue",value:0},],
+      opinionVariablesStudents:[],
+      radioValueStudents:[{id:"radio 1", value: 0},
+      {id:"radio 2", value: 0},
+      {id:"radio 3", value: 0},
+      {id:"radio 4", value: 0},],
     };
   this.setStatus=this.setStatus.bind(this);
   }
-
+  componentDidMount(){
+    let auxArray=[];
+    for(let i=0;i<=23;i++){
+      auxArray.push(
+        {id:"question "+i,value:""},
+      );
+    }
+    this.setState({opinionVariablesStudents: auxArray});
+  }
   setStatus(param){
     this.setState({
       status: param,
@@ -71,7 +84,6 @@ class Formular extends React.Component {
   }
 
   render(){
-
     const{step}=this.state;
        switch(step){
           case 1:
@@ -101,6 +113,8 @@ class Formular extends React.Component {
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 status={this.state.status}
+                radioValueStudents={this.state.radioValueStudents}
+                opinionVariablesStudents={this.state.opinionVariablesStudents}
                 opinionVariables={this.state.opinionVariables}/>
               </div>
             )

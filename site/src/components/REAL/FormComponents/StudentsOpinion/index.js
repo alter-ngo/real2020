@@ -1,4 +1,4 @@
-import { Form, Radio, Input, Col, Select, Button, Rate, Slider } from "antd";
+import { Form, Radio, Input, Col, Select, Button, Rate, Slider,Row } from "antd";
 import Widget from "components/Widget";
 import React from "react";
 import IconSlider from "components/REAL/FormComponents/IconSlider";
@@ -13,35 +13,7 @@ class StudentsOpinionForm extends React.Component {
         {value: 0},
         {value: 0},
         {value: 0},],
-      question: [{ value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },],
+      question: [],
       radioOptions: [{ id: "Da" },
       { id: "Nu" },],
 
@@ -50,26 +22,43 @@ class StudentsOpinionForm extends React.Component {
   }
   saveCurrentState(arg) {
     const { question, radioValue } = this.state;
-    const { opinionVariables } = this.props;
-    for (let i = 0; i <= 8; i++) {
+    const { opinionVariables,radioValueStudents } = this.props;
+    for (let i = 0; i <= 23; i++) {
       opinionVariables[i].value = question[i].value;
-      console.log(opinionVariables[i].value);
+    }
+    for(let i=0;i<=3;i++)
+    {
+      radioValueStudents[i].value=radioValue[i].value;
     }
     if (arg == "back")
       this.props.prevStep();
     else
       this.props.nextStep();
   };
+  componentWillMount(){
+    let auxq=[];
+    for(let i=0;i<=23;i++){
+      auxq.push(
+        {value:""}
+      );
+    }
+    this.setState({question:auxq});
+  }
   componentDidMount() {
-    const { opinionVariables } = this.props;
-    let aux = this.state.question;
-    for (let i = 0; i <= 8; i++) {
+    const { opinionVariables,radioValueStudents } = this.props;
+    let aux = this.state.question,radioAux=this.state.radioValue;
+
+    for (let i = 0; i <= 23; i++) {
       aux[i].value = opinionVariables[i].value;
+    }
+    for(let i=0;i<=3;i++)
+    {
+      radioAux[i].value=radioValueStudents[i].value;
     }
     this.setState({
       question: aux,
+      radioValue: radioAux,
     })
-
   }
   handleChange = input => e => {
     let aux = this.state.question;
@@ -95,7 +84,7 @@ class StudentsOpinionForm extends React.Component {
 
   render() {
     let radioOpts = [];
-    let { question, radioOptions, radioValue } = this.state;
+    let { question, radioOptions, radioValue,widthSlider } = this.state;
     const radioStyle = {
       display: 'block',
       height: '30px',
@@ -126,55 +115,56 @@ class StudentsOpinionForm extends React.Component {
           <Col span={24}>
             <Widget>
               <Form layout={"vertical"}>
-                <Form.Item label={" Ai acces la activități extracurriculare în afara liceului, care să fie promovate în cadrul liceului?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[0].value} onChange={(value) => { this.handleSChange(value, 0) }} />
+                <Form.Item  label={" Ai acces la activități extracurriculare în afara liceului, care să fie promovate în cadrul liceului?"}>
+                <IconSlider marks={marks} min={1} max={10} value={question[0].value} onChange={(value) => { this.handleSChange(value, 0) }} />
                 </Form.Item>
                 <Form.Item label={" Ai acces la activități extracurriculare organizate în cadrul liceului?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[1].value} onChange={(value) => { this.handleSChange(value, 1) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[1].value} onChange={(value) => { this.handleSChange(value, 1) }} />
                 </Form.Item>
                 <Form.Item label={" Ai acces la susținere suplimentară pentru cultivarea performanțelor academice?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[2].value} onChange={(value) => { this.handleSChange(value, 2) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[2].value} onChange={(value) => { this.handleSChange(value, 2) }} />
                 </Form.Item>
                 <Form.Item label={" Ce părere ai despre nivelul dotărilor?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[3].value} onChange={(value) => { this.handleSChange(value, 3) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[3].value} onChange={(value) => { this.handleSChange(value, 3) }} />
                 </Form.Item>
                 <Form.Item label={" Ce părere ai despre starea dotărilor?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[4].value} onChange={(value) => { this.handleSChange(value, 4) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[4].value} onChange={(value) => { this.handleSChange(value, 4) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de curat consideri că este liceul?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[5].value} onChange={(value) => { this.handleSChange(value, 5) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[5].value} onChange={(value) => { this.handleSChange(value, 5) }} />
                 </Form.Item>
+
                 <Form.Item label={" Ți s-a solicitat vreodată să contribui la fondul clasei?"}>
                   <Radio.Group onChange={this.onChange(0)} value={radioValue[0].value}>
                     {radioOpts}
                   </Radio.Group>
                 </Form.Item>
                 <Form.Item label={" Câte sesiuni de meditații ai pe săptămână?"}>
-                  <TextArea value={question[7].value} onChange={this.handleChange(7)} autosize={{ minRows: 1, maxRows: 1 }} />
+                  <TextArea value={question[6].value} onChange={this.handleChange(6)} autosize={{ minRows: 1, maxRows: 1 }} />
                 </Form.Item>
                 <Form.Item label={" Cât de satisfăcut ești de relația elev-profesor?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[8].value} onChange={(value) => { this.handleSChange(value, 8) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[7].value} onChange={(value) => { this.handleSChange(value, 7) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de satisfăcut ești de relația elev-diriginte?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[9].value} onChange={(value) => { this.handleSChange(value, 9) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[8].value} onChange={(value) => { this.handleSChange(value, 8) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de interactive sunt orele de curs?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[10].value} onChange={(value) => { this.handleSChange(value, 10) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[9].value} onChange={(value) => { this.handleSChange(value, 9) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de implicați consideri că sunt profesorii pe parcursul orei de curs?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[11].value} onChange={(value) => { this.handleSChange(value, 11) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[10].value} onChange={(value) => { this.handleSChange(value, 10) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de des consideri că profesorii utilizează dotările?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[12].value} onChange={(value) => { this.handleSChange(value, 12) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[11].value} onChange={(value) => { this.handleSChange(value, 11) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de mult consideri că profesorii pun accentul pe efort în afara orelor?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[13].value} onChange={(value) => { this.handleSChange(value, 13) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[12].value} onChange={(value) => { this.handleSChange(value, 12) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de mult consideri că profesorii pun accentul pe scoaterea in evidenta a unor anumite persoane?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[14].value} onChange={(value) => { this.handleSChange(value, 14) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[13].value} onChange={(value) => { this.handleSChange(value, 13) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de mult te inspiră profesorii tăi?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[15].value} onChange={(value) => { this.handleSChange(value, 15) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[15].value} onChange={(value) => { this.handleSChange(value, 15) }} />
                 </Form.Item>
                 <Form.Item label={" Ai apelat la serviciile consilierilor scolari?"}>
                   <Radio.Group onChange={this.onChange(1)} value={radioValue[1].value}>
@@ -182,7 +172,7 @@ class StudentsOpinionForm extends React.Component {
                   </Radio.Group>
                 </Form.Item>
                 <Form.Item label={" Cât de mult te-au ajutat consilierii școlari?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[17].value} onChange={(value) => { this.handleSChange(value, 17) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[14].value} onChange={(value) => { this.handleSChange(value, 14) }} />
                 </Form.Item>
                 <Form.Item label={" Ai fost vreodată hărțuit de un profesor?"}>
                   <Radio.Group onChange={this.onChange(2)} value={radioValue[2].value}>
@@ -190,19 +180,19 @@ class StudentsOpinionForm extends React.Component {
                   </Radio.Group>
                 </Form.Item>
                 <Form.Item label={" Cât de relaxat te simți la liceu?"}>
-                  <IconSlider marks={marks} min={1} max={10} value={question[19].value} onChange={(value) => { this.handleSChange(value, 19) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[15].value} onChange={(value) => { this.handleSChange(value, 15) }} />
                 </Form.Item>
                 <Form.Item label={" Care sunt cele mai semnificative surse de stres resimțite de tine?"}>
-                  <TextArea value={question[20].value} onChange={this.handleChange(20)} autosize={{ minRows: 1, maxRows: 1 }} />
+                  <TextArea value={question[16].value} onChange={this.handleChange(16)} autosize={{ minRows: 1, maxRows: 1 }} />
                 </Form.Item>
                 <Form.Item label={" Cât de divers ți se pare colectivul liceului tău?"}>
-                <IconSlider marks={marks} min={1} max={10} value={question[21].value} onChange={(value) => { this.handleSChange(value, 21) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[17].value} onChange={(value) => { this.handleSChange(value, 17) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de ușor ți-a fost să te integrezi în colectiv?"}>
-                <IconSlider marks={marks} min={1} max={10} value={question[22].value} onChange={(value) => { this.handleSChange(value, 22) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[18].value} onChange={(value) => { this.handleSChange(value, 18) }} />
                 </Form.Item>
                 <Form.Item label={" Cât de competitivi consideri că sunt colegii tăi?"}>
-                <IconSlider marks={marks} min={1} max={10} value={question[23].value} onChange={(value) => { this.handleSChange(value, 23) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[19].value} onChange={(value) => { this.handleSChange(value, 19) }} />
                 </Form.Item>
                 <Form.Item label={" Ai fost vreodată hărțuit de colegi?"}>
                   <Radio.Group onChange={this.onChange(3)} value={radioValue[3].value}>
@@ -210,16 +200,16 @@ class StudentsOpinionForm extends React.Component {
                   </Radio.Group>
                 </Form.Item>
                 <Form.Item label={" Ce sfaturi i-ai da unui viitor elev în liceul tău?"}>
-                  <TextArea value={question[25].value} onChange={this.handleChange(25)} autosize={{ minRows: 2, maxRows: 5 }} />
+                  <TextArea value={question[20].value} onChange={this.handleChange(20)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
                 <Form.Item label={" Ce sfaturi le-ai da profesorilor tăi?"}>
-                  <TextArea value={question[26].value} onChange={this.handleChange(26)} autosize={{ minRows: 2, maxRows: 5 }} />
+                  <TextArea value={question[21].value} onChange={this.handleChange(21)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
                 <Form.Item label={" Ce recomandări ai propune conducerii liceului în care înveți?"}>
-                  <TextArea value={question[27].value} onChange={this.handleChange(27)} autosize={{ minRows: 2, maxRows: 5 }} />
+                  <TextArea value={question[22].value} onChange={this.handleChange(22)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
                 <Form.Item label={" Ce recomandări ai propune factorilor decizionali?"}>
-                  <TextArea value={question[28].value} onChange={this.handleChange(28)} autosize={{ minRows: 2, maxRows: 5 }} />
+                  <TextArea value={question[23].value} onChange={this.handleChange(23)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
               </Form>
               <Button style={{ marginLeft: 8 }} type="default" onClick={() => this.saveCurrentState("back")}>Back</Button>

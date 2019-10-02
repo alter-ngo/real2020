@@ -12,7 +12,7 @@ class IconSlider extends React.Component {
     const preColor = value >= mid ? '' : 'rgba(250, 140, 21, 1)';
     const nextColor = value >= mid ? 'rgba(250, 140, 21, 1)' : '';
     return (
-      <div className="icon-wrapper">
+      <div className="icon-wrapper" style={{alignSelf:"center"}}>
         <Icon style={{ color: preColor }} type="frown-o" />
         <Slider {...this.props} />
         <Icon style={{ color: nextColor }} type="smile-o" />
