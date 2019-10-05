@@ -25,7 +25,7 @@ class StudentsOpinionForm extends React.Component {
   saveCurrentState(arg) {
     const { question, radioValue,selectedEvMeth } = this.state;
     const { opinionVariables,radioValueStudents,methodsOfEvaluation } = this.props;
-    for (let i = 0; i <= 18; i++) {
+    for (let i = 0; i <= 19; i++) {
       opinionVariables[i].value = question[i].value;
     }
     for (let i=0;i<=3;i++)
@@ -35,7 +35,6 @@ class StudentsOpinionForm extends React.Component {
     for (let i=0;i<=selectedEvMeth.length-1;i++){
       methodsOfEvaluation.push(selectedEvMeth[i]);
     }
-    console.log(methodsOfEvaluation);
     if (arg == "back")
       this.props.prevStep();
     else
@@ -43,7 +42,7 @@ class StudentsOpinionForm extends React.Component {
   };
   componentWillMount(){
     let auxq=[];
-    for (let i=0;i<=18;i++){
+    for (let i=0;i<=19;i++){
       auxq.push(
         {value:""}
       );
@@ -54,7 +53,7 @@ class StudentsOpinionForm extends React.Component {
     const { opinionVariables,radioValueStudents,methodsOfEvaluation } = this.props;
     let aux = this.state.question,radioAux=this.state.radioValue,evmAux=[];
 
-    for (let i = 0; i <= 18; i++) {
+    for (let i = 0; i <= 19; i++) {
       aux[i].value = opinionVariables[i].value;
     }
     for (let i=0;i<=3;i++)
@@ -75,7 +74,6 @@ class StudentsOpinionForm extends React.Component {
   }
   handleEvChange =selectedEvMeth=>{
       this.setState({selectedEvMeth:selectedEvMeth});
-      console.log(selectedEvMeth);
   };
   handleChange = input => e => {
     let aux = this.state.question;
@@ -242,9 +240,14 @@ class StudentsOpinionForm extends React.Component {
                 <Tooltip title="Prin implicare ne referim la: atenție la predare, activitate în timpul orei etc.">
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>
-                  <TextArea value={question[17].value} onChange={this.handleChange(17)} autosize={{ minRows: 1, maxRows: 1 }} /></Form.Item>
+                  <IconSlider marks={marks} min={1} max={10} value={question[17].value} onChange={(value) => { this.handleSChange(value, 17) }} /></Form.Item>
+                <Form.Item label={<span>Cât de satisfăcut sunteți de relația profesor-elevi?&nbsp;       
+                <Tooltip title="Întrebarea face referire la: respectul reciproc, devotamentul si susținerea acordată etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
+                  <IconSlider marks={marks} min={1} max={10} value={question[18].value} onChange={(value) => { this.handleSChange(value, 18) }} /></Form.Item>
                 <Form.Item label={" Cât de divers ți se pare colectivul liceului tău?"}>
-                <IconSlider marks={marks} min={1} max={10} value={question[18].value} onChange={(value) => { this.handleSChange(value, 18) }} />
+                <IconSlider marks={marks} min={1} max={10} value={question[19].value} onChange={(value) => { this.handleSChange(value, 19) }} />
                 </Form.Item>
                 <Form.Item label={<span>Ați fost vreodată hărțuit de către un elev?&nbsp;       
                 <Tooltip title="Prin hărțuire facem referire la insulte, violență fizică sau verbală, avansuri nepotrivite etc.">
