@@ -1,4 +1,4 @@
-import { Form, Radio, Input, Col, Select, Button, Rate, Slider } from "antd";
+import { Form, Radio, Input, Col, Select, Button,Icon,Tooltip} from "antd";
 import Widget from "components/Widget";
 import React from "react";
 import IconSlider from "components/REAL/FormComponents/IconSlider";
@@ -9,17 +9,8 @@ class TutorsOpinionForm extends React.Component {
     super(props);
     this.state = {
       radioValue: 0,
-      question: [{ value: "" },
-      { value: "" },
-      { value: "" },
-      { value: "" },
-      { value: 4 },
-      { value: 4 },
-      { value: "" },
-      { value: "" },
-      { value: "" },],
-      radioOptions: [{ id: "Da" },
-      { id: "Nu" },],
+      question: [],
+      radioOptions: [{ id: "Da" },{ id: "Nu" },],
 
     };
     this.saveCurrentState = this.saveCurrentState.bind(this);
@@ -29,7 +20,6 @@ class TutorsOpinionForm extends React.Component {
     const { opinionVariables } = this.props;
     for (let i = 0; i <= 8; i++) {
       opinionVariables[i].value = question[i].value;
-      console.log(opinionVariables[i].value);
     }
     opinionVariables[9].value = radioValue;
     if (arg == "back")
@@ -37,6 +27,15 @@ class TutorsOpinionForm extends React.Component {
     else
       this.props.nextStep();
   };
+  componentWillMount(){
+    let aux=[];
+    for(let i =0;i<=8;i++){
+      aux.push(
+        {value: ""}
+      );
+    }
+    this.setState({question:aux});
+  }
   componentDidMount() {
     const { opinionVariables } = this.props;
     let aux = this.state.question;
@@ -102,16 +101,28 @@ class TutorsOpinionForm extends React.Component {
           <Col span={24}>
             <Widget>
               <Form layout={"vertical"}>
-                <Form.Item label={" Cât de ușor credeți că le este elevilor să acceseze activități extracurriculare în afara liceului, care să fie promovate în cadrul liceului?"}>
+                <Form.Item label={<span>Cât de ușor credeți că le este elevilor să acceseze activități extracurriculare în afara liceului, care să fie promovate în cadrul liceului?&nbsp;       
+                <Tooltip title="Se consideră activități extracurriculare externe: voluntariate, tabere, conferințe, ateliere etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[0].value} onChange={(value) => { this.handleSChange(value, 0) }} />
                 </Form.Item>
-                <Form.Item label={" Cât de ușor credeți că le este elevilor să acceseze activități extracurriculare interne?"}>
+                <Form.Item label={<span>Cât de ușor credeți că le este elevilor să acceseze activități extracurriculare interne?&nbsp;       
+                <Tooltip title="Se consideră activități extracurriculare interne: cluburi de lectură, cor etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[1].value} onChange={(value) => { this.handleSChange(value, 1) }} />
                 </Form.Item>
-                <Form.Item label={" Credeți că liceul oferă elevilor susținere suplimentară pentru cultivarea performanțelor academice?"}>
+                <Form.Item label={<span>Credeți că liceul oferă elevilor susținere suplimentară pentru cultivarea performanțelor academice?&nbsp;       
+                <Tooltip title="Prin organizare de sesiuni de pregătire în afara orelor pentru concursuri, olimpiade, examene etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[2].value} onChange={(value) => { this.handleSChange(value, 2) }} />
                 </Form.Item>
-                <Form.Item label={" În clasa copilului dumneavoastră există fondul clasei?"}>
+                <Form.Item label={<span>În clasa copilului dumneavoastră există fondul clasei?&nbsp;       
+                <Tooltip title="Fondul clasei presupune strângerea banilor pentru achiziționarea unor resurse / bunuri.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
                   <Radio.Group onChange={this.onChange} value={radioValue}>
                     {radioOpts}
                   </Radio.Group>
@@ -119,10 +130,16 @@ class TutorsOpinionForm extends React.Component {
                 <Form.Item label={" În cazul în care copilul dumneavoastră face meditații, câți bani alocați pe săptămână ședințelor?"}>
                   <TextArea value={question[3].value} onChange={this.handleChange(3)} autosize={{ minRows: 1, maxRows: 1 }} />
                 </Form.Item>
-                <Form.Item label={" Cât de satisfăcut sunteți de relația dintre dumneavoastră și dirigintele copilului dumneavoastră?"}>
+                <Form.Item label={<span>Cât de satisfăcut sunteți de relația dintre dumneavoastră și dirigintele copilului dumneavoastră?&nbsp;       
+                <Tooltip title="Întrebarea face referire la: respectul reciproc, devotamentul si susținerea acordată etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[4].value} onChange={(value) => { this.handleSChange(value, 4) }} />
                 </Form.Item>
-                <Form.Item label={" Cât de satisfăcut sunteți de relația dintre dumneavoastră și conducerea liceului la care învață copilul dumneavoastră?"}>
+                <Form.Item label={<span>Cât de satisfăcut sunteți de relația dintre dumneavoastră și conducerea liceului la care învață copilul dumneavoastră?&nbsp;       
+                <Tooltip title="Întrebarea face referire la: respectul reciproc, deschiderea conducerii de a primi propuneri de la dumneavoastră, susținerea acordată etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[5].value} onChange={(value) => { this.handleSChange(value, 5) }} />
                 </Form.Item>
                 <Form.Item label={" Ce recomandări ați oferi părinților care vor să își înscrie copiii la liceul copilului dumneavoastră?"}>
@@ -131,7 +148,10 @@ class TutorsOpinionForm extends React.Component {
                 <Form.Item label={" Ce recomandări ați oferi conducerii liceului la care învață copilul dumneavoastră?"}>
                   <TextArea value={question[7].value} onChange={this.handleChange(7)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
-                <Form.Item label={" Ce recomandări ați oferi factorilor decizionali?"}>
+                <Form.Item label={<span>Ce recomandări ați oferi factorilor decizionali?&nbsp;       
+                <Tooltip title="Factorii decizionali includ: Guvernul, Ministerul Educației etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
                   <TextArea value={question[8].value} onChange={this.handleChange(8)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
               </Form>

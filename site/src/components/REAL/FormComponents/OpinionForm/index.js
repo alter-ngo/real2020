@@ -1,5 +1,4 @@
-import {Form,Radio,Slider,Col,Select,Button } from "antd";
-import Widget from "components/Widget";
+import {Col} from "antd";
 import React from "react";
 import TutorsOpinion from "components/REAL/FormComponents/TutorsOpinion";
 import StudentsOpinionForm from "components/REAL/FormComponents/StudentsOpinion";

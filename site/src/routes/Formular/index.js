@@ -1,8 +1,4 @@
 import React from "react";
-import {Input,Form,Radio,Slider,Col,Select,Row,Modal,Steps } from "antd";
-import Widget from "components/Widget";
-
-
 import GeneralForm from "../../components/REAL/FormComponents/GeneralForm";
 import ModalSelector from 'components/REAL/FormComponents/ModalSelector';
 import StepsComp from 'components/REAL/FormComponents/Steps';
@@ -14,9 +10,7 @@ class Formular extends React.Component {
     super(props);
     this.state = {
       status:"",
-      radioValue: 1,
       visible: true,
-      sliderValue: 0,
       step: 1,
       current: -1,
       methodsOfEvaluation: [],
@@ -24,7 +18,6 @@ class Formular extends React.Component {
                         {id:"question",value:""},
                         {id:"radio",value:"",select:1,altele: true},
                         {id:"recommendation",value:""},],
-
       generalVariables:[{id:"varsta",value:9},
                         {id:"gen",value:""},
                         {id:"judet",value:""},
@@ -35,16 +28,7 @@ class Formular extends React.Component {
                         {id:"filiera",value:""},
                         {id:"profil",value:""},
                         {id:"specializare",value:""},],
-      opinionVariables:[{id:"question 1",value:""},
-                        {id:"question 2",value:""},
-                        {id:"question 3",value:""},
-                        {id:"question 4",value:""},
-                        {id:"question 5",value:5},
-                        {id:"question 6",value:5},
-                        {id:"question 7",value:""},
-                        {id:"question 8",value:""},
-                        {id:"question 9",value:""},
-                        {id:"radioValue",value:0},],
+      opinionVariables:[],
       opinionVariablesStudents:[],
       radioValueStudents:[{id:"radio 1", value: 0},
       {id:"radio 2", value: 0},
@@ -54,13 +38,15 @@ class Formular extends React.Component {
   this.setStatus=this.setStatus.bind(this);
   }
   componentDidMount(){
-    let auxArray=[];
-    for(let i=0;i<=23;i++){
-      auxArray.push(
-        {id:"question "+i,value:""},
-      );
+    let auxArray=[],auxArrayQ2=[];
+    for(let i=0;i<=8;i++){
+      auxArrayQ2.push({id:"question"+i,value: ""});
     }
-    this.setState({opinionVariablesStudents: auxArray});
+    auxArrayQ2.push({id:"radioValue",value:0});
+    for(let i=0;i<=23;i++){
+      auxArray.push({id:"question "+i,value:""});
+    }
+    this.setState({opinionVariablesStudents: auxArray,opinionVariables:auxArrayQ2});
   }
   setStatus(param){
     this.setState({

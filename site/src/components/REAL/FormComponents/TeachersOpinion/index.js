@@ -1,4 +1,4 @@
-import { Form, Radio, Input, Col, Select, Button, Rate, Slider,Row,Tooltip,Icon } from "antd";
+import { Form, Radio, Input, Col, Select, Button,Tooltip,Icon } from "antd";
 import Widget from "components/Widget";
 import React from "react";
 import IconSlider from "components/REAL/FormComponents/IconSlider";
