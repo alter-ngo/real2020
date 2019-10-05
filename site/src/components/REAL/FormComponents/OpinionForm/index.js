@@ -3,6 +3,7 @@ import Widget from "components/Widget";
 import React from "react";
 import TutorsOpinion from "components/REAL/FormComponents/TutorsOpinion";
 import StudentsOpinionForm from "components/REAL/FormComponents/StudentsOpinion";
+import TeachersOpinion from "components/REAL/FormComponents/TeachersOpinion";
 class OpinionForm extends React.Component {
 
 
@@ -37,8 +38,13 @@ class OpinionForm extends React.Component {
         return(
           <div className="gx-d-flex justify-content-center">
             <Col span={24}>
-              <Button style={{marginLeft:8}} type="default" onClick={()=>this.props.prevStep()}>Back</Button>
-              <Button style={{marginLeft:10}} type="primary" onClick={()=>this.props.nextStep()}>Next</Button> 
+              <TeachersOpinion
+                prevStep={this.props.prevStep}
+                nextStep={this.props.nextStep}
+                methodsOfEvaluation={this.props.methodsOfEvaluation}
+                radioValueStudents={this.props.radioValueStudents}
+                opinionVariables={this.props.opinionVariablesStudents}
+              />
             </Col>
           </div>
         )

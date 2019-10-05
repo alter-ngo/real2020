@@ -19,6 +19,7 @@ class Formular extends React.Component {
       sliderValue: 0,
       step: 1,
       current: -1,
+      methodsOfEvaluation: [],
       FeedbackVariables:[{id:"motivation",value:""},
                         {id:"question",value:""},
                         {id:"radio",value:"",select:1,altele: true},
@@ -113,6 +114,7 @@ class Formular extends React.Component {
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 status={this.state.status}
+                methodsOfEvaluation={this.state.methodsOfEvaluation}
                 radioValueStudents={this.state.radioValueStudents}
                 opinionVariablesStudents={this.state.opinionVariablesStudents}
                 opinionVariables={this.state.opinionVariables}/>
