@@ -16,9 +16,10 @@ class Formular extends React.Component {
       methodsOfEvaluation: [],
       FeedbackVariables:[{id:"motivation",value:""},
                         {id:"question",value:""},
-                        {id:"radio",value:"",select:1,altele: true},
-                        {id:"recommendation",value:""},],
-      generalVariables:[{id:"varsta",value:9},
+                        {id:"radio",value:""},
+                        {id:"recommendation",value:""},
+                        {id:"extra",value:"",altele:true}],
+      generalVariables:[{id:"varsta",value:11},
                         {id:"gen",value:""},
                         {id:"judet",value:""},
                         {id:"localitate",value:""},
@@ -30,10 +31,6 @@ class Formular extends React.Component {
                         {id:"specializare",value:""},],
       opinionVariables:[],
       opinionVariablesStudents:[],
-      radioValueStudents:[{id:"radio 1", value: 0},
-      {id:"radio 2", value: 0},
-      {id:"radio 3", value: 0},
-      {id:"radio 4", value: 0},],
     };
   this.setStatus=this.setStatus.bind(this);
   }
@@ -43,7 +40,7 @@ class Formular extends React.Component {
       auxArrayQ2.push({id:"question"+i,value: ""});
     }
     auxArrayQ2.push({id:"radioValue",value:0});
-    for(let i=0;i<=23;i++){
+    for(let i=0;i<=28;i++){
       auxArray.push({id:"question "+i,value:""});
     }
     this.setState({opinionVariablesStudents: auxArray,opinionVariables:auxArrayQ2});

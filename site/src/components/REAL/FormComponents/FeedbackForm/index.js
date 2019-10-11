@@ -1,20 +1,13 @@
-import {Form,Radio,Input,Col,Select,Button } from "antd";
+import {Form,Radio,Input,Col,Button } from "antd";
 import Widget from "components/Widget";
-import { verify } from "crypto";
-import { relative } from "path";
 import React from "react";
-
-
-const { Option } = Select;
 const { TextArea } = Input;
 class GeneralForm extends React.Component {
-  state = {
-    radioValue: 1,
-    altele: true,
-    motivationText: "",
-    recommendationText: "",
-    questionText: "",
-    alternativeText: "",
+  constructor(props){
+    super(props);
+  this.state = {
+    valid:[],
+    question:[],    
     radioOptions: [{id:"Facebook"},
                    {id:"Instagram"},
                    {id:"Youtube"},
@@ -23,49 +16,100 @@ class GeneralForm extends React.Component {
                    {id:"Parinti"},
                    {id:"Altele "}],
   };
-  saveCurrentState(){
-    const {FeedbackVariables}= this.props;
-    const {radioValue, altele, alternativeText, questionText, motivationText, recommendationText}= this.state;
-      FeedbackVariables[2].select=radioValue;
-      FeedbackVariables[2].altele=altele;      
-      FeedbackVariables[2].value=alternativeText;
-      FeedbackVariables[1].value=questionText;
-      FeedbackVariables[0].value=motivationText;
-      FeedbackVariables[3].value=recommendationText;
-
-      this.props.prevStep();
+  this.validate=this.validate.bind(this);
+  this.saveCurrentState=this.saveCurrentState.bind(this);
+  this.validateForm=this.validateForm.bind(this);
   }
   componentWillMount(){
-    const {FeedbackVariables}= this.props;
-    this.setState({      
-      altele: FeedbackVariables[2].altele,
-      radioValue: FeedbackVariables[2].select,
-      motivationText: FeedbackVariables[0].value,
-      recommendationText: FeedbackVariables[3].value,
-      questionText: FeedbackVariables[1].value,
-      alternativeText: FeedbackVariables[2].value,
-    });
-  }
-  handleChange = input => e =>{
-    this.setState({ [input]: e.target.value});
-  };
-  onChange = e => {
-    if(e.target.value==7){
-      this.setState({
-        altele: false,
-        radioValue: e.target.value
-      });
-    }else{
-      this.setState({
-        altele: true,
-        radioValue: e.target.value
-      });
+    let auxv=[],auxq=[];
+    for(let i=0;i<=3;i++){
+      auxq.push({value:""});
+      auxv.push({status:"",txt:""});
     }
+    auxq.push({value:"",altele:true});
+    auxv.push({status:"",txt:""});
+    this.setState({valid:auxv,question:auxq});
+  }
+  saveCurrentState(){
+    const {FeedbackVariables} = this.props;
+    const {question} = this.state;
+    for(let i=0;i<=3;i++){
+      FeedbackVariables[i].value=question[i].value;
+    }
+    FeedbackVariables[4].altele=question[4].altele;
+    FeedbackVariables[4].value=question[4].value;
+    this.props.prevStep();
+  }
+  componentDidMount(){
+    const {FeedbackVariables}= this.props;
+    let aux=this.state.question;
+    for(let i=0;i<=3;i++){
+      aux[i].value=FeedbackVariables[i].value;
+    }
+    aux[4].altele=FeedbackVariables[4].altele;
+    aux[4].value=FeedbackVariables[4].value;
+    this.setState({question:aux});
+  }
+  validate(input){
+    let aux = this.state.valid;
+    if(this.state.question[input].value=""){
+      aux[input].status="error";
+      aux[input].txt="*Acest câmp este obligatoriu.";
+    }
+    else{
+      aux[input].status="success"; 
+      aux[input].txt="";
+    }
+    this.setState({valid:aux});
+    
+  }
+  handleChange = input => e => {
+    this.validate(input);
+    let aux = this.state.question;
+    aux[input].value = e.target.value;
+    this.setState({
+      question: aux,
+    });  
   };
+  onChange =input => e => {
+    this.validate(2);
+    let aux=this.state.question;
+    if(e.target.value==7){
+      aux[input].value=e.target.value;
+      aux[4].altele=false;
+    }else{
+      aux[input].value=e.target.value;
+      aux[4].altele=true;
+    }
+    this.setState({question:aux});
+  };
+  validateForm(){
+  const {question}=this.state;
+  let ok=true;
+  let aux=this.state.valid;
+   for(let i=0;i<=3;i++){
+     if(question[i].value==""){
+       aux[i].status="error";
+       aux[i].txt="*Acest câmp este obligatoriu.";
+       ok=false;
+     }
+   }
+   if(question[4].altele==false){
+     if(question[4].value==""){
+      aux[4].status="error";
+      aux[4].txt="*Acest câmp este obligatoriu.";
+      ok=false;
+     }
 
+   }
+   this.setState({valid:aux});
+   if(ok){
+     this.saveCurrentState();
+   }
+ }
   render() { 
     let radioOpts=[];
-    const {radioOptions, motivationText, questionText, radioValue, altele, recommendationText}=this.state;   
+    const {radioOptions,question,valid}=this.state;   
     const radioStyle = {
       display: 'block',
       height: '30px',
@@ -83,26 +127,26 @@ class GeneralForm extends React.Component {
         <div className="gx-d-flex justify-content-center">
           <Col span={24}>
             <Widget>
-            <Form layout={"vertical"}>
-              <Form.Item label={" Ce te-a motivat să ajungi la sfârșitul formularului?"}>
-              <TextArea  value={motivationText} onChange={this.handleChange('motivationText')} autosize={{ minRows: 3, maxRows: 5 }}/>
+            <Form  layout={"vertical"}>
+              <Form.Item validateStatus={valid[0].status} help={valid[0].txt} label={" Ce te-a motivat să ajungi la sfârșitul formularului?"}>
+              <TextArea  value={question[0].value} onChange={this.handleChange(0)} autosize={{ minRows: 3, maxRows: 5 }}/>
               </Form.Item>
-              <Form.Item label={" Ce întrebare ai adăuga în formular?"}>
-              <TextArea  value={questionText} onChange={this.handleChange('questionText')} autosize={{ minRows: 1, maxRows: 3 }}/>
+              <Form.Item validateStatus={valid[1].status} help={valid[1].txt} label={" Ce întrebare ai adăuga în formular?"}>
+              <TextArea  value={question[1].value} onChange={this.handleChange(1)} autosize={{ minRows: 1, maxRows: 3 }}/>
               </Form.Item>
 
-              <Form.Item label={" Cum ai aflat de formular?"}>
-                <Radio.Group onChange={this.onChange} value={radioValue}>
+              <Form.Item validateStatus={valid[2].status} help={valid[2].txt} label={" Cum ai aflat de formular?"}>
+                <Radio.Group onChange={this.onChange(2)} value={question[2].value}>
                   {radioOpts}
                 </Radio.Group>
-                <Input disabled={altele} value={this.state.alternativeText || undefined} onChange={this.handleChange('alternativeText')}/>
               </Form.Item>
-              
-              <Form.Item label={" Ai recomandări pentru echipa #estereal?"}>
-              <TextArea  value={recommendationText} onChange={this.handleChange('recommendationText')} autosize={{ minRows: 2, maxRows: 5 }}/>
+              <Form.Item validateStatus={valid[4].status} help={valid[4].txt}>
+                <Input disabled={question[4].altele} value={question[4].value || undefined} onChange={this.handleChange(4)}/></Form.Item>
+              <Form.Item validateStatus={valid[3].status} help={valid[3].txt} label={" Ai recomandări pentru echipa #estereal?"}>
+              <TextArea  value={question[3].value} onChange={this.handleChange(3)} autosize={{ minRows: 2, maxRows: 5 }}/>
               </Form.Item>
             </Form>
-              <Button style={{marginLeft:8}} type="default" onClick={()=>this.saveCurrentState()}>Back</Button>
+              <Button style={{marginLeft:8}} type="default" onClick={()=>this.validateForm()}>Back</Button>
               <Button style={{marginLeft:10}} type="primary">Submit</Button> 
             </Widget>
             </Col>
