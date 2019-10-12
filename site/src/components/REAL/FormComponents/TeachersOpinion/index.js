@@ -25,8 +25,11 @@ class StudentsOpinionForm extends React.Component {
     for (let i = 0; i <= 21; i++) {
       opinionVariables[i].value = question[i].value;
     }
+    for(let i=0;i<=methodsOfEvaluation.length-1;i++){
+      methodsOfEvaluation[i]=0;
+    }
     for (let i=0;i<=selectedEvMeth.length-1;i++){
-      methodsOfEvaluation.push(selectedEvMeth[i]);
+      methodsOfEvaluation[i]=selectedEvMeth[i];
     }
     if (arg == "back")
       this.props.prevStep();
@@ -69,7 +72,7 @@ class StudentsOpinionForm extends React.Component {
   }
   componentDidMount() {
     const { opinionVariables,methodsOfEvaluation } = this.props;
-    let aux = this.state.question,evmAux=[];
+    let aux = this.state.question,evmAux=this.state.selectedEvMeth;
 
     for (let i = 0; i <= 21; i++) {
       aux[i].value = opinionVariables[i].value;
