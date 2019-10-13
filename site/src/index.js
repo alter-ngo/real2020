@@ -8,8 +8,7 @@ import { AppContainer } from "react-hot-loader";
 
 // Wrap the rendering in a function:
 const render = Component => {
-  /*if (document.getElementById("root").hasChildNodes()) {
-    console.log("Hydrate")
+  if (document.getElementById("root").hasChildNodes()) {
     ReactDOM.hydrate(
       <AppContainer>
         <NextApp />
@@ -17,20 +16,13 @@ const render = Component => {
       document.getElementById("root")
     );
   } else {
-    console.log("Rendered")
     ReactDOM.render(
       <AppContainer>
         <NextApp />
       </AppContainer>,
       document.getElementById("root")
     );
-  }*/
-  ReactDOM.hydrate(
-    <AppContainer>
-      <NextApp />
-    </AppContainer>,
-    document.getElementById("root")
-  );
+  }
 };
 
 // Do this once

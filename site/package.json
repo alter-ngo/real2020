@@ -15,6 +15,7 @@
     "less": "2.7.3",
     "less-loader": "^4.1.0",
     "less-vars-to-js": "^1.2.1",
+    "minimalcss": "^0.8.3",
     "moment": "^2.22.2",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
@@ -63,6 +64,9 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired --env=jsdom",
     "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "inlineCss": true
   },
   "devDependencies": {
     "add": "^2.0.6",
