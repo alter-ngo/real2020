@@ -2,7 +2,7 @@ import React from "react";
 
 import Widget from "components/Widget";
 import { Row, Col, Button } from "antd";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { string } from "prop-types";
 import BlogOverview from "../BlogOverview";
 
@@ -51,7 +51,7 @@ class BlogPost extends React.Component {
   render() {
     const ReactMarkdown = require("react-markdown/with-html");
     return (
-      <>
+      <HelmetProvider>
         <Helmet>
           <title>#estereal - {this.state.title}</title>
           <meta
@@ -94,7 +94,7 @@ class BlogPost extends React.Component {
             </Col>
           </Row>
         </Widget>
-      </>
+      </HelmetProvider>
     );
   }
 }
