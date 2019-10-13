@@ -2,7 +2,6 @@ import React from "react";
 
 import Widget from "components/Widget";
 import { Row, Col, Button } from "antd";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 import { string } from "prop-types";
 import BlogOverview from "../BlogOverview";
 
@@ -51,22 +50,6 @@ class BlogPost extends React.Component {
   render() {
     const ReactMarkdown = require("react-markdown/with-html");
     return (
-      <HelmetProvider>
-        <Helmet>
-          <title>#estereal - {this.state.title}</title>
-          <meta
-            name="description"
-            content={this.state.excerpt.substring(0, 150) + " ..."}
-          ></meta>
-          <meta property="og:url" content={window.location.href}></meta>
-          <meta property="og:title" content={this.state.title}></meta>
-          <meta property="og:type" content="article"></meta>
-          <meta property="og:image" content={this.state.src}></meta>
-          <meta
-            property="og:description"
-            content={this.state.excerpt.substring(0, 150) + " ..."}
-          ></meta>
-        </Helmet>
         <Widget>
           <Row gutter={16}>
             <Col xl={18} md={16} sm={24} xs={24}>
@@ -94,7 +77,6 @@ class BlogPost extends React.Component {
             </Col>
           </Row>
         </Widget>
-      </HelmetProvider>
     );
   }
 }
