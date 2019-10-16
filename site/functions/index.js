@@ -21,6 +21,11 @@ exports.host = functions.https.onRequest((req, res) => {
       : false;
 
   if (isBot) {
+    // will be replaced by dynamic logic
+    indexHTML = indexHTML.replace(ogPlaceholder, getOpenGraph());
+    res.status(200).send(indexHTML);
+    return;
+  } else {
     indexHTML = indexHTML.replace(ogPlaceholder, getOpenGraph());
     res.status(200).send(indexHTML);
     return;
