@@ -62,7 +62,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build && cp build/index.html functions/hosting",
+    "build": "react-app-rewired build && cp build/index.html functions/hosting/",
     "test": "react-app-rewired --env=jsdom"
   },
   "devDependencies": {
