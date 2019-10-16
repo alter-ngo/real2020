@@ -30,7 +30,7 @@ exports.host = functions.https.onRequest((req, res) => {
 const defaultDesc =
   "Cea mai mare colecție de date deschise despre învățământul românesc.";
 const defaultTitle = "Registrul Educational Alternativ";
-const defaultLogo = "https://example.com/images/headerHQ.jpg";
+const defaultLogo = "%PUBLIC_URL%/loader.png";
 
 const getOpenGraph = dynamic => {
   let og = `<meta property="og:type" content="website" />`;
@@ -39,7 +39,6 @@ const getOpenGraph = dynamic => {
     og += `<meta property="og:title" content="${defaultTitle}" />`;
     og += `<meta property="og:description" content="${defaultDesc}" />`;
     og += `<meta property="og:image" content="${defaultLogo}" />`;
-    og += `<meta property="og:url" content="%PUBLIC_URL%/loader.png" />`;
   }
 
   return og;
