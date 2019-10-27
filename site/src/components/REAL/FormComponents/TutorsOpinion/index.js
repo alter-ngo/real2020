@@ -112,7 +112,7 @@ class TutorsOpinionForm extends React.Component {
     };
     for (let i = 1; i <= 2; i++) {
       radioOpts.push(
-        <Radio style={radioStyle} value={i}>
+        <Radio style={radioStyle} value={radioOptions[i - 1].id}>
           {radioOptions[i - 1].id}
         </Radio>
       )

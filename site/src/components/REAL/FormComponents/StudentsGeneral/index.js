@@ -204,10 +204,10 @@ class GeneralForm extends React.Component {
         </Form.Item>
         <Form.Item validateStatus={valid[5].status} help={valid[5].txt} label={" Ce clasă ești?"}>
           <Radio.Group buttonStyle="solid" value={question[5].value || undefined} onChange={this.handleChangeRadio(5)}>
-            <Radio.Button value={1}>a IX-a</Radio.Button>
-            <Radio.Button value={2}>a X-a</Radio.Button>
-            <Radio.Button value={3}>a XI-a</Radio.Button>
-            <Radio.Button value={4}>a XII-a</Radio.Button>
+            <Radio.Button value={"IX"}>a IX-a</Radio.Button>
+            <Radio.Button value={"X"}>a X-a</Radio.Button>
+            <Radio.Button value={"XI"}>a XI-a</Radio.Button>
+            <Radio.Button value={"XII"}>a XII-a</Radio.Button>
           </Radio.Group>
         </Form.Item>
         <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={" La ce literă ești?"}>

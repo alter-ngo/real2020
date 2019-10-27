@@ -153,21 +153,21 @@ class StudentsOpinionForm extends React.Component {
     };
     for (let i = 1; i <= 2; i++) {
       radioOpts.push(
-        <Radio style={radioStyle} value={i}>
+        <Radio style={radioStyle} value={radioOptions[i - 1].id}>
           {radioOptions[i - 1].id}
         </Radio>
       );
     }
     for (let i = 1; i <= 5; i++) {
       timeInt.push(
-        <Option value={i} label={timeIntervals[i-1].id}>
+        <Option value={i} value={timeIntervals[i-1].id}>
           {timeIntervals[i-1].id}
         </Option>
       );
     }
     for (let i = 1 ; i<= 6; i++) {
       tOpts.push(
-        <Option value={i} label={teachOpts[i-1].id}>
+        <Option value={teachOpts[i-1].id}>
           {teachOpts[i-1].id}
         </Option>
       );

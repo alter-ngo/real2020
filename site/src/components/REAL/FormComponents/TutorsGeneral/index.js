@@ -24,14 +24,6 @@ class GeneralForm extends React.Component {
     }
     this.setState({valid:auxv,question:auxq});
   }
-  saveCurrentState(){
-    const {generalVariables}= this.props;
-    const {question} = this.state;
-    for(let i=0;i<=4;i++){
-      generalVariables[i].value=question[i].value;
-    }
-    this.props.nextStep();
-  }
     componentWillMount(){
       let auxv=[],auxq=[];
       for(let i=0;i<=4;i++){

@@ -41,8 +41,7 @@ class OpinionForm extends React.Component {
                 prevStep={this.props.prevStep}
                 nextStep={this.props.nextStep}
                 methodsOfEvaluation={this.props.methodsOfEvaluation}
-                radioValueStudents={this.props.radioValueStudents}
-                opinionVariables={this.props.opinionVariablesStudents}
+                opinionVariables={this.props.opinionVariablesTeachers}
               />
             </Col>
           </div>

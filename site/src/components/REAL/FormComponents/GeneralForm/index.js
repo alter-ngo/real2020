@@ -34,7 +34,7 @@ class GeneralForm extends React.Component {
             <Col span={24}>
               <TutorsGeneral
               nextStep={this.props.nextStep}
-              generalVariables={this.props.generalVariables}/>
+              generalVariables={this.props.generalVariablesTutors}/>
             </Col>
           </div>
         )
@@ -44,7 +44,7 @@ class GeneralForm extends React.Component {
             <Col span={24}>
               <TeachersGeneral
               nextStep={this.props.nextStep}
-              generalVariables={this.props.generalVariables}/>
+              generalVariables={this.props.generalVariablesTutors}/>
             </Col>
           </div>
         )
