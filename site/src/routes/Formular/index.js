@@ -42,14 +42,14 @@ class Formular extends React.Component {
   }
   componentDidMount(){
     let auxArray=[],auxArrayQ2=[],auxArrayQ3=[];
-    for(let i=0;i<=8;i++){
+    for(let i=0;i<=10;i++){
       auxArrayQ2.push({id:"question"+i,value: ""});
     }
     auxArrayQ2.push({id:"radioValue",value:0});
     for(let i=0;i<=28;i++){
       auxArray.push({id:"question "+i,value:""});
     }
-    for(let i=0;i<=21;i++){
+    for(let i=0;i<=24;i++){
       auxArrayQ3.push({id:"question "+i,value:""});
     }
     this.setState({opinionVariablesStudents: auxArray,opinionVariables:auxArrayQ2,opinionVariablesTeachers:auxArrayQ3});

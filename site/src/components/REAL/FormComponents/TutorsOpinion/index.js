@@ -17,7 +17,7 @@ class TutorsOpinionForm extends React.Component {
   saveCurrentState(arg) {
     const { question } = this.state;
     const { opinionVariables } = this.props;
-    for (let i = 0; i <= 9; i++) {
+    for (let i = 0; i <= 10; i++) {
       opinionVariables[i].value = question[i].value;
     }
     if (arg == "back")
@@ -27,7 +27,7 @@ class TutorsOpinionForm extends React.Component {
   };
   componentWillMount(){
     let auxq=[],auxv=[];
-    for (let i=0;i<=9;i++){
+    for (let i=0;i<=10;i++){
       auxq.push(
         {value:""}
       );
@@ -57,7 +57,7 @@ class TutorsOpinionForm extends React.Component {
     const { opinionVariables} = this.props;
     let aux = this.state.question,evmAux=[];
 
-    for (let i = 0; i <= 9; i++) {
+    for (let i = 0; i <= 10; i++) {
       aux[i].value = opinionVariables[i].value;
     }
     this.setState({question: aux,});
@@ -140,11 +140,11 @@ class TutorsOpinionForm extends React.Component {
                 </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[2].value} onChange={(value) => { this.handleSChange(value, 2) }} />
                 </Form.Item>
-                <Form.Item validateStatus={valid[9].status} help={valid[9].txt} label={<span>În clasa copilului dumneavoastră există fondul clasei?&nbsp;       
+                <Form.Item validateStatus={valid[10].status} help={valid[10].txt} label={<span>În clasa copilului dumneavoastră există fondul clasei?&nbsp;       
                 <Tooltip title="Fondul clasei presupune strângerea banilor pentru achiziționarea unor resurse / bunuri.">
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>
-                  <Radio.Group onChange={this.handleChange(9)} value={question[9].value}>
+                  <Radio.Group onChange={this.handleChange(10)} value={question[10].value}>
                     {radioOpts}
                   </Radio.Group>
                 </Form.Item>
@@ -163,17 +163,23 @@ class TutorsOpinionForm extends React.Component {
                 </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[5].value} onChange={(value) => { this.handleSChange(value, 5) }} />
                 </Form.Item>
-                <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={" Ce recomandări ați oferi părinților care vor să își înscrie copiii la liceul copilului dumneavoastră?"}>
-                  <TextArea value={question[6].value} onChange={this.handleChange(6)} autosize={{ minRows: 2, maxRows: 5 }} />
+                <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={<span>Cât de satisfăcut sunteți de relația dintre dumneavoastră și profesorii copilul dumneavoastră?&nbsp;       
+                <Tooltip title="Întrebarea face referire la: respectul reciproc, deschiderea profesorilor de a primi propuneri de la dumneavoastră, susținerea acordată etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
+                  <IconSlider marks={marks} min={1} max={10} value={question[6].value} onChange={(value) => { this.handleSChange(value, 6) }} />
                 </Form.Item>
-                <Form.Item validateStatus={valid[7].status} help={valid[7].txt} label={" Ce recomandări ați oferi conducerii liceului la care învață copilul dumneavoastră?"}>
+                <Form.Item validateStatus={valid[7].status} help={valid[7].txt} label={" Ce recomandări ați oferi părinților care vor să își înscrie copiii la liceul copilului dumneavoastră?"}>
                   <TextArea value={question[7].value} onChange={this.handleChange(7)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
-                <Form.Item validateStatus={valid[8].status} help={valid[8].txt} label={<span>Ce recomandări ați oferi factorilor decizionali?&nbsp;       
+                <Form.Item validateStatus={valid[8].status} help={valid[8].txt} label={" Ce recomandări ați oferi conducerii liceului la care învață copilul dumneavoastră?"}>
+                  <TextArea value={question[8].value} onChange={this.handleChange(8)} autosize={{ minRows: 2, maxRows: 5 }} />
+                </Form.Item>
+                <Form.Item validateStatus={valid[9].status} help={valid[9].txt} label={<span>Ce recomandări ați oferi factorilor decizionali?&nbsp;       
                 <Tooltip title="Factorii decizionali includ: Guvernul, Ministerul Educației etc.">
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>
-                  <TextArea value={question[8].value} onChange={this.handleChange(8)} autosize={{ minRows: 2, maxRows: 5 }} />
+                  <TextArea value={question[9].value} onChange={this.handleChange(9)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
               </Form>
               <Button style={{ marginLeft: 8 }} type="default" onClick={() => this.validateForm("back")}>Back</Button>
