@@ -32,7 +32,7 @@ class StudentsOpinionForm extends React.Component {
     const {question}=this.state;
     let ok=true;
     let aux=this.state.valid;
-     for(let i=0;i<=28;i++){
+     for(let i=0;i<=29;i++){
        if(question[i].value==""){
          aux[i].status="error";
          aux[i].txt="*Acest câmp este obligatoriu.";
@@ -47,7 +47,7 @@ class StudentsOpinionForm extends React.Component {
   saveCurrentState(arg) {
     const { question} = this.state;
     const { opinionVariables } = this.props;
-    for (let i = 0; i <= 28; i++) {
+    for (let i = 0; i <= 29; i++) {
       opinionVariables[i].value = question[i].value;
     }
     if (arg == "back")
@@ -57,7 +57,7 @@ class StudentsOpinionForm extends React.Component {
   };
   componentWillMount(){
     let auxq=[],auxv=[];
-    for(let i=0;i<=28;i++){
+    for(let i=0;i<=29;i++){
       auxq.push({value:""});
       auxv.push({status:"",txt:""});
     }
@@ -68,7 +68,7 @@ class StudentsOpinionForm extends React.Component {
     const { opinionVariables } = this.props;
     let aux = this.state.question;
 
-    for (let i = 0; i <= 28; i++) {
+    for (let i = 0; i <= 29; i++) {
       aux[i].value = opinionVariables[i].value;
     }
     this.setState({
@@ -207,6 +207,12 @@ class StudentsOpinionForm extends React.Component {
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>
                 <IconSlider  marks={marks} min={1} max={10} value={question[12].value} onChange={(value) => { this.handleSChange(value, 12) }} />
+                </Form.Item>
+                <Form.Item validateStatus={valid[29].status} help={valid[29].txt} label={<span>Cât de mult consideri că profesorii pun accentul pe scoaterea in evidenta a unor anumite persoane?&nbsp;       
+                <Tooltip title="Prin scoaterea in evidenta facem referire la compararea rezultatelor unor anumiți elevi sau menționarea unor elevi ca exemple negative sau pozitive.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
+                <IconSlider  marks={marks} min={1} max={10} value={question[29].value} onChange={(value) => { this.handleSChange(value, 29) }} />
                 </Form.Item>
                 <Form.Item validateStatus={valid[13].status} help={valid[13].txt} label={<span>Cât de mult consideri că profesorii pun accentul pe scoaterea in evidenta a unor anumite persoane?&nbsp;       
                 <Tooltip title="Prin scoaterea in evidenta facem referire la compararea rezultatelor unor anumiți elevi sau menționarea unor elevi ca exemple negative sau pozitive.">
