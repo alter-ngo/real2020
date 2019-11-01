@@ -4,7 +4,6 @@ import ModalSelector from 'components/REAL/FormComponents/ModalSelector';
 import StepsComp from 'components/REAL/FormComponents/Steps';
 import OpinionForm from 'components/REAL/FormComponents/OpinionForm';
 import FeedbackForm from 'components/REAL/FormComponents/FeedbackForm';
-
 class Formular extends React.Component {
   constructor(props) {
     super(props);
@@ -19,8 +18,8 @@ class Formular extends React.Component {
                         {id:"radio",value:""},
                         {id:"recommendation",value:""},
                         {id:"extra",value:"",altele:true}],
-      generalVariables:[{id:"varsta",value:11},
-                        {id:"gen",value:""},
+      generalVariables:[{id:"01",value:11},
+                        {id:"02",value:""},
                         {id:"judet",value:""},
                         {id:"localitate",value:""},
                         {id:"liceu",value:""},
@@ -29,21 +28,31 @@ class Formular extends React.Component {
                         {id:"filiera",value:""},
                         {id:"profil",value:""},
                         {id:"specializare",value:""},],
+      generalVariablesTutors:[{id:"01",value:11},
+                        {id:"02",value:""},
+                        {id:"judet",value:""},
+                        {id:"localitate",value:""},
+                        {id:"liceu",value:""}],
       opinionVariables:[],
       opinionVariablesStudents:[],
+      opinionVariablesTeachers:[],
+
     };
   this.setStatus=this.setStatus.bind(this);
   }
   componentDidMount(){
-    let auxArray=[],auxArrayQ2=[];
-    for(let i=0;i<=8;i++){
+    let auxArray=[],auxArrayQ2=[],auxArrayQ3=[];
+    for(let i=0;i<=10;i++){
       auxArrayQ2.push({id:"question"+i,value: ""});
     }
     auxArrayQ2.push({id:"radioValue",value:0});
     for(let i=0;i<=28;i++){
       auxArray.push({id:"question "+i,value:""});
     }
-    this.setState({opinionVariablesStudents: auxArray,opinionVariables:auxArrayQ2});
+    for(let i=0;i<=24;i++){
+      auxArrayQ3.push({id:"question "+i,value:""});
+    }
+    this.setState({opinionVariablesStudents: auxArray,opinionVariables:auxArrayQ2,opinionVariablesTeachers:auxArrayQ3});
   }
   setStatus(param){
     this.setState({
@@ -66,6 +75,64 @@ class Formular extends React.Component {
     });
     window.scrollTo(0, 0);
   }
+  Elev_Submit(){
+    const {generalVariables,opinionVariablesStudents,FeedbackVariables}=this.state;
+    let finalArray=[];    
+    let cnt=generalVariables.length;
+    for(let i=0;i<=cnt-1;i++)
+      finalArray.push({id:"E"+(i+1),value:generalVariables[i].value});
+    cnt++;
+    for(let i=0;i<=opinionVariablesStudents.length-1;i++){
+      finalArray.push({id:"E"+cnt++,value:opinionVariablesStudents[i].value});
+    }
+    for(let i=0;i<=FeedbackVariables.length-1;i++){
+      finalArray.push({id:"E"+cnt++,value:FeedbackVariables[i].value});
+    }
+    var jsonString = JSON.stringify(finalArray);
+    console.log(jsonString);
+  }
+  Tutore_Submit(){
+    const {generalVariablesTutors,opinionVariables,FeedbackVariables}=this.state;
+    let finalArray=[];    
+    let cnt=generalVariablesTutors.length;
+    for(let i=0;i<=cnt-1;i++)
+      finalArray.push({id:"T"+(i+1),value:generalVariablesTutors[i].value});
+    cnt++;
+    for(let i=0;i<=opinionVariables.length-1;i++){
+      finalArray.push({id:"T"+cnt++,value:opinionVariables[i].value});
+    }
+    for(let i=0;i<=FeedbackVariables.length-1;i++){
+      finalArray.push({id:"T"+cnt++,value:FeedbackVariables[i].value});
+    }
+    var jsonString = JSON.stringify(finalArray);
+    console.log(jsonString);
+  }
+  Profesor_Submit(){
+    const {generalVariablesTutors,opinionVariablesTeachers,FeedbackVariables,methodsOfEvaluation}=this.state;
+    let finalArray=[];    
+    let cnt=generalVariablesTutors.length;
+    for(let i=0;i<=cnt-1;i++)
+      finalArray.push({id:"P"+(i+1),value:generalVariablesTutors[i].value});
+    cnt++;
+    for(let i=0;i<=opinionVariablesTeachers.length-1;i++){
+      finalArray.push({id:"P"+cnt++,value:opinionVariablesTeachers[i].value});
+    }
+    finalArray.push({id:"P"+cnt++,value:methodsOfEvaluation});
+    for(let i=0;i<=FeedbackVariables.length-1;i++){
+      finalArray.push({id:"P"+cnt++,value:FeedbackVariables[i].value});
+    }
+    var jsonString = JSON.stringify(finalArray);
+    console.log(jsonString);
+  }
+  onSubmit=()=>{
+    const {status}=this.state;
+      if(status=="Elev")
+        this.Elev_Submit();
+      if(status=="Profesor")
+        this.Profesor_Submit();
+      if(status=="Tutore")
+        this.Tutore_Submit();
+  }
 
   render(){
     const{step}=this.state;
@@ -84,6 +151,7 @@ class Formular extends React.Component {
                 <br/>
                 <GeneralForm
                   generalVariables={this.state.generalVariables}
+                  generalVariablesTutors={this.state.generalVariablesTutors}
                   status={this.state.status}
                   nextStep={this.nextStep}/>
               </div>
@@ -98,9 +166,9 @@ class Formular extends React.Component {
                 nextStep={this.nextStep}
                 status={this.state.status}
                 methodsOfEvaluation={this.state.methodsOfEvaluation}
-                radioValueStudents={this.state.radioValueStudents}
                 opinionVariablesStudents={this.state.opinionVariablesStudents}
-                opinionVariables={this.state.opinionVariables}/>
+                opinionVariables={this.state.opinionVariables}
+                opinionVariablesTeachers={this.state.opinionVariablesTeachers}/>
               </div>
             )
           case 4:
@@ -111,7 +179,7 @@ class Formular extends React.Component {
                 <FeedbackForm
                 FeedbackVariables={this.state.FeedbackVariables}
                 prevStep={this.prevStep}
-                nextStep={this.nextStep}/>
+                onSubmit={this.onSubmit}/>
               </div>
             )
 

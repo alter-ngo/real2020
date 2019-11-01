@@ -16,7 +16,7 @@ class GeneralForm extends React.Component {
   }
   componentWillMount(){
     let auxv=[],auxq=[];
-    for(let i=0;i<=4;i++){
+    for(let i=0;i<=9;i++){
       auxq.push(
         {value:""}
       );
@@ -24,17 +24,9 @@ class GeneralForm extends React.Component {
     }
     this.setState({valid:auxv,question:auxq});
   }
-  saveCurrentState(){
-    const {generalVariables}= this.props;
-    const {question} = this.state;
-    for(let i=0;i<=4;i++){
-      generalVariables[i].value=question[i].value;
-    }
-    this.props.nextStep();
-  }
     componentWillMount(){
       let auxv=[],auxq=[];
-      for(let i=0;i<=4;i++){
+      for(let i=0;i<=9;i++){
         auxq.push(
           {value:""}
         );
@@ -45,7 +37,7 @@ class GeneralForm extends React.Component {
     saveCurrentState(){
       const {generalVariables} = this.props;
       const {question} = this.state;
-      for(let i=0;i<=4;i++){
+      for(let i=0;i<=9;i++){
         generalVariables[i].value=question[i].value;
       }
       this.props.nextStep();
@@ -53,7 +45,7 @@ class GeneralForm extends React.Component {
     componentDidMount(){
       const {generalVariables}= this.props;
       let aux=this.state.question;
-      for(let i=0;i<=4;i++){
+      for(let i=0;i<=9;i++){
         aux[i].value=generalVariables[i].value;
       }
       this.setState({question:aux});
@@ -85,7 +77,7 @@ class GeneralForm extends React.Component {
     const {question}=this.state;
     let ok=true;
     let aux=this.state.valid;
-     for(let i=0;i<=4;i++){
+     for(let i=0;i<=9;i++){
        if(question[i].value==""){
          aux[i].status="error";
          aux[i].txt="*Acest câmp este obligatoriu.";
@@ -99,7 +91,7 @@ class GeneralForm extends React.Component {
    }
   render() {
     const {valid,question}=this.state;
-    let judete = [], licee = [], localitati = [];
+    let judete = [], licee = [], localitati = [], clase = [], litere = [], filiere = [], profile = [], specializari = [];
     for (let i = 1; i <= 6; i++) {
       judete.push(
         <Select.Option key={"Judet" + i}>
@@ -116,6 +108,32 @@ class GeneralForm extends React.Component {
           {"Localitatea" + i}
         </Select.Option>
       )
+      clase.push(
+        <Select.Option key={"Specializarea" + i}>
+          {"Specializarea" + i}
+        </Select.Option>
+      )
+      litere.push(
+        <Select.Option key={"Litera" + i}>
+          {"Litera" + i}
+        </Select.Option>
+      )
+      filiere.push(
+        <Select.Option key={"Filiera" + i}>
+          {"Filiera" + i}
+        </Select.Option>
+      )
+      profile.push(
+        <Select.Option key={"Profilul" + i}>
+          {"Profilul" + i}
+        </Select.Option>
+      )
+      specializari.push(
+        <Select.Option key={"Specializarea" + i}>
+          {"Specializarea" + i}
+        </Select.Option>
+      )
+      
     }
     return (
     <Widget>
@@ -184,6 +202,87 @@ class GeneralForm extends React.Component {
             {licee}
           </Select>
         </Form.Item>
+
+        <Form.Item validateStatus={valid[5].status} help={valid[5].txt} label={" În ce clasă este copilul dumneavoastră?"}>
+          <Select
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Selectează clasa"
+            onChange={(value)=>{this.handleChange(value, 5)}}
+            value={question[5].value || undefined}
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            {clase}
+          </Select>
+        </Form.Item>
+
+        <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={" Care este litera clasei copilului dumneavoastră?"}>
+          <Select
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Selectează litera"
+            onChange={(value)=>{this.handleChange(value, 6)}}
+            value={question[6].value || undefined}
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            {litere}
+          </Select>
+        </Form.Item>
+
+        <Form.Item validateStatus={valid[7].status} help={valid[7].txt} label={" La ce filieră este copilul dumneavoastra?"}>
+          <Select
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Selectează filiera"
+            onChange={(value)=>{this.handleChange(value, 7)}}
+            value={question[7].value || undefined}
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            {filiere}
+          </Select>
+        </Form.Item>
+
+        <Form.Item validateStatus={valid[8].status} help={valid[8].txt} label={" La ce profil învata copilul dumneavoastra?"}>
+          <Select
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Selectează profilul"
+            onChange={(value)=>{this.handleChange(value, 8)}}
+            value={question[8].value || undefined}
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            {profile}
+          </Select>
+        </Form.Item>
+
+        <Form.Item validateStatus={valid[9].status} help={valid[9].txt} label={" Care este specializarea copilului dumneavoastră?"}>
+          <Select
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Selectează specializarea"
+            onChange={(value)=>{this.handleChange(value, 9)}}
+            value={question[9].value || undefined}
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            {specializari}
+          </Select>
+        </Form.Item>
+
       </Form>
         <br/>
         <Button type="primary" style={{marginLeft:8}} onClick={()=>this.validateForm()}>Next</Button>

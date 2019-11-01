@@ -1,8 +1,9 @@
-import { Form, Radio, Input, Select, Button,Tooltip,Icon } from "antd";
+import { Form, Radio, Input, Select, Button,Tooltip,Icon, } from "antd";
 import Widget from "components/Widget";
 import React from "react";
 import IconSlider from "components/REAL/FormComponents/IconSlider";
 const { Option } = Select;
+const {TextArea} = Input;
 class StudentsOpinionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,7 @@ class StudentsOpinionForm extends React.Component {
   saveCurrentState(arg) {
     const { question,selectedEvMeth } = this.state;
     const { opinionVariables,methodsOfEvaluation } = this.props;
-    for (let i = 0; i <= 21; i++) {
+    for (let i = 0; i <= 24; i++) {
       opinionVariables[i].value = question[i].value;
     }
     for(let i=0;i<=methodsOfEvaluation.length-1;i++){
@@ -38,10 +39,8 @@ class StudentsOpinionForm extends React.Component {
   };
   componentWillMount(){
     let auxq=[],auxv=[];
-    for (let i=0;i<=21;i++){
-      auxq.push(
-        {value:""}
-      );
+    for (let i=0;i<=24;i++){
+      auxq.push({value:""});
       auxv.push({status:"",txt:""});
     }
     //extra object for selectedEvMeth
@@ -53,7 +52,7 @@ class StudentsOpinionForm extends React.Component {
    const {question,selectedEvMeth}=this.state;
    let ok=true;
    let aux=this.state.valid;
-    for(let i=0;i<=21;i++){
+    for(let i=0;i<=24;i++){
       if(question[i].value==""){
         aux[i].status="error";
         aux[i].txt="*Acest câmp este obligatoriu.";
@@ -74,7 +73,7 @@ class StudentsOpinionForm extends React.Component {
     const { opinionVariables,methodsOfEvaluation } = this.props;
     let aux = this.state.question,evmAux=this.state.selectedEvMeth;
 
-    for (let i = 0; i <= 21; i++) {
+    for (let i = 0; i <= 24; i++) {
       aux[i].value = opinionVariables[i].value;
     }
     for(let i =0;i<=methodsOfEvaluation.length-1;i++){
@@ -91,13 +90,13 @@ class StudentsOpinionForm extends React.Component {
   handleEvChange =selectedEvMeth=>{
     let aux=this.state.valid;
     if(selectedEvMeth.length<1){
-      aux[22].status="error";
-      aux[22].txt="*Acest câmp este obligatoriu.";
+      aux[25].status="error";
+      aux[25].txt="*Acest câmp este obligatoriu.";
     }
     else{
 
-      aux[22].status="success";
-      aux[22].txt="";
+      aux[25].status="success";
+      aux[25].txt="";
     }
       this.setState({selectedEvMeth:selectedEvMeth,valid:aux});
   };
@@ -153,21 +152,21 @@ class StudentsOpinionForm extends React.Component {
     };
     for (let i = 1; i <= 2; i++) {
       radioOpts.push(
-        <Radio style={radioStyle} value={i}>
+        <Radio style={radioStyle} value={radioOptions[i - 1].id}>
           {radioOptions[i - 1].id}
         </Radio>
       );
     }
     for (let i = 1; i <= 5; i++) {
       timeInt.push(
-        <Option value={i} label={timeIntervals[i-1].id}>
+        <Option value={i} value={timeIntervals[i-1].id}>
           {timeIntervals[i-1].id}
         </Option>
       );
     }
     for (let i = 1 ; i<= 6; i++) {
       tOpts.push(
-        <Option value={i} label={teachOpts[i-1].id}>
+        <Option value={teachOpts[i-1].id}>
           {teachOpts[i-1].id}
         </Option>
       );
@@ -272,22 +271,34 @@ class StudentsOpinionForm extends React.Component {
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>
                   <IconSlider marks={marks} min={1} max={10} value={question[18].value} onChange={(value) => { this.handleSChange(value, 18) }} /></Form.Item>
-                <Form.Item validateStatus={valid[19].status} help={valid[19].txt} label={" Cât de divers ți se pare colectivul liceului tău?"}>
-                <IconSlider marks={marks} min={1} max={10} value={question[19].value} onChange={(value) => { this.handleSChange(value, 19) }} />
+                <Form.Item validateStatus={valid[19].status} help={valid[19].txt} label={" Ce recomandări ați oferi elevilor din liceul în care predați?"}>
+                  <TextArea value={question[19].value} onChange={this.handleChange(19)} autosize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
-                <Form.Item validateStatus={valid[20].status} help={valid[20].txt} label={<span>Ați fost vreodată hărțuit de către un elev?&nbsp;       
+                <Form.Item validateStatus={valid[20].status} help={valid[20].txt} label={" Ce recomandări ați oferi părinților care vor să își înscrie copiii la liceul copilului dumneavoastră?"}>
+                  <TextArea value={question[20].value} onChange={this.handleChange(20)} autosize={{ minRows: 2, maxRows: 5 }} />
+                </Form.Item>
+                <Form.Item validateStatus={valid[21].status} help={valid[21].txt} label={" Ce recomandări ați oferi conducerii liceului la care învață copilul dumneavoastră?"}>
+                  <TextArea value={question[21].value} onChange={this.handleChange(21)} autosize={{ minRows: 2, maxRows: 5 }} />
+                </Form.Item>
+                <Form.Item validateStatus={valid[22].status} help={valid[22].txt} label={<span>Ce recomandări ați oferi factorilor decizionali?&nbsp;       
+                <Tooltip title="Factorii decizionali includ: Guvernul, Ministerul Educației etc.">
+                  <Icon type="question-circle-o" />
+                </Tooltip></span>}>
+                  <TextArea value={question[22].value} onChange={this.handleChange(22)} autosize={{ minRows: 2, maxRows: 5 }} />
+                </Form.Item>
+                <Form.Item validateStatus={valid[23].status} help={valid[23].txt} label={<span>Ați fost vreodată hărțuit de către un elev?&nbsp;       
                 <Tooltip title="Prin hărțuire facem referire la insulte, violență fizică sau verbală, avansuri nepotrivite etc.">
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>
-                  <Radio.Group onChange={this.handleChange(20)} value={question[20].value}>
+                  <Radio.Group onChange={this.handleChange(23)} value={question[23].value}>
                     {radioOpts}
                   </Radio.Group>
                   </Form.Item>
-                <Form.Item validateStatus={valid[21].status} help={valid[21].txt} label={<span>Ați fost vreodată hărțuit de către un cadru didactic?&nbsp;       
+                <Form.Item validateStatus={valid[24].status} help={valid[24].txt} label={<span>Ați fost vreodată hărțuit de către un cadru didactic?&nbsp;       
                 <Tooltip title="Prin hărțuire facem referire la insulte, violență fizică sau verbală, avansuri nepotrivite etc.">
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>
-                  <Radio.Group onChange={this.handleChange(21)} value={question[21].value}>
+                  <Radio.Group onChange={this.handleChange(24)} value={question[24].value}>
                     {radioOpts}
                   </Radio.Group></Form.Item>
               </Form>

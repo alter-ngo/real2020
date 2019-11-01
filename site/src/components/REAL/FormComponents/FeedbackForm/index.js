@@ -14,7 +14,7 @@ class GeneralForm extends React.Component {
                    {id:"Prieteni"},
                    {id:"Profesori"},
                    {id:"Parinti"},
-                   {id:"Altele "}],
+                   {id:"Altele"}],
   };
   this.validate=this.validate.bind(this);
   this.saveCurrentState=this.saveCurrentState.bind(this);
@@ -30,7 +30,7 @@ class GeneralForm extends React.Component {
     auxv.push({status:"",txt:""});
     this.setState({valid:auxv,question:auxq});
   }
-  saveCurrentState(){
+  saveCurrentState(arg){
     const {FeedbackVariables} = this.props;
     const {question} = this.state;
     for(let i=0;i<=3;i++){
@@ -38,7 +38,10 @@ class GeneralForm extends React.Component {
     }
     FeedbackVariables[4].altele=question[4].altele;
     FeedbackVariables[4].value=question[4].value;
-    this.props.prevStep();
+    if (arg == "back")
+      this.props.prevStep();
+    else
+      this.props.onSubmit();
   }
   componentDidMount(){
     const {FeedbackVariables}= this.props;
@@ -74,7 +77,7 @@ class GeneralForm extends React.Component {
   onChange =input => e => {
     this.validate(2);
     let aux=this.state.question;
-    if(e.target.value==7){
+    if(e.target.value=="Altele"){
       aux[input].value=e.target.value;
       aux[4].altele=false;
     }else{
@@ -83,7 +86,7 @@ class GeneralForm extends React.Component {
     }
     this.setState({question:aux});
   };
-  validateForm(){
+  validateForm(arg){
   const {question}=this.state;
   let ok=true;
   let aux=this.state.valid;
@@ -104,7 +107,7 @@ class GeneralForm extends React.Component {
    }
    this.setState({valid:aux});
    if(ok){
-     this.saveCurrentState();
+     this.saveCurrentState(arg);
    }
  }
   render() { 
@@ -117,7 +120,7 @@ class GeneralForm extends React.Component {
     };
     for(let i =1; i<=7;i++){
       radioOpts.push(
-        <Radio style={radioStyle} value={i}>
+        <Radio style={radioStyle} value={radioOptions[i-1].id}>
         {radioOptions[i-1].id}
       </Radio>
       )
@@ -146,8 +149,8 @@ class GeneralForm extends React.Component {
               <TextArea  value={question[3].value} onChange={this.handleChange(3)} autosize={{ minRows: 2, maxRows: 5 }}/>
               </Form.Item>
             </Form>
-              <Button style={{marginLeft:8}} type="default" onClick={()=>this.validateForm()}>Back</Button>
-              <Button style={{marginLeft:10}} type="primary">Submit</Button> 
+              <Button style={{marginLeft:8}} type="default" onClick={()=>this.validateForm("back")}>Back</Button>
+              <Button style={{marginLeft:10}} type="primary" onClick={()=>this.validateForm("submit")}>Submit</Button> 
             </Widget>
             </Col>
         </div>
