@@ -214,7 +214,7 @@ class StudentsOpinionForm extends React.Component {
                 </Tooltip></span>}>
                 <IconSlider  marks={marks} min={1} max={10} value={question[29].value} onChange={(value) => { this.handleSChange(value, 29) }} />
                 </Form.Item>
-                <Form.Item validateStatus={valid[13].status} help={valid[13].txt} label={<span>Cât de mult consideri că profesorii pun accentul pe scoaterea in evidenta a unor anumite persoane?&nbsp;       
+                <Form.Item validateStatus={valid[13].status} help={valid[13].txt} label={<span>Cât de mult consideri că profesorii pun accentul pe evaluare?&nbsp;       
                 <Tooltip title="Prin scoaterea in evidenta facem referire la compararea rezultatelor unor anumiți elevi sau menționarea unor elevi ca exemple negative sau pozitive.">
                   <Icon type="question-circle-o" />
                 </Tooltip></span>}>

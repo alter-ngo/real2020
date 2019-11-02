@@ -41,7 +41,7 @@ class TutorsOpinionForm extends React.Component {
    const {question}=this.state;
    let ok=true;
    let aux=this.state.valid;
-    for(let i=0;i<=9;i++){
+    for(let i=0;i<=10;i++){
       if(question[i].value==""){
         aux[i].status="error";
         aux[i].txt="*Acest câmp este obligatoriu.";

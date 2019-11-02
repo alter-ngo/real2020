@@ -32,7 +32,12 @@ class Formular extends React.Component {
                         {id:"02",value:""},
                         {id:"judet",value:""},
                         {id:"localitate",value:""},
-                        {id:"liceu",value:""}],
+                        {id:"liceu",value:""},
+                        {id:"clasa",value:""},
+                        {id:"litera",value:""},
+                        {id:"filiera",value:""},
+                        {id:"profil",value:""},
+                        {id:"specializare",value:""}],
       opinionVariables:[],
       opinionVariablesStudents:[],
       opinionVariablesTeachers:[],
@@ -45,8 +50,7 @@ class Formular extends React.Component {
     for(let i=0;i<=10;i++){
       auxArrayQ2.push({id:"question"+i,value: ""});
     }
-    auxArrayQ2.push({id:"radioValue",value:0});
-    for(let i=0;i<=28;i++){
+    for(let i=0;i<=29;i++){
       auxArray.push({id:"question "+i,value:""});
     }
     for(let i=0;i<=24;i++){

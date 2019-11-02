@@ -17,23 +17,11 @@ class GeneralForm extends React.Component {
   componentWillMount(){
     let auxv=[],auxq=[];
     for(let i=0;i<=9;i++){
-      auxq.push(
-        {value:""}
-      );
+      auxq.push({value:""});
       auxv.push({status:"",txt:""});
     }
     this.setState({valid:auxv,question:auxq});
   }
-    componentWillMount(){
-      let auxv=[],auxq=[];
-      for(let i=0;i<=9;i++){
-        auxq.push(
-          {value:""}
-        );
-        auxv.push({status:"",txt:""});
-      }
-      this.setState({valid:auxv,question:auxq});
-    }
     saveCurrentState(){
       const {generalVariables} = this.props;
       const {question} = this.state;
@@ -73,6 +61,14 @@ class GeneralForm extends React.Component {
         question: aux,
       });
    };
+   handleChangeRadio = input => e => {
+    this.validate(input);
+    let aux = this.state.question;
+    aux[input].value = e.target.value;
+    this.setState({
+      question: aux,
+    });
+  }
    validateForm(){
     const {question}=this.state;
     let ok=true;
@@ -108,11 +104,7 @@ class GeneralForm extends React.Component {
           {"Localitatea" + i}
         </Select.Option>
       )
-      clase.push(
-        <Select.Option key={"Specializarea" + i}>
-          {"Specializarea" + i}
-        </Select.Option>
-      )
+
       litere.push(
         <Select.Option key={"Litera" + i}>
           {"Litera" + i}
@@ -204,19 +196,12 @@ class GeneralForm extends React.Component {
         </Form.Item>
 
         <Form.Item validateStatus={valid[5].status} help={valid[5].txt} label={" În ce clasă este copilul dumneavoastră?"}>
-          <Select
-            showSearch
-            style={{ width: 200 }}
-            placeholder="Selectează clasa"
-            onChange={(value)=>{this.handleChange(value, 5)}}
-            value={question[5].value || undefined}
-            optionFilterProp="children"
-            filterOption={(input, option) =>
-              option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
-          >
-            {clase}
-          </Select>
+            <Radio.Group buttonStyle="solid" value={question[5].value || undefined} onChange={this.handleChangeRadio(5)}>
+              <Radio.Button value={"IX"}>a IX-a</Radio.Button>
+              <Radio.Button value={"X"}>a X-a</Radio.Button>
+              <Radio.Button value={"XI"}>a XI-a</Radio.Button>
+              <Radio.Button value={"XII"}>a XII-a</Radio.Button>
+            </Radio.Group>
         </Form.Item>
 
         <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={" Care este litera clasei copilului dumneavoastră?"}>
