@@ -1,10 +1,5 @@
 import {Input,Form,Radio,Slider,Col,Select,Button } from "antd";
-import Widget from "components/Widget";
-import { verify } from "crypto";
-import { relative } from "path";
-import IconSlider from "components/REAL/FormComponents/IconSlider";
 import React from "react";
-import IntlMessages from "util/IntlMessages";
 import StudentsGeneral from 'components/REAL/FormComponents/StudentsGeneral';
 import TeachersGeneral from 'components/REAL/FormComponents/TeachersGeneral';
 import TutorsGeneral from 'components/REAL/FormComponents/TutorsGeneral';
