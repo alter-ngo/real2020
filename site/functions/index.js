@@ -1,4 +1,5 @@
 const functions = require('firebase-functions');
+const fs = require('fs')
 
 exports.host = functions.https.onRequest((req, res) => {
     const userAgent = req.headers["user-agent"].toLowerCase();
