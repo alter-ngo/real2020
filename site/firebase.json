@@ -1,5 +1,11 @@
 {
   "hosting": {
+    "site": "estereal",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ],
     "rewrites": [
       {
         "source": "**",
