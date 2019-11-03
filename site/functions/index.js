@@ -20,6 +20,7 @@ exports.host = functions.https.onRequest(async (req, res) => {
     userAgent.includes("ia_archiver") ||
     userAgent.includes("facebookexternalhit") ||
     userAgent.includes("twitterbot") ||
+    userAgent.includes("discordbot") ||
     userAgent.includes("developers.google.com")
       ? true
       : false;
