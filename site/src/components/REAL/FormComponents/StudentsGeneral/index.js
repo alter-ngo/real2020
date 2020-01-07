@@ -108,6 +108,15 @@ class GeneralForm extends React.Component {
    };
    handleChangeNested(value,input){
     if(input===2){
+      let aux_q = this.state.question;
+      aux_q[3].value = "";
+      aux_q[4].value = "";
+      aux_q[7].value = "";
+      aux_q[8].value = "";
+      aux_q[9].value = "";
+      this.setState({
+        question: aux_q,
+      });
       path=value;
       localitati=[];licee=[];profile=[]; specializari=[];filiere = [];
       for(var i in json[value]){
@@ -118,6 +127,14 @@ class GeneralForm extends React.Component {
     )}
     }
     if(input===3){
+      let aux_q = this.state.question;
+      aux_q[4].value = "";
+      aux_q[7].value = "";
+      aux_q[8].value = "";
+      aux_q[9].value = "";
+      this.setState({
+        question: aux_q,
+      });
       licee=[];profile=[]; specializari=[];filiere = [];
       second_path=value;
       let aux=json[path][value].judet
@@ -130,6 +147,13 @@ class GeneralForm extends React.Component {
       );inx+=1;}
     }
     if(input===4){
+      let aux_q = this.state.question;
+      aux_q[7].value = "";
+      aux_q[8].value = "";
+      aux_q[9].value = "";
+      this.setState({
+        question: aux_q,
+      });
       filiere = [];profile=[]; specializari=[];third_path=value;
       let aux=json[path][second_path].judet;
       let aux2=json[path][second_path][aux][third_path].liceu;
@@ -145,6 +169,12 @@ class GeneralForm extends React.Component {
       }
     }
     if(input===7){
+      let aux_q = this.state.question;
+      aux_q[8].value = "";
+      aux_q[9].value = "";
+      this.setState({
+        question: aux_q,
+      });
       profile=[]; specializari=[];
       fourth_path=value;
       let aux=json[path][second_path].judet;
@@ -158,6 +188,11 @@ class GeneralForm extends React.Component {
       }
     }
     if(input===8){
+      let aux_q = this.state.question;
+      aux_q[9].value = "";
+      this.setState({
+        question: aux_q,
+      });
         specializari=[];
         fifth_path=value;
         let aux=json[path][second_path].judet;
