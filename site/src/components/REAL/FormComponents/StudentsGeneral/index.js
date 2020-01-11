@@ -250,20 +250,20 @@ class GeneralForm extends React.Component {
     <Widget>
       <Form layout={"vertical"} >
 
-        <Form.Item validateStatus={valid[0].status} help={valid[0].txt} label={" Ce vârstă ai?"}>
+        <Form.Item validateStatus={valid[0].status} help={valid[0].txt} label={<p style={{fontSize:18,fontWeight:400}}> Ce vârstă ai?</p>}>
           <InputNumber min={11} max={25} value={question[0].value} onChange={(value)=>{this.handleChange(value, 0)}}/>
         </Form.Item>
         <Form.Item validateStatus={valid[1].status} help={valid[1].txt} label=" Gen">
-          <Select style={{ width: 200 }} placeholder="Selectează" value={question[1].value || undefined}  onChange={(value)=>{this.handleChange(value, 1)}}>
+          <Select style={{ width: 240 }} placeholder="Selectează" value={question[1].value || undefined}  onChange={(value)=>{this.handleChange(value, 1)}}>
             <Option value="male">Masculin</Option>
             <Option value="female">Feminin</Option>
             <Option value="unspecfied">Nu doresc să menționez</Option>
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[2].status} help={valid[2].txt} label={" În ce județ înveți?"}>
+        <Form.Item validateStatus={valid[2].status} help={valid[2].txt} label={<p style={{fontSize:18,fontWeight:400}}> În ce județ înveți?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             onChange={(value)=>{this.handleChangeNested(value, 2)}}
             value={question[2].value || undefined}
             placeholder="Selectează județul"
@@ -275,10 +275,10 @@ class GeneralForm extends React.Component {
             {judete}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[3].status} help={valid[3].txt} label={" În ce localitate înveți?"}>
+        <Form.Item validateStatus={valid[3].status} help={valid[3].txt} label={<p style={{fontSize:18,fontWeight:400}}> În ce localitate înveți?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează localitatea"            
             optionFilterProp="children"
             value={question[3].value || undefined}
@@ -291,10 +291,10 @@ class GeneralForm extends React.Component {
             {localitati}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[4].status} help={valid[4].txt} label={" La ce liceu înveți?"}>
+        <Form.Item validateStatus={valid[4].status} help={valid[4].txt} label={<p style={{fontSize:18,fontWeight:400}}> La ce liceu înveți?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează liceul"
             value={question[4].value || undefined}
             disabled={(valid[3].status==="success")?false:true}
@@ -307,7 +307,7 @@ class GeneralForm extends React.Component {
             {licee}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[5].status} help={valid[5].txt} label={" Ce clasă ești?"}>
+        <Form.Item validateStatus={valid[5].status} help={valid[5].txt} label={<p style={{fontSize:18,fontWeight:400}}> Ce clasă ești?</p>}>
           <Radio.Group buttonStyle="solid" value={question[5].value || undefined} onChange={this.handleChangeRadio(5)}>
             <Radio.Button value={"IX"}>a IX-a</Radio.Button>
             <Radio.Button value={"X"}>a X-a</Radio.Button>
@@ -315,10 +315,10 @@ class GeneralForm extends React.Component {
             <Radio.Button value={"XII"}>a XII-a</Radio.Button>
           </Radio.Group>
         </Form.Item>
-        <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={" La ce literă ești?"}>
+        <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={<p style={{fontSize:18,fontWeight:400}}> La ce literă ești?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează litera"
             value={question[6].value || undefined}
             onChange={(value)=>{this.handleChange(value, 6)}}
@@ -330,10 +330,10 @@ class GeneralForm extends React.Component {
             {litere}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[7].status} help={valid[7].txt} label={" La ce filieră înveți?"}>
+        <Form.Item validateStatus={valid[7].status} help={valid[7].txt} label={<p style={{fontSize:18,fontWeight:400}}> La ce filieră înveți?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează filiera"
             value={question[7].value || undefined}
             disabled={(valid[4].status==="success")?false:true}
@@ -346,10 +346,10 @@ class GeneralForm extends React.Component {
             {filiere}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[8].status} help={valid[8].txt} label={" La ce profil înveți?"}>
+        <Form.Item validateStatus={valid[8].status} help={valid[8].txt} label={<p style={{fontSize:18,fontWeight:400}}> La ce profil înveți?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             onChange={(value)=>{this.handleChangeNested(value, 8)}}
             placeholder="Selectează profilul"
             value={question[8].value || undefined}
@@ -362,10 +362,10 @@ class GeneralForm extends React.Component {
             {profile}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[9].status} help={valid[9].txt} label={" La ce specializare înveți?"}>
+        <Form.Item validateStatus={valid[9].status} help={valid[9].txt} label={<p style={{fontSize:18,fontWeight:400}}> La ce specializare înveți?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează specializarea"
             optionFilterProp="children"
             value={question[9].value || undefined}

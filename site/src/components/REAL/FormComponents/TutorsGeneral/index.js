@@ -236,23 +236,23 @@ class GeneralForm extends React.Component {
         type="info"
         showIcon
       />
-        <br/>
-        <Form.Item validateStatus={valid[0].status} help={valid[0].txt} label={" Ce vârstă aveți?"}>
+        <br/><br/>
+        <Form.Item validateStatus={valid[0].status} help={valid[0].txt} label={<p style={{fontSize:18,fontWeight:500}}> Ce vârstă aveți?</p>}>
           <InputNumber min={20} max={90} value={question[0].value} onChange={(value)=>{this.handleChange(value, 0)}} />
         </Form.Item>
 
 
-        <Form.Item validateStatus={valid[1].status} help={valid[1].txt} label=" Gen">
-          <Select style={{ width: 200 }} placeholder="Selectează" value={question[1].value || undefined}  onChange={(value)=>{this.handleChange(value, 1)}}>
+        <Form.Item validateStatus={valid[1].status} help={valid[1].txt} label={<p style={{fontSize:18,fontWeight:500}}> Gen</p>}>
+          <Select style={{ width: 240 }} placeholder="Selectează" value={question[1].value || undefined}  onChange={(value)=>{this.handleChange(value, 1)}}>
             <Option value="male">Masculin</Option>
             <Option value="female">Feminin</Option>
             <Option value="unspecfied">Nu doresc să menționez</Option>
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[2].status} help={valid[2].txt} label={" În ce județ învață copilul dumneavoastră?"}>
+        <Form.Item validateStatus={valid[2].status} help={valid[2].txt} label={<p style={{fontSize:18,fontWeight:500}}> În ce județ învață copilul dumneavoastră?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează județul"
             onChange={(value)=>{this.handleChangeNested(value, 2)}}
             value={question[2].value || undefined}
@@ -264,10 +264,10 @@ class GeneralForm extends React.Component {
             {judete}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[3].status} help={valid[3].txt} label={" În ce localitate învață copilul dumneavoastră?"}>
+        <Form.Item validateStatus={valid[3].status} help={valid[3].txt} label={<p style={{fontSize:18,fontWeight:500}}> În ce localitate învață copilul dumneavoastră?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează localitatea"
             onChange={(value)=>{this.handleChangeNested(value, 3)}}
             value={question[3].value || undefined}
@@ -280,10 +280,10 @@ class GeneralForm extends React.Component {
             {localitati}
           </Select>
         </Form.Item>
-        <Form.Item validateStatus={valid[4].status} help={valid[4].txt} label={" La ce liceu învață copilul dumneavoastră?"}>
+        <Form.Item validateStatus={valid[4].status} help={valid[4].txt} label={<p style={{fontSize:18,fontWeight:500}}> La ce liceu învață copilul dumneavoastră?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează liceul"
             onChange={(value)=>{this.handleChangeNested(value, 4)}}
             value={question[4].value || undefined}
@@ -297,7 +297,7 @@ class GeneralForm extends React.Component {
           </Select>
         </Form.Item>
 
-        <Form.Item validateStatus={valid[5].status} help={valid[5].txt} label={" În ce clasă este copilul dumneavoastră?"}>
+        <Form.Item validateStatus={valid[5].status} help={valid[5].txt} label={<p style={{fontSize:18,fontWeight:500}}> În ce clasă este copilul dumneavoastră?</p>}>
             <Radio.Group buttonStyle="solid" value={question[5].value || undefined} onChange={this.handleChangeRadio(5)}>
               <Radio.Button value={"IX"}>a IX-a</Radio.Button>
               <Radio.Button value={"X"}>a X-a</Radio.Button>
@@ -306,10 +306,10 @@ class GeneralForm extends React.Component {
             </Radio.Group>
         </Form.Item>
 
-        <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={" Care este litera clasei copilului dumneavoastră?"}>
+        <Form.Item validateStatus={valid[6].status} help={valid[6].txt} label={<p style={{fontSize:18,fontWeight:500}}> Care este litera clasei copilului dumneavoastră?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează litera"
             onChange={(value)=>{this.handleChange(value, 6)}}
             value={question[6].value || undefined}
@@ -322,10 +322,10 @@ class GeneralForm extends React.Component {
           </Select>
         </Form.Item>
 
-        <Form.Item validateStatus={valid[7].status} help={valid[7].txt} label={" La ce filieră este copilul dumneavoastra?"}>
+        <Form.Item validateStatus={valid[7].status} help={valid[7].txt} label={<p style={{fontSize:18,fontWeight:500}}> La ce filieră este copilul dumneavoastra?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează filiera"
             onChange={(value)=>{this.handleChangeNested(value, 7)}}
             disabled={(valid[4].status==="success")?false:true}
@@ -339,10 +339,10 @@ class GeneralForm extends React.Component {
           </Select>
         </Form.Item>
 
-        <Form.Item validateStatus={valid[8].status} help={valid[8].txt} label={" La ce profil învata copilul dumneavoastra?"}>
+        <Form.Item validateStatus={valid[8].status} help={valid[8].txt} label={<p style={{fontSize:18,fontWeight:500}}> La ce profil învata copilul dumneavoastra?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează profilul"
             onChange={(value)=>{this.handleChangeNested(value, 8)}}
             value={question[8].value || undefined}
@@ -356,10 +356,10 @@ class GeneralForm extends React.Component {
           </Select>
         </Form.Item>
 
-        <Form.Item validateStatus={valid[9].status} help={valid[9].txt} label={" Care este specializarea copilului dumneavoastră?"}>
+        <Form.Item validateStatus={valid[9].status} help={valid[9].txt} label={<p style={{fontSize:18,fontWeight:500}}> Care este specializarea copilului dumneavoastră?</p>}>
           <Select
             showSearch
-            style={{ width: 200 }}
+            style={{ width: 240 }}
             placeholder="Selectează specializarea"
             onChange={(value)=>{this.handleChangeNested(value, 9)}}
             value={question[9].value || undefined}
