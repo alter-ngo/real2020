@@ -21,13 +21,13 @@ const NoMatchPage = () => {
 const App = ({match}) => (
   <div className="gx-main-content-wrapper">
    <Switch>
-      <Route exact path={`${match.url}home`} component={Home}/>
-      <Route exact path={`${match.url}catalogue`} component={Catalog}/>
-      <Route exact path={`${match.url}panel`} component={Bord}/>   
-      <Route exact path={`${match.url}about`} component={About}/> 
-      <Route exact path={`${match.url}blog`} component={Blog}/>  
-      <Route exact path={`${match.url}blog/:slug`} component={BlogPost}/>  
-      <Route exact path={`${match.url}form`} component={Formular}/> 
+      <Route path={`${match.url}home`} component={Home}/>
+      <Route path={`${match.url}catalogue`} component={Catalog}/>
+      <Route path={`${match.url}panel`} component={Bord}/>   
+      <Route path={`${match.url}about`} component={About}/> 
+      <Route path={`${match.url}blog`} component={Blog}/>  
+      <Route path={`${match.url}blog/:slug`} component={BlogPost}/>  
+      <Route path={`${match.url}form`} component={Formular}/> 
       <Route component={NoMatchPage} />
   </Switch>
   </div>

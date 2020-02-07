@@ -1,9 +1,10 @@
 import React from "react";
-import GeneralForm from "../../components/REAL/FormComponents/GeneralForm";
+import GeneralForm from "components/REAL/FormComponents/GeneralForm";
 import ModalSelector from 'components/REAL/FormComponents/ModalSelector';
 import StepsComp from 'components/REAL/FormComponents/Steps';
 import OpinionForm from 'components/REAL/FormComponents/OpinionForm';
 import FeedbackForm from 'components/REAL/FormComponents/FeedbackForm';
+import FormRedirect from 'components/REAL/FormComponents/FormRedirect';
 class Formular extends React.Component {
   constructor(props) {
     super(props);
@@ -129,6 +130,7 @@ class Formular extends React.Component {
     console.log(jsonString);
   }
   onSubmit=()=>{
+    this.nextStep()
     const {status}=this.state;
       if(status=="Elev")
         this.Elev_Submit();
@@ -184,6 +186,14 @@ class Formular extends React.Component {
                 FeedbackVariables={this.state.FeedbackVariables}
                 prevStep={this.prevStep}
                 onSubmit={this.onSubmit}/>
+              </div>
+            )
+            case 5:
+            return(
+              <div>
+                <StepsComp current={this.state.current}/>
+                <br/>
+                <FormRedirect></FormRedirect>
               </div>
             )
 
