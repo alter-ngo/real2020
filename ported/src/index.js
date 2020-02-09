@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";	
-import './styles/wieldy.less';
 import 'antd/dist/antd.css'
 import * as serviceWorker from "./serviceWorker";
 import Formular from "./App";
