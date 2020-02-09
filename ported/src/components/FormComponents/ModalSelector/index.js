@@ -1,10 +1,10 @@
-import {Button,Col,Row,Modal,Card } from "antd";
+import {Button,Col,Row,Modal,Card, Layout } from "antd";
 import Widget from "../../Widget";
 import React from "react";
 import FormIntro from '../../FormIntro';
-
-
-const{Meta}=Card;
+import "assets/vendors/style";
+import "styles/wieldy.less";
+import "styles/blackHole.css";
 class ModalSelector extends React.Component {
   state = {
     visible: true,
@@ -60,30 +60,32 @@ class ModalSelector extends React.Component {
   if(this.state.windowWidth <= 950){
     return(
 <Card>
-  <div className="gx-d-flex justify-content-center" >
+  <div >
+    
     <Col span={24}>    
     <Row>
       <FormIntro/>
     </Row>
 
-      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Elev")}>Elev</Button>
-      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Tutore")}>Tutore</Button>
-      <Button block={true} className="gx-widget-bg" type="primary" onClick={this.handleSelection.bind(this,"Profesor")}>Profesor</Button>
+      <Button block={true}  type="primary" onClick={this.handleSelection.bind(this,"Elev")}>Elev</Button><br/>
+      <Button block={true}  type="primary" onClick={this.handleSelection.bind(this,"Tutore")}>Tutore</Button><br/>
+      <Button block={true}  type="primary" onClick={this.handleSelection.bind(this,"Profesor")}>Profesor</Button><br/>
 
     </Col>
+    
   </div>
 
   </Card>
   )
   }else{
     return(
-<Card>
-  <div className="gx-d-flex justify-content-center" >
-    <Col span={24}>    
+      <Row>
+      <Col span={8}></Col>
+    <Col span={8}>    
     <Row>
       <FormIntro/>
     </Row>
-    <Row gutter={16}>
+    <Row gutter={32}>
       <Col  xl={8}
             md={8}
             sm={12}
@@ -107,11 +109,11 @@ class ModalSelector extends React.Component {
           </Widget>
       </Col>
       
-      <Col xl={8}
+      <Col  xl={8}
             md={8}
             sm={12}
             xs={24} onClick={this.handleSelection.bind(this,"Tutore")}>
-      <Widget styleName="gx-widget-bg"
+      <Widget styleName="gx-widget-bg" hoverable
             cover={
               <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fparinti.jpg?alt=media&token=cab87a57-dfb8-43a1-8ba0-7a4f62dd016b" />
             }
@@ -132,7 +134,7 @@ class ModalSelector extends React.Component {
             md={8}
             sm={12}
             xs={24} onClick={this.handleSelection.bind(this,"Profesor")}>
-      <Widget styleName="gx-widget-bg"
+      <Widget styleName="gx-widget-bg" hoverable
             cover={
               <img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fprofesori.jpg?alt=media&token=2933756d-8127-458a-a523-5619cbb8f7e5" />
             }
@@ -152,9 +154,7 @@ class ModalSelector extends React.Component {
     </Row>
 
     </Col>
-  </div>
-
-  </Card>
+    </Row>
   )}
   };
 
@@ -162,6 +162,7 @@ class ModalSelector extends React.Component {
     
     return (
       <div>
+        <br/><br/><br/>
       {this.objectiveSelectionDisplay()}
       </div>
     );

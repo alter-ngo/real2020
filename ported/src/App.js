@@ -5,6 +5,11 @@ import StepsComp from './components/FormComponents/Steps';
 import OpinionForm from './components/FormComponents/OpinionForm';
 import FeedbackForm from './components/FormComponents/FeedbackForm';
 import FormRedirect from './components/FormComponents/FormRedirect';
+import {Layout } from "antd";
+import "./assets/vendors/style";
+import "styles/wieldy.less";
+import "styles/blackHole.css";
+const {Content}= Layout;
 class Formular extends React.Component {
   constructor(props) {
     super(props);
@@ -145,14 +150,17 @@ class Formular extends React.Component {
        switch(step){
           case 1:
            return (
+            <Layout  className="gx-app-layout">
              <ModalSelector 
               nextStep={this.nextStep}
               setStatus={this.setStatus}
               />
+            </Layout>
            )
           case 2:
             return(
-              <div>
+              <Layout  className="gx-app-layout">
+                <Content className={`gx-layout-content gx-container-wrap `}>
                 <StepsComp current={this.state.current}/>
                 <br/>
                 <GeneralForm
@@ -160,11 +168,13 @@ class Formular extends React.Component {
                   generalVariablesTutors={this.state.generalVariablesTutors}
                   status={this.state.status}
                   nextStep={this.nextStep}/>
-              </div>
+                  </Content>
+              </Layout>
             )
           case 3:
             return(
-              <div>
+              <Layout  className="gx-app-layout">
+                <Content className={`gx-layout-content gx-container-wrap `}>
                 <StepsComp current={this.state.current}/>
                 <br/>
                 <OpinionForm
@@ -175,26 +185,31 @@ class Formular extends React.Component {
                 opinionVariablesStudents={this.state.opinionVariablesStudents}
                 opinionVariables={this.state.opinionVariables}
                 opinionVariablesTeachers={this.state.opinionVariablesTeachers}/>
-              </div>
+                </Content>
+              </Layout>
             )
           case 4:
             return(
-              <div>
+              <Layout  className="gx-app-layout">
+                <Content className={`gx-layout-content gx-container-wrap `}>
                 <StepsComp current={this.state.current}/>
                 <br/>
                 <FeedbackForm
                 FeedbackVariables={this.state.FeedbackVariables}
                 prevStep={this.prevStep}
                 onSubmit={this.onSubmit}/>
-              </div>
+                </Content>
+            </Layout>
             )
             case 5:
             return(
-              <div>
+              <Layout  className="gx-app-layout">
+                <Content className={`gx-layout-content gx-container-wrap `}>
                 <StepsComp current={this.state.current}/>
                 <br/>
                 <FormRedirect></FormRedirect>
-              </div>
+                </Content>
+              </Layout>
             )
 
         }
