@@ -1,3 +1,5 @@
 **.pdf
 **.csv
 **.json
+node_modules
+*.icloud
