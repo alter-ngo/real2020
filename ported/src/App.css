@@ -1,0 +1,9 @@
+.form-body {
+    padding: 64px 150px;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-body {
+        padding: 32px 35px;
+    }
+  }
