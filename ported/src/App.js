@@ -6,6 +6,8 @@ import OpinionForm from "./components/FormComponents/OpinionForm";
 import FeedbackForm from "./components/FormComponents/FeedbackForm";
 import FormRedirect from "./components/FormComponents/FormRedirect";
 import { Layout } from "antd";
+import Firebase from "firebase";
+import config from "./components/FormUpload/config.js";
 import "./assets/vendors/style";
 import "styles/wieldy.less";
 import "App.css";
@@ -14,6 +16,7 @@ const { Content } = Layout;
 class Formular extends React.Component {
 	constructor(props) {
 		super(props);
+		Firebase.initializeApp(config);
 		this.state = {
 			status: "",
 			visible: true,
@@ -117,8 +120,9 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "E" + cnt++, value: FeedbackVariables[i].value });
 		}
-		var jsonString = JSON.stringify(finalArray);
-		console.log(jsonString);
+		Firebase.database()
+			.ref("forms/")
+			.push(finalArray);
 	}
 	Tutore_Submit() {
 		const {
@@ -140,8 +144,9 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "T" + cnt++, value: FeedbackVariables[i].value });
 		}
-		var jsonString = JSON.stringify(finalArray);
-		console.log(jsonString);
+		Firebase.database()
+			.ref("forms/")
+			.push(finalArray);
 	}
 	Profesor_Submit() {
 		const {
@@ -168,8 +173,9 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "P" + cnt++, value: FeedbackVariables[i].value });
 		}
-		var jsonString = JSON.stringify(finalArray);
-		console.log(jsonString);
+		Firebase.database()
+			.ref("forms/")
+			.push(finalArray);
 	}
 	onSubmit = () => {
 		this.nextStep();
