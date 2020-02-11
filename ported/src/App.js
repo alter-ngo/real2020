@@ -122,8 +122,11 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "E" + cnt++, value: FeedbackVariables[i].value });
 		}
+		let county = this.processString(finalArray[2].value)
+		let place = this.processString(finalArray[3].value)
+		let hs = this.processString(finalArray[4].value)
 		Firebase.database()
-			.ref(`forms/${finalArray[4].value.split(" ").join("-")}/students`)
+			.ref(`forms/${county}/${place}/${hs}/tutors`)
 			.push(finalArray);
 	}
 	Tutore_Submit() {
@@ -146,8 +149,11 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "T" + cnt++, value: FeedbackVariables[i].value });
 		}
+		let county = this.processString(finalArray[2].value)
+		let place = this.processString(finalArray[3].value)
+		let hs = this.processString(finalArray[4].value)
 		Firebase.database()
-			.ref(`forms/${finalArray[4].value.split(" ").join("-")}/parents`)
+			.ref(`forms/${county}/${place}/${hs}/tutors`)
 			.push(finalArray);
 	}
 	Profesor_Submit() {
