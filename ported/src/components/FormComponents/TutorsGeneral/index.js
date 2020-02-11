@@ -2,6 +2,7 @@ import {
 	InputNumber,
 	Form,
 	Radio,
+	Input,
 	Slider,
 	Col,
 	Select,
@@ -352,7 +353,7 @@ class GeneralForm extends React.Component {
 						<InputNumber
 							min={20}
 							max={90}
-							style={{width:'100%'}}
+							style={{ width: "100%" }}
 							value={question[0].value}
 							onChange={value => {
 								this.handleChange(value, 0);
@@ -474,6 +475,7 @@ class GeneralForm extends React.Component {
 						<Radio.Group
 							buttonStyle="solid"
 							value={question[5].value || undefined}
+							disabled={valid[4].status === "success" ? false : true}
 							onChange={this.handleChangeRadio(5)}
 						>
 							<Radio.Button value={"IX"}>a IX-a</Radio.Button>
@@ -493,22 +495,21 @@ class GeneralForm extends React.Component {
 							</p>
 						}
 					>
-						<Select
+						<Input
 							showSearch
-							placeholder="Selectează litera"
+							placeholder="Litera clasei copilului dumneavoastră"
+							value={question[6].value || undefined}
+							disabled={valid[4].status === "success" ? false : true}
 							onChange={value => {
 								this.handleChange(value, 6);
 							}}
-							value={question[6].value || undefined}
 							optionFilterProp="children"
 							filterOption={(input, option) =>
 								option.props.children
 									.toLowerCase()
 									.indexOf(input.toLowerCase()) >= 0
 							}
-						>
-							{litere}
-						</Select>
+						></Input>
 					</Form.Item>
 
 					<Form.Item

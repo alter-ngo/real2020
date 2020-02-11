@@ -1,4 +1,4 @@
-import { InputNumber, Form, Radio, Select, Button } from "antd";
+import { InputNumber, Input, Form, Radio, Select, Button } from "antd";
 import React from "react";
 import Widget from "../../Widget";
 import Data from "../data";
@@ -352,7 +352,7 @@ class StudentsGeneral extends React.Component {
 						<InputNumber
 							min={11}
 							max={25}
-							style={{width:'100%'}}
+							style={{ width: "100%" }}
 							value={question[0].value}
 							onChange={value => {
 								this.handleChange(value, 0);
@@ -468,6 +468,7 @@ class StudentsGeneral extends React.Component {
 					>
 						<Radio.Group
 							buttonStyle="solid"
+							disabled={valid[4].status === "success" ? false : true}	
 							value={question[5].value || undefined}
 							onChange={this.handleChangeRadio(5)}
 						>
@@ -487,10 +488,11 @@ class StudentsGeneral extends React.Component {
 							</p>
 						}
 					>
-						<Select
+						<Input
 							showSearch
-							placeholder="Selectează litera"
+							placeholder="Litera clasei tale"
 							value={question[6].value || undefined}
+							disabled={valid[4].status === "success" ? false : true}
 							onChange={value => {
 								this.handleChange(value, 6);
 							}}
@@ -501,8 +503,7 @@ class StudentsGeneral extends React.Component {
 									.indexOf(input.toLowerCase()) >= 0
 							}
 						>
-							{litere}
-						</Select>
+						</Input>
 					</Form.Item>
 					<Form.Item
 						validateStatus={valid[7].status}
