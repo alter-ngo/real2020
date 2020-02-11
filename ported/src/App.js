@@ -17,6 +17,7 @@ class Formular extends React.Component {
 	constructor(props) {
 		super(props);
 		Firebase.initializeApp(config);
+		this.myRef = React.createRef()  
 		this.state = {
 			status: "",
 			visible: true,
@@ -91,7 +92,7 @@ class Formular extends React.Component {
 			step: step + 1,
 			current: current + 1
 		});
-		window.scrollTo(0, 0);
+		window.scrollTo(0,50);
 	};
 	prevStep = () => {
 		const { step, current } = this.state;
@@ -99,7 +100,7 @@ class Formular extends React.Component {
 			step: step - 1,
 			current: current - 1
 		});
-		window.scrollTo(0, 0);
+		window.scrollTo(0,50);
 	};
 	Elev_Submit() {
 		const {
@@ -216,7 +217,7 @@ class Formular extends React.Component {
 		switch (step) {
 			case 1:
 				return (
-					<Layout className="gx-app-layout">
+					<Layout className="gx-app-layout" >
 						<Content>
 							<ModalSelector
 								nextStep={this.nextStep}
@@ -280,7 +281,7 @@ class Formular extends React.Component {
 				);
 			case 5:
 				return (
-					<Layout className="gx-app-layout">
+					<Layout className="gx-app-layout" >
 						<Content
 							className={`gx-layout-content gx-container-wrap form-body`}
 						>

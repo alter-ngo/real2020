@@ -3,6 +3,7 @@ import React from "react";
 import Widget from "../../Widget";
 import Data from "../data";
 const { Option } = Select;
+const {TextArea}= Input;
 var json = Data;
 const judete_array = [
 	"MUNICIPIUL BUCURE\u015eTI",
@@ -122,6 +123,14 @@ class StudentsGeneral extends React.Component {
 		}
 		this.setState({ valid: aux });
 	}
+	handleChangeText = input => e => {
+		this.validate(input);
+		let aux = this.state.question;
+		aux[input].value = e.target.value;
+		this.setState({
+			question: aux
+		});
+	};
 	handleChange(value, input) {
 		this.validate(input);
 		let aux = this.state.question;
@@ -488,22 +497,13 @@ class StudentsGeneral extends React.Component {
 							</p>
 						}
 					>
-						<Input
-							showSearch
+						<TextArea
 							placeholder="Litera clasei tale"
 							value={question[6].value || undefined}
 							disabled={valid[4].status === "success" ? false : true}
-							onChange={value => {
-								this.handleChange(value, 6);
-							}}
-							optionFilterProp="children"
-							filterOption={(input, option) =>
-								option.props.children
-									.toLowerCase()
-									.indexOf(input.toLowerCase()) >= 0
-							}
+							onChange={this.handleChangeText(6)}
 						>
-						</Input>
+						</TextArea>
 					</Form.Item>
 					<Form.Item
 						validateStatus={valid[7].status}
