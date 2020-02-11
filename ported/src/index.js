@@ -1,11 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";	
-import 'antd/dist/antd.css'
+import ReactDOM from "react-dom";
+import "antd/dist/antd.css";
 import * as serviceWorker from "./serviceWorker";
 import Formular from "./App";
+import { Layout } from "antd";
+const { Content } = Layout;
 
-ReactDOM.render(<Formular/>,
-	document.getElementById("root")
+ReactDOM.render(
+  <Layout className="gx-app-layout">
+    <Content className={`gx-layout-content gx-container-wrap form-body`}>
+      <Formular />
+    </Content>
+  </Layout>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

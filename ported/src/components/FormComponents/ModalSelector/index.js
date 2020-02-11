@@ -189,9 +189,7 @@ class ModalSelector extends React.Component {
 	render() {
 		return (
 			<div>
-				<br />
-				<br />
-				<br />
+
 				{this.objectiveSelectionDisplay()}
 			</div>
 		);

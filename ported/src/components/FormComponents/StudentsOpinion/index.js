@@ -280,6 +280,7 @@ class StudentsOpinionForm extends React.Component {
 						label={" Câte sesiuni de meditații ai pe săptămână?"}
 					>
 						<TextArea
+						disabled={valid[4].status === "success" ? false : true}
 							value={question[6].value}
 							onChange={this.handleChange(6)}
 							autosize={{ minRows: 1, maxRows: 1 }}

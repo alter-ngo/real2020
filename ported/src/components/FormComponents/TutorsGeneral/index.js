@@ -12,6 +12,7 @@ import {
 import Widget from "../../Widget";
 import React from "react";
 import Data from "../data";
+const {TextArea} = Input;
 const { Option } = Select;
 var json = Data;
 const judete_array = [
@@ -96,6 +97,14 @@ class GeneralForm extends React.Component {
 		}
 		this.props.nextStep();
 	}
+	handleChangeText = input => e => {
+		this.validate(input);
+		let aux = this.state.question;
+		aux[input].value = e.target.value;
+		this.setState({
+			question: aux
+		});
+	};
 	componentDidMount() {
 		const { generalVariables } = this.props;
 		let aux = this.state.question;
@@ -495,21 +504,13 @@ class GeneralForm extends React.Component {
 							</p>
 						}
 					>
-						<Input
-							showSearch
-							placeholder="Litera clasei copilului dumneavoastră"
+<TextArea
+							placeholder="Litera clasei tale"
 							value={question[6].value || undefined}
 							disabled={valid[4].status === "success" ? false : true}
-							onChange={value => {
-								this.handleChange(value, 6);
-							}}
-							optionFilterProp="children"
-							filterOption={(input, option) =>
-								option.props.children
-									.toLowerCase()
-									.indexOf(input.toLowerCase()) >= 0
-							}
-						></Input>
+							onChange={this.handleChangeText(6)}
+						>
+						</TextArea>
 					</Form.Item>
 
 					<Form.Item
