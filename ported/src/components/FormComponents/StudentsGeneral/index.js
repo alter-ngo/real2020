@@ -352,6 +352,7 @@ class StudentsGeneral extends React.Component {
 						<InputNumber
 							min={11}
 							max={25}
+							style={{width:'100%'}}
 							value={question[0].value}
 							onChange={value => {
 								this.handleChange(value, 0);
@@ -364,7 +365,6 @@ class StudentsGeneral extends React.Component {
 						label=" Gen"
 					>
 						<Select
-							style={{ width: 240 }}
 							placeholder="Selectează"
 							value={question[1].value || undefined}
 							onChange={value => {
@@ -388,7 +388,6 @@ class StudentsGeneral extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							onChange={value => {
 								this.handleChangeNested(value, 2);
 							}}
@@ -416,7 +415,6 @@ class StudentsGeneral extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează localitatea"
 							optionFilterProp="children"
 							value={question[3].value || undefined}
@@ -445,7 +443,6 @@ class StudentsGeneral extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează liceul"
 							value={question[4].value || undefined}
 							disabled={valid[3].status === "success" ? false : true}
@@ -492,7 +489,6 @@ class StudentsGeneral extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează litera"
 							value={question[6].value || undefined}
 							onChange={value => {
@@ -520,7 +516,6 @@ class StudentsGeneral extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează filiera"
 							value={question[7].value || undefined}
 							disabled={valid[4].status === "success" ? false : true}
@@ -549,7 +544,6 @@ class StudentsGeneral extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							onChange={value => {
 								this.handleChangeNested(value, 8);
 							}}
@@ -578,7 +572,6 @@ class StudentsGeneral extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează specializarea"
 							optionFilterProp="children"
 							value={question[9].value || undefined}

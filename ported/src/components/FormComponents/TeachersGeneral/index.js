@@ -230,6 +230,7 @@ class GeneralForm extends React.Component {
 						<InputNumber
 							min={20}
 							max={90}
+							style={{width:'100%'}}
 							value={question[0].value}
 							onChange={value => {
 								this.handleChange(value, 0);
@@ -243,7 +244,6 @@ class GeneralForm extends React.Component {
 						label={<p style={{ fontSize: 18, fontWeight: 500 }}> Gen</p>}
 					>
 						<Select
-							style={{ width: 240 }}
 							placeholder="Selectează"
 							value={question[1].value || undefined}
 							onChange={value => {
@@ -267,7 +267,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							onChange={value => {
 								this.handleChangeNested(value, 2);
 							}}
@@ -295,7 +294,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează localitatea"
 							value={question[3].value || undefined}
 							disabled={valid[2].status === "success" ? false : true}
@@ -324,7 +322,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează liceul"
 							value={question[4].value || undefined}
 							onChange={value => {

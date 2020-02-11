@@ -60,6 +60,7 @@ class Formular extends React.Component {
 		};
 		this.setStatus = this.setStatus.bind(this);
 	}
+	
 	componentDidMount() {
 		let auxArray = [],
 			auxArrayQ2 = [],

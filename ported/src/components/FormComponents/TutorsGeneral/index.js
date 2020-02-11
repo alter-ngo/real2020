@@ -352,6 +352,7 @@ class GeneralForm extends React.Component {
 						<InputNumber
 							min={20}
 							max={90}
+							style={{width:'100%'}}
 							value={question[0].value}
 							onChange={value => {
 								this.handleChange(value, 0);
@@ -365,7 +366,6 @@ class GeneralForm extends React.Component {
 						label={<p style={{ fontSize: 18, fontWeight: 500 }}> Gen</p>}
 					>
 						<Select
-							style={{ width: 240 }}
 							placeholder="Selectează"
 							value={question[1].value || undefined}
 							onChange={value => {
@@ -389,7 +389,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează județul"
 							onChange={value => {
 								this.handleChangeNested(value, 2);
@@ -417,7 +416,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează localitatea"
 							onChange={value => {
 								this.handleChangeNested(value, 3);
@@ -446,7 +444,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează liceul"
 							onChange={value => {
 								this.handleChangeNested(value, 4);
@@ -498,7 +495,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează litera"
 							onChange={value => {
 								this.handleChange(value, 6);
@@ -527,7 +523,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează filiera"
 							onChange={value => {
 								this.handleChangeNested(value, 7);
@@ -557,7 +552,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează profilul"
 							onChange={value => {
 								this.handleChangeNested(value, 8);
@@ -587,7 +581,6 @@ class GeneralForm extends React.Component {
 					>
 						<Select
 							showSearch
-							style={{ width: 240 }}
 							placeholder="Selectează specializarea"
 							onChange={value => {
 								this.handleChangeNested(value, 9);
