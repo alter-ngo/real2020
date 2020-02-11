@@ -5,9 +5,9 @@ import { Typography } from "antd";
 const { Paragraph, Title } = Typography;
 class RedirectForm extends React.Component {
 	renderRedirect = () => {
-		setTimeout(() => {
+		/*setTimeout(() => {
 			window.location.href = "home";
-		}, 2000);
+		}, 2000);*/
 	};
 
 	render() {

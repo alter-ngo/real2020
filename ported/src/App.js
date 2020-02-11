@@ -60,7 +60,7 @@ class Formular extends React.Component {
 		};
 		this.setStatus = this.setStatus.bind(this);
 	}
-	
+
 	componentDidMount() {
 		let auxArray = [],
 			auxArrayQ2 = [],
@@ -122,7 +122,7 @@ class Formular extends React.Component {
 			finalArray.push({ id: "E" + cnt++, value: FeedbackVariables[i].value });
 		}
 		Firebase.database()
-			.ref("forms/")
+			.ref(`forms/${finalArray[4].value.split(" ").join("-")}/students`)
 			.push(finalArray);
 	}
 	Tutore_Submit() {
@@ -146,7 +146,7 @@ class Formular extends React.Component {
 			finalArray.push({ id: "T" + cnt++, value: FeedbackVariables[i].value });
 		}
 		Firebase.database()
-			.ref("forms/")
+			.ref(`forms/${finalArray[4].value.split(" ").join("-")}/parents`)
 			.push(finalArray);
 	}
 	Profesor_Submit() {
@@ -174,10 +174,35 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "P" + cnt++, value: FeedbackVariables[i].value });
 		}
+		let county = this.processString(finalArray[2].value)
+		let place = this.processString(finalArray[3].value)
+		let hs = this.processString(finalArray[4].value)
 		Firebase.database()
-			.ref("forms/")
+			.ref(`forms/${county}/${place}/${hs}/teachers`)
 			.push(finalArray);
 	}
+
+	processString(str) {
+		return this.removeAccents(str.toLowerCase())
+		.split(" ")
+		.join("-")
+		.replace(/['"]+/g, "");
+	}
+
+	removeAccents(str) {
+		var accents = "ăâîșşțţ";
+		var accentsOut = "aaisstt";
+		str = str.split("");
+		var strLen = str.length;
+		var i, x;
+		for (i = 0; i < strLen; i++) {
+			if ((x = accents.indexOf(str[i])) != -1) {
+				str[i] = accentsOut[x];
+			}
+		}
+		return str.join("");
+	}
+
 	onSubmit = () => {
 		this.nextStep();
 		const { status } = this.state;
