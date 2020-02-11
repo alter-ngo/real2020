@@ -184,7 +184,7 @@ class FeedbackForm extends React.Component {
 					<Button
 						style={{ marginLeft: 8 }}
 						type="default"
-						onClick={() => this.validateForm("back")}
+						onClick={() => this.saveCurrentState("back")}
 					>
 						Back
 					</Button>
