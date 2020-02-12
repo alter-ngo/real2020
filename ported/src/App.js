@@ -5,18 +5,17 @@ import StepsComp from "./components/FormComponents/Steps";
 import OpinionForm from "./components/FormComponents/OpinionForm";
 import FeedbackForm from "./components/FormComponents/FeedbackForm";
 import FormRedirect from "./components/FormComponents/FormRedirect";
-import { Layout } from "antd";
+import { Layout, BackTop } from "antd";
 import Firebase from "firebase";
 import config from "./components/FormUpload/config.js";
 import "./assets/vendors/style";
 import "styles/wieldy.less";
-import "App.css";
 const { Content } = Layout;
 class Formular extends React.Component {
 	constructor(props) {
 		super(props);
 		Firebase.initializeApp(config);
-		this.myRef = React.createRef()  
+		this.myRef = React.createRef();
 		this.state = {
 			status: "",
 			init_time: 0,
@@ -92,7 +91,7 @@ class Formular extends React.Component {
 			step: step + 1,
 			current: current + 1
 		});
-		window.scrollTo(0,0);
+		document.querySelector("main").scrollTop = 0;
 	};
 	prevStep = () => {
 		const { step, current } = this.state;
@@ -100,7 +99,7 @@ class Formular extends React.Component {
 			step: step - 1,
 			current: current - 1
 		});
-		window.scrollTo(0,0);
+		document.querySelector("main").scrollTop = 0;
 	};
 	Elev_Submit() {
 		const {
@@ -122,9 +121,9 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "E" + cnt++, value: FeedbackVariables[i].value });
 		}
-		let county = this.processString(finalArray[2].value)
-		let place = this.processString(finalArray[3].value)
-		let hs = this.processString(finalArray[4].value)
+		let county = this.processString(finalArray[2].value);
+		let place = this.processString(finalArray[3].value);
+		let hs = this.processString(finalArray[4].value);
 		Firebase.database()
 			.ref(`forms/${county}/${place}/${hs}/tutors`)
 			.push(finalArray);
@@ -149,9 +148,9 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "T" + cnt++, value: FeedbackVariables[i].value });
 		}
-		let county = this.processString(finalArray[2].value)
-		let place = this.processString(finalArray[3].value)
-		let hs = this.processString(finalArray[4].value)
+		let county = this.processString(finalArray[2].value);
+		let place = this.processString(finalArray[3].value);
+		let hs = this.processString(finalArray[4].value);
 		Firebase.database()
 			.ref(`forms/${county}/${place}/${hs}/tutors`)
 			.push(finalArray);
@@ -181,9 +180,9 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "P" + cnt++, value: FeedbackVariables[i].value });
 		}
-		let county = this.processString(finalArray[2].value)
-		let place = this.processString(finalArray[3].value)
-		let hs = this.processString(finalArray[4].value)
+		let county = this.processString(finalArray[2].value);
+		let place = this.processString(finalArray[3].value);
+		let hs = this.processString(finalArray[4].value);
 		Firebase.database()
 			.ref(`forms/${county}/${place}/${hs}/teachers`)
 			.push(finalArray);
@@ -191,14 +190,14 @@ class Formular extends React.Component {
 
 	processString(str) {
 		return this.removeAccents(str.toLowerCase())
-		.split(" ")
-		.join("-")
-		.replace(/['"]+/g, "");
+			.split(" ")
+			.join("-")
+			.replace(/[,'”"]+/g, "");
 	}
 
 	removeAccents(str) {
-		var accents = "ăâîșşțţ";
-		var accentsOut = "aaisstt";
+		var accents = "ăâàáâãäåîìíîïșşțţòóôõöøèéêëð";
+		var accentsOut = "aaaaaaaaiiiiissttooooooeeeee";
 		str = str.split("");
 		var strLen = str.length;
 		var i, x;
@@ -212,28 +211,34 @@ class Formular extends React.Component {
 
 	onSubmit = () => {
 		const currentTime = new Date();
-		const FTime = (currentTime.getHours()*3600)+(currentTime.getMinutes()*60)+currentTime.getSeconds();
+		const FTime =
+			currentTime.getHours() * 3600 +
+			currentTime.getMinutes() * 60 +
+			currentTime.getSeconds();
 		this.nextStep();
-		if(FTime-this.state.init_time>=150){
+		if (FTime - this.state.init_time >= 150) {
 			const { status } = this.state;
 			if (status == "Elev") this.Elev_Submit();
 			if (status == "Profesor") this.Profesor_Submit();
 			if (status == "Tutore") this.Tutore_Submit();
 		}
 	};
-	initializeForm=()=>{
+	initializeForm = () => {
 		const currentTime = new Date();
-		const Stime = (currentTime.getHours()*3600)+(currentTime.getMinutes()*60)+currentTime.getSeconds();
+		const Stime =
+			currentTime.getHours() * 3600 +
+			currentTime.getMinutes() * 60 +
+			currentTime.getSeconds();
 		this.setState({
-			init_time: Stime,
+			init_time: Stime
 		});
-	}
+	};
 	render() {
 		const { step } = this.state;
 		switch (step) {
 			case 1:
 				return (
-					<Layout className="gx-app-layout" >
+					<Layout className="gx-app-layout">
 						<Content>
 							<ModalSelector
 								initializeForm={this.initializeForm}
@@ -298,7 +303,7 @@ class Formular extends React.Component {
 				);
 			case 5:
 				return (
-					<Layout className="gx-app-layout" >
+					<Layout className="gx-app-layout">
 						<Content
 							className={`gx-layout-content gx-container-wrap form-body`}
 						>
