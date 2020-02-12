@@ -517,13 +517,12 @@ class GeneralForm extends React.Component {
 							</p>
 						}
 					>
-<TextArea
-							placeholder="Litera clasei tale"
+						<Input
+							placeholder="Litera clasei"
 							value={question[6].value || undefined}
 							disabled={valid[4].status === "success" ? false : true}
 							onChange={this.handleChangeText(6)}
-						>
-						</TextArea>
+						/>
 					</Form.Item>
 
 					<Form.Item

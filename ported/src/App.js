@@ -92,6 +92,7 @@ class Formular extends React.Component {
 			step: step + 1,
 			current: current + 1
 		});
+		window.focus();
 		window.scrollTo(0,0);
 	};
 	prevStep = () => {
@@ -100,6 +101,7 @@ class Formular extends React.Component {
 			step: step - 1,
 			current: current - 1
 		});
+		window.focus();
 		window.scrollTo(0,0);
 	};
 	Elev_Submit() {

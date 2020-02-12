@@ -7,11 +7,7 @@ import { Layout } from "antd";
 const { Content } = Layout;
 
 ReactDOM.render(
-  <Layout className="gx-app-layout">
-    <Content className={`gx-layout-content gx-container-wrap form-body`}>
-      <Formular />
-    </Content>
-  </Layout>,
+      <Formular />,
   document.getElementById("root")
 );
 

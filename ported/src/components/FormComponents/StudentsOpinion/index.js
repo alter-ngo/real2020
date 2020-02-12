@@ -1,4 +1,4 @@
-import { Form, Radio, Input, Select, Button, Icon, Tooltip } from "antd";
+import { InputNumber,Form, Radio, Input, Select, Button, Icon, Tooltip } from "antd";
 import Widget from "../../Widget";
 import React from "react";
 import IconSlider from "../IconSlider";
@@ -292,11 +292,14 @@ class StudentsOpinionForm extends React.Component {
 						help={valid[6].txt}
 						label={" Câte sesiuni de meditații ai pe săptămână?"}
 					>
-						<TextArea
-						disabled={valid[4].status === "success" ? false : true}
+						<InputNumber
+							min={0}
+							max={12}
+							style={{ width: "100%" }}
 							value={question[6].value}
-							onChange={this.handleChange(6)}
-							autosize={{ minRows: 1, maxRows: 1 }}
+							onChange={value => {
+								this.handleSChange(value, 6);
+							}}
 						/>
 					</Form.Item>
 					<Form.Item
