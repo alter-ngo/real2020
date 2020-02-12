@@ -216,7 +216,7 @@ class Formular extends React.Component {
 			currentTime.getMinutes() * 60 +
 			currentTime.getSeconds();
 		this.nextStep();
-		if (FTime - this.state.init_time >= 150) {
+		if (FTime - this.state.init_time >= 25) {
 			const { status } = this.state;
 			if (status == "Elev") this.Elev_Submit();
 			if (status == "Profesor") this.Profesor_Submit();
