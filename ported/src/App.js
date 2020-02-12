@@ -19,7 +19,8 @@ class Formular extends React.Component {
 		this.myRef = React.createRef()  
 		this.state = {
 			status: "",
-			visible: true,
+			init_time: 0,
+			final_time: 0,
 			step: 1,
 			current: -1,
 			methodsOfEvaluation: [],
@@ -210,13 +211,23 @@ class Formular extends React.Component {
 	}
 
 	onSubmit = () => {
+		const currentTime = new Date();
+		const FTime = (currentTime.getHours()*3600)+(currentTime.getMinutes()*60)+currentTime.getSeconds();
 		this.nextStep();
-		const { status } = this.state;
-		if (status == "Elev") this.Elev_Submit();
-		if (status == "Profesor") this.Profesor_Submit();
-		if (status == "Tutore") this.Tutore_Submit();
+		if(FTime-this.state.init_time>=150){
+			const { status } = this.state;
+			if (status == "Elev") this.Elev_Submit();
+			if (status == "Profesor") this.Profesor_Submit();
+			if (status == "Tutore") this.Tutore_Submit();
+		}
 	};
-
+	initializeForm=()=>{
+		const currentTime = new Date();
+		const Stime = (currentTime.getHours()*3600)+(currentTime.getMinutes()*60)+currentTime.getSeconds();
+		this.setState({
+			init_time: Stime,
+		});
+	}
 	render() {
 		const { step } = this.state;
 		switch (step) {
@@ -225,6 +236,7 @@ class Formular extends React.Component {
 					<Layout className="gx-app-layout" >
 						<Content>
 							<ModalSelector
+								initializeForm={this.initializeForm}
 								nextStep={this.nextStep}
 								setStatus={this.setStatus}
 							/>

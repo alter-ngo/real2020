@@ -5,7 +5,6 @@ import FormIntro from "../../FormIntro";
 
 class ModalSelector extends React.Component {
 	state = {
-		visible: true,
 		status: "",
 		colors: [
 			{ id: 1, value: "white", context: "Elev" },
@@ -42,16 +41,8 @@ class ModalSelector extends React.Component {
 		}
 		this.props.nextStep();
 		this.props.setStatus(mode);
-		this.setState({
-			visible: false,
-			ready: true
-		});
+		this.props.initializeForm();
 	}
-	handleCancel = e => {
-		this.setState({
-			visible: false
-		});
-	};
 	objectiveSelectionDisplay = () => {
 		if (this.state.windowWidth <= 950) {
 			return (
