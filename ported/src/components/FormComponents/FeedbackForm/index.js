@@ -8,6 +8,7 @@ class FeedbackForm extends React.Component {
 		this.state = {
 			valid: [],
 			question: [],
+			verif: {status:"",txt:""},	
 			radioOptions: [
 				{ id: "Facebook" },
 				{ id: "Instagram" },
@@ -105,12 +106,24 @@ class FeedbackForm extends React.Component {
 		}
 		this.setState({ valid: aux });
 		if (ok) {
-			this.saveCurrentState(arg);
-		}
+            let yetanotheraux=this.state.verif;
+            yetanotheraux.status = "success";
+            yetanotheraux.txt = "Gata!";
+            this.setState({verif:yetanotheraux});
+
+            this.saveCurrentState(arg);
+        }
+        else{
+            let yetanotheraux=this.state.verif;
+            yetanotheraux.status = "error";
+            yetanotheraux.txt = "Vă rugam să completați toate câmpurile marcate.";
+            this.setState({verif:yetanotheraux});
+
+        }
 	}
 	render() {
 		let radioOpts = [];
-		const { radioOptions, question, valid } = this.state;
+		const { radioOptions, question, valid,verif } = this.state;
 		const radioStyle = {
 			display: "block",
 			height: "30px",
@@ -195,6 +208,10 @@ class FeedbackForm extends React.Component {
 					>
 						Submit
 					</Button>
+					<Form.Item
+						validateStatus={verif.status}
+						help={verif.txt}
+					/>
 				</Widget>
 			</Col>
 		);

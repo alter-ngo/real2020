@@ -8,7 +8,8 @@ class TutorsOpinionForm extends React.Component {
 		super(props);
 		this.state = {
 			question: [],
-			radioOptions: [{ id: "Da" }, { id: "Nu" }]
+			radioOptions: [{ id: "Da" }, { id: "Nu" }],
+			verif: { status: "", txt: "" },
 		};
 		this.saveCurrentState = this.saveCurrentState.bind(this);
 		this.validate = this.validate.bind(this);
@@ -46,7 +47,19 @@ class TutorsOpinionForm extends React.Component {
 		}
 		this.setState({ valid: aux });
 		if (ok) {
+			let yetanotheraux=this.state.verif;
+			yetanotheraux.status = "success";
+			yetanotheraux.txt = "Gata!";
+			this.setState({verif:yetanotheraux});
+
 			this.saveCurrentState(arg);
+		}
+		else{
+			let yetanotheraux=this.state.verif;
+			yetanotheraux.status = "error";
+			yetanotheraux.txt = "Vă rugam să completați toate câmpurile marcate.";
+			this.setState({verif:yetanotheraux});
+
 		}
 	}
 	componentDidMount() {
@@ -88,7 +101,7 @@ class TutorsOpinionForm extends React.Component {
 	}
 	render() {
 		let radioOpts = [];
-		let { question, radioOptions, valid } = this.state;
+		let { question, radioOptions, valid,verif } = this.state;
 		const radioStyle = {
 			display: "block",
 			height: "30px",
@@ -346,6 +359,10 @@ class TutorsOpinionForm extends React.Component {
 				>
 					Next
 				</Button>
+				<Form.Item
+						validateStatus={verif.status}
+						help={verif.txt}
+					/>
 			</Widget>
 		);
 	}

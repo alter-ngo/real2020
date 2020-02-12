@@ -74,7 +74,8 @@ class GeneralForm extends React.Component {
 		super(props);
 		this.state = {
 			valid: [],
-			question: []
+			question: [],
+			verif: {status:"",txt:""},
 		};
 		this.validate = this.validate.bind(this);
 		this.validateForm = this.validateForm.bind(this);
@@ -328,11 +329,23 @@ class GeneralForm extends React.Component {
 		}
 		this.setState({ valid: aux });
 		if (ok) {
+			let yetanotheraux=this.state.verif;
+			yetanotheraux.status = "success";
+			yetanotheraux.txt = "Gata!";
+			this.setState({verif:yetanotheraux});
+
 			this.saveCurrentState();
+		}
+		else{
+			let yetanotheraux=this.state.verif;
+			yetanotheraux.status = "error";
+			yetanotheraux.txt = "Vă rugam să completați toate câmpurile marcate.";
+			this.setState({verif:yetanotheraux});
+
 		}
 	}
 	render() {
-		const { valid, question } = this.state;
+		const { valid, question,verif } = this.state;
 		let judete = [],
 			litere = [];
 		for (let i = 0; i <= 41; i++) {
@@ -608,6 +621,10 @@ class GeneralForm extends React.Component {
 				>
 					Next
 				</Button>
+				<Form.Item
+						validateStatus={verif.status}
+						help={verif.txt}
+					/>
 			</Widget>
 		);
 	}
