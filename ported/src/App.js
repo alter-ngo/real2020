@@ -11,7 +11,6 @@ import config from "./components/FormUpload/config.js";
 import "./assets/vendors/style";
 import "styles/wieldy.less";
 import "App.css";
-import "styles/blackHole.css";
 const { Content } = Layout;
 class Formular extends React.Component {
 	constructor(props) {
@@ -92,7 +91,6 @@ class Formular extends React.Component {
 			step: step + 1,
 			current: current + 1
 		});
-		window.focus();
 		window.scrollTo(0,0);
 	};
 	prevStep = () => {
@@ -101,7 +99,6 @@ class Formular extends React.Component {
 			step: step - 1,
 			current: current - 1
 		});
-		window.focus();
 		window.scrollTo(0,0);
 	};
 	Elev_Submit() {

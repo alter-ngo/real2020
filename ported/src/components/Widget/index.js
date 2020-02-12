@@ -1,7 +1,7 @@
 import React from "react";
 import {Card} from "antd";
 import PropTypes from "prop-types";
-import "styles/blackHole.css";
+
 const Widget = ({title, children, styleName, cover, extra, actions}) => {
 
   return (

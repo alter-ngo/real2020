@@ -2,9 +2,7 @@ import { Button, Col, Row, Modal, Card, Layout } from "antd";
 import Widget from "../../Widget";
 import React from "react";
 import FormIntro from "../../FormIntro";
-import "assets/vendors/style";
-import "styles/wieldy.less";
-import "styles/blackHole.css";
+
 class ModalSelector extends React.Component {
 	state = {
 		visible: true,
@@ -15,13 +13,13 @@ class ModalSelector extends React.Component {
 			{ id: 3, value: "white", context: "Profesor" }
 		],
 		windowHeight: 0,
-		windowWidth: 0
+		windowWidth: 0,
 	};
 
 	updateWindowDimension = () => {
 		this.setState({
-			windowHeight: window.innerHeight,
-			windowWidth: window.innerWidth
+			windowHeight: window.availHeight,
+			windowWidth: window.width
 		});
 	};
 
