@@ -2,7 +2,15 @@ import { Button, Col, Row, Modal, Card, Layout } from "antd";
 import Widget from "../../Widget";
 import React from "react";
 import FormIntro from "../../FormIntro";
-
+import styled from 'styled-components';
+const HoverText = styled.p`
+	:hover {
+		box-shadow: -1px 1px 10px #4c429a;
+		backgroundColor: #f5f5f5;
+		Color: #f5f5f5;
+		cursor: pointer;
+	}
+`
 class ModalSelector extends React.Component {
 	state = {
 		status: "",
@@ -84,8 +92,8 @@ class ModalSelector extends React.Component {
 		} else {
 			return (
 				<Row>
-					<Col span={8}></Col>
-					<Col span={8}>
+					<Col span={6}></Col>
+					<Col span={12}>
 						<Row>
 							<FormIntro />
 						</Row>
@@ -97,6 +105,7 @@ class ModalSelector extends React.Component {
 								xs={24}
 								onClick={this.handleSelection.bind(this, "Elev")}
 							>
+								<HoverText>
 								<Widget
 									styleName="gx-widget-bg"
 									cover={
@@ -114,6 +123,7 @@ class ModalSelector extends React.Component {
 										Elev
 									</p>
 								</Widget>
+								</HoverText>
 							</Col>
 
 							<Col
@@ -122,7 +132,7 @@ class ModalSelector extends React.Component {
 								sm={12}
 								xs={24}
 								onClick={this.handleSelection.bind(this, "Tutore")}
-							>
+							><HoverText>
 								<Widget
 									styleName="gx-widget-bg"
 									hoverable
@@ -130,17 +140,20 @@ class ModalSelector extends React.Component {
 										<img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fparinti.jpg?alt=media&token=cab87a57-dfb8-43a1-8ba0-7a4f62dd016b" />
 									}
 								>
+									
 									<p
 										style={{
 											color: this.state.colors[1].value,
 											fontSize: "1.25em",
 											textAlign: "center",
-											margin: 0
+											marginBottom: 0
 										}}
 									>
 										Tutore
 									</p>
+									
 								</Widget>
+								</HoverText>
 							</Col>
 							<Col
 								xl={8}
@@ -149,6 +162,7 @@ class ModalSelector extends React.Component {
 								xs={24}
 								onClick={this.handleSelection.bind(this, "Profesor")}
 							>
+								<HoverText>
 								<Widget
 									styleName="gx-widget-bg"
 									hoverable
@@ -167,6 +181,7 @@ class ModalSelector extends React.Component {
 										Profesor
 									</p>
 								</Widget>
+								</HoverText>
 							</Col>
 						</Row>
 					</Col>
