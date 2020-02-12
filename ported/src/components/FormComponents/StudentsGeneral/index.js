@@ -145,7 +145,6 @@ class StudentsGeneral extends React.Component {
 			aux[input].value = lic;
 		}
 		if (input === 7) {
-			console.log(input, fourth_path);
 			if (fourth_path === "0") 
 				aux[input].value = "Teoretica";
 			else 
