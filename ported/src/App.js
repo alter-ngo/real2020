@@ -125,7 +125,7 @@ class Formular extends React.Component {
 		let place = this.processString(finalArray[3].value);
 		let hs = this.processString(finalArray[4].value);
 		Firebase.database()
-			.ref(`forms/${county}/${place}/${hs}/tutors`)
+			.ref(`forms/${county}/${place}/${hs}/students`)
 			.push(finalArray);
 	}
 	Tutore_Submit() {
