@@ -143,30 +143,30 @@ class FeedbackForm extends React.Component {
 						<Form.Item
 							validateStatus={valid[0].status}
 							help={valid[0].txt}
-							label={" Ce te-a motivat să ajungi la sfârșitul formularului?"}
+							label={<span style={{ fontSize: 18, fontWeight: 500 }}> Ce te-a motivat să ajungi la sfârșitul formularului?</span>}
 						>
 							<TextArea
 								value={question[0].value}
 								onChange={this.handleChange(0)}
 								autosize={{ minRows: 3, maxRows: 5 }}
 							/>
-						</Form.Item>
+						</Form.Item><br/>
 						<Form.Item
 							validateStatus={valid[1].status}
 							help={valid[1].txt}
-							label={" Ce întrebare ai adăuga în formular?"}
+							label={<span style={{ fontSize: 18, fontWeight: 500 }}> Ce întrebare ai adăuga în formular?</span>}
 						>
 							<TextArea
 								value={question[1].value}
 								onChange={this.handleChange(1)}
 								autosize={{ minRows: 1, maxRows: 3 }}
 							/>
-						</Form.Item>
+						</Form.Item><br/>
 
 						<Form.Item
 							validateStatus={valid[2].status}
 							help={valid[2].txt}
-							label={" Cum ai aflat de formular?"}
+							label={<span style={{ fontSize: 18, fontWeight: 500 }}> Cum ai aflat de formular?</span>}
 						>
 							<Radio.Group
 								onChange={this.onChange(2)}
@@ -174,25 +174,25 @@ class FeedbackForm extends React.Component {
 							>
 								{radioOpts}
 							</Radio.Group>
-						</Form.Item>
+						</Form.Item><br/>
 						<Form.Item validateStatus={valid[4].status} help={valid[4].txt}>
 							<Input
 								disabled={question[4].altele}
 								value={question[4].value || undefined}
 								onChange={this.handleChange(4)}
 							/>
-						</Form.Item>
+						</Form.Item><br/>
 						<Form.Item
 							validateStatus={valid[3].status}
 							help={valid[3].txt}
-							label={" Ai recomandări pentru echipa #estereal?"}
+							label={<span style={{ fontSize: 18, fontWeight: 500 }}> Ai recomandări pentru echipa #estereal?</span>}
 						>
 							<TextArea
 								value={question[3].value}
 								onChange={this.handleChange(3)}
 								autosize={{ minRows: 2, maxRows: 5 }}
 							/>
-						</Form.Item>
+						</Form.Item><br/>
 					</Form>
 					<Button
 						style={{ marginLeft: 8 }}

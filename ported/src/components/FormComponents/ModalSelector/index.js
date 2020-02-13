@@ -25,8 +25,8 @@ class ModalSelector extends React.Component {
 
 	updateWindowDimension = () => {
 		this.setState({
-			windowHeight: window.availHeight,
-			windowWidth: window.width
+			windowHeight: window.innerHeight,
+			windowWidth: window.innerWidth
 		});
 	};
 
@@ -92,8 +92,8 @@ class ModalSelector extends React.Component {
 		} else {
 			return (
 				<Row>
-					<Col span={6}></Col>
-					<Col span={12}>
+					<Col sm={2} xs={2} xl={6}></Col>
+					<Col sm={20} xs={20} xl={12}>
 						<Row>
 							<FormIntro />
 						</Row>

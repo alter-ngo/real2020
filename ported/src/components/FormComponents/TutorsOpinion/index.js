@@ -133,7 +133,7 @@ class TutorsOpinionForm extends React.Component {
 						validateStatus={valid[0].status}
 						help={valid[0].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								Cât de ușor credeți că le este elevilor să acceseze activități
 								extracurriculare în afara liceului, care să fie promovate în
 								cadrul liceului?&nbsp;
@@ -152,12 +152,12 @@ class TutorsOpinionForm extends React.Component {
 								this.handleSChange(value, 0);
 							}}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[1].status}
 						help={valid[1].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								Cât de ușor credeți că le este elevilor să acceseze activități
 								extracurriculare interne?&nbsp;
 								<Tooltip title="Se consideră activități extracurriculare interne: cluburi de lectură, cor etc.">
@@ -175,12 +175,12 @@ class TutorsOpinionForm extends React.Component {
 								this.handleSChange(value, 1);
 							}}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[2].status}
 						help={valid[2].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								Credeți că liceul oferă elevilor susținere suplimentară pentru
 								cultivarea performanțelor academice?&nbsp;
 								<Tooltip title="Prin organizare de sesiuni de pregătire în afara orelor pentru concursuri, olimpiade, examene etc.">
@@ -198,12 +198,12 @@ class TutorsOpinionForm extends React.Component {
 								this.handleSChange(value, 2);
 							}}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[10].status}
 						help={valid[10].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								În clasa copilului dumneavoastră există fondul clasei?&nbsp;
 								<Tooltip title="Fondul clasei presupune strângerea banilor pentru achiziționarea unor resurse / bunuri.">
 									<Icon type="question-circle-o" />
@@ -217,13 +217,13 @@ class TutorsOpinionForm extends React.Component {
 						>
 							{radioOpts}
 						</Radio.Group>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[3].status}
 						help={valid[3].txt}
 						label={
-							" În cazul în care copilul dumneavoastră face meditații, câți bani alocați pe săptămână ședințelor?"
-						}
+							<span style={{ fontSize: 18, fontWeight: 500 }}> În cazul în care copilul dumneavoastră face meditații, câți bani alocați pe săptămână ședințelor?
+						</span>}
 					>
 						<InputNumber
 							min={0}
@@ -235,12 +235,12 @@ class TutorsOpinionForm extends React.Component {
 								this.handleSChange(value, 3);
 							}}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[4].status}
 						help={valid[4].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								Cât de satisfăcut sunteți de relația dintre dumneavoastră și
 								dirigintele copilului dumneavoastră?&nbsp;
 								<Tooltip title="Întrebarea face referire la: respectul reciproc, devotamentul si susținerea acordată etc.">
@@ -258,12 +258,12 @@ class TutorsOpinionForm extends React.Component {
 								this.handleSChange(value, 4);
 							}}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[5].status}
 						help={valid[5].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								Cât de satisfăcut sunteți de relația dintre dumneavoastră și
 								conducerea liceului la care învață copilul dumneavoastră?&nbsp;
 								<Tooltip title="Întrebarea face referire la: respectul reciproc, deschiderea conducerii de a primi propuneri de la dumneavoastră, susținerea acordată etc.">
@@ -281,12 +281,12 @@ class TutorsOpinionForm extends React.Component {
 								this.handleSChange(value, 5);
 							}}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[6].status}
 						help={valid[6].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								Cât de satisfăcut sunteți de relația dintre dumneavoastră și
 								profesorii copilul dumneavoastră?&nbsp;
 								<Tooltip title="Întrebarea face referire la: respectul reciproc, deschiderea profesorilor de a primi propuneri de la dumneavoastră, susținerea acordată etc.">
@@ -304,38 +304,38 @@ class TutorsOpinionForm extends React.Component {
 								this.handleSChange(value, 6);
 							}}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[7].status}
 						help={valid[7].txt}
 						label={
-							" Ce recomandări ați oferi părinților care vor să își înscrie copiii la liceul copilului dumneavoastră?"
-						}
+							<span style={{ fontSize: 18, fontWeight: 500 }}> Ce recomandări ați oferi părinților care vor să își înscrie copiii la liceul copilului dumneavoastră?
+						</span>}
 					>
 						<TextArea
 							value={question[7].value}
 							onChange={this.handleChange(7)}
 							autosize={{ minRows: 2, maxRows: 5 }}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[8].status}
 						help={valid[8].txt}
 						label={
-							" Ce recomandări ați oferi conducerii liceului la care învață copilul dumneavoastră?"
-						}
+							<span style={{ fontSize: 18, fontWeight: 500 }}> Ce recomandări ați oferi conducerii liceului la care învață copilul dumneavoastră?
+						</span>}
 					>
 						<TextArea
 							value={question[8].value}
 							onChange={this.handleChange(8)}
 							autosize={{ minRows: 2, maxRows: 5 }}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 					<Form.Item
 						validateStatus={valid[9].status}
 						help={valid[9].txt}
 						label={
-							<span>
+							<span style={{ fontSize: 18, fontWeight: 500 }}>
 								Ce recomandări ați oferi factorilor decizionali?&nbsp;
 								<Tooltip title="Factorii decizionali includ: Guvernul, Ministerul Educației etc.">
 									<Icon type="question-circle-o" />
@@ -348,7 +348,7 @@ class TutorsOpinionForm extends React.Component {
 							onChange={this.handleChange(9)}
 							autosize={{ minRows: 2, maxRows: 5 }}
 						/>
-					</Form.Item>
+					</Form.Item><br/>
 				</Form>
 				<Button
 					style={{ marginLeft: 8 }}
