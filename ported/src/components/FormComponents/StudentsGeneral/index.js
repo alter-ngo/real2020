@@ -369,7 +369,7 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[0].status}
 						help={valid[0].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}> Ce vârstă ai?</p>
+							<span style={{ fontSize: 18, fontWeight: 400 }}> Ce vârstă ai?</span>
 						}
 					>
 						<InputNumber
@@ -385,7 +385,7 @@ class StudentsGeneral extends React.Component {
 					<Form.Item
 						validateStatus={valid[1].status}
 						help={valid[1].txt}
-						label=" Gen"
+						label={<span style={{ fontSize: 18, fontWeight: 400 }}> Gen</span>}
 					>
 						<Select
 							placeholder="Selectează"
@@ -403,10 +403,9 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[2].status}
 						help={valid[2].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}>
-								{" "}
+							<span style={{ fontSize: 18, fontWeight: 400 }}>
 								În ce județ înveți?
-							</p>
+							</span>
 						}
 					>
 						<Select
@@ -430,10 +429,9 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[3].status}
 						help={valid[3].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}>
-								{" "}
+							<span style={{ fontSize: 18, fontWeight: 400 }}>
 								În ce localitate înveți?
-							</p>
+							</span>
 						}
 					>
 						<Select
@@ -458,10 +456,9 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[4].status}
 						help={valid[4].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}>
-								{" "}
+							<span style={{ fontSize: 18, fontWeight: 400 }}>
 								La ce liceu înveți?
-							</p>
+							</span>
 						}
 					>
 						<Select
@@ -486,7 +483,7 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[5].status}
 						help={valid[5].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}> Ce clasă ești?</p>
+							<span style={{ fontSize: 18, fontWeight: 400 }}> Ce clasă ești?</span>
 						}
 					>
 						<Radio.Group
@@ -505,10 +502,9 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[6].status}
 						help={valid[6].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}>
-								{" "}
+							<span style={{ fontSize: 18, fontWeight: 400 }}>
 								La ce literă ești?
-							</p>
+							</span>
 						}
 					>
 						<Input
@@ -522,10 +518,9 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[7].status}
 						help={valid[7].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}>
-								{" "}
+							<span style={{ fontSize: 18, fontWeight: 400 }}>
 								La ce filieră înveți?
-							</p>
+							</span>
 						}
 					>
 						<Select
@@ -550,10 +545,9 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[8].status}
 						help={valid[8].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}>
-								{" "}
+							<span style={{ fontSize: 18, fontWeight: 400 }}>
 								La ce profil înveți?
-							</p>
+							</span>
 						}
 					>
 						<Select
@@ -578,10 +572,9 @@ class StudentsGeneral extends React.Component {
 						validateStatus={valid[9].status}
 						help={valid[9].txt}
 						label={
-							<p style={{ fontSize: 18, fontWeight: 400 }}>
-								{" "}
+							<span style={{ fontSize: 18, fontWeight: 400 }}>
 								La ce specializare înveți?
-							</p>
+							</span>
 						}
 					>
 						<Select

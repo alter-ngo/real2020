@@ -139,7 +139,7 @@ class GeneralForm extends React.Component {
 			aux[input].value = lic;
 		}
 		if (input === 7) {
-			if (fourth_path === 0) aux[input].value = "Teoretica";
+			if (fourth_path === "0") aux[input].value = "Teoretica";
 			else aux[input].value = "Tehnologica";
 		}
 		if (input === 8) {
