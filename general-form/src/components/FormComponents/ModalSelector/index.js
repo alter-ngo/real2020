@@ -2,15 +2,7 @@ import { Button, Col, Row, Modal, Card, Layout } from "antd";
 import Widget from "../../Widget";
 import React from "react";
 import FormIntro from "../../FormIntro";
-import styled from 'styled-components';
-const HoverText = styled.p`
-	:hover {
-		box-shadow: -1px 1px 10px #4c429a;
-		backgroundColor: #f5f5f5;
-		Color: #f5f5f5;
-		cursor: pointer;
-	}
-`
+
 class ModalSelector extends React.Component {
 	state = {
 		status: "",
@@ -20,7 +12,7 @@ class ModalSelector extends React.Component {
 			{ id: 3, value: "white", context: "Profesor" }
 		],
 		windowHeight: 0,
-		windowWidth: 0,
+		windowWidth: 0
 	};
 
 	updateWindowDimension = () => {
@@ -62,6 +54,7 @@ class ModalSelector extends React.Component {
 							</Row>
 
 							<Button
+								className="selection-button"
 								block={true}
 								type="primary"
 								onClick={this.handleSelection.bind(this, "Elev")}
@@ -70,6 +63,7 @@ class ModalSelector extends React.Component {
 							</Button>
 							<br />
 							<Button
+								className="selection-button"
 								block={true}
 								type="primary"
 								onClick={this.handleSelection.bind(this, "Tutore")}
@@ -78,6 +72,7 @@ class ModalSelector extends React.Component {
 							</Button>
 							<br />
 							<Button
+								className="selection-button"
 								block={true}
 								type="primary"
 								onClick={this.handleSelection.bind(this, "Profesor")}
@@ -105,9 +100,8 @@ class ModalSelector extends React.Component {
 								xs={24}
 								onClick={this.handleSelection.bind(this, "Elev")}
 							>
-								<HoverText>
 								<Widget
-									styleName="gx-widget-bg"
+									styleName="gx-widget-bg selection-card"
 									cover={
 										<img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Felevi.jpg?alt=media&token=2e59253a-b2fc-41e0-9f83-100c0aea2e9e" />
 									}
@@ -123,7 +117,6 @@ class ModalSelector extends React.Component {
 										Elev
 									</p>
 								</Widget>
-								</HoverText>
 							</Col>
 
 							<Col
@@ -132,15 +125,14 @@ class ModalSelector extends React.Component {
 								sm={12}
 								xs={24}
 								onClick={this.handleSelection.bind(this, "Tutore")}
-							><HoverText>
+							>
 								<Widget
-									styleName="gx-widget-bg"
+									styleName="gx-widget-bg selection-card"
 									hoverable
 									cover={
 										<img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fparinti.jpg?alt=media&token=cab87a57-dfb8-43a1-8ba0-7a4f62dd016b" />
 									}
 								>
-									
 									<p
 										style={{
 											color: this.state.colors[1].value,
@@ -151,9 +143,7 @@ class ModalSelector extends React.Component {
 									>
 										Tutore
 									</p>
-									
 								</Widget>
-								</HoverText>
 							</Col>
 							<Col
 								xl={8}
@@ -162,9 +152,8 @@ class ModalSelector extends React.Component {
 								xs={24}
 								onClick={this.handleSelection.bind(this, "Profesor")}
 							>
-								<HoverText>
 								<Widget
-									styleName="gx-widget-bg"
+									styleName="gx-widget-bg selection-card"
 									hoverable
 									cover={
 										<img src="https://firebasestorage.googleapis.com/v0/b/real-infrastructure.appspot.com/o/images%2Fprofesori.jpg?alt=media&token=2933756d-8127-458a-a523-5619cbb8f7e5" />
@@ -181,7 +170,6 @@ class ModalSelector extends React.Component {
 										Profesor
 									</p>
 								</Widget>
-								</HoverText>
 							</Col>
 						</Row>
 					</Col>
@@ -191,12 +179,7 @@ class ModalSelector extends React.Component {
 	};
 
 	render() {
-		return (
-			<div>
-
-				{this.objectiveSelectionDisplay()}
-			</div>
-		);
+		return <div>{this.objectiveSelectionDisplay()}</div>;
 	}
 }
 
