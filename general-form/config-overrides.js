@@ -16,6 +16,6 @@ module.exports = override(
     }
   }),
   overrideProcessEnv({
-    VERSION: JSON.stringify(require('./package.json.js').version),
+    VERSION: JSON.stringify(require('./package.json').version),
   })
 );
