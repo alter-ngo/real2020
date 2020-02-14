@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Formular from "./App";
 
 ReactDOM.render(
-      <Formular />,
-  document.getElementById("root")
+	<Router>
+		<Route path="/:ref?" component={Formular} />
+	</Router>,
+	document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

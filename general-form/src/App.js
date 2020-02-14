@@ -5,7 +5,6 @@ import StepsComp from "./components/FormComponents/Steps";
 import OpinionForm from "./components/FormComponents/OpinionForm";
 import FeedbackForm from "./components/FormComponents/FeedbackForm";
 import FormRedirect from "./components/FormComponents/FormRedirect";
-import FooterComponent from "./components/FooterComponent";
 import { Layout, BackTop } from "antd";
 import Firebase from "firebase";
 import config from "./components/FormUpload/config.js";
@@ -122,6 +121,7 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "E" + cnt++, value: FeedbackVariables[i].value });
 		}
+		finalArray.push({ id: "REF", value: this.props.match.params.ref });
 		let county = this.processString(finalArray[2].value);
 		let place = this.processString(finalArray[3].value);
 		let hs = this.processString(finalArray[4].value);
@@ -149,6 +149,7 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "T" + cnt++, value: FeedbackVariables[i].value });
 		}
+		finalArray.push({ id: "REF", value: this.props.match.params.ref });
 		let county = this.processString(finalArray[2].value);
 		let place = this.processString(finalArray[3].value);
 		let hs = this.processString(finalArray[4].value);
@@ -181,6 +182,7 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "P" + cnt++, value: FeedbackVariables[i].value });
 		}
+		finalArray.push({ id: "REF", value: this.props.match.params.ref });
 		let county = this.processString(finalArray[2].value);
 		let place = this.processString(finalArray[3].value);
 		let hs = this.processString(finalArray[4].value);
