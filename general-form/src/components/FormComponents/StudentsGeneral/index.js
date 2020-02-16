@@ -509,6 +509,7 @@ class StudentsGeneral extends React.Component {
 					>
 						<Input
 							placeholder="Litera clasei tale"
+							maxLength = {15}
 							value={question[6].value || undefined}
 							disabled={valid[4].status === "success" ? false : true}
 							onChange={this.handleChangeText(6)}

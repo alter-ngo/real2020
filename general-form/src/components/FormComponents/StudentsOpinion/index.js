@@ -298,7 +298,7 @@ class StudentsOpinionForm extends React.Component {
 							style={{ width: "100%" }}
 							value={question[6].value}
 							onChange={value => {
-								this.handleSChange(value, 6);
+								this.handleSChange(`${value}`, 6);
 							}}
 						/>
 					</Form.Item><br/>
