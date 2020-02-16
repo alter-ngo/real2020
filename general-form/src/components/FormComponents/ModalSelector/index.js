@@ -46,7 +46,7 @@ class ModalSelector extends React.Component {
 	objectiveSelectionDisplay = () => {
 		if (this.state.windowWidth <= 950) {
 			return (
-				<Card>
+				<Card className="center-modal">
 					<div>
 						<Col span={24}>
 							<Row>
@@ -86,7 +86,7 @@ class ModalSelector extends React.Component {
 			);
 		} else {
 			return (
-				<Row>
+				<Row className="center-modal">
 					<Col sm={2} xs={2} xl={6}></Col>
 					<Col sm={20} xs={20} xl={12}>
 						<Row>

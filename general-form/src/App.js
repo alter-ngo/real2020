@@ -257,7 +257,6 @@ class Formular extends React.Component {
 			case 2:
 				return (
 					<Layout className="gx-app-layout">
-						<Header></Header>
 						<Content
 							className={`gx-layout-content gx-container-wrap form-body`}
 						>
