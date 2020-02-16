@@ -10,7 +10,7 @@ import Firebase from "firebase";
 import config from "./components/FormUpload/config.js";
 import "./assets/vendors/style";
 import "styles/wieldy.less";
-const { Content } = Layout;
+const { Content, Header } = Layout;
 class Formular extends React.Component {
 	constructor(props) {
 		super(props);
@@ -121,7 +121,7 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "E" + cnt++, value: FeedbackVariables[i].value });
 		}
-		if(this.props.match.params.ref)
+		if (this.props.match.params.ref)
 			finalArray.push({ id: "REF", value: this.props.match.params.ref });
 		let county = this.processString(finalArray[2].value);
 		let place = this.processString(finalArray[3].value);
@@ -150,7 +150,7 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "T" + cnt++, value: FeedbackVariables[i].value });
 		}
-		if(this.props.match.params.ref)
+		if (this.props.match.params.ref)
 			finalArray.push({ id: "REF", value: this.props.match.params.ref });
 		let county = this.processString(finalArray[2].value);
 		let place = this.processString(finalArray[3].value);
@@ -184,7 +184,7 @@ class Formular extends React.Component {
 		for (let i = 0; i <= FeedbackVariables.length - 1; i++) {
 			finalArray.push({ id: "P" + cnt++, value: FeedbackVariables[i].value });
 		}
-		if(this.props.match.params.ref)
+		if (this.props.match.params.ref)
 			finalArray.push({ id: "REF", value: this.props.match.params.ref });
 		let county = this.processString(finalArray[2].value);
 		let place = this.processString(finalArray[3].value);
@@ -257,6 +257,9 @@ class Formular extends React.Component {
 			case 2:
 				return (
 					<Layout className="gx-app-layout">
+						<Header>
+							<div styleName="seg-bg"></div>
+						</Header>
 						<Content
 							className={`gx-layout-content gx-container-wrap form-body`}
 						>

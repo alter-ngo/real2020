@@ -2,8 +2,8 @@
 @import "styles";
 
 body {
-    overflow-x:hidden;
-    min-height: 100vh;
+	overflow-x: hidden;
+	min-height: 100vh;
 }
 
 .selection-card:hover {
@@ -11,41 +11,53 @@ body {
 	cursor: pointer;
 }
 
+.ant-layout-header {
+	background: #fcefcc;
+	height: 200px;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: -100;
+}
+
 .selection-button {
-    background: #494495 !important;
+	background: #494495 !important;
+	border: none !important;
 }
 .selection-button:hover {
-    background: #494495 !important;
-    box-shadow: -2.5px 2.5px 5px #4c429a;
+	background: #494495 !important;
+	box-shadow: -2.5px 2.5px 5px #4c429a;
 	cursor: pointer;
+	border: none !important;
 }
 
 .form-body {
-    padding-top: 3em;
-    padding-left: 15em;
-    padding-right: 15em;
+	padding-top: 3em;
+	padding-left: 15em;
+	padding-right: 15em;
 }
 
 @media only screen and (max-width: 1200px) {
-    .form-body {
-        padding-top: 3em;
-        padding-left: 8em;
-        padding-right: 8em;
-    }
-  }
+	.form-body {
+		padding-top: 3em;
+		padding-left: 8em;
+		padding-right: 8em;
+	}
+}
 
 @media only screen and (max-width: 992px) {
-    .form-body {
-        padding-top: 2em;
-        padding-left: 6em;
-        padding-right: 6em;
-    }
-  }
+	.form-body {
+		padding-top: 2em;
+		padding-left: 6em;
+		padding-right: 6em;
+	}
+}
 
 @media only screen and (max-width: 768px) {
-    .form-body {
-        padding-top: 1.5em;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
-  }
+	.form-body {
+		padding-top: 1.5em;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+}
