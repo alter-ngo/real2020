@@ -7,7 +7,7 @@
     "amcharts3": "^3.21.13",
     "antd": "^3.11.6",
     "antd-theme-webpack-plugin": "^1.1.6",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "draftjs-to-html": "^0.8.4",
     "firebase": "^5.2.0",
     "formik": "^1.5.8",
