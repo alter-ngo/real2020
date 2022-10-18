@@ -230,5 +230,5 @@ def extract_all_institutions():
     json.dump(real2020, open('real2020.json', 'w+'), default=default)
 
 
-xls = pd.ExcelFile('aracip_2018.xlsx')
+xls = pd.ExcelFile('aracip_2022.xlsx')
 extract_all_institutions()
